@@ -100,5 +100,4 @@ app.*.map.json
 # macOS build folder
 **/macos/Flutter/Flutter.xcworkspace/
 
-# Flutter Plugin Symlinks
-**/pubspec.yaml
+

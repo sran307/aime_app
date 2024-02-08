@@ -1,3 +1,4 @@
+import 'package:dailyme/auth_pages/register.dart';
 import "package:flutter/material.dart";
 import 'Loading.dart';
 import 'auth_pages/login.dart';

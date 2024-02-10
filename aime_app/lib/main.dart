@@ -1,7 +1,7 @@
-import 'package:dailyme/auth_pages/register.dart';
+import 'package:dailyme/screens/auth_pages/register.dart';
 import "package:flutter/material.dart";
-import 'Loading.dart';
-import 'auth_pages/login.dart';
+import 'package:dailyme/screens/Loading.dart';
+import 'screens/auth_pages/login.dart';
 void main() async {
   runApp(const MyApp());
 }
@@ -11,10 +11,10 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  const MaterialApp(
+    return   MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Daily ME',
-      home: LoginForm(),
+      home: Loading(),
     );
   }
 }

@@ -1,4 +1,4 @@
-const baseUrl = "localhost:8005/api/";
+const baseUrl = "http://localhost:8005/api/";
 const loginUrl = baseUrl + 'login/';
 
 

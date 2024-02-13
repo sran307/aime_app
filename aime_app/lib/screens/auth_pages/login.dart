@@ -101,15 +101,16 @@ class LoginFormState extends State<LoginForm> {
               ),
             ),
             Container(
-              width: 500.0,
+              width: MediaQuery.of(context).size.width,
               height: 50.0,
               color: const Color(0xFFC8C8C8), // Background color
               child: const Text(
-                '© 2024 Your Company. All rights reserved.',
+                '© All rights reserved.',
                 textAlign: TextAlign.center, // Center the text horizontally
                 style: TextStyle(
                   fontSize: 12.0, // Font size
-                  color: Colors.black87, // Text color
+                  color: Colors.black87, 
+                  height: 4.0// Text color
                 ),
               ),
             ),

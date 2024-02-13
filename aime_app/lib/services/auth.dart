@@ -22,7 +22,7 @@ Future<String> getToken() async {
   try {
     print(loginUrl);
     final Response = await http
-        .get(Uri.parse(loginUrl), headers: {'Accept': 'application/json'});
+        .get(Uri.parse(loginUrl));
     print(Response);
     apiResponse.data = {'success': 'true'};
   } catch (e) {

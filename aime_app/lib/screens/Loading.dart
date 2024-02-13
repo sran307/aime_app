@@ -1,8 +1,12 @@
+import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:dailyme/screens/auth_pages/login.dart';
 import 'package:dailyme/screens/auth_pages/register.dart';
 import 'package:dailyme/services/auth.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:internet_connection_checker/internet_connection_checker.dart';
+import 'dart:async';
 
 class AvatarWithLoader extends StatefulWidget {
   final String imageUrl;
@@ -20,7 +24,16 @@ class AvatarWithLoader extends StatefulWidget {
 }
 
 class _AvatarWithLoaderState extends State<AvatarWithLoader> {
-  
+  late StreamSubscription subscription;
+  var isDeviceConnected = false;
+  bool isAlertSet = false;
+
+  @override
+  void initState() {
+    super.initState();
+    _loadKey();
+    getConnectivity();
+  }
 
   void _loadKey() async {
     String token = await getToken();
@@ -29,23 +42,32 @@ class _AvatarWithLoaderState extends State<AvatarWithLoader> {
         MaterialPageRoute(builder: (context) => LoginForm()),
         (route) => false,
       );
-    }else{
-      if(token == 'true'){
+    } else {
+      if (token == 'true') {
         Navigator.of(context).pushAndRemoveUntil(
-        MaterialPageRoute(builder: (context) => RegisterForm()),
-        (route) => false,
-      );
+          MaterialPageRoute(builder: (context) => RegisterForm()),
+          (route) => false,
+        );
       }
     }
-    // Navigator.of(context).pushAndRemoveUntil(
-    //     MaterialPageRoute(builder: (context) => RegisterForm()),
-    //     (route) => false);
+  }
+
+  getConnectivity() {
+    subscription = Connectivity()
+        .onConnectivityChanged
+        .listen((ConnectivityResult result) async {
+      isDeviceConnected = await InternetConnectionChecker().hasConnection;
+      if (!isDeviceConnected && !isAlertSet) {
+        showDialogBox();
+        setState(() => isAlertSet = true);
+      }
+    });
   }
 
   @override
-  void initState() {
-    super.initState();
-    _loadKey();
+  void dispose() {
+    subscription.cancel();
+    super.dispose();
   }
 
   @override
@@ -59,12 +81,35 @@ class _AvatarWithLoaderState extends State<AvatarWithLoader> {
           backgroundImage: AssetImage(widget.imageUrl),
         ),
         SpinKitCircle(
-          color: const Color.fromARGB(255, 170, 9, 9), // Change the color as needed
+          color: const Color.fromARGB(
+              255, 170, 9, 9), // Change the color as needed
           size: widget.loaderSize,
         ),
       ],
     );
   }
+
+  showDialogBox() => showCupertinoDialog<String>(
+        context: context,
+        builder: (BuildContext context) => CupertinoAlertDialog(
+          title: const Text('No Connection'),
+          content: const Text('data'),
+          actions: <Widget>[
+            TextButton(
+                onPressed: () async {
+                  Navigator.pop(context, 'cancel');
+                  setState(() => isAlertSet = false);
+                  isDeviceConnected =
+                      await InternetConnectionChecker().hasConnection;
+                  if (!isDeviceConnected) {
+                    showDialogBox();
+                    setState(() => isAlertSet = true);
+                  }
+                },
+                child: const Text('ok'))
+          ],
+        ),
+      );
 }
 
 class Loading extends StatelessWidget {

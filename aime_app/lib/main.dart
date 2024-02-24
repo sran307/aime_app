@@ -1,6 +1,7 @@
 import 'package:dailyme/screens/auth_pages/register.dart';
 import "package:flutter/material.dart";
 import 'package:dailyme/screens/Loading.dart';
+import 'package:dailyme/screens/Home.dart';
 import 'screens/auth_pages/login.dart';
 void main() async {
   runApp(const MyApp());
@@ -14,7 +15,7 @@ class MyApp extends StatelessWidget {
     return   MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Daily ME',
-      home: Loading(),
+      home: Home(),
     );
   }
 }

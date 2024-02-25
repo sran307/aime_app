@@ -1,124 +1,152 @@
-import 'package:flutter/material.dart';
+import 'dart:async';
 
-// Create a Form widget.
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:local_auth/local_auth.dart';
+
 class LoginForm extends StatefulWidget {
-  const LoginForm({Key? key}) : super(key: key);
+  const LoginForm({Key? key});
 
   @override
-  LoginFormState createState() {
-    return LoginFormState();
-  }
+  State<LoginForm> createState() => _LoginFormState();
 }
 
-// Create a corresponding State class.
-// This class holds data related to the form.
-class LoginFormState extends State<LoginForm> {
-  // Create a global key that uniquely identifies the Form widget
-  // and allows validation of the form.
-  //
-  // Note: This is a GlobalKey<FormState>,
-  // not a GlobalKey<MyCustomFormState>.
-  final _formKey = GlobalKey<FormState>();
+class _LoginFormState extends State<LoginForm> {
+  final LocalAuthentication auth = LocalAuthentication();
+  _SupportState _supportState = _SupportState.unknown;
+  bool? _canCheckBiometrics;
+  List<BiometricType>? _availableBiometrics;
+  String _authorized = 'Not Authorized';
+  bool _isAuthenticating = false;
+
+  @override
+  void initState() {
+    super.initState();
+    auth.isDeviceSupported().then(
+      (bool isSupported) => setState(() => _supportState = isSupported
+          ? _SupportState.supported
+          : _SupportState.unsupported),
+    );
+  }
+
+  Future<void> _checkBiometrics() async {
+    late bool canCheckBiometrics;
+    try {
+      canCheckBiometrics = await auth.canCheckBiometrics;
+    } on PlatformException catch (e) {
+      canCheckBiometrics = false;
+      print(e);
+    }
+    if (!mounted) {
+      return;
+    }
+
+    setState(() {
+      _canCheckBiometrics = canCheckBiometrics;
+    });
+  }
+
+  Future<void> _getAvailableBiometrics() async {
+    late List<BiometricType> availableBiometrics;
+    try {
+      availableBiometrics = await auth.getAvailableBiometrics();
+    } on PlatformException catch (e) {
+      availableBiometrics = <BiometricType>[];
+      print(e);
+    }
+    if (!mounted) {
+      return;
+    }
+
+    setState(() {
+      _availableBiometrics = availableBiometrics;
+    });
+  }
+
+  Future<void> _authenticate() async {
+    bool authenticated = false;
+    try {
+      setState(() {
+        _isAuthenticating = true;
+        _authorized = 'Authenticating';
+      });
+      authenticated = await auth.authenticate(
+        localizedReason: 'Let OS determine authentication method',
+      );
+      setState(() {
+        _isAuthenticating = false;
+      });
+    } on PlatformException catch (e) {
+      print(e);
+      setState(() {
+        _isAuthenticating = false;
+        _authorized = 'Error - ${e.message}';
+      });
+      return;
+    }
+    if (!mounted) {
+      return;
+    }
+
+    setState(
+      () => _authorized = authenticated ? 'Authorized' : 'Not Authorized',
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
-    // Build a Form widget using the _formKey created above.
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Color.fromARGB(255, 51, 72, 80),
-        title: const Text(
-          'Sign In',
-          style: TextStyle(
-            color: Color.fromARGB(99, 100, 185, 200),
-          ),
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text('Login'),
         ),
-        centerTitle: true,
-      ),
-      body: SafeArea(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment
-              .spaceBetween, // Align children with space between them
-          children: [
-            Expanded(
-              child: Center(
-                child: Form(
-                  key: _formKey,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      const CircleAvatar(
-                        backgroundColor: Colors.blue,
-                        radius: 100 / 2,
-                        backgroundImage: AssetImage('assets/images/bg.jpg'),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.all(20.0),
-                        child: SizedBox(
-                          width: 500.0,
-                          child: Column(
-                            children: [
-                              TextFormField(
-                                decoration: const InputDecoration(
-                                  border: UnderlineInputBorder(),
-                                  labelText: 'Enter your username',
-                                ),
-                                validator: (value) {
-                                  if (value == null || value.isEmpty) {
-                                    return 'Please enter some text';
-                                  }
-                                  return null;
-                                },
-                              ),
-                              TextFormField(
-                                decoration: const InputDecoration(
-                                  border: UnderlineInputBorder(),
-                                  labelText: 'Enter your password',
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: ElevatedButton(
-                          onPressed: () {
-                            // Validate returns true if the form is valid, or false otherwise.
-                            if (_formKey.currentState!.validate()) {
-                              // If the form is valid, display a snackbar. In the real world,
-                              // you'd often call a server or save the information in a database.
-                              ScaffoldMessenger.of(context).showSnackBar(
-                                const SnackBar(
-                                    content: Text('Processing Data')),
-                              );
-                            }
-                          },
-                          child: const Text('Submit'),
-                        ),
-                      ),
+        body: ListView(
+          padding: const EdgeInsets.only(top: 30),
+          children: <Widget>[
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                if (_supportState == _SupportState.unknown)
+                  const CircularProgressIndicator()
+                else if (_supportState == _SupportState.supported)
+                  const Text('This device is supported')
+                else
+                  const Text('This device is not supported'),
+                const Divider(height: 100),
+                Text('Can check biometrics: $_canCheckBiometrics\n'),
+                ElevatedButton(
+                  onPressed: _checkBiometrics,
+                  child: const Text('Check biometrics'),
+                ),
+                const Divider(height: 100),
+                Text('Available biometrics: $_availableBiometrics\n'),
+                ElevatedButton(
+                  onPressed: _getAvailableBiometrics,
+                  child: const Text('Get available biometrics'),
+                ),
+                const Divider(height: 100),
+                Text('Current State: $_authorized\n'),
+                ElevatedButton(
+                  onPressed: _authenticate,
+                  child: const Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: <Widget>[
+                      Text('Authenticate'),
+                      Icon(Icons.perm_device_information),
                     ],
                   ),
                 ),
-              ),
+              ],
             ),
-            Container(
-              width: MediaQuery.of(context).size.width,
-              height: 50.0,
-              color: const Color(0xFFC8C8C8), // Background color
-              child: const Text(
-                '© All rights reserved.',
-                textAlign: TextAlign.center, // Center the text horizontally
-                style: TextStyle(
-                  fontSize: 12.0, // Font size
-                  color: Colors.black87, 
-                  height: 4.0// Text color
-                ),
-              ),
-            ),
-
-            // Copyright footer
           ],
         ),
       ),
     );
   }
+}
+
+enum _SupportState {
+  unknown,
+  supported,
+  unsupported,
 }

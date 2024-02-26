@@ -1,4 +1,5 @@
 import 'package:dailyme/screens/auth_pages/register.dart';
+import 'package:dailyme/services/AuthHandler.dart';
 import "package:flutter/material.dart";
 import 'package:dailyme/screens/Loading.dart';
 import 'package:dailyme/screens/Home.dart';
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: LoginForm(),
+      home: Loading(),
     );
   }
 }

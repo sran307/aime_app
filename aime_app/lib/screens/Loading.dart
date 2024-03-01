@@ -1,6 +1,6 @@
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:dailyme/screens/auth_pages/login.dart';
-import 'package:dailyme/screens/auth_pages/register.dart';
+import 'package:dailyme/screens/Home.dart';
 import 'package:dailyme/services/auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -37,15 +37,15 @@ class _AvatarWithLoaderState extends State<AvatarWithLoader> {
 
   void _loadKey() async {
     String token = await getToken();
-    if (token == '') {
+    if (token == 'true') {
       Navigator.of(context).pushAndRemoveUntil(
         MaterialPageRoute(builder: (context) => LoginForm()),
         (route) => false,
       );
     } else {
-      if (token == 'true') {
+      if (token == '') {
         Navigator.of(context).pushAndRemoveUntil(
-          MaterialPageRoute(builder: (context) => RegisterForm()),
+          MaterialPageRoute(builder: (context) => Home()),
           (route) => false,
         );
       }

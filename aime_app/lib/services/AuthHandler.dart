@@ -1,7 +1,7 @@
 import 'package:dailyme/screens/Home.dart';
 import 'package:dailyme/screens/Loading.dart';
 import 'package:dailyme/services/Biometric.dart';
-import 'package:dailyme/screens/auth_pages/OtherLogin.dart';
+import 'package:dailyme/screens/auth_pages/PinLogin.dart';
 import 'package:flutter/material.dart';
 
 
@@ -34,7 +34,7 @@ class _AuthHandlerState extends State<AuthHandler> {
       //   MaterialPageRoute(builder: (_) => OtherLogin()),
       // );
       Navigator.of(context).pushAndRemoveUntil(
-        MaterialPageRoute(builder: (context) => OtherLogin()),
+        MaterialPageRoute(builder: (context) => PinLogin()),
         (route) => false,
       );
     }

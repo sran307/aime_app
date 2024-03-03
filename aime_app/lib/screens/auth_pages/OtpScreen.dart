@@ -135,7 +135,7 @@ class _OtpScreenState extends State<OtpScreen> {
                     onPressed: () {
                       clearPin();
                     },
-                    child: Image.asset("image")),
+                    child: Image.asset("assets/images/back.jpg")),
               ),
             ],
           ),

@@ -1,3 +1,6 @@
+import 'dart:async';
+import 'dart:developer' as developer;
+
 import 'package:dailyme/screens/auth_pages/register.dart';
 import 'package:dailyme/services/AuthHandler.dart';
 import "package:flutter/material.dart";
@@ -5,7 +8,12 @@ import 'package:dailyme/screens/Loading.dart';
 import 'package:dailyme/screens/Home.dart';
 import 'screens/auth_pages/login.dart';
 void main() async {
-  runApp(const MyApp());
+  // runApp(const MyApp());
+  runZonedGuarded(() {
+    runApp(const MyApp());
+  }, (dynamic error, dynamic stack) {
+    developer.log("Something went wrong!", error: error, stackTrace: stack);
+  });
 }
 
 class MyApp extends StatelessWidget {

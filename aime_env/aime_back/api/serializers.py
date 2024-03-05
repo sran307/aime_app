@@ -5,3 +5,8 @@ class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         fields = '__all__'
+
+
+class checkDeviceSerializer(serializers.Serializer):
+    Base64EncodedData = serializers.CharField()
+    Checksum = serializers.CharField()

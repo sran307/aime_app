@@ -9,12 +9,11 @@ class encryptor {
 
     String base64Data = encodeDataToBase64(data);
     String checksum = generateChecksum(jsonEncode(data));
-
-    print("Base64 Encoded Data: $base64Data");
+    print("encodedData: $base64Data");
     print("Checksum: $checksum");
 
     encryptedData = <String, dynamic>{
-      "Base64 Encoded Data": "$base64Data",
+      "encodedData": "$base64Data",
       "Checksum": "$checksum"
     };
 

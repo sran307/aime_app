@@ -4,20 +4,20 @@ import 'package:crypto/crypto.dart';
 class encryptor {
   Map<String, dynamic> encryptedData = <String, dynamic>{};
 
-  Future<void> encrypt(data) async {
+  Future<Map<String, dynamic>> encrypt(data) async {
     var _encryptedData = <String, dynamic>{};
 
     String base64Data = encodeDataToBase64(data);
     String checksum = generateChecksum(jsonEncode(data));
-    print("encodedData: $base64Data");
-    print("Checksum: $checksum");
+    // print("encodedData: $base64Data");
+    // print("Checksum: $checksum");
 
     encryptedData = <String, dynamic>{
       "encodedData": "$base64Data",
       "Checksum": "$checksum"
     };
 
-
+    return encryptedData;
   }
 
   String encodeDataToBase64(Map<String, dynamic> data) {
@@ -38,5 +38,5 @@ class encryptor {
     return digest.toString();
   }
 
-    Map<String, dynamic> get _encryptedData => encryptedData;
+  Map<String, dynamic> get _encryptedData => encryptedData;
 }

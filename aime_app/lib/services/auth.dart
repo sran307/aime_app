@@ -1,3 +1,4 @@
+import 'dart:convert';
 import 'dart:ffi';
 
 import 'package:dailyme/models/api_response.dart';
@@ -35,15 +36,21 @@ Future<String> getToken() async {
 
 Future<bool> checkExist(deviceData) async {
   ApiResponse apiResponse = ApiResponse();
+  
   encryptor newData = encryptor();
-  await newData.encrypt(deviceData);
+  Map<String, dynamic> encData = await newData.encrypt(deviceData); 
+  print(encData);
+  print(checkExistUrl);
   try {
     final Response = await http.post(Uri.parse(checkExistUrl),
-        headers: {'Accept': 'appication/json'},
-        body: {'deviceData': deviceData});
-    print(Response);
+        headers: {'Accept': 'application/json'},
+        body: jsonEncode(encData));
+    print(Response.statusCode);
+    print(Response.body);
     apiResponse.data = {'success': 'true'};
   } catch (e) {
+    print('error');
+    print(e);
     apiResponse.error = smw;
   }
   return false;

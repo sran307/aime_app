@@ -8,5 +8,5 @@ class UserSerializer(serializers.ModelSerializer):
 
 
 class checkDeviceSerializer(serializers.Serializer):
-    Base64EncodedData = serializers.CharField()
+    encodedData = serializers.CharField()
     Checksum = serializers.CharField()

@@ -31,4 +31,10 @@ class TokenHandler {
       );
     }
   }
+
+  Future<void> submitForm(data) async {
+    int token = await Register(data);
+    String pin = '$token';
+    loadKey(pin);
+  }
 }

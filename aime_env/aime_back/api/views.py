@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 
 from .models import deviceDetails
 from .serializers import UserSerializer
-from .serializers import checkDeviceSerializer
+from .serializers import checkDataSerializer
 
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
@@ -25,7 +25,7 @@ def checkDeviceExist(request):
     except json.JSONDecodeError:
         return Response({'error': 'Invalid JSON data'}, status=400)
     
-    serializer = checkDeviceSerializer(data=device_data)
+    serializer = checkDataSerializer(data=device_data)
     if serializer.is_valid():
         base64_encoded_data = serializer.validated_data.get('encodedData')
         
@@ -51,5 +51,25 @@ def checkDeviceExist(request):
                 'isExist' : False,
                 'isException': True
                 })
+    else:
+        return Response(serializer.errors, status=400)
+    
+@api_view(['POST'])
+def registerUser(request):
+    try:
+        device_data = json.loads(request.body.decode('utf-8'))
+    except json.JSONDecodeError:
+        return Response({'error': 'Invalid JSON data'}, status=400)
+    serializer = checkDataSerializer(data=device_data)
+    if serializer.is_valid():
+        base64_encoded_data = serializer.validated_data.get('encodedData')
+        
+        decodedData = decode_data(base64_encoded_data)
+        serializer = UserSerializer(data = decodedData)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(decodedData['password'])
+        else:
+            return Response(serializer.errors, status=400)   
     else:
         return Response(serializer.errors, status=400)

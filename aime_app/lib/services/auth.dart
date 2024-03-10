@@ -65,3 +65,21 @@ Future<bool> checkExist(deviceData) async {
     return false;
   }
 }
+
+Future<int> Register(data) async {
+  ApiResponse apiResponse = ApiResponse();
+  encryptor newData = encryptor();
+
+  Map<String, dynamic> encData = await newData.encrypt(data);
+print(jsonEncode(encData));
+  try {
+    final Response = await http.post(Uri.parse(registerUrl),
+        headers: {'Accept': 'application/json'}, body: jsonEncode(encData));
+
+        Map<String, dynamic> jsonResponse = jsonDecode(Response.body);
+        int pin = jsonResponse['pin'];
+        return pin;
+  } catch (e) {
+    return 0;
+  }
+}

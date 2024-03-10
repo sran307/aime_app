@@ -1,3 +1,4 @@
+import 'package:dailyme/services/TokenHandler.dart';
 import 'package:flutter/material.dart';
 
 class RegisterForm extends StatefulWidget {
@@ -9,6 +10,11 @@ class RegisterForm extends StatefulWidget {
 
 class _RegisterFormState extends State<RegisterForm> {
   final _formKey = GlobalKey<FormState>();
+
+  final TextEditingController _nameController = TextEditingController();
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -44,28 +50,51 @@ class _RegisterFormState extends State<RegisterForm> {
                           child: Column(
                             children: [
                               TextFormField(
+                                controller: _nameController,
                                 decoration: const InputDecoration(
                                   border: UnderlineInputBorder(),
-                                  labelText: 'Enter your username',
+                                  labelText: 'Enter fullname',
                                 ),
+                                validator: (value) {
+                                  if (value == null || value.isEmpty) {
+                                    return 'Please enter your name';
+                                  }
+                                  return null;
+                                },
                               ),
                               TextFormField(
+                                controller: _emailController,
                                 decoration: const InputDecoration(
                                   border: UnderlineInputBorder(),
-                                  labelText: 'Enter your username',
+                                  labelText: 'Enter emailId',
                                 ),
+                                validator: (value) {
+                                  if (value == null || value.isEmpty) {
+                                    return 'Please enter your email';
+                                  }
+                                  if (!_isValidEmail(value)) {
+                                    return 'Please enter a valid email address';
+                                  }
+                                  return null;
+                                },
                               ),
                               TextFormField(
+                                controller: _passwordController,
                                 decoration: const InputDecoration(
                                   border: UnderlineInputBorder(),
-                                  labelText: 'Enter your username',
+                                  labelText: 'Enter 4 digit login pin',
                                 ),
-                              ),
-                              TextFormField(
-                                decoration: const InputDecoration(
-                                  border: UnderlineInputBorder(),
-                                  labelText: 'Enter your username',
-                                ),
+                                validator: (value) {
+                                  if (value == null || value.isEmpty) {
+                                    return 'Please enter your password';
+                                  } else if (value.length != 4) {
+                                    return 'Password must be 4 digits';
+                                  } else if (!RegExp(r'^[0-9]+$')
+                                      .hasMatch(value)) {
+                                    return 'Only digits are allowed';
+                                  }
+                                  return null;
+                                },
                               )
                             ],
                           ),
@@ -77,11 +106,21 @@ class _RegisterFormState extends State<RegisterForm> {
                           onPressed: () {
                             // Validate returns true if the form is valid, or false otherwise.
                             if (_formKey.currentState!.validate()) {
-                              // If the form is valid, display a snackbar. In the real world,
-                              // you'd often call a server or save the information in a database.
                               ScaffoldMessenger.of(context).showSnackBar(
                                 const SnackBar(
-                                    content: Text('Processing Data')),
+                                    content: Text('Processing...')),
+                              );
+                              TokenHandler tokenHandler = TokenHandler(context);
+                              Map<String, dynamic> data = {
+                                "first_name": _nameController.text,
+                                "email": _emailController.text,
+                                "password": _passwordController.text
+                              };
+                              tokenHandler.submitForm(data);
+                            } else {
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                const SnackBar(
+                                    content: Text('Enter valid data')),
                               );
                             }
                           },
@@ -100,14 +139,22 @@ class _RegisterFormState extends State<RegisterForm> {
               '© All rights reserved.',
               textAlign: TextAlign.center, // Center the text horizontally
               style: TextStyle(
-                fontSize: 12.0, // Font size
-                color: Colors.black87,
-                height: 4.0// Text color
-              ),
+                  fontSize: 12.0, // Font size
+                  color: Colors.black87,
+                  height: 4.0 // Text color
+                  ),
             ),
           ),
         ],
       )),
     );
+  }
+
+  bool _isValidEmail(String email) {
+    // Regular expression for validating email addresses
+    // This expression checks for a standard email format.
+    // It may not cover all possible valid email formats, but it provides basic validation.
+    final emailRegex = RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$');
+    return emailRegex.hasMatch(email);
   }
 }

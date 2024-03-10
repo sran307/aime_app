@@ -12,3 +12,11 @@ class deviceDetails(models.Model):
     class Meta:
         db_table = 'device_details'
         unique_together = ('deviceName', 'deviceId')
+
+
+class User(User):
+    firstName = models.CharField(max_length=30, db_column = 'first_name')
+    username = None
+
+    USERNAME_FIELD = 'email'
+    REQUIRED_FIELDS =[]

@@ -1,6 +1,4 @@
 import 'package:connectivity_plus/connectivity_plus.dart';
-import 'package:dailyme/screens/auth_pages/login.dart';
-import 'package:dailyme/screens/Home.dart';
 import 'package:dailyme/screens/auth_pages/register.dart';
 import 'package:dailyme/services/TokenHandler.dart';
 import 'package:dailyme/services/auth.dart';

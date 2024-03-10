@@ -1,14 +1,11 @@
 import 'dart:async';
 import 'dart:developer' as developer;
 
-import 'package:dailyme/screens/auth_pages/register.dart';
-import 'package:dailyme/services/AuthHandler.dart';
 import "package:flutter/material.dart";
 import 'package:dailyme/screens/Loading.dart';
 import 'package:dailyme/screens/Home.dart';
 import 'package:jwt_decoder/jwt_decoder.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'screens/auth_pages/login.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

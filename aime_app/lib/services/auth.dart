@@ -1,5 +1,4 @@
 import 'dart:convert';
-import 'dart:ffi';
 
 import 'package:dailyme/models/api_response.dart';
 import 'package:dailyme/services/DataEncryptor.dart';

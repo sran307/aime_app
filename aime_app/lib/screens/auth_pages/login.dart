@@ -2,8 +2,7 @@ import 'dart:io';
 
 import 'package:dailyme/services/AuthHandler.dart';
 import 'package:dailyme/services/Biometric.dart';
-import 'package:dailyme/screens/auth_pages/PinLogin.dart';
-import 'package:dailyme/screens/auth_pages/OtherLogin.dart';
+import 'package:dailyme/screens/auth_pages/login_pages/PinLogin.dart';
 
 import 'package:flutter/material.dart';
 

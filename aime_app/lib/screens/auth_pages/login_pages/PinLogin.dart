@@ -1,4 +1,4 @@
-import 'package:dailyme/screens/auth_pages/OtpScreen.dart';
+import 'package:dailyme/screens/auth_pages/login_pages/OtpScreen.dart';
 import 'package:flutter/material.dart';
 
 class PinLogin extends StatefulWidget {

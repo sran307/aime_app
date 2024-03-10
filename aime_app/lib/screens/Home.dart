@@ -1,15 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:dailyme/screens/extends/HomeCard1.dart';
+import 'package:jwt_decoder/jwt_decoder.dart';
 
 class Home extends StatefulWidget {
-  const Home({Key? key}) : super(key: key);
+  final token;
+  const Home({@required this.token, Key? key}) : super(key: key);
 
   @override
   _HomeState createState() => _HomeState();
 }
 
 class _HomeState extends State<Home> {
+  late var name='';
   @override
+  void initState(){
+    super.initState();
+    Map<String, dynamic> jwtDecodedToken = JwtDecoder.decode(widget.token);
+
+    name = jwtDecodedToken['name'] ?? '';
+  }
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
@@ -51,8 +60,8 @@ class _HomeState extends State<Home> {
                             ], // Specify your gradient colors
                           ),
                         ),
-                        child: const Row(children: [
-                          Padding(
+                        child: Row(children: [
+                          const Padding(
                             padding: EdgeInsets.all(8.0),
                             child: CircleAvatar(
                               backgroundImage:
@@ -62,8 +71,8 @@ class _HomeState extends State<Home> {
                             
                           ),
                           Padding(
-                            padding: EdgeInsets.all(1.0),
-                            child: Text('Name'),
+                            padding: const EdgeInsets.all(1.0),
+                            child: Text(name),
                           ),
                         ]),
                       ),

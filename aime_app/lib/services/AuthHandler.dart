@@ -1,7 +1,7 @@
 import 'package:dailyme/screens/Home.dart';
 import 'package:dailyme/screens/Loading.dart';
 import 'package:dailyme/services/Biometric.dart';
-import 'package:dailyme/screens/auth_pages/PinLogin.dart';
+import 'package:dailyme/screens/auth_pages/login_pages/PinLogin.dart';
 import 'package:flutter/material.dart';
 
 

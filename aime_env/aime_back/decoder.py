@@ -41,8 +41,14 @@ def verify_checksum(json_data, received_checksum):
     # json_bytes = json_string.encode('utf-8')
     
     # Compute the MD5 hash
-    md5_hash = hashlib.md5(json_data)
-    return md5_hash.hexdigest()
+    # md5_hash = hashlib.md5(json_data)
+    # return md5_hash.hexdigest()
     
     # Return the hexadecimal representation of the hash digest
-    return md5_hash.hexdigest()
+    # return md5_hash.hexdigest()
+
+    json_string = json.dumps(json_data)
+
+    # Compute SHA-256 hash
+    sha256_hash = hashlib.sha256(json_data.encode())
+    return sha256_hash

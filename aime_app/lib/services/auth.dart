@@ -20,38 +20,49 @@ Future<ApiResponse> login(String username) async {
   return apiResponse;
 }
 
-Future<String> getToken() async {
+Future<bool> getToken(pin) async {
   ApiResponse apiResponse = ApiResponse();
 
+  encryptor newData = encryptor();
+  var pinData = {"pin": pin};
+  Map<String, dynamic> encData = await newData.encrypt(pinData);
+  print(encData);
   try {
-    // print(loginUrl);
-    final Response = await http.get(Uri.parse(loginUrl));
-    print(Response);
+    final Response = await http.post(Uri.parse(checkExistUrl),
+        headers: {'Accept': 'application/json'}, body: jsonEncode(encData));
+
+    // Parse the JSON response
+    Map<String, dynamic> jsonResponse = jsonDecode(Response.body);
+    print(jsonResponse);
     apiResponse.data = {'success': 'true'};
   } catch (e) {
     apiResponse.error = smw;
   }
-  return 'true';
+  return false;
 }
 
 Future<bool> checkExist(deviceData) async {
   ApiResponse apiResponse = ApiResponse();
-  
+
   encryptor newData = encryptor();
-  Map<String, dynamic> encData = await newData.encrypt(deviceData); 
-  print(encData);
-  print(checkExistUrl);
+  Map<String, dynamic> encData = await newData.encrypt(deviceData);
+  // print(encData);
+  // print(checkExistUrl);
   try {
     final Response = await http.post(Uri.parse(checkExistUrl),
-        headers: {'Accept': 'application/json'},
-        body: jsonEncode(encData));
-    print(Response.statusCode);
-    print(Response.body);
-    apiResponse.data = {'success': 'true'};
+        headers: {'Accept': 'application/json'}, body: jsonEncode(encData));
+
+    // Parse the JSON response
+    Map<String, dynamic> jsonResponse = jsonDecode(Response.body);
+
+// Extract each field separately
+    int status = jsonResponse['status'];
+    bool isExist = jsonResponse['isExist'];
+    // print(status);
+    // print(isExist);
+    return isExist;
   } catch (e) {
-    print('error');
-    print(e);
     apiResponse.error = smw;
+    return false;
   }
-  return false;
 }

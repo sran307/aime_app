@@ -1,6 +1,8 @@
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:dailyme/screens/auth_pages/login.dart';
 import 'package:dailyme/screens/Home.dart';
+import 'package:dailyme/screens/auth_pages/register.dart';
+import 'package:dailyme/services/TokenHandler.dart';
 import 'package:dailyme/services/auth.dart';
 import 'package:dailyme/services/deviceDetails.dart';
 import 'package:flutter/cupertino.dart';
@@ -32,56 +34,47 @@ class _AvatarWithLoaderState extends State<AvatarWithLoader> {
   @override
   void initState() {
     super.initState();
-    // _loadKey();
     getConnectivity();
     checkDeviceExist();
   }
 
   void checkDeviceExist() async {
-    // THIS SECTION IS USED TO CHECK THE USER DEVICE ADDED OR 
+    // THIS SECTION IS USED TO CHECK THE USER DEVICE ADDED OR
     //ENTERED INTO THE FIRST TIME. IF ENTERED INTO THE FIRST TIME REGISTRATION
     // SECTION AND OTHERWISE LOGIN SECTION. THE LOGIC USED
     // CHECK DEVICE DETAILS NOT EXISTS THEN TAKE THE DEVICE PHONE NUMBER IF IT IS
     // ANDROID OR IOS. IF DESKTOP A PHONENUMBER VERIFICATION PAGE IS ENABLED.
 
     DeviceDetails deviceDetails = DeviceDetails();
+    TokenHandler tokenHandler = TokenHandler(context);
     await deviceDetails.initPlatformState();
     // print(deviceDetails.deviceData);
     bool isExist = await checkExist(deviceDetails.deviceData);
     if (isExist) {
+      // TRY THE LOGIC WITH SESSION TOKEN
+      tokenHandler.loadKey('1234');
+    } else {
       Navigator.of(context).pushAndRemoveUntil(
-        MaterialPageRoute(builder: (context) => LoginForm()),
+        MaterialPageRoute(builder: (context) => RegisterForm()),
         (route) => false,
       );
-    } else {
-      if (isExist) {
-        Navigator.of(context).pushAndRemoveUntil(
-          MaterialPageRoute(builder: (context) => Home()),
-          (route) => false,
-        );
-      }
     }
   }
-  void _loadKey() async {
-    String token = await getToken();
-    DeviceDetails deviceDetails = DeviceDetails();
-    await deviceDetails.initPlatformState();
-    // print(deviceDetails.deviceData);
-    
-    if (token == 'true') {
-      Navigator.of(context).pushAndRemoveUntil(
-        MaterialPageRoute(builder: (context) => LoginForm()),
-        (route) => false,
-      );
-    } else {
-      if (token == '') {
-        Navigator.of(context).pushAndRemoveUntil(
-          MaterialPageRoute(builder: (context) => Home()),
-          (route) => false,
-        );
-      }
-    }
-  }
+
+  // void _loadKey() async {
+  //   bool token = await getToken();
+  //   if (!token) {
+  //     Navigator.of(context).pushAndRemoveUntil(
+  //       MaterialPageRoute(builder: (context) => LoginForm()),
+  //       (route) => false,
+  //     );
+  //   } else if (token) {
+  //     Navigator.of(context).pushAndRemoveUntil(
+  //       MaterialPageRoute(builder: (context) => Home()),
+  //       (route) => false,
+  //     );
+  //   }
+  // }
 
   getConnectivity() async {
     subscription = Connectivity()

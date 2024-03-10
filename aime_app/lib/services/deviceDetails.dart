@@ -108,17 +108,17 @@ class DeviceDetails {
 
   Map<String, dynamic> _readLinuxDeviceInfo(LinuxDeviceInfo data) {
     return <String, dynamic>{
-      'name': data.name,
-      'version': data.version,
-      'id': data.id,
-      'idLike': data.idLike,
-      'versionCodename': data.versionCodename,
-      'versionId': data.versionId,
-      'prettyName': data.prettyName,
-      'buildId': data.buildId,
-      'variant': data.variant,
-      'variantId': data.variantId,
-      'machineId': data.machineId,
+      'deviceName': data.name,
+      // 'version': data.version,
+      // 'id': data.id,
+      // 'idLike': data.idLike,
+      // 'versionCodename': data.versionCodename,
+      // 'versionId': data.versionId,
+      // 'prettyName': data.prettyName,
+      // 'buildId': data.buildId,
+      // 'variant': data.variant,
+      // 'variantId': data.variantId,
+      'deviceId': data.machineId,
     };
   }
 

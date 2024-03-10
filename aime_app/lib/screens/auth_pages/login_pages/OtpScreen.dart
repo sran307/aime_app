@@ -1,5 +1,6 @@
-import 'package:dailyme/screens/auth_pages/KeyboardNumber.dart';
-import 'package:dailyme/screens/auth_pages/PinNumber.dart';
+import 'package:dailyme/screens/auth_pages/login_pages/KeyboardNumber.dart';
+import 'package:dailyme/screens/auth_pages/login_pages/PinNumber.dart';
+import 'package:dailyme/services/TokenHandler.dart';
 import 'package:flutter/material.dart';
 
 class OtpScreen extends StatefulWidget {
@@ -171,7 +172,9 @@ class _OtpScreenState extends State<OtpScreen> {
       strPin += e;
     });
     if (pinIndex == 4) {
+      TokenHandler tokenHandler = TokenHandler(context);
       print(strPin);
+      tokenHandler.loadKey(strPin);
     }
   }
 

@@ -16,8 +16,8 @@ class TokenHandler {
 
   Future<void> loadKey(String pin) async {
     await initSharedPref(); // Initialize SharedPreferences
-
-    bool token = await getToken(pin); // Define this function in auth.dart
+    bool token = await getToken(pin); // Define this function in auth.dartprint
+    print(token);
     if (!token) {
       Navigator.of(context).pushAndRemoveUntil(
         MaterialPageRoute(builder: (context) => LoginForm()),
@@ -33,8 +33,7 @@ class TokenHandler {
   }
 
   Future<void> submitForm(data) async {
-    int token = await Register(data);
-    String pin = '$token';
-    loadKey(pin);
+    String token = await Register(data);
+    loadKey(token);
   }
 }

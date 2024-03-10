@@ -67,9 +67,23 @@ def registerUser(request):
         decodedData = decode_data(base64_encoded_data)
         serializer = UserSerializer(data = decodedData)
         if serializer.is_valid():
-            serializer.save()
+            # serializer.save()
             return Response(decodedData['password'])
         else:
             return Response(serializer.errors, status=400)   
     else:
         return Response(serializer.errors, status=400)
+    
+@api_view(['POST'])
+def loginUser(request):
+    try:
+        device_data = json.loads(request.body.decode('utf-8'))
+    except json.JSONDecodeError:
+        return Response({'error': 'Inalid JSON data'}, status = 400)
+    serializer = checkDataSerializer(data=device_data)
+    serializer.is_valid(raise_exception=True)
+    base64_encoded_data = serializer.validated_data.get('encodedData')
+    decodedData = decode_data(base64_encoded_data)
+    pin = decodedData['pin']
+    user = User.objects.get(password = pin)
+    return Response(user)

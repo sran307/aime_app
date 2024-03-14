@@ -1,6 +1,6 @@
 import 'package:dailyme/services/TokenHandler.dart';
+import 'package:dailyme/services/deviceDetails.dart';
 import 'package:flutter/material.dart';
-
 class RegisterForm extends StatefulWidget {
   const RegisterForm({super.key});
 
@@ -111,10 +111,12 @@ class _RegisterFormState extends State<RegisterForm> {
                                     content: Text('Processing...')),
                               );
                               TokenHandler tokenHandler = TokenHandler(context);
+                              
                               Map<String, dynamic> data = {
                                 "first_name": _nameController.text,
                                 "email": _emailController.text,
-                                "password": _passwordController.text
+                                "password": _passwordController.text,
+                                "username": _passwordController.text,
                               };
                               tokenHandler.submitForm(data);
                             } else {

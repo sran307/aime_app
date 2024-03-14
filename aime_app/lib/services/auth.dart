@@ -6,7 +6,7 @@ import 'package:dailyme/services/urls.dart';
 import 'package:http/http.dart' as http;
 
 // LOGIN LOGIC IMPLEMENTED IN GETTOKEN FUNCTION
-Future<bool> getToken(pin) async {
+Future<dynamic> getToken(pin) async {
   ApiResponse apiResponse = ApiResponse();
 
   encryptor newData = encryptor();
@@ -15,19 +15,16 @@ Future<bool> getToken(pin) async {
   try {
     final Response = await http.post(Uri.parse(loginUrl),
         headers: {'Accept': 'application/json'}, body: jsonEncode(encData));
-print(Response.body);
     // Parse the JSON response
     Map<String, dynamic> jsonResponse = jsonDecode(Response.body);
-    print(jsonResponse);
-    apiResponse.data = {'success': 'true'};
+    
+    return jsonResponse;
   } catch (e) {
-    apiResponse.error = smw;
+    return 'false';
   }
-  return false;
 }
 
 Future<bool> checkExist(deviceData) async {
-  ApiResponse apiResponse = ApiResponse();
 
   encryptor newData = encryptor();
   Map<String, dynamic> encData = await newData.encrypt(deviceData);
@@ -47,23 +44,20 @@ Future<bool> checkExist(deviceData) async {
     // print(isExist);
     return isExist;
   } catch (e) {
-    apiResponse.error = smw;
     return false;
   }
 }
 
-Future<String> Register(data) async {
+Future<dynamic> Register(data) async {
   // ApiResponse apiResponse = ApiResponse();
   encryptor newData = encryptor();
-
   Map<String, dynamic> encData = await newData.encrypt(data);
-// print(jsonEncode(encData));
   try {
     final Response = await http.post(Uri.parse(registerUrl),
         headers: {'Accept': 'application/json'}, body: jsonEncode(encData));
-
-        return Response.body;
+        
+        return Response;
   } catch (e) {
-    return '0';
+    return {'status': 400};
   }
 }

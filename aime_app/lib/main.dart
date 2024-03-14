@@ -10,14 +10,12 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  
   SharedPreferences prefs = await SharedPreferences.getInstance();
   String? token = prefs.getString('token');
-  runZonedGuarded(() {
-    runApp(MyApp(token: token));
-  }, (dynamic error, dynamic stack) {
-    developer.log("Something went wrong!", error: error, stackTrace: stack);
-  });
+  runApp(MyApp(token: token));
 }
+
 
 class MyApp extends StatelessWidget {
   final String? token;
@@ -51,6 +49,7 @@ class MyApp extends StatelessWidget {
       home: token != null && !JwtDecoder.isExpired(token!)
           ? Home(token: token!)
           : Loading(),
+      // home:Loading(),
     );
   }
 }

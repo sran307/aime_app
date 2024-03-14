@@ -6,7 +6,7 @@ from .models import deviceDetails
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ['id', 'first_name', 'email', 'password']
+        fields = ['id', 'first_name', 'email', 'password', 'username']
 
         extra_kwargs ={
             'password': {'write_only':True}
@@ -27,6 +27,6 @@ class checkDataSerializer(serializers.Serializer):
 
 class deviceDetailsSerializer(serializers.ModelSerializer):
     class Meta:
-        model: deviceDetails
-        fields = '__all__'
+        model = deviceDetails  # Specify the model here
+        fields = ['deviceName', 'deviceId', 'userId', 'lastLoginAt']
 

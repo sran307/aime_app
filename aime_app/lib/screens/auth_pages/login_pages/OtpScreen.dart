@@ -28,13 +28,13 @@ class _OtpScreenState extends State<OtpScreen> {
     return SafeArea(
         child: Column(
       children: [
-        buildExitButton(),
+        // buildExitButton(),
         Expanded(
             child: Container(
           alignment: Alignment(0, 0.5),
           padding: EdgeInsets.symmetric(horizontal: 16.0),
           child: Column(mainAxisSize: MainAxisSize.min, children: [
-            buildSecurityText(),
+            // buildSecurityText(),
             SizedBox(height: 40.0),
             buildPinrow(),
           ]),
@@ -173,7 +173,6 @@ class _OtpScreenState extends State<OtpScreen> {
     });
     if (pinIndex == 4) {
       TokenHandler tokenHandler = TokenHandler(context);
-      print(strPin);
       tokenHandler.loadKey(strPin);
     }
   }

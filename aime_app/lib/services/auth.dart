@@ -36,7 +36,6 @@ Future<bool> checkExist(deviceData) async {
 
     // Parse the JSON response
     Map<String, dynamic> jsonResponse = jsonDecode(Response.body);
-
 // Extract each field separately
     int status = jsonResponse['status'];
     bool isExist = jsonResponse['isExist'];

@@ -1,6 +1,6 @@
 import 'package:connectivity_plus/connectivity_plus.dart';
+import 'package:dailyme/screens/auth_pages/login.dart';
 import 'package:dailyme/screens/auth_pages/register.dart';
-import 'package:dailyme/services/TokenHandler.dart';
 import 'package:dailyme/services/auth.dart';
 import 'package:dailyme/services/deviceDetails.dart';
 import 'package:flutter/cupertino.dart';
@@ -44,13 +44,14 @@ class _AvatarWithLoaderState extends State<AvatarWithLoader> {
     // ANDROID OR IOS. IF DESKTOP A PHONENUMBER VERIFICATION PAGE IS ENABLED.
 
     DeviceDetails deviceDetails = DeviceDetails();
-    TokenHandler tokenHandler = TokenHandler(context);
     await deviceDetails.initPlatformState();
     // print(deviceDetails.deviceData);
     bool isExist = await checkExist(deviceDetails.deviceData);
     if (isExist) {
-      // TRY THE LOGIC WITH SESSION TOKEN
-      tokenHandler.loadKey('1234');
+      Navigator.of(context).pushAndRemoveUntil(
+        MaterialPageRoute(builder: (context) => LoginForm()),
+        (route) => false,
+      );
     } else {
       Navigator.of(context).pushAndRemoveUntil(
         MaterialPageRoute(builder: (context) => RegisterForm()),

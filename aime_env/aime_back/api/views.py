@@ -55,7 +55,11 @@ def checkDeviceExist(request):
                 'isException': True
                 })
     else:
-        return Response(serializer.errors, status=400)
+        return Response({
+                'status': 400, 
+                'isExist' : False,
+                'isException': True
+                })
     
 @api_view(['POST'])
 def registerUser(request):
@@ -69,13 +73,14 @@ def registerUser(request):
         base64_encoded_data = serializer.validated_data.get('encodedData')
         decoded_data = decode_data(base64_encoded_data)
 
-        pin = hashUsername(decoded_data.get('username'))
+        pin = decoded_data.get('username')
+        username = hashUsername(decoded_data.get('username'))
         password = hashPassword(decoded_data.get('password'), decoded_data.get('username'))
         user_data = {
             'first_name': decoded_data.get('first_name'),
             'email': decoded_data.get('email'),
             'password': password,
-            'username': pin
+            'username': username
         }
 
         device_data = {
@@ -117,8 +122,10 @@ def loginUser(request):
     base64_encoded_data = serializer.validated_data.get('encodedData')
     decodedData = decode_data(base64_encoded_data)
     pin = decodedData['pin']
+    username = hashUsername(pin)
+    password = hashPassword(pin, pin)
     try:
-        user = User.objects.filter(username = 8271)
+        user = User.objects.filter(username = username, password=password)
         serializer = UserSerializer(user, many=True)
         id = 0
         for userData in serializer.data:
@@ -137,7 +144,7 @@ def loginUser(request):
         else:
             return Response({
                 'status':400,
-                'msg': 'No data found'
+                'msg': 'Invalid Pin'
             })
     except User.DoesNotExist:
         return Response({

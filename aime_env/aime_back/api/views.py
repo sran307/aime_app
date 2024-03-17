@@ -140,13 +140,13 @@ def loginUser(request):
             return Response({
                 'status':200,
                 'token':token
-                }) 
+                }, status=status.HTTP_201_CREATED) 
         else:
             return Response({
                 'status':400,
-                'msg': 'Invalid Pin'
-            })
+                'message': 'Invalid Pin'
+            }, status=status.HTTP_400_BAD_REQUEST)
     except User.DoesNotExist:
         return Response({
-            'status': 400,
-        }) 
+            'message': 'User not found',
+        }, status=status.HTTP_400_BAD_REQUEST) 

@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:dailyme/services/TokenHandler.dart';
 
@@ -64,31 +65,40 @@ class _RegisterFormState extends State<RegisterForm> {
                 ),
                 TextFormField(
                   controller: _passwordController,
-                  decoration: const InputDecoration(labelText: 'Password'),
+                  decoration: const InputDecoration(
+                    border: UnderlineInputBorder(),
+                    labelText: 'Enter 4 digit login pin',
+                  ),
                   validator: (value) {
                     if (value == null || value.isEmpty) {
-                      return 'Please enter your password';
+                      return 'Please enter your Pin';
+                    } else if (value.length != 4) {
+                      return 'Pin must be 4 digits';
+                    } else if (!RegExp(r'^[0-9]+$').hasMatch(value)) {
+                      return 'Only digits are allowed';
                     }
-                    // You can add more password validation logic if needed
                     return null;
                   },
                 ),
-                ElevatedButton(
-                  onPressed: () {
-                    if (_formKey.currentState!.validate()) {
-                      // If the form is valid, submit the data
-                      TokenHandler tokenHandler = TokenHandler(context);
+                Padding(
+                  padding: EdgeInsets.all(10.0),
+                  child: ElevatedButton(
+                    onPressed: () {
+                      if (_formKey.currentState!.validate()) {
+                        // If the form is valid, submit the data
+                        TokenHandler tokenHandler = TokenHandler(context);
 
-                      Map<String, dynamic> data = {
-                        "first_name": _nameController.text,
-                        "email": _emailController.text,
-                        "password": _passwordController.text,
-                        "username": _passwordController.text,
-                      };
-                      tokenHandler.submitForm(data);
-                    }
-                  },
-                  child: const Text('Submit'),
+                        Map<String, dynamic> data = {
+                          "first_name": _nameController.text,
+                          "email": _emailController.text,
+                          "password": _passwordController.text,
+                          "username": _passwordController.text,
+                        };
+                        tokenHandler.submitForm(data);
+                      }
+                    },
+                    child: const Text('Submit'),
+                  ),
                 ),
               ],
             ),

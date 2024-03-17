@@ -12,7 +12,7 @@ class _PinLoginState extends State<PinLogin> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      resizeToAvoidBottomInset: false,
+      // resizeToAvoidBottomInset: false,
       appBar: AppBar(
         backgroundColor: Color.fromARGB(255, 51, 72, 80),
         title: const Text(
@@ -26,8 +26,8 @@ class _PinLoginState extends State<PinLogin> {
       body: Container(
         decoration: const BoxDecoration(
           gradient: LinearGradient(colors: [
-            Color.fromRGBO(87, 129, 129, 1),
-            Color.fromARGB(221, 52, 102, 114)
+            Color.fromRGBO(248, 248, 248, 1),
+            Color.fromARGB(221, 254, 255, 255)
           ],
           begin: Alignment.topRight)
         ),

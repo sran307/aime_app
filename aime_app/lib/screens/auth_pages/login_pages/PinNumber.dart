@@ -21,7 +21,7 @@ class PinNumber extends StatelessWidget {
       style: TextStyle(
         fontWeight: FontWeight.bold,
         fontSize: 21.0,
-        color: Colors.white,
+        color: Color.fromARGB(255, 75, 202, 224),
 
       ),
       ),

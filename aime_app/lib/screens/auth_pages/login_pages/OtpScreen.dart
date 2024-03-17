@@ -25,8 +25,7 @@ class _OtpScreenState extends State<OtpScreen> {
   int pinIndex = 0;
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-        child: Column(
+    return Column(
       children: [
         // buildExitButton(),
         Expanded(
@@ -34,14 +33,14 @@ class _OtpScreenState extends State<OtpScreen> {
           alignment: Alignment(0, 0.5),
           padding: EdgeInsets.symmetric(horizontal: 16.0),
           child: Column(mainAxisSize: MainAxisSize.min, children: [
-            // buildSecurityText(),
+            buildSecurityText(),
             SizedBox(height: 40.0),
             buildPinrow(),
           ]),
         )),
         buildNumberPad(),
       ],
-    ));
+    );
   }
 
   buildNumberPad() {
@@ -115,29 +114,45 @@ class _OtpScreenState extends State<OtpScreen> {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              Container(
-                width: 60.0,
-                child: MaterialButton(
-                  onPressed: null,
-                  child: SizedBox(),
-                ),
-              ),
+              // Container(
+              //   width: 60.0,
+              //   child: MaterialButton(
+              //     onPressed: null,
+              //     child: SizedBox(),
+              //   ),
+              // ),
+              // KeyboardNumber(
+              //     n: 0,
+              //     onPressed: () {
+              //       pinIndexSetup("0");
+              //     }),
+              // Container(
+              //   width: 60,
+              //   child: MaterialButton(
+              //       height: 60.0,
+              //       shape: RoundedRectangleBorder(
+              //           borderRadius: BorderRadius.circular(60.0)),
+              //       onPressed: () {
+              //         clearPin();
+              //       },
+              //       child: Image.asset("assets/images/back.jpg",
+              //       color:Colors.white)),
+              // ),
+              KeyboardIcon(
+                  icon: Icons.login,
+                  onPressed: () {
+                    clearPin();
+                  }),
               KeyboardNumber(
                   n: 0,
                   onPressed: () {
                     pinIndexSetup("0");
                   }),
-              Container(
-                width: 60,
-                child: MaterialButton(
-                    height: 60.0,
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(60.0)),
-                    onPressed: () {
-                      clearPin();
-                    },
-                    child: Image.asset("assets/images/back.jpg")),
-              ),
+              KeyboardIcon(
+                  icon: Icons.backspace,
+                  onPressed: () {
+                    clearPin();
+                  }),
             ],
           ),
         ]),
@@ -219,7 +234,10 @@ class _OtpScreenState extends State<OtpScreen> {
   }
 
   buildSecurityText() {
-    return Text('data');
+    return const CircleAvatar(
+      backgroundImage: AssetImage('assets/images/bg.jpg'),
+      radius: 50.0,
+    );
   }
 
   buildExitButton() {

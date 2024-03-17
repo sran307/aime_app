@@ -20,37 +20,17 @@ class TokenHandler {
 
   Future<void> loadKey(String pin) async {
     await initSharedPref(); // Initialize SharedPreferences
-    Map<String, dynamic> jsonData =
-        await getToken(pin); // Define this function in auth.dartprint
-    if (jsonData['status'] == 200) {
+    dynamic response= await getToken(pin); // Define this function in auth.dartprint
+    if (response.statusCode == 201) {
+      final jsonData = jsonDecode(response.body);
       prefs.setString('token', jsonData['token'].toString());
       Navigator.of(context).pushAndRemoveUntil(
         MaterialPageRoute(builder: (context) => Home(token: jsonData['token'])),
         (route) => false,
       );
     } else {
-      var errorMsg = jsonData['msg'];
-      showDialog(
-        context: context,
-        builder: (BuildContext context) {
-          return AlertDialog(
-            title: const Text('Error'),
-            content: Text('${errorMsg}'),
-            actions: <Widget>[
-              TextButton(
-                onPressed: () {
-                  Navigator.of(context).pop();
-                  Navigator.of(context).pushAndRemoveUntil(
-                    MaterialPageRoute(builder: (context) => LoginForm()),
-                    (route) => false,
-                  );
-                },
-                child: const Text('OK'),
-              ),
-            ],
-          );
-        },
-      );
+      ApiResponse apiResponse = ApiResponse();
+      await apiResponse.errorData(context, response);
     }
   }
 
@@ -66,24 +46,7 @@ class TokenHandler {
       loadKey(jsonData['pin']);
     } else {
       ApiResponse apiResponse = ApiResponse();
-      var errorMsg = await apiResponse.errorData(response);
-      showDialog(
-        context: context,
-        builder: (BuildContext context) {
-          return AlertDialog(
-            title: const Text('Error'),
-            content: Text('${errorMsg}'),
-            actions: <Widget>[
-              TextButton(
-                onPressed: () {
-                  Navigator.of(context).pop();
-                },
-                child: const Text('OK'),
-              ),
-            ],
-          );
-        },
-      );
+      await apiResponse.errorData(context, response);
     }
   }
 }

@@ -1,7 +1,8 @@
 import 'dart:convert';
+import 'package:flutter/material.dart';
 
 class ApiResponse {
-  Future<String> errorData(response) async {
+  Future<void> errorData(BuildContext context, response) async {
     String errorMessage = '';
     try {
       // Try to parse response body as JSON
@@ -11,11 +12,31 @@ class ApiResponse {
         errorMessage = value.toString();
         return;
       });
-      return errorMessage;
     } catch (e) {
       // If parsing as JSON fails, use status code as error message
       errorMessage = 'Failed to load data: ${response.statusCode}';
-      return errorMessage;
     }
+
+    _showErrorDialog(context, errorMessage);
+  }
+
+  void _showErrorDialog(BuildContext context, String errorMessage) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: const Text('Error'),
+          content: Text(errorMessage),
+          actions: <Widget>[
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              child: const Text('OK'),
+            ),
+          ],
+        );
+      },
+    );
   }
 }

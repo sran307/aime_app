@@ -16,16 +16,16 @@ Future<dynamic> getToken(pin) async {
     final Response = await http.post(Uri.parse(loginUrl),
         headers: {'Accept': 'application/json'}, body: jsonEncode(encData));
     // Parse the JSON response
-    Map<String, dynamic> jsonResponse = jsonDecode(Response.body);
-    
-    return jsonResponse;
+    // Map<String, dynamic> jsonResponse = jsonDecode(Response.body);
+
+    return Response;
   } catch (e) {
-    return 'false';
+    final response = http.Response('{"status": "Server Not Found"}', 400);
+    return response;
   }
 }
 
 Future<bool> checkExist(deviceData) async {
-
   encryptor newData = encryptor();
   Map<String, dynamic> encData = await newData.encrypt(deviceData);
   // print(encData);
@@ -54,9 +54,10 @@ Future<dynamic> Register(data) async {
   try {
     final Response = await http.post(Uri.parse(registerUrl),
         headers: {'Accept': 'application/json'}, body: jsonEncode(encData));
-        
-        return Response;
+
+    return Response;
   } catch (e) {
-    return {'status': 400};
+    final response = http.Response('{"status": "Server Not Found"}', 400);
+    return response;
   }
 }

@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
-class HomeCard1 extends StatefulWidget {
-  const HomeCard1({super.key});
+class UserSection extends StatefulWidget {
+  const UserSection({super.key});
 
   @override
-  State<HomeCard1> createState() => _HomeCard1State();
+  State<UserSection> createState() => _UserSectionState();
 }
 
-class _HomeCard1State extends State<HomeCard1> {
+class _UserSectionState extends State<UserSection> {
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -17,7 +18,7 @@ class _HomeCard1State extends State<HomeCard1> {
             BorderRadius.circular(15), // Adjust border radius as needed
       ),
       child: Container(
-        height: 100, // Adjust height as needed
+        height: 50, // Adjust height as needed
         decoration: BoxDecoration(
           borderRadius:
               BorderRadius.circular(15), // Match the border radius of the card
@@ -32,15 +33,30 @@ class _HomeCard1State extends State<HomeCard1> {
         ),
         child: const Row(children: [
           Padding(
-            padding: EdgeInsets.all(8.0),
+            padding: EdgeInsets.only(left: 5.0),
             child: CircleAvatar(
               backgroundImage: AssetImage('assets/images/bg.jpg'),
-              radius: 50.0,
+              radius: 20.0,
             ),
           ),
           Padding(
             padding: EdgeInsets.all(1.0),
             child: Text('Name'),
+          ),
+          Expanded(
+            child: Row(
+              children: [
+                Padding(
+                  padding: EdgeInsets.only(right: 10.0),
+                  child: Align(
+                    alignment: Alignment.centerRight,
+                    child: Padding(
+                        padding: EdgeInsets.all(1.0), 
+                        child: Icon(Icons.event)),
+                  ),
+                ),
+              ],
+            ),
           ),
         ]),
       ),

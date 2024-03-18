@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'dart:developer' as developer;
 
+import 'package:dailyme/constants/theme.dart';
 import "package:flutter/material.dart";
 import 'package:dailyme/screens/Loading.dart';
 import 'package:dailyme/screens/Home.dart';
@@ -27,25 +28,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Daily ME',
-      theme: ThemeData(
-          useMaterial3: true,
-          colorScheme: ColorScheme.fromSeed(
-            seedColor: Color.fromARGB(255, 27, 228, 211),
-            brightness: Brightness.light
-          ),
-          textTheme:TextTheme(
-            displayLarge:const TextStyle(
-              fontSize: 72,
-              fontWeight: FontWeight.bold,
-            ),
-            titleLarge:GoogleFonts.oswald(
-              fontSize: 30,
-              fontStyle: FontStyle.italic
-            ),
-            bodyMedium: GoogleFonts.merriweather(),
-            displaySmall: GoogleFonts.pacifico(),
-          ),
-      ),
+      theme: AppTheme.lightTheme(context),
       home: token != null && !JwtDecoder.isExpired(token!)
           ? Home(token: token!)
           : Loading(),

@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:dailyme/screens/home/UserSection.dart';
 import 'package:flutter/widgets.dart';
 import 'package:jwt_decoder/jwt_decoder.dart';
+import 'package:dailyme/constants/appBar.dart';
+
 
 class Home extends StatefulWidget {
   final token;
@@ -25,13 +27,15 @@ class _HomeState extends State<Home> {
   }
 
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
+      appBar:CustomAppBar(),
       body: SafeArea(
           child: SingleChildScrollView(
         padding: EdgeInsets.symmetric(vertical: 16),
         child: Column(
           children: [
-            HomeHeader(),
+            // HomeHeader(),
+            UserSection()
           ],
         ),
       )),

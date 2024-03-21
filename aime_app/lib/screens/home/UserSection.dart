@@ -1,3 +1,4 @@
+import 'package:dailyme/constants/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
@@ -22,42 +23,35 @@ class _UserSectionState extends State<UserSection> {
         decoration: BoxDecoration(
           borderRadius:
               BorderRadius.circular(15), // Match the border radius of the card
-          gradient: const LinearGradient(
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-            colors: [
-              Color.fromARGB(255, 70, 185, 122),
-              Color.fromARGB(255, 59, 170, 142)
-            ], // Specify your gradient colors
-          ),
+          gradient: kSuccessGradientColor,
         ),
         child: const Row(children: [
-          Padding(
-            padding: EdgeInsets.only(left: 5.0),
-            child: CircleAvatar(
-              backgroundImage: AssetImage('assets/images/bg.jpg'),
-              radius: 20.0,
-            ),
-          ),
+          // Padding(
+          //   padding: EdgeInsets.only(left: 5.0),
+          //   child: CircleAvatar(
+          //     backgroundImage: AssetImage('assets/images/bg.jpg'),
+          //     radius: 20.0,
+          //   ),
+          // ),
           Padding(
             padding: EdgeInsets.all(1.0),
             child: Text('Name'),
           ),
-          Expanded(
-            child: Row(
-              children: [
-                Padding(
-                  padding: EdgeInsets.only(right: 10.0),
-                  child: Align(
-                    alignment: Alignment.centerRight,
-                    child: Padding(
-                        padding: EdgeInsets.all(1.0), 
-                        child: Icon(Icons.event)),
-                  ),
-                ),
-              ],
-            ),
-          ),
+          // Expanded(
+          //   child: Row(
+          //     children: [
+          //       Padding(
+          //         padding: EdgeInsets.only(right: 10.0),
+          //         child: Align(
+          //           alignment: Alignment.centerRight,
+          //           child: Padding(
+          //               padding: EdgeInsets.all(1.0), 
+          //               child: Icon(Icons.event)),
+          //         ),
+          //       ),
+          //     ],
+          //   ),
+          // ),
         ]),
       ),
     );

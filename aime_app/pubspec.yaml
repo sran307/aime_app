@@ -50,6 +50,8 @@ dependencies:
   fl_chart: ^0.66.2
   bottom_navy_bar: ^6.0.0
   flutter_svg: ^2.0.9 
+  simple_animations: ^5.0.2
+  page_transition: ^2.1.0
   
 
 dev_dependencies:

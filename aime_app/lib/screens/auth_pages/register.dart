@@ -36,49 +36,58 @@ class _RegisterFormState extends State<RegisterForm> {
           child: Form(
             key: _formKey,
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 const CircleAvatar(
                   backgroundImage: AssetImage('assets/images/bg.jpg'),
                   radius: 50.0,
                 ),
-                TextFormField(
-                  controller: _nameController,
-                  decoration: const InputDecoration(labelText: 'Full Name'),
-                  validator: (value) {
-                    if (value == null || value.isEmpty) {
-                      return 'Please enter your name';
-                    }
-                    return null;
-                  },
-                ),
-                TextFormField(
-                  controller: _emailController,
-                  decoration: const InputDecoration(labelText: 'Email'),
-                  validator: (value) {
-                    if (value == null || value.isEmpty) {
-                      return 'Please enter your email';
-                    }
-                    // You can add more email validation logic if needed
-                    return null;
-                  },
-                ),
-                TextFormField(
-                  controller: _passwordController,
-                  decoration: const InputDecoration(
-                    border: UnderlineInputBorder(),
-                    labelText: 'Enter 4 digit login pin',
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: TextFormField(
+                    controller: _nameController,
+                    decoration: const InputDecoration(labelText: 'Full Name'),
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return 'Please enter your name';
+                      }
+                      return null;
+                    },
                   ),
-                  validator: (value) {
-                    if (value == null || value.isEmpty) {
-                      return 'Please enter your Pin';
-                    } else if (value.length != 4) {
-                      return 'Pin must be 4 digits';
-                    } else if (!RegExp(r'^[0-9]+$').hasMatch(value)) {
-                      return 'Only digits are allowed';
-                    }
-                    return null;
-                  },
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: TextFormField(
+                    controller: _emailController,
+                    decoration: const InputDecoration(labelText: 'Email'),
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return 'Please enter your email';
+                      }
+                      // You can add more email validation logic if needed
+                      return null;
+                    },
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: TextFormField(
+                    controller: _passwordController,
+                    decoration: const InputDecoration(
+                      border: UnderlineInputBorder(),
+                      labelText: 'Enter 4 digit login pin',
+                    ),
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return 'Please enter your Pin';
+                      } else if (value.length != 4) {
+                        return 'Pin must be 4 digits';
+                      } else if (!RegExp(r'^[0-9]+$').hasMatch(value)) {
+                        return 'Only digits are allowed';
+                      }
+                      return null;
+                    },
+                  ),
                 ),
                 Padding(
                   padding: EdgeInsets.all(10.0),

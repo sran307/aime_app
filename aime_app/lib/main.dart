@@ -5,10 +5,10 @@ import 'package:dailyme/constants/theme.dart';
 import "package:flutter/material.dart";
 import 'package:dailyme/screens/Loading.dart';
 import 'package:dailyme/screens/Home.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:jwt_decoder/jwt_decoder.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   
@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Daily ME',
       theme: AppTheme.lightTheme(context),

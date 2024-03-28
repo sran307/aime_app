@@ -1,6 +1,7 @@
 import 'dart:ffi';
 
 import 'package:dailyme/screens/home/HomeHeader.dart';
+import 'package:dailyme/screens/profile/profile.dart';
 import 'package:flutter/material.dart';
 import 'package:dailyme/screens/home/UserSection.dart';
 import 'package:flutter/widgets.dart';
@@ -8,7 +9,7 @@ import 'package:jwt_decoder/jwt_decoder.dart';
 import 'package:dailyme/constants/appBar.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:dailyme/constants/bottomNavbar.dart';
-
+import 'package:get/get.dart';
 
 class Home extends StatefulWidget {
   final token;
@@ -52,12 +53,11 @@ class _HomeState extends State<Home> {
           if (index == 0) {
             SharedPreferences prefs = await SharedPreferences.getInstance();
             String? token = prefs.getString('token');
-
-            Navigator.of(context).pushAndRemoveUntil(
-              MaterialPageRoute(builder: (context) => Home(token: token)),
-              (route) => false,
-            );
+          Get.to(Home(token: token), transition: Transition.fadeIn);
+          } else if (index == 1) {
+            Get.to(Profile(), transition: Transition.zoom);
           }
+
         },
         context: context, // Pass the context here
       ),

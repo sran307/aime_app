@@ -1,5 +1,5 @@
 import 'package:dailyme/screens/events/EventItem.dart';
-import 'package:dailyme/constants/FadeAnimation.dart';
+import 'package:dailyme/constants/animations/FadeAnimation.dart';
 import 'package:dailyme/constants/appBar.dart';
 import 'package:dailyme/constants/bottomNavbar.dart';
 import 'package:flutter/material.dart';
@@ -14,7 +14,7 @@ class EventList extends StatefulWidget {
 }
 
 class _EventListState extends State<EventList> {
-  int _currentIndex = 1;
+  int _currentIndex = 5;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -59,7 +59,7 @@ class _EventListState extends State<EventList> {
           if (index == 0) {
             SharedPreferences prefs = await SharedPreferences.getInstance();
             String? token = prefs.getString('token');
-
+      
             Navigator.of(context).pushAndRemoveUntil(
               MaterialPageRoute(builder: (context) => Home(token: token)),
               (route) => false,

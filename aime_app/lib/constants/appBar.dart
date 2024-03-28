@@ -3,6 +3,7 @@ import 'package:dailyme/screens/events/EventList.dart';
 import 'package:flutter/material.dart';
 import 'package:dailyme/screens/home/icon_btn_with_counter.dart';
 import 'package:page_transition/page_transition.dart';
+import 'package:get/get.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   const CustomAppBar({Key? key}) : super(key: key);
@@ -19,10 +20,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
             svgSrc: Icons.menu,
             Icolor: kSuccessColor,
             press: () {
-              Navigator.of(context).pushAndRemoveUntil(
-                MaterialPageRoute(builder: (context) => EventList()),
-                (route) => false,
-              );
+              Get.to(EventList(), transition: Transition.zoom);
             },
           ),
         ],
@@ -36,15 +34,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
               svgSrc: Icons.event,
               Icolor: kSuccessColor,
               press: () {
-                Navigator.of(context).pushAndRemoveUntil(
-                  PageTransition(
-                    curve: Curves.linear,
-                    type: PageTransitionType
-                        .bottomToTop, // Specify the transition type
-                    child: EventList(), // The destination screen/widget
-                  ),
-                  (route) => false,
-                );
+                Get.to(EventList(), transition: Transition.downToUp);
               },
             ),
             const SizedBox(width: 8),

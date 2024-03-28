@@ -30,8 +30,8 @@ class CustomBottomNavyBar extends StatelessWidget {
           textAlign: TextAlign.center,
         ),
         BottomNavyBarItem(
-          icon: Icon(Icons.people),
-          title: Text('Users'),
+          icon: Icon(Icons.person),
+          title: Text('User'),
           activeColor: kSuccessColor,
           textAlign: TextAlign.center,
         ),

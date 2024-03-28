@@ -1,8 +1,9 @@
+import 'package:dailyme/constants/animations/FadeInAnimation.dart';
 import 'package:dailyme/constants/constants.dart';
-import 'package:dailyme/screens/home/icon_btn_with_counter.dart';
+import 'package:dailyme/screens/profile/profile.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-
+import 'package:get/get.dart';
 class UserSection extends StatefulWidget {
   const UserSection({super.key});
 
@@ -11,15 +12,14 @@ class UserSection extends StatefulWidget {
 }
 
 class _UserSectionState extends State<UserSection> {
-  get press => null;
-
+ 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-       onTap: () {
-        
+      onTap: () {
+        Get.to(Profile(), transition: Transition.zoom); 
       },
-      child: Card(
+      child: FadeInAnimation(1, Card(
         elevation: 5, // Adjust elevation as needed
         shape: RoundedRectangleBorder(
           borderRadius:
@@ -36,22 +36,22 @@ class _UserSectionState extends State<UserSection> {
                 gradient: kSuccessGradientColor,
               ),
               child: Row(
-                  // crossAxisAlignment: CrossAxisAlignment.center,
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    SizedBox(width: 40.0),
-                    Text('Name'),
-                    Container(
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text('Completed'),
-                          Text('75%'),
-                        ],
-                      ),
+                // crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  SizedBox(width: 40.0),
+                  Text('Name'),
+                  Container(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text('Completed'),
+                        Text('75%'),
+                      ],
                     ),
-                  ],
                   ),
+                ],
+              ),
             ),
             Positioned(
                 top: -30,
@@ -59,26 +59,9 @@ class _UserSectionState extends State<UserSection> {
                 child: CircleAvatar(
                     backgroundImage: AssetImage('assets/images/bg.jpg'),
                     radius: 40.0)),
-            Positioned(
-                bottom: 40.0,
-                right: 220.0,
-                child: InkWell(
-                  borderRadius: BorderRadius.circular(100),
-                  onTap: press,
-                  child: IconBtnWithCounter(
-                    svgSrc: Icons.camera,
-                    Icolor: kPrimaryColor,
-                    press: () {
-                      //       Navigator.of(context).pushAndRemoveUntil(
-                      // MaterialPageRoute(builder: (context) => EventList()),
-                      // (route) => false,
-                      // );
-                    },
-                  ),
-                )),
           ],
         ),
-      ),
+      ),)
     );
   }
 }

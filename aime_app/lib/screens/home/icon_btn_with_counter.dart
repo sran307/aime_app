@@ -9,11 +9,13 @@ class IconBtnWithCounter extends StatelessWidget {
     required this.svgSrc,
     this.numOfitem = 0,
     required this.press,
+    this.Icolor,
   }) : super(key: key);
 
   final IconData svgSrc;
   final int numOfitem;
   final GestureTapCallback press;
+  final Icolor;
 
   @override
   Widget build(BuildContext context) {
@@ -28,11 +30,11 @@ class IconBtnWithCounter extends StatelessWidget {
             height: 46,
             width: 46,
             decoration: BoxDecoration(
-              color: kSecondaryColor.withOpacity(0.1),
+              color: kFadeColor,
               shape: BoxShape.circle,
             ),
             // child: SvgPicture.asset(svgSrc),
-            child:Icon(svgSrc,color: kSuccessColor,)
+            child:Icon(svgSrc,color: Icolor,)
           ),
           if (numOfitem != 0)
             Positioned(

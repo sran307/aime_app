@@ -1,3 +1,4 @@
+import 'package:dailyme/constants/constants.dart';
 import 'package:dailyme/screens/events/EventList.dart';
 import 'package:dailyme/screens/home/userHeader.dart';
 import 'package:flutter/material.dart';
@@ -22,6 +23,7 @@ class HomeHeader extends StatelessWidget {
           const SizedBox(width: 16),
           IconBtnWithCounter(
             svgSrc: Icons.event,
+            Icolor:kSuccessColor,
             press: () {
               Navigator.of(context).pushAndRemoveUntil(
         MaterialPageRoute(builder: (context) => EventList()),
@@ -33,6 +35,7 @@ class HomeHeader extends StatelessWidget {
           IconBtnWithCounter(
             // svgSrc: "assets/icons/Bell.svg",
             svgSrc:Icons.notifications_active,
+            Icolor:Colors.red,
             numOfitem: 3,
             press: () {},
           ),

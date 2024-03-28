@@ -38,6 +38,7 @@ class _HomeState extends State<Home> {
         child: Column(
           children: [
             // HomeHeader(),
+            SizedBox(height: 20.0,),
             UserSection()
           ],
         ),

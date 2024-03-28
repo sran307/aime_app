@@ -1,3 +1,4 @@
+import 'package:dailyme/constants/constants.dart';
 import 'package:dailyme/screens/events/EventList.dart';
 import 'package:flutter/material.dart';
 import 'package:dailyme/screens/home/icon_btn_with_counter.dart';
@@ -16,6 +17,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
         children: [
           IconBtnWithCounter(
             svgSrc: Icons.menu,
+            Icolor: kSuccessColor,
             press: () {
               Navigator.of(context).pushAndRemoveUntil(
                 MaterialPageRoute(builder: (context) => EventList()),
@@ -32,11 +34,13 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
             const SizedBox(width: 16),
             IconBtnWithCounter(
               svgSrc: Icons.event,
+              Icolor: kSuccessColor,
               press: () {
                 Navigator.of(context).pushAndRemoveUntil(
                   PageTransition(
                     curve: Curves.linear,
-                    type: PageTransitionType.bottomToTop, // Specify the transition type
+                    type: PageTransitionType
+                        .bottomToTop, // Specify the transition type
                     child: EventList(), // The destination screen/widget
                   ),
                   (route) => false,
@@ -46,12 +50,14 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
             const SizedBox(width: 8),
             IconBtnWithCounter(
               svgSrc: Icons.notifications_active,
+              Icolor: kSuccessColor,
               numOfitem: 3,
               press: () {},
             ),
             const SizedBox(width: 8),
             IconBtnWithCounter(
               svgSrc: Icons.logout,
+              Icolor: kSuccessColor,
               numOfitem: 0,
               press: () {},
             ),

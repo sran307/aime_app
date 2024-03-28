@@ -6,6 +6,8 @@ import 'package:dailyme/screens/home/UserSection.dart';
 import 'package:flutter/widgets.dart';
 import 'package:jwt_decoder/jwt_decoder.dart';
 import 'package:dailyme/constants/appBar.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:dailyme/constants/bottomNavbar.dart';
 
 
 class Home extends StatefulWidget {
@@ -27,7 +29,8 @@ class _HomeState extends State<Home> {
   }
 
   Widget build(BuildContext context) {
-    return const Scaffold(
+    int _currentIndex = 0;
+    return Scaffold(
       appBar:CustomAppBar(),
       body: SafeArea(
           child: SingleChildScrollView(
@@ -39,6 +42,24 @@ class _HomeState extends State<Home> {
           ],
         ),
       )),
+
+
+      bottomNavigationBar: CustomBottomNavyBar(
+        currentIndex: _currentIndex,
+        onItemSelected: (index) async {
+          setState(() => _currentIndex = index);
+          if (index == 0) {
+            SharedPreferences prefs = await SharedPreferences.getInstance();
+            String? token = prefs.getString('token');
+
+            Navigator.of(context).pushAndRemoveUntil(
+              MaterialPageRoute(builder: (context) => Home(token: token)),
+              (route) => false,
+            );
+          }
+        },
+        context: context, // Pass the context here
+      ),
     );
   }
 }

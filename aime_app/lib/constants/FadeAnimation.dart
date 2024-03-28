@@ -12,7 +12,7 @@ class FadeAnimation extends StatelessWidget {
     return PlayAnimationBuilder<double>(
       tween: Tween(begin: 0.0, end: 200.0),
       duration: const Duration(seconds: 2),
-      curve: Curves.easeOut,
+      curve: Curves.easeIn,
       builder: (context, value, child) {
         return AnimatedOpacity(
           opacity: value / 200.0, // Use the animated value to control opacity

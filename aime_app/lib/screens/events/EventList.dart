@@ -1,7 +1,7 @@
 import 'package:dailyme/screens/events/EventItem.dart';
 import 'package:dailyme/constants/animations/FadeAnimation.dart';
 import 'package:dailyme/constants/appBar.dart';
-import 'package:dailyme/constants/bottomNavbar.dart';
+import 'package:dailyme/constants/navBar/CustomBottomNavBar.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:dailyme/screens/Home.dart';
@@ -52,21 +52,11 @@ class _EventListState extends State<EventList> {
           ],
         ),
       )),
-      bottomNavigationBar: CustomBottomNavyBar(
+      bottomNavigationBar: CustomBottomNavBar(
         currentIndex: _currentIndex,
-        onItemSelected: (index) async {
+        onItemSelected: (index) {
           setState(() => _currentIndex = index);
-          if (index == 0) {
-            SharedPreferences prefs = await SharedPreferences.getInstance();
-            String? token = prefs.getString('token');
-      
-            Navigator.of(context).pushAndRemoveUntil(
-              MaterialPageRoute(builder: (context) => Home(token: token)),
-              (route) => false,
-            );
-          }
         },
-        context: context, // Pass the context here
       ),
     );
   }

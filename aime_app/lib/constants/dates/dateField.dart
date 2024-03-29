@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:datetime_picker_formfield_new/datetime_picker_formfield.dart';
 // For changing the language
-import 'package:flutter_localization/flutter_localization.dart';
 
 class dateTimeField extends StatelessWidget {
   final format = DateFormat("dd-MM-yyyy HH:mm");

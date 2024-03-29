@@ -1,10 +1,10 @@
 
 import 'package:flutter/material.dart';
 import 'package:dailyme/screens/home/UserSection.dart';
+import 'package:dailyme/screens/home/Utilities.dart';
 import 'package:jwt_decoder/jwt_decoder.dart';
 import 'package:dailyme/constants/appBar.dart';
 import 'package:dailyme/constants/navBar/CustomBottomNavBar.dart';
-
 class Home extends StatefulWidget {
   final token;
   const Home({@required this.token, Key? key}) : super(key: key);
@@ -27,6 +27,7 @@ class _HomeState extends State<Home> {
     int _currentIndex = 0;
     return Scaffold(
       appBar:CustomAppBar(),
+      backgroundColor: Colors.white,
       body: SafeArea(
           child: SingleChildScrollView(
         padding: EdgeInsets.symmetric(vertical: 16),
@@ -34,7 +35,8 @@ class _HomeState extends State<Home> {
           children: [
             // HomeHeader(),
             SizedBox(height: 20.0,),
-            UserSection()
+            UserSection(),
+            Utilities(),
           ],
         ),
       )),

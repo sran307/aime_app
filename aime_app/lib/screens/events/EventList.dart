@@ -5,8 +5,6 @@ import 'package:dailyme/constants/navBar/CustomBottomNavBar.dart';
 import 'package:dailyme/screens/events/eventForm.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-import 'package:dailyme/screens/Home.dart';
 
 class EventList extends StatefulWidget {
   const EventList({super.key});

@@ -2,7 +2,6 @@ import 'package:dailyme/constants/constants.dart';
 import 'package:dailyme/screens/events/EventList.dart';
 import 'package:flutter/material.dart';
 import 'package:dailyme/screens/home/icon_btn_with_counter.dart';
-import 'package:page_transition/page_transition.dart';
 import 'package:get/get.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {

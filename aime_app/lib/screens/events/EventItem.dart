@@ -5,7 +5,7 @@ Widget EventIem({image, date}){
   return Row(children: [
     Container(
       width: 50,
-      height: 200,
+      height: 150,
       margin: EdgeInsets.only(right: 20),
       child: Column(
         children: [
@@ -24,7 +24,7 @@ Widget EventIem({image, date}){
       ),
     ),
     Expanded(child: Container(
-      height: 200,
+      height: 150,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
         image: DecorationImage(image: AssetImage(image),

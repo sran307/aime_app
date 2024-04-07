@@ -1,13 +1,15 @@
 import 'dart:convert';
 
+import 'package:dailyme/constants/constants.dart';
 import 'package:dailyme/models/api_response.dart';
-import 'package:dailyme/screens/auth_pages/login.dart';
 import 'package:dailyme/screens/Home.dart';
+import 'package:dailyme/screens/todo/ToDoList.dart';
 import 'package:dailyme/services/auth.dart';
 import 'package:dailyme/services/deviceDetails.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-
+import 'package:dailyme/constants/alertBoxes/SuccessAlert.dart';
+import 'package:get/get.dart';
 class TokenHandler {
   final BuildContext context;
   late SharedPreferences prefs;
@@ -52,5 +54,48 @@ class TokenHandler {
       ApiResponse apiResponse = ApiResponse();
       await apiResponse.errorData(context, response);
     }
+  }
+
+  Future<void> submitCommonForm(data, url) async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    String? token = prefs.getString('token');
+    data['token'] = token;
+    dynamic response = await CommonSubmit(data, url);
+    int status = response.statusCode;
+  
+    if ([200, 201, 204].contains(status)) {
+      // Parse the response JSON data
+      final jsonData = jsonDecode(response.body);
+      // Now you can use the parsed data as needed
+      // SuccessAlert.show(context, jsonData['message']);
+      showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            // alignment: Alignment.topCenter,
+            title: Text('Success'),
+            content: Text(jsonData['message'], style: const TextStyle(
+              color: kSuccessColor,
+            ),),
+            actions: <Widget>[
+              TextButton(
+                child: Text('OK'),
+                onPressed: () {
+                  Navigator.of(context).pop(); 
+                  // Get.to(ToDoList(), transition: Transition.downToUp);// Close the dialog
+                },
+              ),
+            ],
+          );
+        });
+
+    } else {
+      ApiResponse apiResponse = ApiResponse();
+      await apiResponse.errorData(context, response);
+    }
+  }
+
+  Future<dynamic> FetchData(url) async {
+
   }
 }

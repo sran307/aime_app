@@ -1,6 +1,7 @@
 import base64
 import json
 import hashlib
+import jwt, datetime
 
 def decode_data(encoded_data):
     # Decode base64 data
@@ -52,3 +53,16 @@ def verify_checksum(json_data, received_checksum):
     # Compute SHA-256 hash
     sha256_hash = hashlib.sha256(json_data.encode())
     return sha256_hash
+
+
+def decode_jwt_token(token, secret_key):
+    try:
+        # Decode the JWT token
+        decoded_token = jwt.decode(token, secret_key, algorithms=['HS256'])
+        
+        # Return decoded token data
+        return decoded_token
+    except jwt.ExpiredSignatureError:
+        return 400
+    except jwt.InvalidTokenError:
+        return 405

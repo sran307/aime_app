@@ -1,18 +1,19 @@
 from rest_framework import generics, status
 from django.contrib.auth.models import User
 
-from .models import deviceDetails
-from .serializers import checkDataSerializer,UserSerializer, deviceDetailsSerializer
+from .models import deviceDetails, CustomUser
+from .serializers import checkDataSerializer,UserSerializer, deviceDetailsSerializer, todoSerializer,metaDataSerializer
 
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
-from decoder import decode_data, verify_checksum
+from decoder import decode_data, verify_checksum, decode_jwt_token
 import json
 from django.contrib.auth import authenticate
 import jwt, datetime
 from django.utils import timezone
 from django.db import transaction
 from encoder import hashUsername, hashPassword
+from rest_framework.exceptions import AuthenticationFailed
 # class Usercreate(generics.ListCreateAPIView):
 #     queryset = User.objects.all()
 #     serializer_class = UserSerializer
@@ -35,9 +36,8 @@ def checkDeviceExist(request):
         decodedData = decode_data(base64_encoded_data)
         deviceName = decodedData['deviceName']
         deviceId = decodedData['deviceId']
-
         try:
-            isExist = deviceDetails.objects.filter(deviceName = deviceName, deviceId = deviceId).count()
+            isExist = deviceDetails.objects.filter(device_name = deviceName, device_id = deviceId).count()
             if(isExist > 0):
                 return Response({
                     'status': 200,
@@ -68,7 +68,7 @@ def registerUser(request):
     except json.JSONDecodeError:
         return Response({'error': 'Invalid JSON data'}, status=400)
     
-    serializer = checkDataSerializer(data=device_data)
+    serializer = checkDataSerializer(data=device_data) 
     if serializer.is_valid():
         base64_encoded_data = serializer.validated_data.get('encodedData')
         decoded_data = decode_data(base64_encoded_data)
@@ -80,34 +80,34 @@ def registerUser(request):
             'first_name': decoded_data.get('first_name'),
             'email': decoded_data.get('email'),
             'password': password,
-            'username': username
+            'username': username,
+            'last_login':timezone.now()
         }
 
         device_data = {
-            'deviceName': decoded_data['deviceDetails']['deviceName'],
-            'deviceId': decoded_data['deviceDetails']['deviceId']
+            'device_name': decoded_data['deviceDetails']['deviceName'],
+            'device_id': decoded_data['deviceDetails']['deviceId']
         }
-
         # Validate and save user data
         user_serializer = UserSerializer(data=user_data)
         if user_serializer.is_valid():
             try:
                 with transaction.atomic():  # Use transaction to ensure atomicity
                     user_instance = user_serializer.save()
-                    device_data['userId'] = user_instance.id 
-                    device_data['lastLoginAt']= timezone.now()
+                    device_data['user'] = user_instance.id 
+                    device_data['last_login_at']= timezone.now()
                     device_serializer = deviceDetailsSerializer(data=device_data)
+                    # return Response(device_data, status=status.HTTP_400_BAD_REQUEST)
                     if device_serializer.is_valid():
                         device_serializer.save()
+                        return Response({'pin': pin}, status=status.HTTP_201_CREATED)
                     else:
                         user_instance.delete()  # Rollback user creation if device creation fails
                         return Response(device_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
             except Exception as e:
-                return Response(e, status=status.HTTP_400_BAD_REQUEST)
+                return Response(str(e), status=status.HTTP_400_BAD_REQUEST)
         else:
             return Response(user_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
-        return Response({'pin': pin}, status=status.HTTP_201_CREATED)
     else:
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     
@@ -116,37 +116,89 @@ def loginUser(request):
     try:
         device_data = json.loads(request.body.decode('utf-8'))
     except json.JSONDecodeError:
-        return Response({'error': 'Inalid JSON data'}, status = 400)
+        return Response({'error': 'Invalid JSON data'}, status=400)
+    
     serializer = checkDataSerializer(data=device_data)
     serializer.is_valid(raise_exception=True)
+    
     base64_encoded_data = serializer.validated_data.get('encodedData')
-    decodedData = decode_data(base64_encoded_data)
-    pin = decodedData['pin']
+    decoded_data = decode_data(base64_encoded_data)
+    
+    pin = decoded_data['pin']
     username = hashUsername(pin)
     password = hashPassword(pin, pin)
+    
     try:
-        user = User.objects.filter(username = username, password=password)
-        serializer = UserSerializer(user, many=True)
-        id = 0
-        for userData in serializer.data:
-            id = userData['id']
-        if(id != 0):
+        user = authenticate(request, username=username, password=password)
+        if user is not None:
             payload = {
-                'id': id,
-                'exp':datetime.datetime.utcnow()+datetime.timedelta(minutes=1),
+                'id': str(user.guid),
+                'exp': datetime.datetime.utcnow() + datetime.timedelta(minutes=60),
                 'iat': datetime.datetime.utcnow()
             }
             token = jwt.encode(payload, 'secret', algorithm='HS256')
-            return Response({
-                'status':200,
-                'token':token
-                }, status=status.HTTP_201_CREATED) 
+            return Response({'status': 200, 'token': token}, status=status.HTTP_200_OK)
         else:
-            return Response({
-                'status':400,
-                'message': 'Invalid Pin'
-            }, status=status.HTTP_400_BAD_REQUEST)
-    except User.DoesNotExist:
+            raise AuthenticationFailed('Invalid username or password')
+    except AuthenticationFailed as e:
+        return Response({'error': str(e)}, status=status.HTTP_401_UNAUTHORIZED)
+
+
+@api_view(['POST'])
+def todoInsert(request):
+    try:
+        data = json.loads(request.body.decode('utf-8'))
+    except json.JSONDecodeError:
+        return Response({'error': 'Invalid JSON data'}, status=400)
+    
+    serializer = checkDataSerializer(data=data)
+    serializer.is_valid(raise_exception=True)
+    base64_encoded_data = serializer.validated_data.get('encodedData')
+    decodedData = decode_data(base64_encoded_data)
+    token = decodedData['token']
+    payload = decode_jwt_token(token, 'secret')
+    if payload == 400:
         return Response({
-            'message': 'User not found',
-        }, status=status.HTTP_400_BAD_REQUEST) 
+            'error':'Token expired'
+            }, status=400)
+    elif payload == 405:
+        return Resposnse({
+            'error': 'Invalid Token'
+        }, status=400)
+    else:
+        objId = payload['id']
+        try:
+            user = CustomUser.objects.get(guid=objId)
+            if user is not None:
+                deviceData = deviceDetails.objects.filter(user=user).order_by('last_login_at').first()
+                metada = {}
+                metada['user'] = user.id
+                metada['deviceName'] = deviceData.device_name
+                metada['dateTime'] = timezone.now()
+                todo = {}
+                todo['todoName'] = decodedData['name']
+                todo['todoDate'] = decodedData['date']
+                todo['user'] = user.id
+                metadaSerializer = metaDataSerializer(data = metada)
+                try:
+                    if metadaSerializer.is_valid():
+                        with transaction.atomic():
+                            metaInstance = metadaSerializer.save()
+                            todo['insertAt'] = metaInstance.id
+                            todo_serializer = todoSerializer(data = todo)
+                            if todo_serializer.is_valid():
+                                todo_serializer.save()
+                                return Response({'message': 'Item Added.'}, status=status.HTTP_200_OK)
+                            else:
+                                metaInstance.delete()
+                                return Response(todo_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+                    else:
+                        return Response(metadaSerializer.errors, status=status.HTTP_400_BAD_REQUEST)
+                except Exception as e:
+                    return Response({'error': str(e)}, status=status.HTTP_400_BAD_REQUEST)
+            else:
+                raise AuthenticationFailed('Invalid username')
+        except AuthenticationFailed as e:
+            return Response({'error': str(e)}, status=status.HTTP_401_UNAUTHORIZED)
+
+        

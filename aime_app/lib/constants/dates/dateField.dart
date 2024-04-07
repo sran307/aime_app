@@ -7,15 +7,27 @@ import 'package:datetime_picker_formfield_new/datetime_picker_formfield.dart';
 
 class dateTimeField extends StatelessWidget {
   final format = DateFormat("dd-MM-yyyy HH:mm");
+
+  TextEditingController dateController;
+
+  dateTimeField(this.dateController);
+
   @override
   Widget build(BuildContext context) {
     return Column(children: <Widget>[
       DateTimeField(
+        controller: dateController,
         decoration: const InputDecoration(
-          labelText: 'Event Date & Time',
+          labelText: 'Date & Time',
           hintText: 'Enter the date...',
         ),
         format: format,
+        validator: (value) {
+          if (value == null) {
+            return 'Enter a date and time';
+          }
+          return null;
+        },
         onShowPicker: (context, currentValue) async {
           return await showDatePicker(
             context: context,

@@ -7,5 +7,6 @@ urlpatterns = [
     # path('login/', views.as_view),
     path('checkExist/', views.checkDeviceExist),
     path('register/', views.registerUser),
-    path('login/', views.loginUser)
+    path('login/', views.loginUser),
+    path('todo/ins/', views.todoInsert)
 ]

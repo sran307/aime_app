@@ -1,9 +1,10 @@
 import 'package:dailyme/constants/constants.dart';
+import 'package:dailyme/screens/Loading.dart';
 import 'package:dailyme/screens/events/EventList.dart';
 import 'package:flutter/material.dart';
 import 'package:dailyme/screens/home/icon_btn_with_counter.dart';
 import 'package:get/get.dart';
-
+import 'package:shared_preferences/shared_preferences.dart';
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   const CustomAppBar({Key? key}) : super(key: key);
 
@@ -48,7 +49,10 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
               svgSrc: Icons.logout,
               Icolor: kSuccessColor,
               numOfitem: 0,
-              press: () {},
+              press: () async {
+                await clearToken();
+                Get.to(Loading(), transition: Transition.zoom);
+              },
             ),
           ],
         )
@@ -56,6 +60,11 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
     );
   }
 
+  Future<void> clearToken() async {
+    final prefs = await SharedPreferences.getInstance();
+    prefs.remove('jwt_token'); // Remove the JWT token from shared preferences
+  }
+  
   @override
   Size get preferredSize => const Size.fromHeight(kToolbarHeight);
 }

@@ -3,6 +3,7 @@ import 'package:dailyme/constants/dates/dateField.dart';
 
 class eventForm extends StatelessWidget {
   final TextEditingController _nameController = TextEditingController();
+  final TextEditingController _dateController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -46,7 +47,7 @@ class eventForm extends StatelessWidget {
               ),
               Padding(
                 padding: EdgeInsets.all(8.0),
-                child: dateTimeField(),
+                child: dateTimeField(_dateController),
               ),
               Padding(
                 padding: const EdgeInsets.all(8.0),

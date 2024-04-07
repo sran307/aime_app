@@ -2,6 +2,9 @@ const baseUrl = "http://localhost:8005/api/";
 const loginUrl = '${baseUrl}login/';
 const checkExistUrl = '${baseUrl}checkExist/';
 const registerUrl = '${baseUrl}register/';
+const todoSave = '${baseUrl}todo/ins/';
+const todoList = '${baseUrl}todo/list/';
+
 
 
 const serverError = 'server error';

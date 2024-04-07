@@ -4,6 +4,7 @@ import 'package:dailyme/models/api_response.dart';
 import 'package:dailyme/services/DataEncryptor.dart';
 import 'package:dailyme/services/urls.dart';
 import 'package:http/http.dart' as http;
+import 'package:shared_preferences/shared_preferences.dart';
 
 // LOGIN LOGIC IMPLEMENTED IN GETTOKEN FUNCTION
 Future<dynamic> getToken(pin) async {
@@ -28,8 +29,6 @@ Future<dynamic> getToken(pin) async {
 Future<bool> checkExist(deviceData) async {
   encryptor newData = encryptor();
   Map<String, dynamic> encData = await newData.encrypt(deviceData);
-  // print(encData);
-  // print(checkExistUrl);
   try {
     final Response = await http.post(Uri.parse(checkExistUrl),
         headers: {'Accept': 'application/json'}, body: jsonEncode(encData));
@@ -53,6 +52,39 @@ Future<dynamic> Register(data) async {
   Map<String, dynamic> encData = await newData.encrypt(data);
   try {
     final Response = await http.post(Uri.parse(registerUrl),
+        headers: {'Accept': 'application/json'}, body: jsonEncode(encData));
+
+    return Response;
+  } catch (e) {
+    final response = http.Response('{"status": "Server Not Found"}', 400);
+    return response;
+  }
+}
+
+Future<dynamic> CommonSubmit(data, url) async {
+  // ApiResponse apiResponse = ApiResponse();
+  encryptor newData = encryptor();
+  Map<String, dynamic> encData = await newData.encrypt(data);
+
+  try {
+    final Response = await http.post(Uri.parse(url),
+        headers: {'Accept': 'application/json'}, body: jsonEncode(encData));
+
+    return Response;
+  } catch (e) {
+    final response = http.Response('{"status": "Server Not Found"}', 400);
+    return response;
+  }
+}
+
+Future<dynamic> GetData(url) async {
+  SharedPreferences prefs = await SharedPreferences.getInstance();
+  String? token = prefs.getString('token');
+  encryptor newData = encryptor();
+  Map<String, dynamic> encData = await newData.encrypt(token);
+
+  try {
+    final Response = await http.post(Uri.parse(url),
         headers: {'Accept': 'application/json'}, body: jsonEncode(encData));
 
     return Response;

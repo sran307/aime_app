@@ -1,5 +1,6 @@
 import hashlib
-
+import base64
+import json
 def hashUsername(input_string):
     # Convert input string to bytes (UTF-8 encoding)
     input_bytes = input_string.encode('utf-8')
@@ -26,3 +27,10 @@ def hashPassword(password, username, iterations=7):
     hashed_password = hashlib.sha256(hashed_result).hexdigest()
 
     return hashed_password
+
+def baseEncode(string_to_encode):
+    json_data = json.dumps(string_to_encode)
+    encoded_bytes = base64.b64encode(json_data.encode('utf-8'))
+    encoded_string = encoded_bytes.decode('utf-8')
+    
+    return encoded_string

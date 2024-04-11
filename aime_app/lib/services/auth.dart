@@ -81,8 +81,8 @@ Future<dynamic> GetData(url) async {
   SharedPreferences prefs = await SharedPreferences.getInstance();
   String? token = prefs.getString('token');
   encryptor newData = encryptor();
-  Map<String, dynamic> encData = await newData.encrypt(token);
-
+  Map<String, dynamic> data = {'token':token};
+  Map<String, dynamic> encData = await newData.encrypt(data);
   try {
     final Response = await http.post(Uri.parse(url),
         headers: {'Accept': 'application/json'}, body: jsonEncode(encData));

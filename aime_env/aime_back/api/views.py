@@ -1,7 +1,7 @@
 from rest_framework import generics, status
 from django.contrib.auth.models import User
 
-from .models import deviceDetails, CustomUser
+from .models import deviceDetails, CustomUser, Todo
 from .serializers import checkDataSerializer,UserSerializer, deviceDetailsSerializer, todoSerializer,metaDataSerializer
 
 from rest_framework.decorators import api_view
@@ -12,8 +12,9 @@ from django.contrib.auth import authenticate
 import jwt, datetime
 from django.utils import timezone
 from django.db import transaction
-from encoder import hashUsername, hashPassword
+from encoder import hashUsername, hashPassword, baseEncode
 from rest_framework.exceptions import AuthenticationFailed
+from datetime import date
 # class Usercreate(generics.ListCreateAPIView):
 #     queryset = User.objects.all()
 #     serializer_class = UserSerializer
@@ -201,4 +202,50 @@ def todoInsert(request):
         except AuthenticationFailed as e:
             return Response({'error': str(e)}, status=status.HTTP_401_UNAUTHORIZED)
 
-        
+@api_view(['POST'])
+def todoList(request):
+    try:
+        data = json.loads(request.body.decode('utf-8'))
+    except json.JSONDecodeError:
+        return Response({'error': 'Invalid JSON data'}, status=400)
+    
+    serializer = checkDataSerializer(data=data)
+    serializer.is_valid(raise_exception=True)
+    base64_encoded_data = serializer.validated_data.get('encodedData')
+    decodedData = decode_data(base64_encoded_data)
+    token = decodedData['token']
+    payload = decode_jwt_token(token, 'secret')
+    if payload == 400:
+        return Response({
+            'error':'Token expired'
+            }, status=400)
+    elif payload == 405:
+        return Resposnse({
+            'error': 'Invalid Token'
+        }, status=400)
+    else:
+        objId = payload['id']
+        try:
+            user = CustomUser.objects.get(guid=objId)
+            if user is not None:
+                current_date = timezone.now().date()
+                todoToday = Todo.objects.filter(user=user, todoDate__date=current_date, isCompleted=False)
+                todoYesterday = Todo.objects.filter(user=user, todoDate__date__lt=current_date, isCompleted=False)
+                todoTomorrow = Todo.objects.filter(user=user, todoDate__date__gt=current_date, isCompleted=False)
+
+                todo_today_list = [{'guid': str(todo['guid']), 'todoName': todo['todoName']} for todo in todoToday.values()]
+                todo_yesterday_list = [{'guid': str(todo['guid']), 'todoName': todo['todoName']} for todo in todoYesterday.values()]
+                todo_tomorrow_list = [{'guid': str(todo['guid']), 'todoName': todo['todoName']} for todo in todoTomorrow.values()]
+
+                data = {
+                    'todoToday': todo_today_list,
+                    'todoYesterday': todo_yesterday_list,
+                    'todoTomorrow': todo_tomorrow_list
+                }
+                encodedData = baseEncode(data)
+                
+                return Response({'data': encodedData}, status=200)
+            else:
+                raise AuthenticationFailed('Invalid username')
+        except AuthenticationFailed as e:
+            return Response({'error': str(e)}, status=status.HTTP_401_UNAUTHORIZED)

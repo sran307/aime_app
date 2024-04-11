@@ -3,13 +3,10 @@ import 'dart:convert';
 import 'package:dailyme/constants/constants.dart';
 import 'package:dailyme/models/api_response.dart';
 import 'package:dailyme/screens/Home.dart';
-import 'package:dailyme/screens/todo/ToDoList.dart';
 import 'package:dailyme/services/auth.dart';
 import 'package:dailyme/services/deviceDetails.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:dailyme/constants/alertBoxes/SuccessAlert.dart';
-import 'package:get/get.dart';
 class TokenHandler {
   final BuildContext context;
   late SharedPreferences prefs;
@@ -93,9 +90,5 @@ class TokenHandler {
       ApiResponse apiResponse = ApiResponse();
       await apiResponse.errorData(context, response);
     }
-  }
-
-  Future<dynamic> FetchData(url) async {
-
   }
 }

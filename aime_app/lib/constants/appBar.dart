@@ -11,14 +11,14 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      backgroundColor: Color.fromARGB(0, 210, 226, 226),
+      backgroundColor: barColor,
       elevation: 0,
       leading: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           IconBtnWithCounter(
             svgSrc: Icons.menu,
-            Icolor: kSuccessColor,
+            Icolor: iconColor,
             press: () {
               Get.to(EventList(), transition: Transition.zoom);
             },
@@ -32,7 +32,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
             const SizedBox(width: 16),
             IconBtnWithCounter(
               svgSrc: Icons.event,
-              Icolor: kSuccessColor,
+              Icolor: iconColor,
               press: () {
                 Get.to(EventList(), transition: Transition.downToUp);
               },
@@ -40,14 +40,14 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
             const SizedBox(width: 8),
             IconBtnWithCounter(
               svgSrc: Icons.notifications_active,
-              Icolor: kSuccessColor,
+              Icolor: iconColor,
               numOfitem: 3,
               press: () {},
             ),
             const SizedBox(width: 8),
             IconBtnWithCounter(
               svgSrc: Icons.logout,
-              Icolor: kSuccessColor,
+              Icolor: iconColor,
               numOfitem: 0,
               press: () async {
                 await clearToken();

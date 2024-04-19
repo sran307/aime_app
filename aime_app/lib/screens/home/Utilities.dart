@@ -9,146 +9,152 @@ class Utilities extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      surfaceTintColor: Colors.deepOrange,
-      elevation: 0.0,
-      color: kPrimaryColor,
-      child: SizedBox(
-        // width: double.infinity, // Take the full width
-        height: MediaQuery.of(context).size.height * 0.35,
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Expanded(
-                    child: Container(
-                      padding: EdgeInsets.all(8),
-                      child: Center(child: Text('UTILITIES'))
-                    ),
-                  ),
-              
-                  
-                  
-                ],
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Expanded(
-                    child: Container(
-                      padding: EdgeInsets.all(8),
-                      child: ElevatedButton(
-                        onPressed: () {
-                          Get.to(ToDoList(), transition: Transition.zoom);
-                        },
-                        child: Text('To Do'),
+      elevation: 5.0,
+      child: Container(
+        // margin:EdgeInsets.all(5),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(
+                      15),
+          gradient: kSecondaryGradientColor,
+        ),
+        child: SizedBox(
+          // width: double.infinity, // Take the full width
+          height: MediaQuery.of(context).size.height * 0.35,
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Expanded(
+                      child: Container(
+                        padding: EdgeInsets.all(8),
+                        child: Center(child: Text('UTILITIES', style: subHeading,))
                       ),
                     ),
-                  ),
-              
-                  Expanded(
-                    child: Container(
-                      padding: EdgeInsets.all(8),
-                      child: ElevatedButton(
-                        onPressed: () {
-                          Get.to(ToDoList(), transition: Transition.circularReveal);
-                        },
-                        child: Text('Alarm'),
+                
+                    
+                    
+                  ],
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Expanded(
+                      child: Container(
+                        padding: EdgeInsets.all(8),
+                        child: ElevatedButton(
+                          onPressed: () {
+                            Get.to(ToDoList(), transition: Transition.zoom);
+                          },
+                          child: Text('To Do'),
+                        ),
                       ),
                     ),
-                  ),
-                  
-                ],
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Expanded(
-                    child: Container(
-                      padding: EdgeInsets.all(8),
-                      child: ElevatedButton(
-                        onPressed: () {
-                          Get.to(ToDoList(), transition: Transition.circularReveal);
-                        },
-                        child: Text('Goals'),
+                
+                    Expanded(
+                      child: Container(
+                        padding: EdgeInsets.all(8),
+                        child: ElevatedButton(
+                          onPressed: () {
+                            Get.to(ToDoList(), transition: Transition.circularReveal);
+                          },
+                          child: Text('Alarm'),
+                        ),
                       ),
                     ),
-                  ),
-              
-                  Expanded(
-                    child: Container(
-                      padding: EdgeInsets.all(8),
-                      child: ElevatedButton(
-                        onPressed: () {
-                          Get.to(ToDoList(), transition: Transition.circularReveal);
-                        },
-                        child: Text('Assets'),
+                    
+                  ],
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Expanded(
+                      child: Container(
+                        padding: EdgeInsets.all(8),
+                        child: ElevatedButton(
+                          onPressed: () {
+                            Get.to(ToDoList(), transition: Transition.circularReveal);
+                          },
+                          child: Text('Goals'),
+                        ),
                       ),
                     ),
-                  ),
-                  
-                ],
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Expanded(
-                    child: Container(
-                      padding: EdgeInsets.all(8),
-                      child: ElevatedButton(
-                        onPressed: () {
-                          Get.to(ToDoList(), transition: Transition.circularReveal);
-                        },
-                        child: Text('Liability'),
+                
+                    Expanded(
+                      child: Container(
+                        padding: EdgeInsets.all(8),
+                        child: ElevatedButton(
+                          onPressed: () {
+                            Get.to(ToDoList(), transition: Transition.circularReveal);
+                          },
+                          child: Text('Assets'),
+                        ),
                       ),
                     ),
-                  ),
-              
-                  Expanded(
-                    child: Container(
-                      padding: EdgeInsets.all(8),
-                      child: ElevatedButton(
-                        onPressed: () {
-                          Get.to(ToDoList(), transition: Transition.circularReveal);
-                        },
-                        child: Text('Trade'),
+                    
+                  ],
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Expanded(
+                      child: Container(
+                        padding: EdgeInsets.all(8),
+                        child: ElevatedButton(
+                          onPressed: () {
+                            Get.to(ToDoList(), transition: Transition.circularReveal);
+                          },
+                          child: Text('Liability'),
+                        ),
                       ),
                     ),
-                  ),
-                  
-                ],
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Expanded(
-                    child: Container(
-                      padding: EdgeInsets.all(8),
-                      child: ElevatedButton(
-                        onPressed: () {
-                          Get.to(ToDoList(), transition: Transition.circularReveal);
-                        },
-                        child: Text('Locker'),
+                
+                    Expanded(
+                      child: Container(
+                        padding: EdgeInsets.all(8),
+                        child: ElevatedButton(
+                          onPressed: () {
+                            Get.to(ToDoList(), transition: Transition.circularReveal);
+                          },
+                          child: Text('Trade'),
+                        ),
                       ),
                     ),
-                  ),
-              
-                  Expanded(
-                    child: Container(
-                      padding: EdgeInsets.all(8),
-                      child: ElevatedButton(
-                        onPressed: () {
-                          Get.to(ToDoList(), transition: Transition.circularReveal);
-                        },
-                        child: Text('Trade'),
+                    
+                  ],
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Expanded(
+                      child: Container(
+                        padding: EdgeInsets.all(8),
+                        child: ElevatedButton(
+                          onPressed: () {
+                            Get.to(ToDoList(), transition: Transition.circularReveal);
+                          },
+                          child: Text('Locker'),
+                        ),
                       ),
                     ),
-                  ),
-                  
-                ],
-              ),
-            ],
+                
+                    Expanded(
+                      child: Container(
+                        padding: EdgeInsets.all(8),
+                        child: ElevatedButton(
+                          onPressed: () {
+                            Get.to(ToDoList(), transition: Transition.circularReveal);
+                          },
+                          child: Text('Trade'),
+                        ),
+                      ),
+                    ),
+                    
+                  ],
+                ),
+              ],
+            ),
           ),
         ),
       ),

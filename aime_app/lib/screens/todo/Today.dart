@@ -44,6 +44,7 @@ class _TodayState extends State<Today> {
   Widget build(BuildContext context) {
     return Card(
       elevation: 5.0,
+      color:bg1,
       child: Container(
         height: MediaQuery.of(context).size.height * 0.6,
         margin: EdgeInsets.all(10.0),
@@ -52,7 +53,7 @@ class _TodayState extends State<Today> {
             const Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text("Today's Actions"),
+                Text("Today's Actions", style: formHeading,),
                 // Text("27/07/2024"),
               ],
             ),
@@ -82,38 +83,41 @@ class _TodayState extends State<Today> {
                     decoration: const BoxDecoration(
                       color: Colors.black38,
                     ),
-                    child: SingleChildScrollView(
-                      child: FutureBuilder<List<dynamic>>(
-                        future: todoFuture, // Set the future to fetch todo data
-                        builder: (context, snapshot) {
-                          if (snapshot.connectionState == ConnectionState.waiting) {
-                            return const Center(child: CircularProgressIndicator());
-                          } else if (snapshot.hasError) {
-                            return Center(child: Text('Error: ${snapshot.error}'));
-                          } else if (snapshot.hasData) {
-                            // Build UI components based on the fetched data
-                            return Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                for (var item in snapshot.data!) ...[
-                                  Padding(
-                                    padding: const EdgeInsets.only(left: 10),
-                                    child: Text(item['todoName'].toString()),
-                                  ),
-                                  const Divider(
-                                    color: kDark,
-                                    thickness: 1,
-                                    height: 1.0,
-                                    indent: 10,
-                                    endIndent: 20,
-                                  ),
+                    child: RefreshIndicator(
+                      onRefresh: fetchTodoData,
+                      child: SingleChildScrollView(
+                        child: FutureBuilder<List<dynamic>>(
+                          future: todoFuture, // Set the future to fetch todo data
+                          builder: (context, snapshot) {
+                            if (snapshot.connectionState == ConnectionState.waiting) {
+                              return const Center(child: CircularProgressIndicator());
+                            } else if (snapshot.hasError) {
+                              return Center(child: Text('Error: ${snapshot.error}'));
+                            } else if (snapshot.hasData) {
+                              // Build UI components based on the fetched data
+                              return Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  for (var item in snapshot.data!) ...[
+                                    Padding(
+                                      padding: const EdgeInsets.only(left: 10),
+                                      child: Text(item['todoName'].toString(), style: paragraph,),
+                                    ),
+                                    const Divider(
+                                      color: kDark,
+                                      thickness: 1,
+                                      height: 1.0,
+                                      indent: 10,
+                                      endIndent: 20,
+                                    ),
+                                  ],
                                 ],
-                              ],
-                            );
-                          } else {
-                            return const Center(child: Text('No data available'));
-                          }
-                        },
+                              );
+                            } else {
+                              return const Center(child: Text('No data available'));
+                            }
+                          },
+                        ),
                       ),
                     ),
                   ),

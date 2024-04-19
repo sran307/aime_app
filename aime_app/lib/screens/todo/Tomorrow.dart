@@ -9,11 +9,10 @@ import 'package:dailyme/services/DataDecryptor.dart';
 import 'package:flutter/widgets.dart';
 
 class Tomorrow extends StatefulWidget {
-  
-
   @override
   State<Tomorrow> createState() => _TomorrowState();
 }
+
 class _TomorrowState extends State<Tomorrow> {
   Future<List<dynamic>>? todoFuture; // Future for fetching todo data
 
@@ -44,6 +43,7 @@ class _TomorrowState extends State<Tomorrow> {
   @override
   Widget build(BuildContext context) {
     return Card(
+      color: bg1,
       elevation: 5.0,
       child: Container(
         height: MediaQuery.of(context).size.height * 0.6,
@@ -53,7 +53,7 @@ class _TomorrowState extends State<Tomorrow> {
             const Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text("Future Actions"),
+                Text("Future Actions", style: formHeading,),
                 // Text("27/07/2024"),
               ],
             ),
@@ -87,10 +87,13 @@ class _TomorrowState extends State<Tomorrow> {
                       child: FutureBuilder<List<dynamic>>(
                         future: todoFuture, // Set the future to fetch todo data
                         builder: (context, snapshot) {
-                          if (snapshot.connectionState == ConnectionState.waiting) {
-                            return const Center(child: CircularProgressIndicator());
+                          if (snapshot.connectionState ==
+                              ConnectionState.waiting) {
+                            return const Center(
+                                child: CircularProgressIndicator());
                           } else if (snapshot.hasError) {
-                            return Center(child: Text('Error: ${snapshot.error}'));
+                            return Center(
+                                child: Text('Error: ${snapshot.error}'));
                           } else if (snapshot.hasData) {
                             // Build UI components based on the fetched data
                             return Column(
@@ -99,7 +102,7 @@ class _TomorrowState extends State<Tomorrow> {
                                 for (var item in snapshot.data!) ...[
                                   Padding(
                                     padding: const EdgeInsets.only(left: 10),
-                                    child: Text(item['todoName'].toString()),
+                                    child: Text(item['todoName'].toString(), style: paragraph,),
                                   ),
                                   const Divider(
                                     color: kDark,
@@ -112,7 +115,8 @@ class _TomorrowState extends State<Tomorrow> {
                               ],
                             );
                           } else {
-                            return const Center(child: Text('No data available'));
+                            return const Center(
+                                child: Text('No data available'));
                           }
                         },
                       ),

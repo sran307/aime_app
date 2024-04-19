@@ -17,6 +17,7 @@ class CustomBottomNavyBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BottomNavyBar(
+      backgroundColor: barColor,
       selectedIndex: currentIndex,
       showElevation: true,
       itemCornerRadius: 24,
@@ -26,13 +27,13 @@ class CustomBottomNavyBar extends StatelessWidget {
         BottomNavyBarItem(
           icon: Icon(Icons.apps),
           title: Text('Home'),
-          activeColor: kSuccessColor,
+          activeColor: iconColor,
           textAlign: TextAlign.center,
         ),
         BottomNavyBarItem(
           icon: Icon(Icons.person),
           title: Text('User'),
-          activeColor: kSuccessColor,
+          activeColor: iconColor,
           textAlign: TextAlign.center,
         ),
         BottomNavyBarItem(
@@ -40,13 +41,13 @@ class CustomBottomNavyBar extends StatelessWidget {
           title: Text(
             'Messages test for mes teset test test ',
           ),
-          activeColor: kSuccessColor,
+          activeColor: iconColor,
           textAlign: TextAlign.center,
         ),
         BottomNavyBarItem(
           icon: Icon(Icons.settings),
           title: Text('Settings'),
-          activeColor: kSuccessColor,
+          activeColor: iconColor,
           textAlign: TextAlign.center,
         ),
       ],

@@ -15,7 +15,7 @@ class Yesterday extends StatefulWidget {
 class _YesterdayState extends State<Yesterday> {
   Future<List<dynamic>>? todoYesterday; // Future for fetching todo data
   bool isLoading = true;
-  
+
   @override
   void initState() {
     super.initState();
@@ -36,8 +36,8 @@ class _YesterdayState extends State<Yesterday> {
       decryptor decode = decryptor();
       Map<String, dynamic> data = await decode.decrypt(jsonData['data']);
       setState(() {
-      isLoading = false;
-    });
+        isLoading = false;
+      });
       return data['todoYesterday']; // Return the todo data
     } else {
       ApiResponse apiResponse = ApiResponse();
@@ -55,13 +55,14 @@ class _YesterdayState extends State<Yesterday> {
   @override
   Widget build(BuildContext context) {
     return Visibility(
-      visible:isLoading,
+      visible: isLoading,
       child: Center(
         child: CircularProgressIndicator(),
       ),
       replacement: RefreshIndicator(
         onRefresh: _refreshTodoData,
         child: Card(
+          color: bg1,
           elevation: 5.0,
           child: Container(
             height: MediaQuery.of(context).size.height * 0.6,
@@ -71,7 +72,7 @@ class _YesterdayState extends State<Yesterday> {
                 const Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text("Pending Actions"),
+                    Text("Pending Actions", style: formHeading,),
                     // Text("27/07/2024"),
                   ],
                 ),
@@ -103,12 +104,16 @@ class _YesterdayState extends State<Yesterday> {
                         ),
                         child: SingleChildScrollView(
                           child: FutureBuilder<List<dynamic>>(
-                            future: todoYesterday, // Set the future to fetch todo data
+                            future:
+                                todoYesterday, // Set the future to fetch todo data
                             builder: (context, snapshot) {
-                              if (snapshot.connectionState == ConnectionState.waiting) {
-                                return const Center(child: CircularProgressIndicator());
+                              if (snapshot.connectionState ==
+                                  ConnectionState.waiting) {
+                                return const Center(
+                                    child: CircularProgressIndicator());
                               } else if (snapshot.hasError) {
-                                return Center(child: Text('Error: ${snapshot.error}'));
+                                return Center(
+                                    child: Text('Error: ${snapshot.error}'));
                               } else if (snapshot.hasData) {
                                 // Build UI components based on the fetched data
                                 return Column(
@@ -116,8 +121,10 @@ class _YesterdayState extends State<Yesterday> {
                                   children: [
                                     for (var item in snapshot.data!) ...[
                                       Padding(
-                                        padding: const EdgeInsets.only(left: 10),
-                                        child: Text(item['todoName'].toString()),
+                                        padding:
+                                            const EdgeInsets.only(left: 10),
+                                        child:
+                                            Text(item['todoName'].toString(), style: paragraph,),
                                       ),
                                       const Divider(
                                         color: kDark,
@@ -130,7 +137,8 @@ class _YesterdayState extends State<Yesterday> {
                                   ],
                                 );
                               } else {
-                                return const Center(child: Text('No data available'));
+                                return const Center(
+                                    child: Text('No data available'));
                               }
                             },
                           ),
@@ -147,4 +155,3 @@ class _YesterdayState extends State<Yesterday> {
     );
   }
 }
-

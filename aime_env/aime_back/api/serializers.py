@@ -31,7 +31,7 @@ class deviceDetailsSerializer(serializers.ModelSerializer):
 class todoSerializer(serializers.ModelSerializer):
     class Meta:
         model = Todo
-        fields = ['todoName', 'todoDate', 'guid', 'isCompleted', 'user', 'insertAt', 'updateAt']
+        fields = ['todoName', 'todoDate', 'guid', 'isCompleted', 'user', 'insertAt', 'updateAt', 'isRegular']
         
 class metaDataSerializer(serializers.ModelSerializer):
     class Meta:

@@ -38,7 +38,7 @@ class _TomorrowState extends State<Tomorrow> {
     } else {
       ApiResponse apiResponse = ApiResponse();
       await apiResponse.errorData(context, todoDetails);
-      throw Exception('Failed to fetch todo data');
+      return [];
     }
   }
 
@@ -164,7 +164,7 @@ Future<void> _submitFormAndRefreshData(Map<String, dynamic> data) async {
                                                             child: Text('OK'),
                                                             onPressed: () {
                                                               Map<String, dynamic> data = {
-                                                                "guId": item['guId'].toString(),
+                                                                "guId": item['guid'].toString(),
                                                               };
                                                               _submitFormAndRefreshData(data);
                                                               // Navigator.of(context).pop();

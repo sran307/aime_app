@@ -36,8 +36,9 @@ class Todo(models.Model):
     guid = models.UUIDField(default=uuid.uuid4, editable=False, unique=True)
     user = models.ForeignKey(CustomUser, on_delete=models.CASCADE, db_column='user_id')
     todoName = models.CharField(max_length=255, db_column='todo_name')
-    todoDate = models.DateTimeField(auto_now_add=True, db_column='todo_date')
+    todoDate = models.DateTimeField(db_column='todo_date')
     isCompleted = models.BooleanField(default=False, db_column='is_completed')
+    isRegular = models.BooleanField(default=False, db_column='is_regular')
     insertAt = models.ForeignKey(MetaData, on_delete=models.SET_NULL, null=True, db_column = 'insert_at', related_name='todo_inserts')
     updateAt = models.ForeignKey(MetaData, on_delete=models.SET_NULL, null=True, db_column = 'update_at', related_name='todo_updates')
 

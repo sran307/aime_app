@@ -26,27 +26,29 @@ class _YesterdayState extends State<Yesterday> {
   }
 
   Future<List<dynamic>> fetchTodoData() async {
-    setState(() {
-      isLoading = true;
-    });
-    dynamic todoDetails = await GetData(todoList);
-    int status = todoDetails.statusCode;
+  setState(() {
+    isLoading = true;
+  });
 
-    if ([200, 201, 204].contains(status)) {
-      // Parse the todoDetails JSON data
-      final jsonData = jsonDecode(todoDetails.body);
-      decryptor decode = decryptor();
-      Map<String, dynamic> data = await decode.decrypt(jsonData['data']);
-      setState(() {
-        isLoading = false;
-      });
-      return data['todoYesterday']; // Return the todo data
-    } else {
-      ApiResponse apiResponse = ApiResponse();
-      await apiResponse.errorData(context, todoDetails);
-      throw Exception('Failed to fetch todo data');
-    }
+  dynamic todoDetails = await GetData(todoList);
+  int status = todoDetails.statusCode;
+
+  if ([200, 201, 204].contains(status)) {
+    // Parse the todoDetails JSON data
+    final jsonData = jsonDecode(todoDetails.body);
+    decryptor decode = decryptor();
+    Map<String, dynamic> data = await decode.decrypt(jsonData['data']);
+    setState(() {
+      isLoading = false;
+    });
+    return data['todoYesterday']; // Return the todo data
+  } else {
+    ApiResponse apiResponse = ApiResponse();
+    await apiResponse.errorData(context, todoDetails);
+    // Add a return statement here to handle the else case
+    return []; // or any other default value as needed
   }
+}
 
   Future<void> _refreshTodoData() async {
     setState(() {
@@ -180,7 +182,7 @@ class _YesterdayState extends State<Yesterday> {
                                                             child: Text('OK'),
                                                             onPressed: () {
                                                               Map<String, dynamic> data = {
-                                                                "guId": item['guId'].toString(),
+                                                                "guId": item['guid'].toString(),
                                                               };
                                                               _submitFormAndRefreshData(data);
                                                               // Navigator.of(context).pop();

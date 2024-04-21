@@ -85,12 +85,12 @@ class _GoalState extends State<Goal> {
               top: MediaQuery.of(context).size.height * 0.05,
               left: 40.0,
               child: Container(
-                width: MediaQuery.of(context).size.height * 0.13,
+                width: MediaQuery.of(context).size.width * 0.3,
                 height: MediaQuery.of(context).size.height * 0.13,
                 alignment: Alignment.center,
                 decoration: BoxDecoration(
                   gradient: kSecondaryGradientColor,
-                  borderRadius: BorderRadius.circular(50.0),
+                  shape: BoxShape.circle,
                 ),
                 child: const Text(
                   'data12',
@@ -101,12 +101,13 @@ class _GoalState extends State<Goal> {
               top: MediaQuery.of(context).size.height * 0.15,
               right: 40.0,
               child: Container(
-                width: MediaQuery.of(context).size.height * 0.13,
+                width: MediaQuery.of(context).size.width * 0.28,
                 height: MediaQuery.of(context).size.height * 0.13,
                 alignment: Alignment.center,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   gradient: kSecondaryGradientColor,
-                  borderRadius: BorderRadius.circular(50.0),
+                  shape: BoxShape.circle,
+
                 ),
                 child: const Text(
                   'data123',
@@ -117,12 +118,12 @@ class _GoalState extends State<Goal> {
               top: MediaQuery.of(context).size.height * 0.3,
               left: 40.0,
               child: Container(
-                width: MediaQuery.of(context).size.height * 0.13,
+                width: MediaQuery.of(context).size.width * 0.25,
                 height: MediaQuery.of(context).size.height * 0.13,
                 alignment: Alignment.center,
                 decoration: BoxDecoration(
                   gradient: kSecondaryGradientColor,
-                  borderRadius: BorderRadius.circular(50.0),
+                  shape: BoxShape.circle,
                 ),
                 child: const Text(
                   'data125',

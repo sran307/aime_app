@@ -9,5 +9,6 @@ urlpatterns = [
     path('register/', views.registerUser),
     path('login/', views.loginUser),
     path('todo/ins/', views.todoInsert),
-    path('todo/list/', views.todoList)
+    path('todo/list/', views.todoList),
+    path('todo/update/', views.todoUpdate)
 ]

@@ -30,13 +30,13 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             const SizedBox(width: 16),
-            IconBtnWithCounter(
-              svgSrc: Icons.event,
-              Icolor: iconColor,
-              press: () {
-                Get.to(EventList(), transition: Transition.downToUp);
-              },
-            ),
+            // IconBtnWithCounter(
+            //   svgSrc: Icons.event,
+            //   Icolor: iconColor,
+            //   press: () {
+            //     Get.to(EventList(), transition: Transition.downToUp);
+            //   },
+            // ),
             const SizedBox(width: 8),
             IconBtnWithCounter(
               svgSrc: Icons.notifications_active,

@@ -1,5 +1,7 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
+import 'package:dailyme/constants/flashMessage.dart';
+
 
 class ApiResponse {
   Future<void> errorData(BuildContext context, response) async {
@@ -17,7 +19,9 @@ class ApiResponse {
       errorMessage = 'Failed to load data: ${response.statusCode}';
     }
 
-    _showErrorDialog(context, errorMessage);
+    // _showErrorDialog(context, errorMessage);
+    FlashMessage.showMessage(context, errorMessage, 400);
+    Navigator.of(context).pop();
   }
 
   void _showErrorDialog(BuildContext context, String errorMessage) {

@@ -6,6 +6,8 @@ import 'package:dailyme/services/urls.dart';
 import 'package:dailyme/services/auth.dart';
 import 'package:dailyme/models/api_response.dart';
 import 'package:dailyme/services/DataDecryptor.dart';
+import 'package:dailyme/services/TokenHandler.dart';
+import 'package:dailyme/services/urls.dart';
 
 class Yesterday extends StatefulWidget {
   @override
@@ -52,6 +54,12 @@ class _YesterdayState extends State<Yesterday> {
     });
   }
 
+  Future<void> _submitFormAndRefreshData(Map<String, dynamic> data) async {
+    TokenHandler tokenHandler = TokenHandler(context);
+    await tokenHandler.submitCommonForm(data, todoUpdate);
+    await _refreshTodoData();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Visibility(
@@ -72,8 +80,10 @@ class _YesterdayState extends State<Yesterday> {
                 const Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text("Pending Actions", style: formHeading,),
-                    // Text("27/07/2024"),
+                    Text(
+                      "Pending Actions",
+                      style: formHeading,
+                    ),
                   ],
                 ),
                 Expanded(
@@ -122,9 +132,76 @@ class _YesterdayState extends State<Yesterday> {
                                     for (var item in snapshot.data!) ...[
                                       Padding(
                                         padding:
-                                            const EdgeInsets.only(left: 10),
-                                        child:
-                                            Text(item['todoName'].toString(), style: paragraph,),
+                                            const EdgeInsets.fromLTRB(10, 0, 10, 0),
+                                        child: Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceBetween,
+                                          children: [
+                                            Text(
+                                              item['todoName'].toString(),
+                                              style: paragraph,
+                                            ),
+                                            SizedBox(
+                                              width: MediaQuery.of(context)
+                                                      .size
+                                                      .width *
+                                                  0.1,
+                                              height: MediaQuery.of(context)
+                                                      .size
+                                                      .height *
+                                                  0.1,
+                                              child: FloatingActionButton(
+                                                shape: const CircleBorder(),
+                                                backgroundColor: bg1,
+                                                child: const Center(
+                                                  child: Icon(
+                                                    Icons.upgrade,
+                                                    size: 30.0,
+                                                    color: iconColor1,
+                                                  ),
+                                                ),
+                                                onPressed: () {
+                                                  showDialog(
+                                                    context: context,
+                                                    builder: (BuildContext
+                                                        context) {
+                                                      return AlertDialog(
+                                                        title: const Text(
+                                                            'Confirmation', style: formHeading,),
+                                                        content: const Text(
+                                                          'Do you complete?',
+                                                          style: TextStyle(
+                                                            color:
+                                                                kSuccessColor,
+                                                          ),
+                                                        ),
+                                                        actions: <Widget>[
+                                                          TextButton(
+                                                            child: Text('OK'),
+                                                            onPressed: () {
+                                                              Map<String, dynamic> data = {
+                                                                "guId": item['guId'].toString(),
+                                                              };
+                                                              _submitFormAndRefreshData(data);
+                                                              // Navigator.of(context).pop();
+                                                            },
+                                                          ),
+                                                          TextButton(
+                                                            child: const Text(
+                                                                'Cancel'),
+                                                            onPressed: () {
+                                                              Navigator.of(context).pop();
+                                                            },
+                                                          ),
+                                                        ],
+                                                      );
+                                                    },
+                                                  );
+                                                },
+                                              ),
+                                            ),
+                                          ],
+                                        ),
                                       ),
                                       const Divider(
                                         color: kDark,

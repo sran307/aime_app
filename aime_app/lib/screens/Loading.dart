@@ -49,12 +49,12 @@ class _AvatarWithLoaderState extends State<AvatarWithLoader> {
     bool isExist = await checkExist(deviceDetails.deviceData);
     if (isExist) {
       Navigator.of(context).pushAndRemoveUntil(
-        MaterialPageRoute(builder: (context) => LoginForm()),
+        MaterialPageRoute(builder: (context) => const LoginForm()),
         (route) => false,
       );
     } else {
       Navigator.of(context).pushAndRemoveUntil(
-        MaterialPageRoute(builder: (context) => RegisterForm()),
+        MaterialPageRoute(builder: (context) => const RegisterForm()),
         (route) => false,
       );
     }

@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'dart:developer' as developer;
 
+import 'package:dailyme/constants/flashMessage.dart';
 import 'package:dailyme/constants/theme.dart';
 import "package:flutter/material.dart";
 import 'package:dailyme/screens/Loading.dart';
@@ -29,9 +30,12 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Daily ME',
       theme: AppTheme.lightTheme(context),
-      home: token != null && !JwtDecoder.isExpired(token!)
+      home: ScaffoldMessenger(
+        key: FlashMessage.scaffoldMessengerKey,
+        child: token != null && !JwtDecoder.isExpired(token!)
           ? Home(token: token!)
           : Loading(),
+      )
       // home:Loading(),
     );
   }

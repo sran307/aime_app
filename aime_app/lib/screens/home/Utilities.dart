@@ -1,8 +1,10 @@
+import 'package:dailyme/screens/events/EventList.dart';
+import 'package:dailyme/screens/goals/goals.dart';
 import 'package:flutter/material.dart';
 import 'package:dailyme/constants/constants.dart';
 import 'package:get/get.dart';
 import 'package:dailyme/screens/todo/ToDoList.dart';
-
+import 'package:flutter_animate/flutter_animate.dart';
 class Utilities extends StatelessWidget {
   const Utilities({Key? key});
 
@@ -13,8 +15,7 @@ class Utilities extends StatelessWidget {
       child: Container(
         // margin:EdgeInsets.all(5),
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(
-                      15),
+          borderRadius: BorderRadius.circular(15),
           gradient: kSecondaryGradientColor,
         ),
         child: SizedBox(
@@ -28,13 +29,16 @@ class Utilities extends StatelessWidget {
                   children: [
                     Expanded(
                       child: Container(
-                        padding: EdgeInsets.all(8),
-                        child: Center(child: Text('UTILITIES', style: subHeading,))
-                      ),
+                          padding: EdgeInsets.all(8),
+                          child: Center(
+                              child: const Text(
+                            'UTILITIES',
+                            style: subHeading,
+                          )
+                                  .animate()
+                                  .fade(duration: 500.ms)
+                                  .scale(delay: 500.ms))),
                     ),
-                
-                    
-                    
                   ],
                 ),
                 Row(
@@ -51,19 +55,18 @@ class Utilities extends StatelessWidget {
                         ),
                       ),
                     ),
-                
                     Expanded(
                       child: Container(
                         padding: EdgeInsets.all(8),
                         child: ElevatedButton(
                           onPressed: () {
-                            Get.to(ToDoList(), transition: Transition.circularReveal);
+                            Get.to(ToDoList(),
+                                transition: Transition.circularReveal);
                           },
                           child: Text('Alarm'),
                         ),
                       ),
                     ),
-                    
                   ],
                 ),
                 Row(
@@ -74,25 +77,25 @@ class Utilities extends StatelessWidget {
                         padding: EdgeInsets.all(8),
                         child: ElevatedButton(
                           onPressed: () {
-                            Get.to(ToDoList(), transition: Transition.circularReveal);
+                            Get.to(Goal(),
+                                transition: Transition.circularReveal);
                           },
                           child: Text('Goals'),
                         ),
                       ),
                     ),
-                
                     Expanded(
                       child: Container(
                         padding: EdgeInsets.all(8),
                         child: ElevatedButton(
                           onPressed: () {
-                            Get.to(ToDoList(), transition: Transition.circularReveal);
+                            Get.to(ToDoList(),
+                                transition: Transition.circularReveal);
                           },
-                          child: Text('Assets'),
+                          child: Text('Finance'),
                         ),
                       ),
                     ),
-                    
                   ],
                 ),
                 Row(
@@ -103,25 +106,25 @@ class Utilities extends StatelessWidget {
                         padding: EdgeInsets.all(8),
                         child: ElevatedButton(
                           onPressed: () {
-                            Get.to(ToDoList(), transition: Transition.circularReveal);
+                            Get.to(EventList(),
+                                transition: Transition.circularReveal);
                           },
-                          child: Text('Liability'),
+                          child: Text('Events'),
                         ),
                       ),
                     ),
-                
                     Expanded(
                       child: Container(
                         padding: EdgeInsets.all(8),
                         child: ElevatedButton(
                           onPressed: () {
-                            Get.to(ToDoList(), transition: Transition.circularReveal);
+                            Get.to(ToDoList(),
+                                transition: Transition.circularReveal);
                           },
                           child: Text('Trade'),
                         ),
                       ),
                     ),
-                    
                   ],
                 ),
                 Row(
@@ -132,25 +135,25 @@ class Utilities extends StatelessWidget {
                         padding: EdgeInsets.all(8),
                         child: ElevatedButton(
                           onPressed: () {
-                            Get.to(ToDoList(), transition: Transition.circularReveal);
+                            Get.to(ToDoList(),
+                                transition: Transition.circularReveal);
                           },
                           child: Text('Locker'),
                         ),
                       ),
                     ),
-                
                     Expanded(
                       child: Container(
                         padding: EdgeInsets.all(8),
                         child: ElevatedButton(
                           onPressed: () {
-                            Get.to(ToDoList(), transition: Transition.circularReveal);
+                            Get.to(ToDoList(),
+                                transition: Transition.circularReveal);
                           },
                           child: Text('Trade'),
                         ),
                       ),
                     ),
-                    
                   ],
                 ),
               ],

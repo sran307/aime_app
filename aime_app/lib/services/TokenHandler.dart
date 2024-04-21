@@ -7,6 +7,8 @@ import 'package:dailyme/services/auth.dart';
 import 'package:dailyme/services/deviceDetails.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:dailyme/constants/flashMessage.dart';
+
 class TokenHandler {
   final BuildContext context;
   late SharedPreferences prefs;
@@ -65,30 +67,37 @@ class TokenHandler {
       final jsonData = jsonDecode(response.body);
       // Now you can use the parsed data as needed
       // SuccessAlert.show(context, jsonData['message']);
-      showDialog(
-        context: context,
-        builder: (BuildContext context) {
-          return AlertDialog(
-            // alignment: Alignment.topCenter,
-            title: Text('Success'),
-            content: Text(jsonData['message'], style: const TextStyle(
-              color: kSuccessColor,
-            ),),
-            actions: <Widget>[
-              TextButton(
-                child: Text('OK'),
-                onPressed: () {
-                  Navigator.of(context).pop(); 
-                  // Get.to(ToDoList(), transition: Transition.downToUp);// Close the dialog
-                },
-              ),
-            ],
-          );
-        });
+      // showDialog(
+      //   context: context,
+      //   builder: (BuildContext context) {
+      //     return Builder(
+      //       builder: (BuildContext context) {
+      //         return AlertDialog(
+      //           // alignment: Alignment.topCenter,
+      //           title: Text('Success'),
+      //           content: Text(jsonData['message'], style: const TextStyle(
+      //             color: kSuccessColor,
+      //           ),),
+      //           actions: <Widget>[
+      //             TextButton(
+      //               child: Text('OK'),
+      //               onPressed: () {
+      //                 Navigator.of(context).pop(); 
+      //                 // Get.to(ToDoList(), transition: Transition.downToUp);// Close the dialog
+      //               },
+      //             ),
+      //           ],
+      //         );
+      //       }
+      //     );
+      //   });
+      FlashMessage.showMessage(context, jsonData['message'], 200);
+      Navigator.of(context).pop();
 
     } else {
       ApiResponse apiResponse = ApiResponse();
       await apiResponse.errorData(context, response);
+      
     }
   }
 }

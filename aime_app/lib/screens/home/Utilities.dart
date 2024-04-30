@@ -5,6 +5,9 @@ import 'package:dailyme/constants/constants.dart';
 import 'package:get/get.dart';
 import 'package:dailyme/screens/todo/ToDoList.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:dailyme/services/notificartion.dart';
+import 'package:dailyme/widgets/top_bar.dart';
+import 'package:awesome_notifications/awesome_notifications.dart';
 class Utilities extends StatelessWidget {
   const Utilities({Key? key});
 
@@ -24,23 +27,23 @@ class Utilities extends StatelessWidget {
           child: SingleChildScrollView(
             child: Column(
               children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Expanded(
-                      child: Container(
-                          padding: EdgeInsets.all(8),
-                          child: Center(
-                              child: const Text(
-                            'UTILITIES',
-                            style: subHeading,
-                          )
-                                  .animate()
-                                  .fade(duration: 500.ms)
-                                  .scale(delay: 500.ms))),
-                    ),
-                  ],
-                ),
+                // Row(
+                //   mainAxisAlignment: MainAxisAlignment.center,
+                //   children: [
+                //     Expanded(
+                //       child: Container(
+                //           padding: EdgeInsets.all(8),
+                //           child: Center(
+                //               child: const Text(
+                //             'UTILITIES',
+                //             style: subHeading,
+                //           )
+                //                   .animate()
+                //                   .fade(duration: 500.ms)
+                //                   .scale(delay: 500.ms))),
+                //     ),
+                //   ],
+                // ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
@@ -88,9 +91,14 @@ class Utilities extends StatelessWidget {
                       child: Container(
                         padding: EdgeInsets.all(8),
                         child: ElevatedButton(
-                          onPressed: () {
-                            Get.to(ToDoList(),
-                                transition: Transition.circularReveal);
+                          onPressed: () async {
+                            await NotificationService.showNotification(
+                              title: "title of",
+                              body: "message body",
+                              summary:"test summary",
+                              notificationLayout:NotificationLayout.Inbox
+                            );
+                            // NotificationService.createNewNotification();
                           },
                           child: Text('Finance'),
                         ),

@@ -43,12 +43,21 @@ const buttonGradient = LinearGradient(
     Color.fromARGB(255, 21, 153, 109)
   ],
 );
+// const kSecondaryGradientColor = LinearGradient(
+//   begin: Alignment.topLeft,
+//   end: Alignment.bottomRight,
+//   colors: [
+//     Color.fromARGB(255, 247, 189, 115),
+//     Color.fromARGB(255, 255, 214, 132)
+//   ],
+// );
+
 const kSecondaryGradientColor = LinearGradient(
   begin: Alignment.topLeft,
   end: Alignment.bottomRight,
   colors: [
-    Color.fromARGB(255, 247, 189, 115),
-    Color.fromARGB(255, 255, 214, 132)
+    Color.fromARGB(255, 3, 72, 91),
+    Color.fromARGB(255, 10, 117, 156)
   ],
 );
 

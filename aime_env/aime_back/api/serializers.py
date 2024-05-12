@@ -1,7 +1,7 @@
 from rest_framework import serializers
 from django.contrib.auth.models import User
 
-from .models import deviceDetails, CustomUser, Todo, MetaData
+from .models import deviceDetails, CustomUser, Todo, MetaData, StockNames
 
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
@@ -36,4 +36,9 @@ class todoSerializer(serializers.ModelSerializer):
 class metaDataSerializer(serializers.ModelSerializer):
     class Meta:
         model = MetaData
+        fields = '__all__'
+
+class stockNameSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = StockNames
         fields = '__all__'

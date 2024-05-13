@@ -93,7 +93,7 @@ def getDailyData(request):
                                     adjClose=adjClose, 
                                     stock=stock, 
                                     startDate=start_date, 
-                                    endDate=end_date,
+                                    endDate=end_date-timedelta(days=1),
                                     prevDate = prev_date)
                 stock_data.save()
                 
@@ -156,15 +156,20 @@ def dataScreen(request):
                     WHERE `date` = %s
                     AND `stock` = %s
                 )
+                AND `close` > (
+                    SELECT `open`
+                    FROM trade_data 
+                    WHERE `date` = %s
+                    AND `stock` = %s
+                )
                 AND `close` > 100
                 AND `close` <= 200
                 AND volume > 1000000;
             """
 
             with connection.cursor() as cursor:
-                cursor.execute(query, [target_date, stock_id, date_1, stock_id, date_2, stock_id, date_2, stock_id])
+                cursor.execute(query, [target_date, stock_id, date_1, stock_id, date_2, stock_id, date_2, stock_id, date_2, stock_id])
                 rows = cursor.fetchall()
-            
                 for stock in rows:
                     stocks = StockNames.objects.filter(id = stock[0]).values()
                     for stock in stocks:                       

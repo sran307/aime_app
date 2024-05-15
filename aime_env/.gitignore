@@ -4,3 +4,7 @@ env/
 *.pyc
 *.pyo
 __pycache__/
+lib/python3.10/site-packages/
+bin/
+etc/
+share/

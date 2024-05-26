@@ -172,3 +172,25 @@ class StockRatios(models.Model):
         db_table = 'stock_ratios'
     def __str__(self):
         return f"StockJson(id={self.id})"
+
+class StockHoldings(models.Model):
+    stock = models.ForeignKey(StockNames, on_delete=models.CASCADE, null=True, db_column = 'stock', related_name='holding_stock_name')
+    date = models.DateField(null=True)
+    pmPctT= models.FloatField(null=True, blank=True)
+    pmPctP= models.FloatField(null=True, blank=True)
+    plPctT= models.FloatField(null=True, blank=True)
+    uPlPctT= models.FloatField(null=True, blank=True)
+    mfPctT= models.FloatField(null=True, blank=True)
+    isPctT= models.FloatField(null=True, blank=True)
+    diPctT= models.FloatField(null=True, blank=True)
+    othDiPctT= models.FloatField(null=True, blank=True)
+    othExInsDiPctT= models.FloatField(null=True, blank=True)
+    fiPctT=models.FloatField(null=True, blank=True)
+    rhPctT= models.FloatField(null=True, blank=True)
+    othPctT= models.FloatField(null=True, blank=True)
+    rOthPctT= models.FloatField(null=True, blank=True)
+    class Meta:
+        db_table = 'stock_holdings'
+
+    def __int__(self):
+        return self.id

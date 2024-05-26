@@ -8,7 +8,7 @@ from .stock_details import stockDetails
 from pprint import pprint
 import yfinance as yf
 from ..serializers import stockNameSerializer
-from ..models import StockNames, TradeData, Holidays, SwingData, StockCodes, StockRatios
+from ..models import StockNames, TradeData, Holidays, SwingData, StockCodes, StockRatios, StockHoldings
 import pandas as pd
 from datetime import datetime, timedelta, date
 import math
@@ -401,6 +401,7 @@ def GetFundas(request):
                 # Navigate to the 'ratios' object
                 ratios = json_content.get('props', {}).get('pageProps', {}).get('securityInfo', {}).get('ratios', {})
                 quotes = json_content.get('props', {}).get('pageProps', {}).get('securityQuote', {})
+                holdings = json_content.get('props', {}).get('pageProps', {}).get('securitySummary', {}).get('holdings',{}).get('holdings',{})
                 # Extract the required attributes
                 stock_json, created = StockRatios.objects.update_or_create(stock=stock.id, defaults={
                     'stock':StockNames.objects.get(pk=stock.id),
@@ -447,6 +448,39 @@ def GetFundas(request):
                     print("Existing record updated.")
                 else:
                     print("Data inserted")
+
+                for entry in holdings:
+                    date_str = entry['date'].replace(' ', '')  # Remove any extra spaces
+                    date_obj = datetime.strptime(date_str, '%Y-%m-%dT%H:%M:%S.%fZ').date()
+                    holding = entry['data']
+                    created = StockHoldings.objects.get_or_create(
+                        date=date_obj,
+                        stock=stock.id,
+                        defaults={
+                            'stock':StockNames.objects.get(pk=stock.id),
+                            'date':date_obj,
+                            'pmPctT': holding.get('pmPctT'),
+                            'pmPctP': holding.get('pmPctP'),
+                            'plPctT': holding.get('plPctT'),
+                            'uPlPctT': holding.get('uPlPctT'),
+                            'mfPctT': holding.get('mfPctT'),
+                            'isPctT': holding.get('isPctT'),
+                            'diPctT': holding.get('diPctT'),
+                            'othDiPctT': holding.get('othDiPctT'),
+                            'othExInsDiPctT': holding.get('othExInsDiPctT'),
+                            'fiPctT': holding.get('fiPctT'),
+                            'rhPctT': holding.get('rhPctT'),
+                            'othPctT': holding.get('othPctT'),
+                            'rOthPctT': holding.get('rOthPctT'),
+                        }
+                    )
+
+                    if created:
+                        print(f"Data inserted for date {date_obj}")
+                    else:
+                        print(f"Data exists {date_obj}")
+
+                
             else:
                 return JsonResponse({'status': 'error', 'message': 'Script tag with id "__NEXT_DATA__" not found.'})
 

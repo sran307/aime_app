@@ -8,3 +8,6 @@ lib/python3.10/site-packages/
 bin/
 etc/
 share/
+soup_content.html
+ticker.json
+../../json/

@@ -11,9 +11,15 @@ urlpatterns = [
     path('todo/ins/', views.todoInsert),
     path('todo/list/', views.todoList),
     path('todo/update/', views.todoUpdate),
+    
+    path('stock/codes/', stock_views.getStockCode),
+    path('stock/names/', stock_views.getStockName),
     path('stock/quotes/', stock_views.getQuotes),
     path('stock/daily/', stock_views.getDailyData),
     path('stock/screen/', stock_views.dataScreen),
     path('stock/holidays/', stock_views.getHolidays),
-    path('stock/predict/', stock_ai.getPredictPrice),
+    # path('stock/predict/', stock_ai.getPredictPrice),
+    
+    path('stock/fundas/', stock_views.GetFundas),
+    path('stock/slug/', stock_views.GetSlug)
 ]

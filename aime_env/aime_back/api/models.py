@@ -53,9 +53,13 @@ class StockNames(models.Model):
     stockName = models.CharField(max_length=150, db_column='stock_name')
     stockCode = models.CharField(max_length=50, db_column='stock_code')
     yCode = models.CharField(max_length=50, db_column='yhoo_code')
-    isActive = models.BooleanField(default=True, db_column='is_active')
+    isActive = models.BooleanField(default=False, db_column='is_active')
     insertAt = models.ForeignKey(MetaData, on_delete=models.SET_NULL, null=True, db_column = 'insert_at', related_name='stock_inserts')
     updateAt = models.ForeignKey(MetaData, on_delete=models.SET_NULL, null=True, db_column = 'update_at', related_name='stock_updates')
+    sector = models.CharField(max_length=150, null=True, db_column='sector')
+    industry = models.CharField(max_length=150, null=True,  db_column='industry')
+    isFno = models.BooleanField(default=False, db_column='is_fno')
+    stockSlug = models.CharField(max_length=150, null=True, db_column='stock_slug')
 
     class Meta:
         db_table = 'stock_names'
@@ -64,7 +68,7 @@ class StockNames(models.Model):
         return self.stockName
     
 class TradeData(models.Model):
-    stock = models.ForeignKey(StockNames, on_delete=models.SET_NULL, null=True, db_column = 'stock', related_name='stock_name')
+    stock = models.ForeignKey(StockNames, on_delete=models.CASCADE, null=True, db_column = 'stock', related_name='stock_name')
     date = models.DateField(db_column='date')
     startDate = models.DateField(null=True,db_column='start_date')
     endDate = models.DateField(null=True,db_column='end_date')
@@ -98,7 +102,7 @@ class Holidays(models.Model):
         return self.id
     
 class SwingData(models.Model):
-    stock = models.ForeignKey(StockNames, on_delete=models.SET_NULL, null=True, db_column = 'stock', related_name='swing_stock_name')
+    stock = models.ForeignKey(StockNames, on_delete=models.CASCADE, null=True, db_column = 'stock', related_name='swing_stock_name')
     date = models.DateField(db_column='date')
     startDate = models.DateField(null=True,db_column='start_date')
     endDate = models.DateField(null=True,db_column='end_date') 
@@ -115,3 +119,56 @@ class SwingData(models.Model):
     def __int__(self):
         return self.id
     
+class StockCodes(models.Model):
+    stockCode = models.CharField(max_length=50, db_column='stock_code')
+    isUsed = models.BooleanField(default=False, db_column='is_used')     
+    
+    class Meta:
+        db_table = 'stock_codes'
+
+    def __int__(self):
+        return self.id
+    
+class StockRatios(models.Model):
+    stock = models.ForeignKey(StockNames, on_delete=models.CASCADE, null=True, db_column = 'stock', related_name='ratio_stock_name')
+    risk = models.FloatField(null=True, blank=True)
+    m3AvgVol = models.FloatField(null=True, blank=True)
+    wpct_4 = models.FloatField(null=True, blank=True) 
+    w52High = models.FloatField(null=True, blank=True)
+    w52Low = models.FloatField(null=True, blank=True)
+    wpct_52 = models.FloatField(null=True, blank=True) 
+    beta = models.FloatField(null=True, blank=True)
+    bps = models.FloatField(null=True, blank=True)
+    divYield = models.FloatField(null=True, blank=True)
+    eps = models.FloatField(null=True, blank=True)
+    inddy = models.FloatField(null=True, blank=True)
+    indpb = models.FloatField(null=True, blank=True)
+    indpe = models.FloatField(null=True, blank=True)
+    marketCap = models.FloatField(null=True, blank=True)
+    mrktCapRank = models.IntegerField(null=True, blank=True)
+    pb = models.FloatField(null=True, blank=True)
+    pe = models.FloatField(null=True, blank=True)
+    roe = models.FloatField(null=True, blank=True)
+    nShareholders = models.IntegerField(null=True, blank=True)
+    lastPrice = models.FloatField(null=True, blank=True)
+    ttmPe = models.FloatField(null=True, blank=True)
+    marketCapLabel = models.CharField(max_length=50, null=True, blank=True)
+    m12Vol = models.FloatField(null=True, blank=True) 
+    mrktCapf = models.FloatField(null=True, blank=True)
+    apef = models.FloatField(null=True, blank=True)
+    pbr = models.FloatField(null=True, blank=True)
+    etfLiq = models.FloatField(null=True, blank=True)
+    etfLiqLabel = models.CharField(max_length=50, null=True, blank=True)
+    dayChange = models.FloatField(null=True, blank=True)
+    weekChange = models.FloatField(null=True, blank=True)
+    monthChange = models.FloatField(null=True, blank=True)
+    away52H = models.FloatField(null=True, blank=True)
+    away52L = models.FloatField(null=True, blank=True)
+    volumeBreakOut = models.FloatField(null=True, blank=True)
+    isCrossedHigh = models.BooleanField(default=False, null=True)
+    isCrossedLow = models.BooleanField(default=False, null=True)
+
+    class Meta:
+        db_table = 'stock_ratios'
+    def __str__(self):
+        return f"StockJson(id={self.id})"

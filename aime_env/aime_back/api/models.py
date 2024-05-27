@@ -194,3 +194,60 @@ class StockHoldings(models.Model):
 
     def __int__(self):
         return self.id
+
+class StockProfitRatios(models.Model):
+    stock = models.ForeignKey(StockNames, on_delete=models.CASCADE, null=True, db_column = 'stock', related_name='profit_stock_name')
+    pat = models.FloatField(null=True, blank=True)
+    ebita= models.FloatField(null=True, blank=True)
+    ebitam= models.FloatField(null=True, blank=True)
+    roe= models.FloatField(null=True, blank=True)
+    roce= models.FloatField(null=True, blank=True)
+    roa= models.FloatField(null=True, blank=True)
+    eps= models.FloatField(null=True, blank=True)
+
+    class Meta:
+        db_table ='stock_profit_ratios'
+
+    def __int__(self):
+        return self.id
+    
+
+class StockLeverageRatios(models.Model):
+    stock = models.ForeignKey(StockNames, on_delete=models.CASCADE, null=True, db_column = 'stock', related_name='lvr_stock_name')
+    intCover = models.FloatField(null=True, blank=True)
+    debtEq=models.FloatField(null=True, blank=True)
+    debtAs=models.FloatField(null=True, blank=True)
+    finLe = models.FloatField(null=True, blank=True)
+
+    class Meta:
+        db_table ='stock_leverage_ratios'
+
+    def __int__(self):
+        return self.id
+    
+class StockValuationRatios(models.Model):
+    stock = models.ForeignKey(StockNames, on_delete=models.CASCADE, null=True, db_column = 'stock', related_name='vlt_stock_name')
+    pe = models.FloatField(null=True, blank=True)
+    pbv= models.FloatField(null=True, blank=True)
+    ps= models.FloatField(null=True, blank=True) 
+
+    class Meta:
+        db_table = 'stock_valuation_ratios'
+
+    def __int__(self):
+        return self.id
+    
+class StockOperatingRatios(models.Model):
+    stock = models.ForeignKey(StockNames, on_delete=models.CASCADE, null=True, db_column = 'stock', related_name='oprt_stock_name')
+    fxtr= models.FloatField(null=True, blank=True)
+    wctr= models.FloatField(null=True, blank=True)
+    tatr= models.FloatField(null=True, blank=True)
+    rtr= models.FloatField(null=True, blank=True)
+
+    class Meta:
+        db_table ='stock_operating_ratios'
+
+    def __int__(self):
+        return self.id
+
+

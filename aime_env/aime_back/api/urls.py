@@ -21,5 +21,6 @@ urlpatterns = [
     # path('stock/predict/', stock_ai.getPredictPrice),
     
     path('stock/fundas/', stock_views.GetFundas),
-    path('stock/slug/', stock_views.GetSlug)
+    path('stock/slug/', stock_views.GetSlug),
+    path('stock/penny/', stock_views.GetPenny),
 ]

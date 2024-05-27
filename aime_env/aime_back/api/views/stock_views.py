@@ -519,3 +519,39 @@ def GetSlug(request):
             print(f"An error occurred: {e}")
         
     return Response({'status': 200})
+
+@api_view(['GET'])
+def GetPenny(request):
+    stockData =[]
+    procesQry = """
+                SELECT
+                    sn.id,
+                    sn.stock_name,
+                FROM
+                    stock_names sn
+                    LEFT JOIN stock_ratios sr ON sr.stock = sn.id
+                    LEFT JOIN stock_holdings sh ON sh.stock = sn.id
+                WHERE
+                    sr.w52High <= 100
+                    AND sh.date =(
+                        SELECT
+                            MAX(date)
+                        FROM
+                            stock_holdings
+                        WHERE
+                            stock = sh.stock)
+                    AND sh.pmPctT > 50
+                    AND m3AvgVol >10000;
+                """
+    with connection.cursor() as cursor:
+        cursor.execute(procesQry)
+        rows = cursor.fetchall()
+
+        for data in rows:
+            stock_data = {
+                        'id': data[0],
+                        'stockName': data[1],
+                    }
+            stockData.append(stock_data)
+            
+    return Response({'status': 200, 'data':stockData}, 200)

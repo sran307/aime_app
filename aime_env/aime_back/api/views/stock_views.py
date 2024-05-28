@@ -8,7 +8,7 @@ from .stock_details import stockDetails
 from pprint import pprint
 import yfinance as yf
 from ..serializers import stockNameSerializer
-from ..models import StockNames, TradeData, Holidays, SwingData, StockCodes, StockRatios, StockHoldings
+from ..models import StockNames, TradeData, Holidays, SwingData, StockCodes, StockRatios, StockHoldings, StockForecast, StockCommentary
 import pandas as pd
 from datetime import datetime, timedelta, date
 import math
@@ -368,6 +368,12 @@ def getHolidays(request):
 
 @api_view(['GET'])
 def GetFundas(request):
+    dataExist = StockCommentary.objects.exists()
+    if dataExist:
+        tableName = 'stock_commentary'
+        with connection.cursor() as cursor:
+            cursor.execute("TRUNCATE TABLE {};".format(tableName))
+
     stocks = StockNames.objects.filter(Q(isActive=True) | Q(isFno=True))
     for stock in stocks:
         slug = stock.stockSlug
@@ -402,8 +408,10 @@ def GetFundas(request):
                 ratios = json_content.get('props', {}).get('pageProps', {}).get('securityInfo', {}).get('ratios', {})
                 quotes = json_content.get('props', {}).get('pageProps', {}).get('securityQuote', {})
                 holdings = json_content.get('props', {}).get('pageProps', {}).get('securitySummary', {}).get('holdings',{}).get('holdings',{})
+                forecast = json_content.get('props', {}).get('pageProps', {}).get('securitySummary', {}).get('forecast',{})
+
                 # Extract the required attributes
-                stock_json, created = StockRatios.objects.update_or_create(stock=stock.id, defaults={
+                created = StockRatios.objects.update_or_create(stock=stock.id, defaults={
                     'stock':StockNames.objects.get(pk=stock.id),
                     'risk': ratios.get('risk'),
                     'm3AvgVol': ratios.get('3mAvgVol'),
@@ -453,7 +461,7 @@ def GetFundas(request):
                     date_str = entry['date'].replace(' ', '')  # Remove any extra spaces
                     date_obj = datetime.strptime(date_str, '%Y-%m-%dT%H:%M:%S.%fZ').date()
                     holding = entry['data']
-                    created = StockHoldings.objects.get_or_create(
+                    created = StockHoldings.objects.update_or_create(
                         date=date_obj,
                         stock=stock.id,
                         defaults={
@@ -480,6 +488,82 @@ def GetFundas(request):
                     else:
                         print(f"Data exists {date_obj}")
 
+                buy = forecast.get('percBuyReco')
+                if buy:
+                    sell = 100-buy
+                else:
+                    buy=0
+                    sell=0
+                forecastInsert = StockForecast.objects.update_or_create(
+                    stock=stock.id,
+                    defaults={
+                        'stock':StockNames.objects.get(pk=stock.id),
+                        'total':forecast.get('totalReco'),
+                        'buy':buy,
+                        'sell':sell
+                    }
+                )
+
+                if forecastInsert:
+                    print("inserted")
+                else:
+                    print("updated")
+
+                commentary = json_content.get('props', {}).get('pageProps', {}).get('commentary', {})
+                financial_statements = commentary['financialStatement']
+                for category, statements in financial_statements.items():
+                    for statement in statements:
+                        StockCommentary.objects.create(
+                            stock=StockNames.objects.get(pk=stock.id),
+                            title=statement['title'],
+                            mood=statement['mood'],
+                            message=statement['message'],
+                            description=statement['description'],
+                            tag=statement['tag'],
+                            itemType=category,
+                            item='financialStatement'
+                        )
+                financial_statements = commentary['interimFinancialStatement']
+                for category, statements in financial_statements.items():
+                    for statement in statements:
+                        StockCommentary.objects.create(
+                            stock=StockNames.objects.get(pk=stock.id),
+                            title=statement['title'],
+                            mood=statement['mood'],
+                            message=statement['message'],
+                            description=statement['description'],
+                            tag=statement['tag'],
+                            itemType=category,
+                            item='interimFinancialStatement'
+                        )
+
+                commentary = json_content.get('props', {}).get('pageProps', {}).get('holdingsCommentary', {})
+                financial_statements = commentary['holdings']
+                for category, statements in financial_statements.items():
+                    for statement in statements:
+                        StockCommentary.objects.create(
+                            stock=StockNames.objects.get(pk=stock.id),
+                            title=statement['title'],
+                            mood=statement['mood'],
+                            message=statement['message'],
+                            description=statement['description'],
+                            itemType=category,
+                            item='holdings'
+                        )
+
+                commentary = json_content.get('props', {}).get('pageProps', {}).get('eventsCommentary', {})
+                financial_statements = commentary['corporates']
+                for category, statements in financial_statements.items():
+                    for statement in statements:
+                        StockCommentary.objects.create(
+                            stock=StockNames.objects.get(pk=stock.id),
+                            title=statement['title'],
+                            mood=statement['mood'],
+                            message=statement['message'],
+                            description=statement['description'],
+                            itemType=category,
+                            item='corporates'
+                        )
                 
             else:
                 return JsonResponse({'status': 'error', 'message': 'Script tag with id "__NEXT_DATA__" not found.'})

@@ -250,4 +250,31 @@ class StockOperatingRatios(models.Model):
     def __int__(self):
         return self.id
 
+class StockCommentary(models.Model):
+    stock = models.ForeignKey(StockNames, on_delete=models.CASCADE, null=True, db_column = 'stock', related_name='cmnt_stock_name')
+    item = models.CharField(max_length=100,null=True)
+    itemType = models.CharField(max_length=100,null=True) 
+    mood = models.CharField(max_length=100,null=True)
+    title=models.CharField(max_length=100,null=True)
+    message = models.TextField(null=True)
+    description=models.TextField(null=True)
+    tag   =models.CharField(max_length=100,null=True)
 
+    class Meta:
+        db_table='stock_commentary'
+
+    def __int__(self):
+        return self.id
+
+class StockForecast(models.Model):
+    stock = models.ForeignKey(StockNames, on_delete=models.CASCADE, null=True, db_column = 'stock', related_name='forecast_stock_name')
+    total=models.FloatField(null=True)
+    buy=models.FloatField(null=True)
+    sell= models.FloatField(null=True)
+    nuet=models.FloatField(null=True)
+
+    class Meta:
+        db_table='stock_forecast'
+
+    def __int__(self):
+        return self.id

@@ -1,0 +1,76 @@
+{'sid': 'PAIS', 'financialStatement': {'income': [
+            {'mood': 'Positive', 'title': 'Higher than Industry Revenue Growth', 'message': 'Over the last 5 years, revenue has grown at a yearly rate of 76.79%, vs industry avg of 10.46%', 'description': 'A higher-than-industry revenue growth represents increased potential for the company to increase their market share', 'tag': 'normal'
+            },
+            {'mood': 'Positive', 'title': 'Increasing Market Share', 'message': 'Over the last 5 years, market share increased from 0.02% to 0.25%', 'description': "Market share is the percentage of an industry's total sales going to a particular company. It gives a general idea of the size of a company v/s its competitors", 'tag': 'normal'
+            },
+            {'mood': 'Positive', 'title': 'Higher than Industry Revenue Growth', 'message': 'Over the last 5 years, revenue growth has averaged 86.85%, vs industry avg of 11.06%', 'description': 'A higher-than-industry revenue growth represents increased potential for the company to increase their market share', 'tag': 'growth'
+            },
+            {'mood': 'Negative', 'title': 'Lower than Industry Net Income', 'message': 'Over the last 5 years, net income has averaged 115.94%, vs industry avg of 153.97%', 'description': 'Net income is equal to net earnings (profit) less expenses. This number is an important measure of how profitable the company is', 'tag': 'growth'
+            },
+            {'mood': 'Negative', 'title': 'Lower than Industry EBITDA Margin', 'message': 'Over the last 5 years, ebitda margin has been -0.89%, vs industry avg of 8.54%', 'description': 'The EBITDA margin is the percent of revenue that the company retains after incurring all the direct and operational costs of the business', 'tag': 'margin'
+            },
+            {'mood': 'Negative', 'title': 'Lower than Industry Net Profit Margin', 'message': 'Over the last 5 years, net profit margin has been -2.7%, vs industry avg of 3.58%', 'description': 'The net profit margin is net income or profit generated as a percentage of revenue and illustrates how much of each rupee in revenue translates to profit', 'tag': 'margin'
+            }
+        ], 'cashflow': [], 'balancesheet': [
+            {'mood': 'Positive', 'title': 'Lower than Industry Debt to Equity Ratio', 'message': 'Over the last 5 years, debt to equity ratio has been 124.87%, vs industry avg of 257.7%', 'description': "The Debt to Equity Ratio is a company’s total liabilities divided by its shareholder equity. It's the degree to which a company is financing its operations through debt v/s wholly owned funds", 'tag': 'normal'
+            },
+            {'mood': 'Positive', 'title': 'Lower than Industry Debt to Equity Ratio', 'message': 'Over the last 5 years, debt to equity ratio has been 124.87%, vs industry avg of 257.7%', 'description': "The Debt to Equity Ratio is a company’s total liabilities divided by its shareholder equity. It's the degree to which a company is financing its operations through debt v/s wholly owned funds", 'tag': 'growth'
+            },
+            {'mood': 'Positive', 'title': 'Higher than Industry Current Ratio', 'message': 'Over the last 5 years, current ratio has been 114.19%, vs industry avg of 40.32%', 'description': 'Current ratio measures a company’s ability to pay short-term obligations. Higher is better', 'tag': 'normal'
+            },
+            {'mood': 'Positive', 'title': 'Higher than Industry Current Ratio', 'message': 'Over the last 5 years, current ratio has been 114.19%, vs industry avg of 40.32%', 'description': 'Current ratio measures a company’s ability to pay short-term obligations. Higher is better', 'tag': 'growth'
+            }
+        ]
+    }, 'interimFinancialStatement': {'income': [
+            {'mood': 'Positive', 'title': 'Increasing Total Revenue', 'message': 'Total Revenue for this quarter increased by 23.43% year-on-year', 'description': 'Y-o-y growth in the total revenue represents increased potential for the company to increase their market share.Total revenue for the current quarter is compared with the same quarter of previous year to reduce the effects of seasonality', 'tag': 'growth'
+            },
+            {'mood': 'Negative', 'title': 'Decreasing Net Profit', 'message': 'Net Profit for this quarter decreased by 59.93% year-on-year', 'description': 'Y-o-y growth in the net income represents increased profitability of the company.Net profit for the current quarter is compared with the same quarter of previous year to reduce the effects of seasonality', 'tag': 'growth'
+            },
+            {'mood': 'Negative', 'title': 'Decreasing EBITDA Margin', 'message': 'EBITDA margin decreased from an average of 24.95% over the last 4 quarters to 9.15%', 'description': 'Increasing EBITDA margin indicates increased profit efficiency without taking into account financial, accounting or tax implications', 'tag': 'margin'
+            },
+            {'mood': 'Negative', 'title': 'Decreasing Net Profit Margin', 'message': 'Net Profit margin decreased from an average of 16.9% over the last 4 quarters to 5.11%', 'description': 'Increasing Net profit margins indicates the increasing profit to the shareholders with each unit of revenue', 'tag': 'margin'
+            },
+            {'mood': 'Negative', 'title': 'Decreasing EBIDTA', 'message': 'EBIDTA for this quarter decreased by 52.35% year-on-year', 'description': 'Y-o-y growth in the EBITDA represents how efficiently the company manages its expenses.EBITDA for the current quarter is compared with the same quarter of previous year to reduce the effects of seasonality', 'tag': 'growth'
+            }
+        ]
+    }
+}
+{'sid': 'ADRG', 'financialStatement': {'income': [
+            {'mood': 'Positive', 'title': 'Higher than Industry Revenue Growth', 'message': 'Over the last 5 years, revenue has grown at a yearly rate of 16.91%, vs industry avg of 8.33%', 'description': 'A higher-than-industry revenue growth represents increased potential for the company to increase their market share', 'tag': 'normal'
+            },
+            {'mood': 'Positive', 'title': 'Increasing Market Share', 'message': 'Over the last 5 years, market share increased from 0.61% to 0.83%', 'description': "Market share is the percentage of an industry's total sales going to a particular company. It gives a general idea of the size of a company v/s its competitors", 'tag': 'normal'
+            },
+            {'mood': 'Positive', 'title': 'Higher than Industry Net Income', 'message': 'Over the last 5 years, net income has grown at a yearly rate of 15.1%, vs industry avg of 9.77%', 'description': 'Net income is equal to net earnings (profit) less expenses. This number is an important measure of how profitable the company is', 'tag': 'normal'
+            },
+            {'mood': 'Positive', 'title': 'Higher than Industry Revenue Growth', 'message': 'Over the last 5 years, revenue growth has averaged 17.04%, vs industry avg of 8.62%', 'description': 'A higher-than-industry revenue growth represents increased potential for the company to increase their market share', 'tag': 'growth'
+            },
+            {'mood': 'Positive', 'title': 'Higher than Industry Net Income', 'message': 'Over the last 5 years, net income has averaged 23.83%, vs industry avg of 11.74%', 'description': 'Net income is equal to net earnings (profit) less expenses. This number is an important measure of how profitable the company is', 'tag': 'growth'
+            },
+            {'mood': 'Negative', 'title': 'Lower than Industry EBITDA Margin', 'message': 'Over the last 5 years, ebitda margin has been 14.93%, vs industry avg of 20.6%', 'description': 'The EBITDA margin is the percent of revenue that the company retains after incurring all the direct and operational costs of the business', 'tag': 'margin'
+            },
+            {'mood': 'Negative', 'title': 'Lower than Industry Net Profit Margin', 'message': 'Over the last 5 years, net profit margin has been 8.16%, vs industry avg of 10.88%', 'description': 'The net profit margin is net income or profit generated as a percentage of revenue and illustrates how much of each rupee in revenue translates to profit', 'tag': 'margin'
+            }
+        ], 'cashflow': [], 'balancesheet': [
+            {'mood': 'Negative', 'title': 'Higher than Industry Debt to Equity Ratio', 'message': 'Over the last 5 years, debt to equity ratio has been 58.95%, vs industry avg of 29%', 'description': "The Debt to Equity Ratio is a company’s total liabilities divided by its shareholder equity. It's the degree to which a company is financing its operations through debt v/s wholly owned funds", 'tag': 'normal'
+            },
+            {'mood': 'Negative', 'title': 'Higher than Industry Debt to Equity Ratio', 'message': 'Over the last 5 years, debt to equity ratio has been 58.95%, vs industry avg of 29%', 'description': "The Debt to Equity Ratio is a company’s total liabilities divided by its shareholder equity. It's the degree to which a company is financing its operations through debt v/s wholly owned funds", 'tag': 'growth'
+            },
+            {'mood': 'Negative', 'title': 'Lower than Industry Current Ratio', 'message': 'Over the last 5 years, current ratio has been 152.54%, vs industry avg of 179.84%', 'description': 'Current ratio measures a company’s ability to pay short-term obligations. Higher is better', 'tag': 'normal'
+            },
+            {'mood': 'Negative', 'title': 'Lower than Industry Current Ratio', 'message': 'Over the last 5 years, current ratio has been 152.54%, vs industry avg of 179.84%', 'description': 'Current ratio measures a company’s ability to pay short-term obligations. Higher is better', 'tag': 'growth'
+            }
+        ]
+    }, 'interimFinancialStatement': {'income': [
+            {'mood': 'Negative', 'title': 'Decreasing Total Revenue', 'message': 'Total Revenue for this quarter decreased by 16.44% year-on-year', 'description': 'Y-o-y growth in the total revenue represents increased potential for the company to increase their market share.Total revenue for the current quarter is compared with the same quarter of previous year to reduce the effects of seasonality', 'tag': 'growth'
+            },
+            {'mood': 'Negative', 'title': 'Decreasing Net Profit', 'message': 'Net Profit for this quarter decreased by 15.55% year-on-year', 'description': 'Y-o-y growth in the net income represents increased profitability of the company.Net profit for the current quarter is compared with the same quarter of previous year to reduce the effects of seasonality', 'tag': 'growth'
+            },
+            {'mood': 'Positive', 'title': 'Increasing EBITDA Margin', 'message': 'EBITDA margin increased from an average of 12.33% over the last 4 quarters to 13.99%', 'description': 'Increasing EBITDA margin indicates increased profit efficiency without taking into account financial, accounting or tax implications', 'tag': 'margin'
+            },
+            {'mood': 'Neutral', 'title': 'Constant Net Profit Margin', 'message': 'Net Profit margin stayed inline with last 4 quarters’ average at 7.63%', 'description': 'Increasing Net profit margins indicates the increasing profit to the shareholders with each unit of revenue', 'tag': 'margin'
+            },
+            {'mood': 'Negative', 'title': 'Decreasing EBIDTA', 'message': 'EBIDTA for this quarter decreased by 7.97% year-on-year', 'description': 'Y-o-y growth in the EBITDA represents how efficiently the company manages its expenses.EBITDA for the current quarter is compared with the same quarter of previous year to reduce the effects of seasonality', 'tag': 'growth'
+            }
+        ]
+    }
+}

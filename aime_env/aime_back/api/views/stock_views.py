@@ -8,7 +8,7 @@ from .stock_details import stockDetails
 from pprint import pprint
 import yfinance as yf
 from ..serializers import stockNameSerializer
-from ..models import StockNames, TradeData, Holidays, SwingData, StockCodes, StockRatios, StockHoldings, StockForecast, StockCommentary
+from ..models import StockNames, TradeData, Holidays, SwingData, StockCodes, StockRatios, StockHoldings, StockForecast, StockCommentary,SwingStocks
 import pandas as pd
 from datetime import datetime, timedelta, date
 import math
@@ -324,6 +324,10 @@ def dataScreen(request):
 
             for data in rows:
                 stock_instance = StockNames.objects.filter(id=data[0]).values()
+                SwingStocks.objects.update_or_create(stock=data[0],date=current_date, defaults={
+                    'stock' :StockNames.objects.get(pk=data[0]),
+                    'date' : current_date
+                })
                 for stock in stock_instance:
                     stock_data = {
                         'id': stock['id'],
@@ -594,9 +598,10 @@ def GetSlug(request):
                 # Extract and parse the JSON content
                 json_content = json.loads(script_tag.string)
                 data = json_content.get('props', {}).get('pageProps', {}).get('index', {})
+                
                 for stock in data:
                     stockCodeUpt = StockNames.objects.filter(stockCode=stock['ticker']).update(
-                                stockSlug=stock['slug']
+                                stockSlug=stock['slug'],
                             )
                 print('ticker updated')
         except requests.exceptions.RequestException as e:
@@ -639,3 +644,32 @@ def GetPenny(request):
             stockData.append(stock_data)
             
     return Response({'status': 200, 'data':stockData}, 200)
+
+@api_view(['GET'])
+def getSector(request):
+    stocks = StockNames.objects.filter(Q(isActive=True) | Q(isFno=True)).values()
+    for stock in stocks:
+        slug = stock['stockSlug']
+        url = 'https://www.tickertape.in/'+slug
+
+        headers = {
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
+        }
+
+        try:
+            response = requests.get(url, headers=headers)
+            response.raise_for_status()  
+            soup = BeautifulSoup(response.content, 'html.parser')
+            script_tag = soup.find('script', id='__NEXT_DATA__', type='application/json')
+            
+            if script_tag:
+                json_content = json.loads(script_tag.string)
+                gic = json_content.get('props', {}).get('pageProps', {}).get('securityInfo', {}).get('gic', {})
+                StockNames.objects.filter(id=stock['id']).update(
+                    sector=gic.get('sector')
+                )
+
+        except requests.exceptions.RequestException as e:
+            print(f"An error occurred: {e}")
+        
+    return Response({'status': 200})

@@ -278,3 +278,31 @@ class StockForecast(models.Model):
 
     def __int__(self):
         return self.id
+
+
+class SwingStocks(models.Model):
+    stock = models.ForeignKey(StockNames, on_delete=models.CASCADE, null=True, db_column = 'stock', related_name='sw_stock_name')
+    com_rank=models.FloatField(null=True)
+    div_rank=models.FloatField(null=True)
+    hol_rank=models.FloatField(null=True)
+    tot_rank=models.FloatField(null=True)
+    date = models.DateField(null=True)
+
+    class Meta:
+        db_table='swing_stocks'
+
+    def __int__(self):
+        return self.id
+    
+class TrendySector(models.Model):
+    sector = models.CharField(null=True, max_length=50)
+    no=models.IntegerField(null=True)
+    week=models.FloatField(null=True)
+    month=models.FloatField(null=True)
+    perc=models.FloatField(null=True)
+
+    class Meta:
+        db_table='trendy_sector'
+
+    def __int__(self):
+        return self.id

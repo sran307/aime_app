@@ -2,7 +2,7 @@
 from django.urls import path
 # from .views import Usercreate
 # from .views import AuthView
-from .views import views, stock_views, stock_ai
+from .views import views, stock_views, stock_ai, trade_analysis
 urlpatterns = [
     # path('login/', views.as_view),
     path('checkExist/', views.checkDeviceExist),
@@ -23,4 +23,8 @@ urlpatterns = [
     path('stock/fundas/', stock_views.GetFundas),
     path('stock/slug/', stock_views.GetSlug),
     path('stock/penny/', stock_views.GetPenny),
+    path('stock/sector/', stock_views.getSector),
+
+    path('trendy/sector/', trade_analysis.getTrendySector),
+    path('swing/analys/', trade_analysis.swingAnalysis),
 ]

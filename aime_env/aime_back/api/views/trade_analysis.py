@@ -32,7 +32,7 @@ def getTrendySector(request):
                     no=number,
                     week=weekChange,
                     month=monthChange,
-                    perc=((weekChange+monthChange)/number*2)
+                    perc=((weekChange/number)+(monthChange/number))
                 )
                 print('updated')
         except TrendySector.DoesNotExist:
@@ -41,7 +41,7 @@ def getTrendySector(request):
                 no=1,
                 week=ratio['weekChange'],
                 month=ratio['monthChange'],
-                perc=((ratio['weekChange']+ratio['monthChange'])/2)
+                perc=((ratio['weekChange']+ratio['monthChange']))
             )
             print('data inserted')
 

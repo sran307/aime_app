@@ -8,7 +8,7 @@ from .stock_details import stockDetails
 from pprint import pprint
 import yfinance as yf
 from ..serializers import stockNameSerializer
-from ..models import StockNames, TradeData, Holidays, SwingData, StockCodes, StockRatios, StockHoldings, StockForecast, StockCommentary,SwingStocks
+from ..models import StockNames, TradeData, Holidays, SwingData, StockCodes, StockRatios, StockHoldings, StockForecast, StockCommentary,SwingStocks, StockProfitRatios,StockLeverageRatios
 import pandas as pd
 from datetime import datetime, timedelta, date
 import math
@@ -265,7 +265,7 @@ def dataScreen(request):
                     AND `stock` = %s
                 )
                 AND `close` > 100
-                AND `close` <= 200
+                AND `close` <= 400
                 AND volume > 1000000;
             """
 
@@ -378,9 +378,31 @@ def GetFundas(request):
         with connection.cursor() as cursor:
             cursor.execute("TRUNCATE TABLE {};".format(tableName))
 
-    stocks = StockNames.objects.filter(Q(isActive=True) | Q(isFno=True))
+    stocks = StockNames.objects.filter(Q(isActive=True) | Q(isFno=True)).values()
     for stock in stocks:
-        slug = stock.stockSlug
+        # START SECTION FOR FETCH DATA FROM YFINANACE
+        yCode = stock['yCode']
+        yStock = yf.Ticker(yCode)
+        info = yStock.info
+        stockId = stock['id']
+        stmt=yStock.cashflow
+        
+        StockProfitRatios.objects.update_or_create(stock=stockId, defaults={
+            'stock' :StockNames.objects.get(pk=stockId),
+            'ebita': info.get('ebitda', -1),
+            'ebitam': info.get('ebitdaMargins', -1),
+            'roe': info.get('returnOnEquity', -1),
+            'roa': info.get('returnOnAssets', -1),
+            'eps': info.get('trailingEps', -1)
+        })
+        StockLeverageRatios.objects.update_or_create(stock=stockId, defaults={
+            'stock' :StockNames.objects.get(pk=stockId),
+            'debtEq': info.get('debtToEquity', -1)/100,
+        })
+        # END SECTION FOR FETCH DATA FROM YFINANACE
+
+        # START SECTION FOR FETCH DATA FROM TICKER TAPE
+        slug = stock['stockSlug']
         url = 'https://www.tickertape.in/'+slug
 
         headers = {
@@ -388,35 +410,24 @@ def GetFundas(request):
         }
 
         try:
-            # Make a request to fetch the page content
             response = requests.get(url, headers=headers)
             response.raise_for_status()  # Check if the request was successful
 
-            # Parse the page content
             soup = BeautifulSoup(response.content, 'html.parser')
 
-            # Write the parsed HTML content to a file
-            # with open('soup_content.html', 'w', encoding='utf-8') as file:
-            #     file.write(str(soup))
-
-            # Find the <script> tag with id="__NEXT_DATA__"
             script_tag = soup.find('script', id='__NEXT_DATA__', type='application/json')
             
             if script_tag:
-                # Extract and parse the JSON content
                 json_content = json.loads(script_tag.string)
-                # with open('ticker.json', 'w', encoding='utf-8') as file:
-                #     file.write(str(json_content))
-
-                # Navigate to the 'ratios' object
+                
                 ratios = json_content.get('props', {}).get('pageProps', {}).get('securityInfo', {}).get('ratios', {})
                 quotes = json_content.get('props', {}).get('pageProps', {}).get('securityQuote', {})
                 holdings = json_content.get('props', {}).get('pageProps', {}).get('securitySummary', {}).get('holdings',{}).get('holdings',{})
                 forecast = json_content.get('props', {}).get('pageProps', {}).get('securitySummary', {}).get('forecast',{})
 
                 # Extract the required attributes
-                created = StockRatios.objects.update_or_create(stock=stock.id, defaults={
-                    'stock':StockNames.objects.get(pk=stock.id),
+                created = StockRatios.objects.update_or_create(stock=stock['id'], defaults={
+                    'stock':StockNames.objects.get(pk=stock['id']),
                     'risk': ratios.get('risk'),
                     'm3AvgVol': ratios.get('3mAvgVol'),
                     'wpct_4': ratios.get('4wpct'),
@@ -467,9 +478,9 @@ def GetFundas(request):
                     holding = entry['data']
                     created = StockHoldings.objects.update_or_create(
                         date=date_obj,
-                        stock=stock.id,
+                        stock=stock['id'],
                         defaults={
-                            'stock':StockNames.objects.get(pk=stock.id),
+                            'stock':StockNames.objects.get(pk=stock['id']),
                             'date':date_obj,
                             'pmPctT': holding.get('pmPctT'),
                             'pmPctP': holding.get('pmPctP'),
@@ -499,9 +510,9 @@ def GetFundas(request):
                     buy=0
                     sell=0
                 forecastInsert = StockForecast.objects.update_or_create(
-                    stock=stock.id,
+                    stock=stock['id'],
                     defaults={
-                        'stock':StockNames.objects.get(pk=stock.id),
+                        'stock':StockNames.objects.get(pk=stock['id']),
                         'total':forecast.get('totalReco'),
                         'buy':buy,
                         'sell':sell
@@ -518,7 +529,7 @@ def GetFundas(request):
                 for category, statements in financial_statements.items():
                     for statement in statements:
                         StockCommentary.objects.create(
-                            stock=StockNames.objects.get(pk=stock.id),
+                            stock=StockNames.objects.get(pk=stock['id']),
                             title=statement['title'],
                             mood=statement['mood'],
                             message=statement['message'],
@@ -531,7 +542,7 @@ def GetFundas(request):
                 for category, statements in financial_statements.items():
                     for statement in statements:
                         StockCommentary.objects.create(
-                            stock=StockNames.objects.get(pk=stock.id),
+                            stock=StockNames.objects.get(pk=stock['id']),
                             title=statement['title'],
                             mood=statement['mood'],
                             message=statement['message'],
@@ -546,7 +557,7 @@ def GetFundas(request):
                 for category, statements in financial_statements.items():
                     for statement in statements:
                         StockCommentary.objects.create(
-                            stock=StockNames.objects.get(pk=stock.id),
+                            stock=StockNames.objects.get(pk=stock['id']),
                             title=statement['title'],
                             mood=statement['mood'],
                             message=statement['message'],
@@ -560,7 +571,7 @@ def GetFundas(request):
                 for category, statements in financial_statements.items():
                     for statement in statements:
                         StockCommentary.objects.create(
-                            stock=StockNames.objects.get(pk=stock.id),
+                            stock=StockNames.objects.get(pk=stock['id']),
                             title=statement['title'],
                             mood=statement['mood'],
                             message=statement['message'],
@@ -574,6 +585,7 @@ def GetFundas(request):
 
         except requests.exceptions.RequestException as e:
             print(f"An error occurred: {e}")
+        # END SECTION FOR FETCH DATA FROM TICKER TAPE
         
     return Response({'status': 200})
 

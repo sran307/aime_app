@@ -287,6 +287,7 @@ class SwingStocks(models.Model):
     hol_rank=models.FloatField(null=True)
     tot_rank=models.FloatField(null=True)
     date = models.DateField(null=True)
+    fore_rank=models.FloatField(null=True)
 
     class Meta:
         db_table='swing_stocks'
@@ -306,3 +307,22 @@ class TrendySector(models.Model):
 
     def __int__(self):
         return self.id
+    
+class LongStocks(models.Model):
+    stock = models.ForeignKey(StockNames, on_delete=models.CASCADE, null=True, db_column = 'stock', related_name='lg_stock_name')
+    five_yr_avg_rtn_inst= models.FloatField(null=True)
+    five_yr_hist_rvnu_grth= models.FloatField(null=True)
+    one_yr_hist_rvnu_grth= models.FloatField(null=True)
+    debt_eqty= models.FloatField(null=True)
+    roce= models.FloatField(null=True)
+    item=models.CharField(null=True, max_length=20)
+    five_yr_roe= models.FloatField(null=True)
+    away_from= models.FloatField(null=True)
+    pe= models.FloatField(null=True)
+
+    class Meta:
+        db_table='long_stocks'
+
+    def __int__(self):
+        return self.id
+

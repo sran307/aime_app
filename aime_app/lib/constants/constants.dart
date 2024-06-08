@@ -22,8 +22,8 @@ const kPrimaryGradientColor = LinearGradient(
   begin: Alignment.topLeft,
   end: Alignment.bottomRight,
   colors: [
-    Color.fromARGB(255, 62, 255, 229),
-    Color.fromARGB(255, 21, 144, 153)
+    Color.fromARGB(255, 7, 94, 82),
+    Color.fromARGB(255, 5, 94, 100)
   ],
 );
 const kSuccessGradientColor = LinearGradient(
@@ -147,7 +147,7 @@ const formHeading = TextStyle(
 
 const paragraph = TextStyle(
   fontWeight: FontWeight.bold,
-  color: Color.fromARGB(255, 1, 51, 43),
-  fontSize: 16.0,
+  color: Color.fromARGB(255, 5, 59, 109),
+  fontSize: 24.0,
 );
 

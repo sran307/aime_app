@@ -6,8 +6,10 @@ import 'package:get/get.dart';
 import 'package:dailyme/screens/todo/ToDoList.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:dailyme/services/notificartion.dart';
-import 'package:dailyme/widgets/top_bar.dart';
 import 'package:awesome_notifications/awesome_notifications.dart';
+import 'package:dailyme/screens/stocks/stockHome.dart';
+
+
 class Utilities extends StatelessWidget {
   const Utilities({Key? key});
 
@@ -126,7 +128,7 @@ class Utilities extends StatelessWidget {
                         padding: EdgeInsets.all(8),
                         child: ElevatedButton(
                           onPressed: () {
-                            Get.to(ToDoList(),
+                            Get.to(stockHome(),
                                 transition: Transition.circularReveal);
                           },
                           child: Text('Trade'),

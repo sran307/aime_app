@@ -10,9 +10,11 @@ import requests
 from bs4 import BeautifulSoup
 import json
 from pprint import pprint
+from rest_framework import generics, status
+from encoder import hashUsername, hashPassword, baseEncode
 
 
-@api_view(['GET'])
+@api_view(['POST'])
 def getTrendySector(request):
     # stocks = StockNames.objects.filter(Q(isActive=True) | Q(isFno=True)).values()
     # for stock in stocks:
@@ -51,10 +53,15 @@ def getTrendySector(request):
             print('data inserted')
 
     TrendySector.objects.filter(week__lt=10).delete()
+    sectors=TrendySector.objects.filter(week__gt=10).order_by('-week').values()
+    sector=[{'sector':str(sector['sector'])}for sector in sectors]
+    data = {
+        'sectors':sector
+    }
+    encodedData = baseEncode(data)
+    return Response({'data': encodedData}, status=200)
 
-    return Response({'status': 200})
-
-@api_view(['GET'])
+@api_view(['POST'])
 def swingAnalysis(request):
     
     max_date = SwingStocks.objects.aggregate(Max('date'))['date__max']
@@ -133,10 +140,14 @@ def swingAnalysis(request):
             }
         stockData.append(stock_data)
 
-    return Response({'status': 200, 'data':stockData}, 200)
+    data = {
+        'swingStocks':stockData
+    }
+    encodedData = baseEncode(data)
+    return Response({'data': encodedData}, status=200)
 
 
-@api_view(['GET'])
+@api_view(['POST'])
 def getLong(request):
     dataExist = LongStocks.objects.exists()
     if dataExist:
@@ -218,4 +229,21 @@ def getLong(request):
     except requests.exceptions.RequestException as e:
             print(f"An error occurred: {e}")
         
-    return Response({'status': 200})
+    stockData=[]
+    long_stocks = LongStocks.objects.all().values()
+    for long_stock in long_stocks:
+        stock_instance = StockNames.objects.filter(id=long_stock['stock_id']).values()
+        for stock in stock_instance:
+            
+
+            stock_data = {
+                'id': stock['id'],
+                'stockName': stock['stockName'],
+            }
+        stockData.append(stock_data)
+
+    data = {
+        'longStocks':stockData
+    }
+    encodedData = baseEncode(data)
+    return Response({'data': encodedData}, status=200)

@@ -17,7 +17,8 @@ from django.db.models import F, Subquery, OuterRef
 import requests
 from bs4 import BeautifulSoup
 from django.db.models import Q
-
+from rest_framework import generics, status
+from encoder import hashUsername, hashPassword, baseEncode
 
 def fetch_with_retries(func, *args, retries=3, delay=5, **kwargs):
     """Helper function to retry a function call with a delay."""
@@ -38,7 +39,7 @@ def fetch_yf_ticker(yCode):
     except Exception as e:
         raise requests.exceptions.RequestException(f"Failed to fetch Yahoo Finance data for {yCode}: {e}")
 
-@api_view(['GET'])
+@api_view(['POST'])
 def getStockCode(request):
     """
     THIS FUNCTION IS USED TO TAKE ALL THE STOCKS LISTED IN NSE
@@ -46,7 +47,7 @@ def getStockCode(request):
     try:
         stocks = fetch_with_retries(nse_eq_symbols)
     except Exception as e:
-        return Response({'status': 500, 'error': 'Failed to fetch stock symbols', 'details': str(e)})
+        return Response({'message': 'Failed to fetch stock symbols', 'details': str(e)}, status=status.HTTP_404_NOT_FOUND)
 
     for stock in stocks:
         try:
@@ -55,9 +56,9 @@ def getStockCode(request):
         except StockCodes.DoesNotExist:
             stock_code = StockCodes(stockCode=stock)
             stock_code.save()
-    return Response({'status': 200})
+    return Response({'message': 'Data Fetched Successfully.'}, status=status.HTTP_200_OK)
 
-@api_view(['GET'])
+@api_view(['POST'])
 def getStockName(request):
     """
     THIS FUNCTION IS USED TO TAKE ALL THE STOCK Name
@@ -65,7 +66,7 @@ def getStockName(request):
     try:
         stocks = StockCodes.objects.filter(isUsed=False).values()
     except Exception as e:
-        return Response({'status': 500, 'error': 'Failed to fetch stock symbols', 'details': str(e)})
+        return Response({'message': 'Failed to fetch stock symbols', 'details': str(e)}, status=status.HTTP_404_NOT_FOUND)
 
     for stock in stocks:
         stock = stock['stockCode']
@@ -93,9 +94,9 @@ def getStockName(request):
             except Exception as e:
                 print(f"Failed to save stock {stock}: {e}")
             
-    return Response({'status': 200})
+    return Response({'message': 'Data Fetched Successfully.'}, status=status.HTTP_200_OK)
 
-@api_view(['GET'])
+@api_view(['POST'])
 def getQuotes(request):
     
     """
@@ -110,7 +111,7 @@ def getQuotes(request):
     try:
         stocks = StockNames.objects.filter(isActive=False).values()
     except Exception as e:
-        return Response({'status': 500, 'error': 'Failed to fetch stock symbols', 'details': str(e)})
+        return Response({'message': 'Failed to fetch stock symbols', 'details': str(e)}, status=status.HTTP_404_NOT_FOUND)
 
     for stock in stocks:
         stockCode = stock['stockCode']
@@ -140,10 +141,10 @@ def getQuotes(request):
                 print(f"Stock {stock} did not meet the criteria.")           
         except Exception as e:
             print(f"Failed to update stock {stockCode}: {e}")
-    return Response({'status': 200})
+    return Response({'message': 'Trading Stocks Added.'}, status=status.HTTP_200_OK)
 
 
-@api_view(['GET'])
+@api_view(['POST'])
 def getDailyData(request):
     current_date = datetime.now().date()
     for x in range(6):
@@ -199,9 +200,9 @@ def getDailyData(request):
                                     prevDate = prev_date)
                 stock_data.save()
                 
-    return Response({'status': 200})
+    return Response({'message': 'Daily data updated successfully.'}, status=status.HTTP_200_OK)
     
-@api_view(['GET'])  
+@api_view(['POST'])  
 def dataScreen(request):
     dataExist = SwingData.objects.exists()
     if dataExist:
@@ -337,9 +338,13 @@ def dataScreen(request):
                     }
                 stockData.append(stock_data)
             
-    return Response({'status': 200, 'data':stockData}, 200)
+    data = {
+        'screenedStocks':stockData
+    }
+    encodedData = baseEncode(data)
+    return Response({'data': encodedData}, status=200)
 
-@api_view(['GET'])
+@api_view(['POST'])
 def getHolidays(request):
     year = date.today().year
     for month in range(1, 13):
@@ -368,9 +373,9 @@ def getHolidays(request):
         if not dateExist.exists():
             holidays = Holidays(holiday = date_obj, reason = description)
             holidays.save()
-    return Response({'status': 200})
+    return Response({'message': 'Holidays Added Successfully.'}, status=status.HTTP_200_OK)
 
-@api_view(['GET'])
+@api_view(['POST'])
 def GetFundas(request):
     dataExist = StockCommentary.objects.exists()
     if dataExist:
@@ -581,15 +586,16 @@ def GetFundas(request):
                         )
                 
             else:
-                return JsonResponse({'status': 'error', 'message': 'Script tag with id "__NEXT_DATA__" not found.'})
+                return Response({'message': 'Data not Found.'}, status=status.HTTP_404_NOT_FOUND)
 
         except requests.exceptions.RequestException as e:
             print(f"An error occurred: {e}")
         # END SECTION FOR FETCH DATA FROM TICKER TAPE
         
-    return Response({'status': 200})
+    return Response({'message': 'Stock Fundamentals Added Successfully.'}, status=status.HTTP_200_OK)
 
-@api_view(['GET'])
+
+@api_view(['POST'])
 def GetSlug(request):
     filter = ['a', 'b', 'c', 'd', 'e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','others']
     for i in filter:
@@ -617,21 +623,21 @@ def GetSlug(request):
                             )
                 print('ticker updated')
         except requests.exceptions.RequestException as e:
-            print(f"An error occurred: {e}")
+            return Response({'message': 'Error Occured.'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
         
-    return Response({'status': 200})
+    return Response({'message': 'Slug Added Successfully.'}, status=status.HTTP_200_OK)
 
-@api_view(['GET'])
+@api_view(['POST'])
 def GetPenny(request):
     stockData =[]
     procesQry = """
                 SELECT
                     sn.id,
-                    sn.stock_name,
+                    sn.stock_name
                 FROM
-                    stock_names sn
-                    LEFT JOIN stock_ratios sr ON sr.stock = sn.id
-                    LEFT JOIN stock_holdings sh ON sh.stock = sn.id
+                    stock_names AS sn
+                LEFT JOIN stock_ratios sr ON sr.stock = sn.id
+                LEFT JOIN stock_holdings sh ON sh.stock = sn.id
                 WHERE
                     sr.w52High <= 100
                     AND sh.date =(
@@ -655,9 +661,13 @@ def GetPenny(request):
                     }
             stockData.append(stock_data)
             
-    return Response({'status': 200, 'data':stockData}, 200)
+    data = {
+        'pennyStocks':stockData
+    }
+    encodedData = baseEncode(data)
+    return Response({'data': encodedData}, status=200)
 
-@api_view(['GET'])
+@api_view(['POST'])
 def getSector(request):
     stocks = StockNames.objects.filter(Q(isActive=True) | Q(isFno=True)).values()
     for stock in stocks:
@@ -682,6 +692,6 @@ def getSector(request):
                 )
 
         except requests.exceptions.RequestException as e:
-            print(f"An error occurred: {e}")
+            return Response({'message': 'Error Occured.'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
         
-    return Response({'status': 200})
+    return Response({'message': 'Trading Stocks Added.'}, status=status.HTTP_200_OK)

@@ -89,7 +89,7 @@ class _TradeButtonsState extends State<TradeButtons> with TickerProviderStateMix
                                     const SizedBox(height: 8),
                                   ],
                                 )
-                              : const Text('Get Holidays'),
+                              : const Text('Get Holidays 1'),
                         ),
                       ),
                     ),
@@ -114,7 +114,7 @@ class _TradeButtonsState extends State<TradeButtons> with TickerProviderStateMix
                                     const SizedBox(height: 8),
                                   ],
                                 )
-                              : const Text('Get Ticker Slug'),
+                              : const Text('Get Ticker Slug 2'),
                         ),
                       ),
                     ),
@@ -144,7 +144,7 @@ class _TradeButtonsState extends State<TradeButtons> with TickerProviderStateMix
                                     const SizedBox(height: 8),
                                   ],
                                 )
-                              :const Text('Get New Stock'),
+                              :const Text('Get New Stock 3'),
                         ),
                       ),
                     ),
@@ -169,7 +169,7 @@ class _TradeButtonsState extends State<TradeButtons> with TickerProviderStateMix
                                     const SizedBox(height: 8),
                                   ],
                                 )
-                              :const Text('Get Stock Name'),
+                              :const Text('Get Stock Name 4'),
                         ),
                       ),
                     ),
@@ -199,7 +199,7 @@ class _TradeButtonsState extends State<TradeButtons> with TickerProviderStateMix
                                     const SizedBox(height: 8),
                                   ],
                                 )
-                              :const Text('Get Trading Stocks'),
+                              :const Text('Get Trading Stocks 5'),
                         ),
                       ),
                     ),
@@ -224,7 +224,7 @@ class _TradeButtonsState extends State<TradeButtons> with TickerProviderStateMix
                                     const SizedBox(height: 8),
                                   ],
                                 )
-                              :const Text('Get Sector'),
+                              :const Text('Get Sector 6'),
                         ),
                       ),
                     ),
@@ -254,7 +254,7 @@ class _TradeButtonsState extends State<TradeButtons> with TickerProviderStateMix
                                     const SizedBox(height: 8),
                                   ],
                                 )
-                              :const Text('Get Stock Fundamentals'),
+                              :const Text('Get Stock Fundamentals 7'),
                         ),
                       ),
                     ),
@@ -279,7 +279,7 @@ class _TradeButtonsState extends State<TradeButtons> with TickerProviderStateMix
                                     const SizedBox(height: 8),
                                   ],
                                 )
-                              :const Text('Update Daily Data'),
+                              :const Text('Update Daily Data 8'),
                         ),
                       ),
                     ),
@@ -296,7 +296,7 @@ class _TradeButtonsState extends State<TradeButtons> with TickerProviderStateMix
                             Get.to(TrendySector(),
                                 transition: Transition.circularReveal);
                           },
-                          child: const Text('Get Trending Sector'),
+                          child: const Text('Get Trending Sector 9'),
                         ),
                       ),
                     ),
@@ -308,7 +308,7 @@ class _TradeButtonsState extends State<TradeButtons> with TickerProviderStateMix
                             Get.to(PennyStocks(),
                                 transition: Transition.circularReveal);
                           },
-                          child: const Text('Get Penny Stocks'),
+                          child: const Text('Get Penny Stocks 10'),
                         ),
                       ),
                     ),
@@ -325,7 +325,7 @@ class _TradeButtonsState extends State<TradeButtons> with TickerProviderStateMix
                             Get.to(ScreenStocks(),
                                 transition: Transition.circularReveal);
                           },
-                          child: const Text('Get Screened Stocks'),
+                          child: const Text('Get Screened Stocks 11'),
                         ),
                       ),
                     ),
@@ -337,7 +337,7 @@ class _TradeButtonsState extends State<TradeButtons> with TickerProviderStateMix
                             Get.to(SwingStocks(),
                                 transition: Transition.circularReveal);
                           },
-                          child: const Text('Get Swing Stocks'),
+                          child: const Text('Get Swing Stocks 12'),
                         ),
                       ),
                     ),
@@ -354,7 +354,19 @@ class _TradeButtonsState extends State<TradeButtons> with TickerProviderStateMix
                             Get.to(LongStocks(),
                                 transition: Transition.circularReveal);
                           },
-                          child: const Text('Get Long Position Stocks'),
+                          child: const Text('Get Long Position Stocks 13'),
+                        ),
+                      ),
+                    ),
+                    Expanded(
+                      child: Container(
+                        padding: const EdgeInsets.all(8),
+                        child: ElevatedButton(
+                           onPressed: () {
+                            Get.to(LongStocks(),
+                                transition: Transition.circularReveal);
+                          },
+                          child: const Text('Watch List 14'),
                         ),
                       ),
                     ),

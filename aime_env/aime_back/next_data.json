@@ -295,7 +295,7 @@
                                     ],
                                     "title": "NIFTY 50",
                                     "type": "prebuilt",
-                                    "updatedAt": "2024-06-08T15:00:11.435Z",
+                                    "updatedAt": "2024-06-11T15:53:47.642Z",
                                     "watchlistId": null,
                                     "linkedIndex": ".NSEI"
                                 },
@@ -410,7 +410,7 @@
                                     ],
                                     "title": "NIFTY 100",
                                     "type": "prebuilt",
-                                    "updatedAt": "2024-06-08T15:00:11.436Z",
+                                    "updatedAt": "2024-06-11T15:53:47.642Z",
                                     "watchlistId": null,
                                     "linkedIndex": ".NIFTY100"
                                 },
@@ -524,7 +524,7 @@
                                     ],
                                     "title": "Nifty Midcap 100",
                                     "type": "prebuilt",
-                                    "updatedAt": "2024-06-08T15:00:11.436Z",
+                                    "updatedAt": "2024-06-11T15:53:47.642Z",
                                     "watchlistId": null,
                                     "linkedIndex": ".NIFMDCP100"
                                 },
@@ -1039,7 +1039,7 @@
                                     ],
                                     "title": "Nifty 500",
                                     "type": "prebuilt",
-                                    "updatedAt": "2024-06-08T15:00:11.436Z",
+                                    "updatedAt": "2024-06-11T15:53:47.642Z",
                                     "watchlistId": null,
                                     "linkedIndex": ".NIFTY500"
                                 },
@@ -1153,7 +1153,7 @@
                                     ],
                                     "title": "Nifty Smallcap 100",
                                     "type": "prebuilt",
-                                    "updatedAt": "2024-06-08T15:00:11.436Z",
+                                    "updatedAt": "2024-06-11T15:53:47.642Z",
                                     "watchlistId": null,
                                     "linkedIndex": ".NIFSMCP100"
                                 }
@@ -31382,31 +31382,12 @@
                 },
                 "screenedResults": [
                     {
-                        "sid": "CHEMP",
-                        "stock": {
-                            "advancedRatios": {
-                                "lastPrice": 491.2,
-                                "mrktCapf": 7510.204765,
-                                "5YrevChg": 25.877074849502257,
-                                "5Yroe": 17.87783780689821,
-                                "apef": -47.40393085274252,
-                                "52wld": 18.805175958398834,
-                                "subindustry": "Building Products - Pipes"
-                            },
-                            "info": {
-                                "name": "Chemplast Sanmar Ltd",
-                                "ticker": "CHEMPLASTS",
-                                "sector": "Industrials"
-                            }
-                        }
-                    },
-                    {
                         "sid": "CNFH",
                         "stock": {
                             "advancedRatios": {
                                 "subindustry": "Home Financing",
-                                "52wld": 13.867647058823529,
-                                "lastPrice": 774.3,
+                                "52wld": 18.308823529411768,
+                                "lastPrice": 804.5,
                                 "mrktCapf": 9834.097901875,
                                 "5YrevChg": 15.27833964464973,
                                 "5Yroe": 18.309895964521832,
@@ -31424,8 +31405,8 @@
                         "stock": {
                             "advancedRatios": {
                                 "subindustry": "Private Banks",
-                                "52wld": 15.38630779949397,
-                                "lastPrice": 1573.35,
+                                "52wld": 15.44497818195154,
+                                "lastPrice": 1574.15,
                                 "mrktCapf": 1153545.7023080802,
                                 "5YrevChg": 26.873555522548,
                                 "5Yroe": 16.699023011702216,
@@ -31439,31 +31420,12 @@
                         }
                     },
                     {
-                        "sid": "TNSL",
-                        "stock": {
-                            "advancedRatios": {
-                                "subindustry": "Software Services",
-                                "52wld": 16.443961383543247,
-                                "lastPrice": 910.65,
-                                "mrktCapf": 12063.7386392,
-                                "5YrevChg": 31.374508861278617,
-                                "5Yroe": 19.69253374792728,
-                                "apef": 22.001675401141693
-                            },
-                            "info": {
-                                "name": "Tanla Platforms Ltd",
-                                "ticker": "TANLA",
-                                "sector": "Information Technology"
-                            }
-                        }
-                    },
-                    {
                         "sid": "ROUT",
                         "stock": {
                             "advancedRatios": {
                                 "subindustry": "IT Services & Consulting",
-                                "52wld": 7.849644673713074,
-                                "lastPrice": 1494.85,
+                                "52wld": 11.774467010569612,
+                                "lastPrice": 1549.25,
                                 "mrktCapf": 9023.967819039999,
                                 "5YrevChg": 36.77866724490579,
                                 "5Yroe": 23.006443739049157,
@@ -31481,8 +31443,8 @@
                         "stock": {
                             "advancedRatios": {
                                 "subindustry": "Payment Infrastructure",
-                                "52wld": 10.432903773439284,
-                                "lastPrice": 715.55,
+                                "52wld": 10.726136275947207,
+                                "lastPrice": 717.45,
                                 "mrktCapf": 67476.15574864499,
                                 "5YrevChg": 19.129058543817724,
                                 "5Yroe": 24.52011573898949,
@@ -31500,8 +31462,8 @@
                         "stock": {
                             "advancedRatios": {
                                 "subindustry": "Consumer Finance",
-                                "52wld": 16.219011603477806,
-                                "lastPrice": 7191.4,
+                                "52wld": 16.644849542648444,
+                                "lastPrice": 7217.75,
                                 "mrktCapf": 422525.88336679,
                                 "5YrevChg": 24.343128489772425,
                                 "5Yroe": 19.27551841564368,
@@ -31519,8 +31481,8 @@
                         "stock": {
                             "advancedRatios": {
                                 "subindustry": "Tea & Coffee",
-                                "52wld": 9.282088469905725,
-                                "lastPrice": 602.8,
+                                "52wld": 9.445250181290788,
+                                "lastPrice": 603.7,
                                 "mrktCapf": 7610.5273032,
                                 "5YrevChg": 19.64932362914975,
                                 "5Yroe": 18.72883584037823,
@@ -31538,8 +31500,8 @@
                         "stock": {
                             "advancedRatios": {
                                 "subindustry": "IT Services & Consulting",
-                                "52wld": 10.272401989564738,
-                                "lastPrice": 4977.2,
+                                "52wld": 9.694143191058036,
+                                "lastPrice": 4951.1,
                                 "mrktCapf": 143335.666511775,
                                 "5YrevChg": 30.017872730711524,
                                 "5Yroe": 30.01949594392744,
@@ -31557,8 +31519,8 @@
                         "stock": {
                             "advancedRatios": {
                                 "subindustry": "Industrial Machinery",
-                                "52wld": 11.486309159303666,
-                                "lastPrice": 1274.4,
+                                "52wld": 17.076371271104907,
+                                "lastPrice": 1338.3,
                                 "mrktCapf": 5752.052024680001,
                                 "5YrevChg": 46.64888462146195,
                                 "5Yroe": 19.635267275604846,
@@ -31576,8 +31538,8 @@
                         "stock": {
                             "advancedRatios": {
                                 "subindustry": "Diversified Chemicals",
-                                "52wld": 13.124223602484463,
-                                "lastPrice": 3642.6,
+                                "52wld": 12.889751552795037,
+                                "lastPrice": 3635.05,
                                 "mrktCapf": 55078.01312286,
                                 "5YrevChg": 22.13995167509104,
                                 "5Yroe": 17.967458698585055,
@@ -31595,8 +31557,8 @@
                         "stock": {
                             "advancedRatios": {
                                 "subindustry": "Specialty Chemicals",
-                                "52wld": 11.591643869684166,
-                                "lastPrice": 4487.1,
+                                "52wld": 17.189753792588913,
+                                "lastPrice": 4712.2,
                                 "mrktCapf": 13494.9884364,
                                 "5YrevChg": 15.234509989496958,
                                 "5Yroe": 31.565449754232635,
@@ -31613,12 +31575,12 @@
                         "sid": "INDIG",
                         "stock": {
                             "advancedRatios": {
-                                "lastPrice": 1365.65,
+                                "lastPrice": 1367.95,
                                 "mrktCapf": 6459.31067668,
                                 "5YrevChg": 19.701402750574793,
                                 "5Yroe": 19.7958735535828,
                                 "apef": 43.848419500916435,
-                                "52wld": 9.252000000000017,
+                                "52wld": 9.436,
                                 "subindustry": "Paints"
                             },
                             "info": {
@@ -31633,8 +31595,8 @@
                         "stock": {
                             "advancedRatios": {
                                 "subindustry": "Online Services",
-                                "52wld": 14.024663677130045,
-                                "lastPrice": 2542.75,
+                                "52wld": 16.405829596412545,
+                                "lastPrice": 2595.85,
                                 "mrktCapf": 15347.82941019,
                                 "5YrevChg": 20.74384091275203,
                                 "5Yroe": 29.309689857018384,
@@ -31648,31 +31610,12 @@
                         }
                     },
                     {
-                        "sid": "HAPP",
-                        "stock": {
-                            "advancedRatios": {
-                                "subindustry": "IT Services & Consulting",
-                                "52wld": 13.569500674763834,
-                                "lastPrice": 841.55,
-                                "mrktCapf": 12085.76015192,
-                                "5YrevChg": 23.458446344847374,
-                                "5Yroe": 38.81149926576212,
-                                "apef": 48.65638774475619
-                            },
-                            "info": {
-                                "name": "Happiest Minds Technologies Ltd",
-                                "ticker": "HAPPSTMNDS",
-                                "sector": "Information Technology"
-                            }
-                        }
-                    },
-                    {
                         "sid": "TTEX",
                         "stock": {
                             "advancedRatios": {
                                 "subindustry": "Software Services",
-                                "52wld": 11.055652607936107,
-                                "lastPrice": 7120,
+                                "52wld": 11.059552033940601,
+                                "lastPrice": 7120.25,
                                 "mrktCapf": 45928.5631178,
                                 "5YrevChg": 17.500786037433457,
                                 "5Yroe": 33.60702518292786,
@@ -31689,12 +31632,12 @@
                         "sid": "CLE",
                         "stock": {
                             "advancedRatios": {
-                                "lastPrice": 1320.2,
+                                "lastPrice": 1376.1,
                                 "mrktCapf": 14577.24368878,
                                 "5YrevChg": 15.533631957322026,
                                 "5Yroe": 40.212092431691154,
                                 "apef": 59.73790545356939,
-                                "52wld": 6.210780370072411,
+                                "52wld": 10.707964601769904,
                                 "subindustry": "Specialty Chemicals"
                             },
                             "info": {
@@ -31709,8 +31652,8 @@
                         "stock": {
                             "advancedRatios": {
                                 "subindustry": "FMCG - Foods",
-                                "52wld": 10.010706638115629,
-                                "lastPrice": 513.75,
+                                "52wld": 9.379014989293367,
+                                "lastPrice": 510.8,
                                 "mrktCapf": 5657.059304375,
                                 "5YrevChg": 41.17218380680989,
                                 "5Yroe": 18.759936455197273,
@@ -31724,39 +31667,77 @@
                         }
                     },
                     {
-                        "sid": "NAFL",
-                        "stock": {
-                            "advancedRatios": {
-                                "subindustry": "Specialty Chemicals",
-                                "52wld": 15.761748291868782,
-                                "lastPrice": 3329.25,
-                                "mrktCapf": 16637.957787,
-                                "5YrevChg": 16.095512610264784,
-                                "5Yroe": 19.61046133034203,
-                                "apef": 61.508161874306886
-                            },
-                            "info": {
-                                "name": "Navin Fluorine International Ltd",
-                                "ticker": "NAVINFLUOR",
-                                "sector": "Materials"
-                            }
-                        }
-                    },
-                    {
                         "sid": "EASE",
                         "stock": {
                             "advancedRatios": {
-                                "lastPrice": 41.75,
+                                "lastPrice": 42.39,
                                 "mrktCapf": 7814.699125380001,
                                 "5YrevChg": 32.15275663112402,
                                 "5Yroe": 45.10421077025046,
                                 "apef": 75.79727570688648,
-                                "52wld": 12.837837837837828,
+                                "52wld": 14.567567567567563,
                                 "subindustry": "Tour & Travel Services"
                             },
                             "info": {
                                 "name": "Easy Trip Planners Ltd",
                                 "ticker": "EASEMYTRIP",
+                                "sector": "Consumer Discretionary"
+                            }
+                        }
+                    },
+                    {
+                        "sid": "SBIL",
+                        "stock": {
+                            "advancedRatios": {
+                                "subindustry": "Insurance",
+                                "52wld": 18.331772084877596,
+                                "lastPrice": 1452.7,
+                                "mrktCapf": 143843.231724375,
+                                "5YrevChg": 24.447549472283225,
+                                "5Yroe": 15.819140205641128,
+                                "apef": 75.9556187753458
+                            },
+                            "info": {
+                                "name": "SBI Life Insurance Company Ltd",
+                                "ticker": "SBILIFE",
+                                "sector": "Financials"
+                            }
+                        }
+                    },
+                    {
+                        "sid": "HDFL",
+                        "stock": {
+                            "advancedRatios": {
+                                "subindustry": "Insurance",
+                                "52wld": 11.986703167774749,
+                                "lastPrice": 572.7,
+                                "mrktCapf": 121519.34659743,
+                                "5YrevChg": 21.278216637741743,
+                                "5Yroe": 18.028896032898906,
+                                "apef": 77.20023543748029
+                            },
+                            "info": {
+                                "name": "HDFC Life Insurance Company Ltd",
+                                "ticker": "HDFCLIFE",
+                                "sector": "Financials"
+                            }
+                        }
+                    },
+                    {
+                        "sid": "TITN",
+                        "stock": {
+                            "advancedRatios": {
+                                "subindustry": "Precious Metals, Jewellery & Watches",
+                                "52wld": 19.378805258978215,
+                                "lastPrice": 3382.3,
+                                "mrktCapf": 302948.1492384,
+                                "5YrevChg": 20.926581002205502,
+                                "5Yroe": 23.763734322801543,
+                                "apef": 86.65564909565217
+                            },
+                            "info": {
+                                "name": "Titan Company Ltd",
+                                "ticker": "TITAN",
                                 "sector": "Consumer Discretionary"
                             }
                         }
@@ -32787,7 +32768,7 @@
                     }
                 ],
                 "stats": {
-                    "count": 22
+                    "count": 19
                 },
                 "metaScreenInfo": {
                     "title": "Near 52W Lows",

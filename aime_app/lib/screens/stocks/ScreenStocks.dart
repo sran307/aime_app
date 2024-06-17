@@ -1,3 +1,5 @@
+import 'package:dailyme/screens/home/icon_btn_with_counter.dart';
+import 'package:dailyme/screens/stocks/stockHome.dart';
 import 'package:flutter/material.dart';
 import 'package:dailyme/constants/constants.dart';
 import 'package:dailyme/constants/appBar.dart';
@@ -10,6 +12,8 @@ import 'package:dailyme/services/auth.dart';
 import 'package:dailyme/models/api_response.dart';
 import 'package:dailyme/services/DataDecryptor.dart';
 import 'package:dailyme/services/TokenHandler.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 
 class ScreenStocks extends StatefulWidget {
   const ScreenStocks({super.key});
@@ -70,14 +74,20 @@ class _ScreenStocksState extends State<ScreenStocks> {
             margin: EdgeInsets.all(10.0),
             child: Column(
               children: [
-                const Row(
+                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text(
-                      "Screened Stocks From Daily Data For Swing Trade",
+                    const Text(
+                      "Screened Stocks From Daily Data For Swing Trade - Technically analysed stocks",
                       style: formHeading,
                     ),
-                    // Text("27/07/2024"),
+                    IconBtnWithCounter(
+                      svgSrc: Icons.arrow_back_ios_new_rounded,
+                      Icolor: iconColor,
+                      press: () {
+                        Get.to( stockHome(), transition: Transition.zoom);
+                      },
+                    ),
                   ],
                 ),
                 Expanded(

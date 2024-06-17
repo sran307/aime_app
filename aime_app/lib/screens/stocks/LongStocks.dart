@@ -1,3 +1,5 @@
+import 'package:dailyme/screens/home/icon_btn_with_counter.dart';
+import 'package:dailyme/screens/stocks/stockHome.dart';
 import 'package:flutter/material.dart';
 import 'package:dailyme/constants/constants.dart';
 import 'package:dailyme/constants/appBar.dart';
@@ -10,6 +12,7 @@ import 'package:dailyme/services/auth.dart';
 import 'package:dailyme/models/api_response.dart';
 import 'package:dailyme/services/DataDecryptor.dart';
 import 'package:dailyme/services/TokenHandler.dart';
+import 'package:get/get.dart';
 
 class LongStocks extends StatefulWidget {
   const LongStocks({super.key});
@@ -70,14 +73,20 @@ class _LongStocksState extends State<LongStocks> {
             margin: EdgeInsets.all(10.0),
             child: Column(
               children: [
-                const Row(
+                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text(
+                    const Text(
                       "Analysed for Long Position",
                       style: formHeading,
                     ),
-                    // Text("27/07/2024"),
+                    IconBtnWithCounter(
+                      svgSrc: Icons.arrow_back_ios_new_rounded,
+                      Icolor: iconColor,
+                      press: () {
+                        Get.to( stockHome(), transition: Transition.zoom);
+                      },
+                    ),
                   ],
                 ),
                 Expanded(

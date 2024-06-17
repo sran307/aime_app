@@ -128,15 +128,20 @@ def swingAnalysis(request):
                 totalRank = SwingStocks.objects.filter(stock=stock['id']).values('tot_rank')
 
                 SwingStocks.objects.filter(stock=stock['id']).update(
-                    tot_rank=totalRank[0]['tot_rank']+50
+                    tot_rank=totalRank[0]['tot_rank']+50,
+                    is_sector=True
                 )
             except TrendySector.DoesNotExist:
                 print('no action')
 
+    swing_stocks = SwingStocks.objects.filter(date=max_date, is_sector=True).order_by('-tot_rank').values()
+    for swing_stock in swing_stocks:
+        stock_instance = StockNames.objects.filter(id=swing_stock['stock_id']).values()
+        for stock in stock_instance:
             stock_data = {
                 'id': stock['id'],
                 'stockName': stock['stockName'],
-                'sector': stock['sector']
+                'rank': swing_stock['tot_rank']
             }
         stockData.append(stock_data)
 

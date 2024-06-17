@@ -288,6 +288,7 @@ class SwingStocks(models.Model):
     tot_rank=models.FloatField(null=True)
     date = models.DateField(null=True)
     fore_rank=models.FloatField(null=True)
+    is_sector=models.BooleanField(default=False)
 
     class Meta:
         db_table='swing_stocks'

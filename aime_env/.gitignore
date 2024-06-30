@@ -11,3 +11,10 @@ share/
 soup_content.html
 ticker.json
 ../../json/
+
+bin/
+include/
+lib/
+lib64/
+share/
+pyvenv.cfg

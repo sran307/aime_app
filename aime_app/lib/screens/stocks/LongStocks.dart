@@ -140,7 +140,7 @@ class _LongStocksState extends State<LongStocks> {
                                                 MainAxisAlignment.spaceBetween,
                                             children: [
                                               Text(
-                                                item['id'].toString()+' - '+item['stockName'].toString(),
+                                                item['id'].toString()+' - '+item['stockName'].toString()+' - '+item['amount'].toString(),
                                                 style: paragraph,
                                               ),
                                             ],

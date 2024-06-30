@@ -140,7 +140,7 @@ def swingAnalysis(request):
         for stock in stock_instance:
             stock_data = {
                 'id': stock['id'],
-                'stockName': stock['stockName'],
+                'stockName': stock['stockCode']+':'+stock['stockName'],
                 'rank': swing_stock['tot_rank']
             }
         stockData.append(stock_data)
@@ -235,15 +235,21 @@ def getLong(request):
             print(f"An error occurred: {e}")
         
     stockData=[]
+
     long_stocks = LongStocks.objects.all().values()
     for long_stock in long_stocks:
         stock_instance = StockNames.objects.filter(id=long_stock['stock_id']).values()
+        max_date = TradeData.objects.filter(stock=long_stock['stock_id']).aggregate(Max('date'))['date__max']
         for stock in stock_instance:
-            
-
+            amount = TradeData.objects.filter(stock=long_stock['stock_id'], date=max_date).values('close').first()
+            if amount:
+                close_value = round(amount['close'], 2)
+            else:
+                close_value = 0
             stock_data = {
                 'id': stock['id'],
-                'stockName': stock['stockName'],
+                'stockName': stock['stockCode']+':'+stock['stockName'],
+                'amount': close_value,
             }
         stockData.append(stock_data)
 

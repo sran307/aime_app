@@ -1,5 +1,6 @@
 import 'package:dailyme/screens/events/EventList.dart';
 import 'package:dailyme/screens/goals/goals.dart';
+import 'package:dailyme/screens/locker/LockerIndex.dart';
 import 'package:flutter/material.dart';
 import 'package:dailyme/constants/constants.dart';
 import 'package:get/get.dart';
@@ -145,7 +146,7 @@ class Utilities extends StatelessWidget {
                         padding: EdgeInsets.all(8),
                         child: ElevatedButton(
                           onPressed: () {
-                            Get.to(ToDoList(),
+                            Get.to(LockerIndex(),
                                 transition: Transition.circularReveal);
                           },
                           child: Text('Locker'),

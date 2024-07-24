@@ -21,6 +21,9 @@ const getPenny='${baseUrl}stock/penny/';
 const screener='${baseUrl}stock/screen/';
 const swingAnalysis='${baseUrl}swing/analys/';
 const longAnalysis='${baseUrl}stock/long/';
+const stock52LowUrl = '${baseUrl}stock/52low/';
+const stock52HighUrl = '${baseUrl}stock/52high/';
+
 
 
 

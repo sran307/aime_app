@@ -141,7 +141,7 @@ def swingAnalysis(request):
             stock_data = {
                 'id': stock['id'],
                 'stockName': stock['stockCode']+':'+stock['stockName'],
-                'rank': swing_stock['tot_rank']
+                'rank': round(swing_stock['tot_rank'], 2)
             }
         stockData.append(stock_data)
 

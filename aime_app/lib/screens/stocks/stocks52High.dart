@@ -93,21 +93,21 @@ class _Stock52HighState extends State<Stock52High> {
                 Expanded(
                   child: Row(
                     children: [
-                      Expanded(
-                        child: Container(
-                          width: MediaQuery.of(context).size.width * .01,
-                          height: MediaQuery.of(context).size.height * .7,
-                          decoration: const BoxDecoration(
-                            color: Color.fromARGB(96, 180, 39, 39),
-                            borderRadius: BorderRadius.only(
-                              topLeft: Radius.circular(10),
-                              bottomLeft: Radius.circular(20.0),
-                            ),
-                          ),
-                        ),
-                      ),
+                      // Expanded(
+                      //   child: Container(
+                      //     width: MediaQuery.of(context).size.width * .01,
+                      //     height: MediaQuery.of(context).size.height * .7,
+                      //     decoration: const BoxDecoration(
+                      //       color: Color.fromARGB(96, 180, 39, 39),
+                      //       borderRadius: BorderRadius.only(
+                      //         topLeft: Radius.circular(10),
+                      //         bottomLeft: Radius.circular(20.0),
+                      //       ),
+                      //     ),
+                      //   ),
+                      // ),
                       Container(
-                        width: MediaQuery.of(context).size.width * .8,
+                        width: MediaQuery.of(context).size.width * .96,
                         height: MediaQuery.of(context).size.height * .7,
                         decoration: const BoxDecoration(
                           color: Colors.black38,
@@ -145,7 +145,7 @@ class _Stock52HighState extends State<Stock52High> {
                                                     ' - ' +
                                                     item['stockName']
                                                         .toString()+' - ' +
-                                                    item['rank']
+                                                    item['amount']
                                                         .toString(),
                                                 style: paragraph,
                                               ),

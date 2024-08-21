@@ -25,8 +25,8 @@ class CustomBottomNavyBar extends StatelessWidget {
       onItemSelected: onItemSelected, // Use the provided callback
       items: <BottomNavyBarItem>[
         BottomNavyBarItem(
-          icon: Icon(Icons.apps),
-          title: Text('Home'),
+          icon: const Icon(Icons.home),
+          title: const Text('Home'),
           activeColor: iconColor,
           textAlign: TextAlign.center,
         ),

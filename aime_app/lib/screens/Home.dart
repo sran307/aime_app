@@ -4,6 +4,7 @@ import 'package:dailyme/screens/home/UserSection.dart';
 import 'package:dailyme/screens/home/Utilities.dart';
 import 'package:jwt_decoder/jwt_decoder.dart';
 import 'package:dailyme/constants/appBar.dart';
+import 'package:dailyme/constants/drawer.dart';
 import 'package:dailyme/constants/navBar/CustomBottomNavBar.dart';
 import 'package:dailyme/constants/constants.dart';
 
@@ -28,7 +29,8 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     int _currentIndex = 0;
     return Scaffold(
-      appBar:CustomAppBar(),
+      appBar:const CustomAppBar(),
+      drawer: const drawer(),
       backgroundColor: homeColor,
       body: SafeArea(
           child: SingleChildScrollView(

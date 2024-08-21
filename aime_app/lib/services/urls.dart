@@ -6,6 +6,22 @@ const todoSave = '${baseUrl}todo/ins/';
 const todoList = '${baseUrl}todo/list/';
 const todoUpdate = '${baseUrl}todo/update/';
 
+const getHolidays='${baseUrl}stock/holidays/';
+const getSlug = '${baseUrl}stock/slug/';     
+const getNewStock='${baseUrl}stock/codes/';
+const getStockName='${baseUrl}stock/names/';
+const getQuotes = '${baseUrl}stock/quotes/';
+const getSector ='${baseUrl}stock/sector/'; 
+const getFunda='${baseUrl}stock/fundas/';
+const updateDaily='${baseUrl}stock/daily/';
+
+const trendySector='${baseUrl}trendy/sector/';
+const getPenny='${baseUrl}stock/penny/'; 
+
+const screener='${baseUrl}stock/screen/';
+const swingAnalysis='${baseUrl}swing/analys/';
+const longAnalysis='${baseUrl}stock/long/';
+
 
 
 const serverError = 'server error';

@@ -27,4 +27,5 @@ urlpatterns = [
 
     path('trendy/sector/', trade_analysis.getTrendySector),
     path('swing/analys/', trade_analysis.swingAnalysis),
+    path('stock/long/', trade_analysis.getLong)
 ]

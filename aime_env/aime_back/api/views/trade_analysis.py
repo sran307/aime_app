@@ -1,13 +1,20 @@
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from django.http import JsonResponse
-from ..models import StockNames, TradeData, Holidays, SwingData, StockCodes, StockRatios, StockHoldings, StockForecast, StockCommentary,SwingStocks,TrendySector
+from ..models import StockNames, TradeData, Holidays, SwingData, StockCodes, StockRatios, StockHoldings, StockForecast, StockCommentary,SwingStocks,TrendySector,StockLeverageRatios,StockProfitRatios,LongStocks
 from django.db.models import Max
 from django.db.models import Q
 from django.db import connection
+import yfinance as yf
+import requests
+from bs4 import BeautifulSoup
+import json
+from pprint import pprint
+from rest_framework import generics, status
+from encoder import hashUsername, hashPassword, baseEncode
 
 
-@api_view(['GET'])
+@api_view(['POST'])
 def getTrendySector(request):
     # stocks = StockNames.objects.filter(Q(isActive=True) | Q(isFno=True)).values()
     # for stock in stocks:
@@ -45,11 +52,16 @@ def getTrendySector(request):
             )
             print('data inserted')
 
-    TrendySector.objects.filter(perc__lt=20).delete()
+    TrendySector.objects.filter(week__lt=10).delete()
+    sectors=TrendySector.objects.filter(week__gt=10).order_by('-week').values()
+    sector=[{'sector':str(sector['sector'])}for sector in sectors]
+    data = {
+        'sectors':sector
+    }
+    encodedData = baseEncode(data)
+    return Response({'data': encodedData}, status=200)
 
-    return Response({'status': 200})
-
-@api_view(['GET'])
+@api_view(['POST'])
 def swingAnalysis(request):
     
     max_date = SwingStocks.objects.aggregate(Max('date'))['date__max']
@@ -90,6 +102,18 @@ def swingAnalysis(request):
                     hol_rank=holding_rank
                 )
         
+        forecasts = StockForecast.objects.filter(stock=stock['stock_id']).values()
+        for forecast in forecasts:
+            forecastRank=forecast['buy']-forecast['sell']
+            rank = rank+(forecastRank)
+            SwingStocks.objects.filter(stock=stock['stock_id']).update(
+                    fore_rank=forecastRank
+                )
+        
+        Stock_Ratios = StockLeverageRatios.objects.filter(stock=stock['stock_id']).values()
+        for Stock_Ratio in Stock_Ratios:
+            rank = rank/Stock_Ratio['debtEq']
+
         SwingStocks.objects.filter(stock=stock['stock_id']).update(
                     tot_rank=rank
                 )
@@ -104,19 +128,133 @@ def swingAnalysis(request):
                 totalRank = SwingStocks.objects.filter(stock=stock['id']).values('tot_rank')
 
                 SwingStocks.objects.filter(stock=stock['id']).update(
-                    tot_rank=totalRank[0]['tot_rank']+50
+                    tot_rank=totalRank[0]['tot_rank']+50,
+                    is_sector=True
                 )
             except TrendySector.DoesNotExist:
                 print('no action')
 
+    swing_stocks = SwingStocks.objects.filter(date=max_date, is_sector=True).order_by('-tot_rank').values()
+    for swing_stock in swing_stocks:
+        stock_instance = StockNames.objects.filter(id=swing_stock['stock_id']).values()
+        for stock in stock_instance:
             stock_data = {
                 'id': stock['id'],
-                'stockName': stock['stockName'],
-                'sector': stock['sector']
+                'stockName': stock['stockCode']+':'+stock['stockName'],
+                'rank': swing_stock['tot_rank']
             }
         stockData.append(stock_data)
 
-    return Response({'status': 200, 'data':stockData}, 200)
+    data = {
+        'swingStocks':stockData
+    }
+    encodedData = baseEncode(data)
+    return Response({'data': encodedData}, status=200)
 
 
+@api_view(['POST'])
+def getLong(request):
+    dataExist = LongStocks.objects.exists()
+    if dataExist:
+        tableName = 'long_stocks'
+        with connection.cursor() as cursor:
+            cursor.execute("TRUNCATE TABLE {};".format(tableName))
+    url = 'https://www.tickertape.in/screener/equity/prebuilt/SCR0026?ref=eq_screener_homepage'
 
+    headers = {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
+    }
+
+    try:
+        response = requests.get(url, headers=headers)
+        response.raise_for_status()  # Check if the request was successful
+
+        soup = BeautifulSoup(response.content, 'html.parser')
+
+        script_tag = soup.find('script', id='__NEXT_DATA__', type='application/json')
+        
+        if script_tag:
+            json_content = json.loads(script_tag.string)
+            # Write the JSON content to a file
+            with open('next_data.json', 'w', encoding='utf-8') as file:
+                json.dump(json_content, file, ensure_ascii=False, indent=4)
+                
+            results=json_content.get('props', {}).get('initialReduxState', {}).get('screenerSessionData', {}).get('screenedResults', {})
+            for result in results:
+                code = result.get('stock', {}).get('info', {}).get('ticker', {})
+                ratios= result.get('stock', {}).get('advancedRatios', {})
+
+                LongStocks.objects.create(
+                    stock=StockNames.objects.get(stockCode=code), 
+                    five_yr_avg_rtn_inst= ratios.get('5Yaroi', {}),
+                    five_yr_hist_rvnu_grth= ratios.get('5YrevChg', {}),
+                    one_yr_hist_rvnu_grth= ratios.get('rvng', {}),
+                    debt_eqty= ratios.get('dbtEqt', {}),
+                    roce= ratios.get('roce', {}),
+                    item='gems'
+                )
+                print('inserted')
+    except requests.exceptions.RequestException as e:
+            print(f"An error occurred: {e}")
+        
+    url = 'https://www.tickertape.in/screener/equity/prebuilt/SCR0005'
+
+    headers = {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
+    }
+
+    try:
+        response = requests.get(url, headers=headers)
+        response.raise_for_status()  # Check if the request was successful
+
+        soup = BeautifulSoup(response.content, 'html.parser')
+
+        script_tag = soup.find('script', id='__NEXT_DATA__', type='application/json')
+        
+        if script_tag:
+            json_content = json.loads(script_tag.string)
+            # Write the JSON content to a file
+            with open('next_data.json', 'w', encoding='utf-8') as file:
+                json.dump(json_content, file, ensure_ascii=False, indent=4)
+                
+            results=json_content.get('props', {}).get('initialReduxState', {}).get('screenerSessionData', {}).get('screenedResults', {})
+            for result in results:
+                code = result.get('stock', {}).get('info', {}).get('ticker', {})
+                ratios= result.get('stock', {}).get('advancedRatios', {})
+
+                LongStocks.objects.create(
+                    stock=StockNames.objects.get(stockCode=code), 
+                    five_yr_roe= ratios.get('5Yroe'),
+                    five_yr_hist_rvnu_grth= ratios.get('5YrevChg'),
+                    pe= ratios.get('apef'),
+                    away_from= ratios.get('52wld'),
+                    item='52low'
+                )
+                print('inserted')
+    except requests.exceptions.RequestException as e:
+            print(f"An error occurred: {e}")
+        
+    stockData=[]
+
+    long_stocks = LongStocks.objects.all().values()
+    for long_stock in long_stocks:
+        stock_instance = StockNames.objects.filter(id=long_stock['stock_id']).values()
+        max_date = TradeData.objects.filter(stock=long_stock['stock_id']).aggregate(Max('date'))['date__max']
+        for stock in stock_instance:
+            amount = TradeData.objects.filter(stock=long_stock['stock_id'], date=max_date).values('close').first()
+            if amount:
+                close_value = round(amount['close'], 2)
+            else:
+                close_value = 0
+            stock_data = {
+                'id': stock['id'],
+                'stockName': stock['stockCode']+':'+stock['stockName'],
+                'amount': close_value,
+            }
+        stockData.append(stock_data)
+
+    data = {
+        'longStocks':stockData
+    }
+    encodedData = baseEncode(data)
+    return Response({'data': encodedData}, status=200)

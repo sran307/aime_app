@@ -1,13 +1,16 @@
 import 'package:dailyme/screens/events/EventList.dart';
 import 'package:dailyme/screens/goals/goals.dart';
+import 'package:dailyme/screens/locker/LockerIndex.dart';
 import 'package:flutter/material.dart';
 import 'package:dailyme/constants/constants.dart';
 import 'package:get/get.dart';
 import 'package:dailyme/screens/todo/ToDoList.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:dailyme/services/notificartion.dart';
-import 'package:dailyme/widgets/top_bar.dart';
 import 'package:awesome_notifications/awesome_notifications.dart';
+import 'package:dailyme/screens/stocks/stockHome.dart';
+
+
 class Utilities extends StatelessWidget {
   const Utilities({Key? key});
 
@@ -126,7 +129,7 @@ class Utilities extends StatelessWidget {
                         padding: EdgeInsets.all(8),
                         child: ElevatedButton(
                           onPressed: () {
-                            Get.to(ToDoList(),
+                            Get.to(stockHome(),
                                 transition: Transition.circularReveal);
                           },
                           child: Text('Trade'),
@@ -143,7 +146,7 @@ class Utilities extends StatelessWidget {
                         padding: EdgeInsets.all(8),
                         child: ElevatedButton(
                           onPressed: () {
-                            Get.to(ToDoList(),
+                            Get.to(LockerIndex(),
                                 transition: Transition.circularReveal);
                           },
                           child: Text('Locker'),

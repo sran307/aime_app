@@ -1,0 +1,2593 @@
+'phstr': {'_id': '5ea3e807f66c081ef6e173cb', 'label': 'phstr', 'type': 'prebuilt', '__v': 0, 'category': 'Futures & Options', 'clear': True, 'createdAt': '2020-04-25T07: 34: 30.967Z', 'def': 'Strike price of the stock put option with the highest open interest', 'display': 'Highest Put OI Strike', 'premium': True, 'quartile': True, 'rsch': 'OPPHSTR', 'short': 'High Put OI Strike', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': 12, 'max': 120000
+        },
+        {'type': 'radio', 'min': 420, 'btw': True, 'max': 2500, 'elem': [
+                {'text': 'Low', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Mid', 'rank': 2, 'subindustries': []
+                },
+                {'text': 'High', 'rank': 3, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': None, 'updatedAt': '2024-05-28T01: 55: 27.027Z', 'userId': None, 'locked': True
+}, 'putcall': {'_id': '5ea3e807f66c081ef6e173d0', 'label': 'putcall', 'type': 'prebuilt', '__v': 0, 'category': 'Futures & Options', 'clear': True, 'createdAt': '2020-04-25T07: 34: 30.967Z', 'def': 'Total put open interest divided by the total call open interest', 'display': 'Put Call Ratio', 'premium': True, 'quartile': True, 'rsch': 'PUTCALL', 'short': 'Put Call Ratio', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': 0.23, 'max': 1.38
+        },
+        {'type': 'radio', 'min': 0.49, 'btw': True, 'max': 0.71, 'elem': [
+                {'text': 'Low', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Mid', 'rank': 2, 'subindustries': []
+                },
+                {'text': 'High', 'rank': 3, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': None, 'updatedAt': '2024-05-28T01: 55: 27.027Z', 'userId': None, 'locked': True
+}, 'rolc': {'_id': '5ea3e807f66c081ef6e173c1', 'label': 'rolc', 'type': 'prebuilt', '__v': 0, 'category': 'Futures & Options', 'clear': True, 'createdAt': '2020-04-25T07: 34: 30.966Z', 'def': 'Difference between the next and current month future price divided by the current month future price', 'display': 'Rollover Cost', 'premium': True, 'quartile': True, 'rsch': 'FTROLC', 'short': 'Rollover Cost', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': -2.02, 'max': 1.51
+        },
+        {'type': 'radio', 'min': 0.32, 'btw': True, 'max': 0.73, 'elem': [
+                {'text': 'Low', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Mid', 'rank': 2, 'subindustries': []
+                },
+                {'text': 'High', 'rank': 3, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': '%', 'updatedAt': '2024-05-28T01: 55: 27.027Z', 'userId': None, 'locked': True
+}, 'rolp': {'_id': '5ea3e807f66c081ef6e173c2', 'label': 'rolp', 'type': 'prebuilt', '__v': 0, 'category': 'Futures & Options', 'clear': True, 'createdAt': '2020-04-25T07: 34: 30.966Z', 'def': 'An indication of how many current month futures contract have been rolled over to next month', 'display': 'Percentage Rollover', 'premium': True, 'quartile': True, 'rsch': 'FTROLP', 'short': 'Percentage Rollover', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': 0.9, 'max': 26.12
+        },
+        {'type': 'radio', 'min': 5.1, 'btw': True, 'max': 10.83, 'elem': [
+                {'text': 'Low', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Mid', 'rank': 2, 'subindustries': []
+                },
+                {'text': 'High', 'rank': 3, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': '%', 'updatedAt': '2024-05-28T01: 55: 27.027Z', 'userId': None, 'locked': True
+}, '5Yaroi': {'_id': '5ea3e807f66c081ef6e17370', 'label': '5Yaroi', 'type': 'prebuilt', '__v': 0, 'category': 'Profitability', 'clear': True, 'createdAt': '2020-04-25T07: 34: 30.963Z', 'def': 'Average of annual return on investment for the five most recent financial years', 'display': '5Y Avg Return on Investment', 'premium': False, 'quartile': False, 'rsch': 'AROI5YRAVG', 'short': '5Y Avg ROI', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': -35.32, 'max': 31.66
+        },
+        {'type': 'radio', 'min': 5, 'btw': True, 'max': 12, 'elem': [
+                {'text': 'Low ', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Mid', 'rank': 2, 'subindustries': []
+                },
+                {'text': 'High', 'rank': 3, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': '%', 'updatedAt': '2024-05-28T01: 55: 27.024Z', 'userId': None, 'locked': False
+}, '5YcafCfoaMgn': {'_id': '6040e08cce89850a4339e35b', 'label': '5YcafCfoaMgn', 'type': 'prebuilt', '__v': 0, 'category': 'Profitability', 'clear': True, 'createdAt': '2021-03-04T13: 28: 43.772Z', 'def': 'Average of annual cash flow margin for the 5 most recent financial years', 'display': '5Y Avg Cash Flow Margin', 'premium': False, 'quartile': False, 'rsch': None, 'short': '5Y Avg Cash Flow Margin', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': -667.18, 'max': 254.17
+        },
+        {'type': 'radio', 'min': 8, 'btw': True, 'max': 20, 'elem': [
+                {'text': 'Low', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Mid', 'rank': 2, 'subindustries': []
+                },
+                {'text': 'High', 'rank': 3, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': '%', 'updatedAt': '2024-05-28T01: 55: 27.031Z', 'userId': None, 'locked': False
+}, '5YpftMrg': {'_id': '5ea3e807f66c081ef6e1736e', 'label': '5YpftMrg', 'type': 'prebuilt', '__v': 0, 'category': 'Profitability', 'clear': True, 'createdAt': '2020-04-25T07: 34: 30.962Z', 'def': 'Average of annual net profit margin for the five most recent financial years', 'display': '5Y Avg Net Profit Margin', 'premium': False, 'quartile': False, 'rsch': 'MARGIN5YR', 'short': '5Y Avg NPM', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': -1947.04, 'max': 62.56
+        },
+        {'type': 'radio', 'min': 5, 'btw': True, 'max': 15, 'elem': [
+                {'text': 'Low ', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Mid', 'rank': 2, 'subindustries': []
+                },
+                {'text': 'High', 'rank': 3, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': '%', 'updatedAt': '2024-05-28T01: 55: 27.024Z', 'userId': None, 'locked': False
+}, '5Yroe': {'_id': '5ea3e807f66c081ef6e1736a', 'label': '5Yroe', 'type': 'prebuilt', '__v': 0, 'category': 'Profitability', 'clear': True, 'createdAt': '2020-04-25T07: 34: 30.962Z', 'def': 'Average of annual return on equity for the five most recent financial years', 'display': '5Y Avg Return on Equity', 'premium': False, 'quartile': False, 'rsch': 'AROE5YAVG', 'short': '5Y Avg ROE', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': -816.43, 'max': 2834.32
+        },
+        {'type': 'radio', 'min': 5, 'btw': True, 'max': 15, 'elem': [
+                {'text': 'Low ', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Mid', 'rank': 2, 'subindustries': []
+                },
+                {'text': 'High', 'rank': 3, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': '%', 'updatedAt': '2024-05-28T01: 55: 27.024Z', 'userId': None, 'locked': False
+}, '5YrtnAsts': {'_id': '5ea3e807f66c081ef6e1736c', 'label': '5YrtnAsts', 'type': 'prebuilt', '__v': 0, 'category': 'Profitability', 'clear': True, 'createdAt': '2020-04-25T07: 34: 30.962Z', 'def': 'Average of annual return on assets for the five most recent financial years', 'display': '5Y Avg Return on Assets', 'premium': False, 'quartile': False, 'rsch': 'AROA5YAVG', 'short': '5Y Avg ROA', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': -59.82, 'max': 30.59
+        },
+        {'type': 'radio', 'min': 3, 'btw': True, 'max': 10, 'elem': [
+                {'text': 'Low ', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Mid', 'rank': 2, 'subindustries': []
+                },
+                {'text': 'High', 'rank': 3, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': '%', 'updatedAt': '2024-05-28T01: 55: 27.024Z', 'userId': None, 'locked': False
+}, 'aopm': {'_id': '5ea3e807f66c081ef6e17371', 'label': 'aopm', 'type': 'prebuilt', '__v': 0, 'category': 'Profitability', 'clear': True, 'createdAt': '2020-04-25T07: 34: 30.963Z', 'def': 'EBITDA divided by the revenue earned for the most recent financial year', 'display': 'EBITDA Margin', 'premium': False, 'quartile': False, 'rsch': 'AOPMGNPCT', 'short': 'EBITDA Margin', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': -1420.66, 'max': 93.5
+        },
+        {'type': 'radio', 'min': 7, 'btw': True, 'max': 20, 'elem': [
+                {'text': 'Low ', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Mid', 'rank': 2, 'subindustries': []
+                },
+                {'text': 'High', 'rank': 3, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': '%', 'updatedAt': '2024-05-28T01: 55: 27.024Z', 'userId': None, 'locked': False
+}, 'aroi': {'_id': '5ea3e807f66c081ef6e1736f', 'label': 'aroi', 'type': 'prebuilt', '__v': 0, 'category': 'Profitability', 'clear': True, 'createdAt': '2020-04-25T07: 34: 30.963Z', 'def': 'Net income divided by the average of total debt and total equity', 'display': 'Return on Investment', 'premium': False, 'quartile': False, 'rsch': 'AROIPCT', 'short': 'Return on Investment', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': -37.62, 'max': 65.4
+        },
+        {'type': 'radio', 'min': 5, 'btw': True, 'max': 12, 'elem': [
+                {'text': 'Low ', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Mid', 'rank': 2, 'subindustries': []
+                },
+                {'text': 'High', 'rank': 3, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': '%', 'updatedAt': '2024-05-28T01: 55: 27.024Z', 'userId': None, 'locked': False
+}, 'balCogs': {'_id': '6040e08cce89850a4339e34f', 'label': 'balCogs', 'type': 'prebuilt', '__v': 0, 'category': 'Profitability', 'clear': True, 'createdAt': '2021-03-04T13: 28: 43.770Z', 'def': 'Refers to the direct cost of producing goods sold by the company. This usually includes raw material and labour cost expended to produce the good.', 'display': 'Cost of Goods Sold', 'premium': False, 'quartile': True, 'rsch': None, 'short': 'Cost of Goods Sold', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': -0.03, 'max': 337599.9
+        },
+        {'type': 'radio', 'min': 0.36, 'btw': True, 'max': 140.57, 'elem': [
+                {'text': 'Low', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Mid', 'rank': 2, 'subindustries': []
+                },
+                {'text': 'High', 'rank': 3, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': 'Cr', 'updatedAt': '2024-05-28T01: 55: 27.031Z', 'userId': None, 'locked': False
+}, 'cafCfoaMgn': {'_id': '6040e08cce89850a4339e35a', 'label': 'cafCfoaMgn', 'type': 'prebuilt', '__v': 0, 'category': 'Profitability', 'clear': True, 'createdAt': '2021-03-04T13: 28: 43.771Z', 'def': 'Cash from operations divided by total revenue for the most recent financial year', 'display': 'Cash Flow Margin', 'premium': False, 'quartile': False, 'rsch': None, 'short': 'Cash Flow Margin', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': -1018.75, 'max': 348.68
+        },
+        {'type': 'radio', 'min': 8, 'btw': True, 'max': 20, 'elem': [
+                {'text': 'Low', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Mid', 'rank': 2, 'subindustries': []
+                },
+                {'text': 'High', 'rank': 3, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': '%', 'updatedAt': '2024-05-28T01: 55: 27.031Z', 'userId': None, 'locked': False
+}, 'opmg': {'_id': '5ea3e807f66c081ef6e17372', 'label': 'opmg', 'type': 'prebuilt', '__v': 0, 'category': 'Profitability', 'clear': True, 'createdAt': '2020-04-25T07: 34: 30.963Z', 'def': 'Average of annual EBITDA margin for the five most recent financial years', 'display': '5Y Avg EBITDA Margin', 'premium': False, 'quartile': False, 'rsch': 'OPMGN5YR', 'short': '5Y Avg EBITDA margin', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': -1367.8, 'max': 76.4
+        },
+        {'type': 'radio', 'min': 7, 'btw': True, 'max': 20, 'elem': [
+                {'text': 'Low ', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Mid', 'rank': 2, 'subindustries': []
+                },
+                {'text': 'High', 'rank': 3, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': '%', 'updatedAt': '2024-05-28T01: 55: 27.024Z', 'userId': None, 'locked': False
+}, 'pftMrg': {'_id': '5ea3e807f66c081ef6e1736d', 'label': 'pftMrg', 'type': 'prebuilt', '__v': 0, 'category': 'Profitability', 'clear': True, 'createdAt': '2020-04-25T07: 34: 30.962Z', 'def': 'Net income divided by the revenue earned for the most recent financial year ', 'display': 'Net Profit Margin', 'premium': False, 'quartile': False, 'rsch': 'ANPMGNPCT', 'short': 'Net Profit Margin', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': -1900, 'max': 87.17
+        },
+        {'type': 'radio', 'min': 5, 'btw': True, 'max': 15, 'elem': [
+                {'text': 'Low ', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Mid', 'rank': 2, 'subindustries': []
+                },
+                {'text': 'High', 'rank': 3, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': '%', 'updatedAt': '2024-05-28T01: 55: 27.024Z', 'userId': None, 'locked': False
+}, 'roce': {'_id': '6040e08cce89850a4339e36b', 'label': 'roce', 'type': 'prebuilt', '__v': 0, 'category': 'Profitability', 'clear': True, 'createdAt': '2021-03-04T13: 28: 43.773Z', 'def': 'Return on Capital Employed. EBIT divided by capital employed, ie total assets minus total current liabilities for the most recent financial year', 'display': 'ROCE', 'premium': False, 'quartile': False, 'rsch': None, 'short': 'ROCE', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': -152.49, 'max': 210.25
+        },
+        {'type': 'radio', 'min': 7, 'btw': True, 'max': 20, 'elem': [
+                {'text': 'Low', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Mid', 'rank': 2, 'subindustries': []
+                },
+                {'text': 'High', 'rank': 3, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': '%', 'updatedAt': '2024-05-28T01: 55: 27.032Z', 'userId': None, 'locked': False
+}, 'roe': {'_id': '5ea3e807f66c081ef6e17369', 'label': 'roe', 'type': 'prebuilt', '__v': 0, 'category': 'Profitability', 'clear': True, 'createdAt': '2020-04-25T07: 34: 30.962Z', 'def': 'Net income divided by the average common equity for the most recent financial year', 'display': 'Return on Equity', 'premium': False, 'quartile': False, 'rsch': 'AROEPCT', 'short': 'Return on Equity', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': -3886.74, 'max': 18014398509481562
+        },
+        {'type': 'radio', 'min': 5, 'btw': True, 'max': 15, 'elem': [
+                {'text': 'Low ', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Mid', 'rank': 2, 'subindustries': []
+                },
+                {'text': 'High', 'rank': 3, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': '%', 'updatedAt': '2024-05-28T01: 55: 27.024Z', 'userId': None, 'locked': False
+}, 'rtnAsts': {'_id': '5ea3e807f66c081ef6e1736b', 'label': 'rtnAsts', 'type': 'prebuilt', '__v': 0, 'category': 'Profitability', 'clear': True, 'createdAt': '2020-04-25T07: 34: 30.962Z', 'def': 'Net income divided by the average total assets for the most recent financial year', 'display': 'Return on Assets', 'premium': False, 'quartile': False, 'rsch': 'AROAPCT', 'short': 'Return on Assets', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': -87.81, 'max': 59.9
+        },
+        {'type': 'radio', 'min': 3, 'btw': True, 'max': 10, 'elem': [
+                {'text': 'Low ', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Mid', 'rank': 2, 'subindustries': []
+                },
+                {'text': 'High', 'rank': 3, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': '%', 'updatedAt': '2024-05-28T01: 55: 27.024Z', 'userId': None, 'locked': False
+}, 'aint': {'_id': '5ea3e807f66c081ef6e17378', 'label': 'aint', 'type': 'prebuilt', '__v': 0, 'category': 'Financial Ratios', 'clear': True, 'createdAt': '2020-04-25T07: 34: 30.963Z', 'def': 'Ratio of earnings before interest and taxes divided by the interest expense', 'display': 'Interest Coverage Ratio', 'premium': False, 'quartile': False, 'rsch': 'AINTCOV', 'short': 'Int Coverage Ratio', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': -171.01, 'max': 639.26
+        },
+        {'type': 'radio', 'min': 0.5, 'btw': True, 'max': 5, 'elem': [
+                {'text': 'Low ', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Mid', 'rank': 2, 'subindustries': []
+                },
+                {'text': 'High', 'rank': 3, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': None, 'updatedAt': '2024-05-28T01: 55: 27.025Z', 'userId': None, 'locked': False
+}, 'aqui': {'_id': '5ea3e807f66c081ef6e17375', 'label': 'aqui', 'type': 'prebuilt', '__v': 0, 'category': 'Financial Ratios', 'clear': True, 'createdAt': '2020-04-25T07: 34: 30.963Z', 'def': 'Total current assets minus total inventory divided by the total current liabilities', 'display': 'Quick Ratio', 'premium': False, 'quartile': False, 'rsch': 'AQUICKRATI', 'short': 'Quick Ratio', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': 0.01, 'max': 161.29
+        },
+        {'type': 'radio', 'min': 0.5, 'btw': True, 'max': 1.2, 'elem': [
+                {'text': 'Low ', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Mid', 'rank': 2, 'subindustries': []
+                },
+                {'text': 'High', 'rank': 3, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': None, 'updatedAt': '2024-05-28T01: 55: 27.024Z', 'userId': None, 'locked': False
+}, 'asstTurnR': {'_id': '6040e08cce89850a4339e34e', 'label': 'asstTurnR', 'type': 'prebuilt', '__v': 0, 'category': 'Financial Ratios', 'clear': True, 'createdAt': '2021-03-04T13: 28: 43.770Z', 'def': 'Total revenue of a company divided by average total assets over the past 2 financial years', 'display': 'Asset Turnover Ratio', 'premium': False, 'quartile': False, 'rsch': None, 'short': 'Asset Turnover Ratio', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': 0, 'max': 7.32
+        },
+        {'type': 'radio', 'min': 0.5, 'btw': True, 'max': 1.2, 'elem': [
+                {'text': 'Low', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Mid', 'rank': 2, 'subindustries': []
+                },
+                {'text': 'High', 'rank': 3, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': None, 'updatedAt': '2024-05-28T01: 55: 27.031Z', 'userId': None, 'locked': False
+}, 'ccnc': {'_id': '5ea3e807f66c081ef6e17377', 'label': 'ccnc', 'type': 'prebuilt', '__v': 0, 'category': 'Financial Ratios', 'clear': True, 'createdAt': '2020-04-25T07: 34: 30.963Z', 'def': 'Sum of the avg inventory days & avg receivables collection days minus avg payable payment period', 'display': 'Cash Conversion Cycle', 'premium': False, 'quartile': False, 'rsch': 'CCNC', 'short': 'Cash Conversion Cycle', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': -7137.24, 'max': 6255.14
+        },
+        {'type': 'radio', 'min': 50, 'btw': True, 'max': 250, 'elem': [
+                {'text': 'Low ', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Mid', 'rank': 2, 'subindustries': []
+                },
+                {'text': 'High', 'rank': 3, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': None, 'updatedAt': '2024-05-28T01: 55: 27.025Z', 'userId': None, 'locked': False
+}, 'daysOfInvOstndng': {'_id': '6040e08cce89850a4339e350', 'label': 'daysOfInvOstndng', 'type': 'prebuilt', '__v': 0, 'category': 'Financial Ratios', 'clear': True, 'createdAt': '2021-03-04T13: 28: 43.770Z', 'def': 'Average number of days a company holds inventory before turning it into sales', 'display': 'Days of Inventory Outstanding', 'premium': True, 'quartile': False, 'rsch': None, 'short': 'Days of Inventory Outstanding', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': 0, 'max': 419020
+        },
+        {'type': 'radio', 'min': 50, 'btw': True, 'max': 180, 'elem': [
+                {'text': 'Low', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Mid', 'rank': 2, 'subindustries': []
+                },
+                {'text': 'High', 'rank': 3, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': None, 'updatedAt': '2024-05-28T01: 55: 27.031Z', 'userId': None, 'locked': True
+}, 'daysPayOstndng': {'_id': '6040e08cce89850a4339e352', 'label': 'daysPayOstndng', 'type': 'prebuilt', '__v': 0, 'category': 'Financial Ratios', 'clear': True, 'createdAt': '2021-03-04T13: 28: 43.770Z', 'def': 'Average number of days a company takes to make payments to its trade creditors.', 'display': 'Days Payable Outstanding', 'premium': True, 'quartile': False, 'rsch': None, 'short': 'Days Payable Outstanding', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': 0, 'max': 254770
+        },
+        {'type': 'radio', 'min': 60, 'btw': True, 'max': 180, 'elem': [
+                {'text': 'Low', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Mid', 'rank': 2, 'subindustries': []
+                },
+                {'text': 'High', 'rank': 3, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': None, 'updatedAt': '2024-05-28T01: 55: 27.031Z', 'userId': None, 'locked': True
+}, 'daysSalesOstndng': {'_id': '6040e08cce89850a4339e351', 'label': 'daysSalesOstndng', 'type': 'prebuilt', '__v': 0, 'category': 'Financial Ratios', 'clear': True, 'createdAt': '2021-03-04T13: 28: 43.770Z', 'def': 'Average number of days a company takes to realise payment of a sale', 'display': 'Days of Sales Outstanding', 'premium': True, 'quartile': False, 'rsch': None, 'short': 'Days Sales Outstanding', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': 0, 'max': 7430.36
+        },
+        {'type': 'radio', 'min': 20, 'btw': True, 'max': 70, 'elem': [
+                {'text': 'Low', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Mid', 'rank': 2, 'subindustries': []
+                },
+                {'text': 'High', 'rank': 3, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': None, 'updatedAt': '2024-05-28T01: 55: 27.031Z', 'userId': None, 'locked': True
+}, 'dbtEqt': {'_id': '5ea3e807f66c081ef6e17374', 'label': 'dbtEqt', 'type': 'prebuilt', '__v': 0, 'category': 'Financial Ratios', 'clear': True, 'createdAt': '2020-04-25T07: 34: 30.963Z', 'def': 'Total debt divided by the total shareholder equity', 'display': 'Debt to Equity', 'premium': False, 'quartile': False, 'rsch': 'ATOTD2EQ', 'short': 'Debt to Equity', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': 0, 'max': 989.94
+        },
+        {'type': 'radio', 'min': 20, 'btw': True, 'max': 70, 'elem': [
+                {'text': 'Low ', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Mid', 'rank': 2, 'subindustries': []
+                },
+                {'text': 'High', 'rank': 3, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': '%', 'updatedAt': '2024-05-28T01: 55: 27.024Z', 'userId': None, 'locked': False
+}, 'erngPwrR': {'_id': '6040e08cce89850a4339e36d', 'label': 'erngPwrR', 'type': 'prebuilt', '__v': 0, 'category': 'Financial Ratios', 'clear': True, 'createdAt': '2021-03-04T13: 28: 43.773Z', 'def': 'EBIT divided by total assets for the most recent financial year', 'display': 'Earning Power', 'premium': False, 'quartile': False, 'rsch': None, 'short': 'Earning Power', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': 0.13, 'max': 128.49
+        },
+        {'type': 'radio', 'min': 0.05, 'btw': True, 'max': 0.15, 'elem': [
+                {'text': 'Low', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Mid', 'rank': 2, 'subindustries': []
+                },
+                {'text': 'High', 'rank': 3, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': '%', 'updatedAt': '2024-05-28T01: 55: 27.032Z', 'userId': None, 'locked': False
+}, 'invTurnR': {'_id': '6040e08cce89850a4339e34d', 'label': 'invTurnR', 'type': 'prebuilt', '__v': 0, 'category': 'Financial Ratios', 'clear': True, 'createdAt': '2021-03-04T13: 28: 43.770Z', 'def': 'Cost of goods sold of a company divided by average inventory over the past 2 financial years', 'display': 'Inventory Turnover Ratio', 'premium': False, 'quartile': False, 'rsch': None, 'short': 'Inventory Turnover Ratio', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': 0, 'max': 54.76
+        },
+        {'type': 'radio', 'min': 4, 'btw': True, 'max': 12, 'elem': [
+                {'text': 'Low', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Mid', 'rank': 2, 'subindustries': []
+                },
+                {'text': 'High', 'rank': 3, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': None, 'updatedAt': '2024-05-28T01: 55: 27.031Z', 'userId': None, 'locked': False
+}, 'ldbtEqt': {'_id': '5ea3e807f66c081ef6e17373', 'label': 'ldbtEqt', 'type': 'prebuilt', '__v': 0, 'category': 'Financial Ratios', 'clear': True, 'createdAt': '2020-04-25T07: 34: 30.963Z', 'def': 'Total long term debt divided by the total shareholder equity', 'display': 'Long Term Debt to Equity', 'premium': False, 'quartile': False, 'rsch': 'ALTD2EQ', 'short': 'Lt Debt to Equity', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': 0, 'max': 603.35
+        },
+        {'type': 'radio', 'min': 20, 'btw': True, 'max': 70, 'elem': [
+                {'text': 'Low ', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Mid', 'rank': 2, 'subindustries': []
+                },
+                {'text': 'High', 'rank': 3, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': '%', 'updatedAt': '2024-05-28T01: 55: 27.024Z', 'userId': None, 'locked': False
+}, 'netIncByLbl': {'_id': '6040e08cce89850a4339e35d', 'label': 'netIncByLbl', 'type': 'prebuilt', '__v': 0, 'category': 'Financial Ratios', 'clear': True, 'createdAt': '2021-03-04T13: 28: 43.772Z', 'def': 'Net income divided by total liabilities for the most recent financial year', 'display': 'Net Income / Liabilities', 'premium': False, 'quartile': False, 'rsch': None, 'short': 'Net Income / Liabilities', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': 0.14, 'max': 1532.15
+        },
+        {'type': 'radio', 'min': 5, 'btw': True, 'max': 30, 'elem': [
+                {'text': 'Low', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Mid', 'rank': 2, 'subindustries': []
+                },
+                {'text': 'High', 'rank': 3, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': '%', 'updatedAt': '2024-05-28T01: 55: 27.031Z', 'userId': None, 'locked': False
+}, 'qcur': {'_id': '5ea3e807f66c081ef6e17376', 'label': 'qcur', 'type': 'prebuilt', '__v': 0, 'category': 'Financial Ratios', 'clear': True, 'createdAt': '2020-04-25T07: 34: 30.963Z', 'def': 'Total current assets divided by the total current liabilities', 'display': 'Current Ratio', 'premium': False, 'quartile': False, 'rsch': 'QCURRATIO', 'short': 'Current Ratio', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': 0.01, 'max': 206.64
+        },
+        {'type': 'radio', 'min': 0.6, 'btw': True, 'max': 1.5, 'elem': [
+                {'text': 'Low ', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Mid', 'rank': 2, 'subindustries': []
+                },
+                {'text': 'High', 'rank': 3, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': None, 'updatedAt': '2024-05-28T01: 55: 27.024Z', 'userId': None, 'locked': False
+}, 'wcTurnR': {'_id': '6040e08cce89850a4339e35c', 'label': 'wcTurnR', 'type': 'prebuilt', '__v': 0, 'category': 'Financial Ratios', 'clear': True, 'createdAt': '2021-03-04T13: 28: 43.772Z', 'def': 'Total revenue of a company divided by average working capital over the past 2 financial years', 'display': 'Working Capital Turnover Ratio', 'premium': False, 'quartile': False, 'rsch': None, 'short': 'Working Capital Turnover', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': -103.87, 'max': 102.54
+        },
+        {'type': 'radio', 'min': 1.5, 'btw': True, 'max': 8, 'elem': [
+                {'text': 'Low', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Mid', 'rank': 2, 'subindustries': []
+                },
+                {'text': 'High', 'rank': 3, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': None, 'updatedAt': '2024-05-28T01: 55: 27.031Z', 'userId': None, 'locked': False
+}, 'apef': {'_id': '5ea3e807f66c081ef6e17386', 'label': 'apef', 'type': 'prebuilt', '__v': 0, 'category': 'Valuation', 'clear': True, 'createdAt': '2020-04-25T07: 34: 30.964Z', 'def': 'Close price divided by the earnings per share, excluding extraordinary items, for the most recent financial year', 'display': 'PE Ratio', 'premium': False, 'quartile': False, 'rsch': 'APEF', 'short': 'PE Ratio', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': -526.32, 'max': 1369.21
+        },
+        {'type': 'radio', 'min': 20, 'btw': True, 'max': 45, 'elem': [
+                {'text': 'Low ', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Mid', 'rank': 2, 'subindustries': []
+                },
+                {'text': 'High', 'rank': 3, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': None, 'updatedAt': '2024-05-28T01: 55: 27.026Z', 'userId': None, 'locked': False
+}, 'divDps': {'_id': '5ea3e807f66c081ef6e1738b', 'label': 'divDps', 'type': 'prebuilt', '__v': 0, 'category': 'Valuation', 'clear': True, 'createdAt': '2020-04-25T07: 34: 30.964Z', 'def': 'Dividend Per Share for the most recent financial year divided by the close price', 'display': 'Dividend Yield', 'premium': False, 'quartile': False, 'rsch': 'ADYF', 'short': 'Div Yield', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': 0, 'max': 4682.6
+        },
+        {'type': 'radio', 'min': 1, 'btw': True, 'max': 3, 'elem': [
+                {'text': 'Low ', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Mid', 'rank': 2, 'subindustries': []
+                },
+                {'text': 'High', 'rank': 3, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': '%', 'updatedAt': '2024-05-28T01: 55: 27.026Z', 'userId': None, 'locked': False
+}, 'divSec': {'_id': '5ea3e807f66c081ef6e1738c', 'label': 'divSec', 'type': 'prebuilt', '__v': 0, 'category': 'Valuation', 'clear': True, 'createdAt': '2020-04-25T07: 34: 30.964Z', 'def': 'Difference between the dividend yield of company and the corresponding sector', 'display': 'Dividend Yield vs Sector', 'premium': True, 'quartile': False, 'rsch': 'ADYFPD', 'short': 'Div Yield vs Sector', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': -1.93, 'max': 4682.15
+        },
+        {'type': 'radio', 'min': 0, 'max': 0, 'elem': [
+                {'text': 'Below Sector', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Above Sector', 'rank': 2, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': '%', 'updatedAt': '2024-05-28T01: 55: 27.026Z', 'userId': None, 'locked': True
+}, 'dyPremSs': {'_id': '6040e08cce89850a4339e36a', 'label': 'dyPremSs', 'type': 'prebuilt', '__v': 0, 'category': 'Valuation', 'clear': True, 'createdAt': '2021-03-04T13: 28: 43.773Z', 'def': 'Difference between the dividend yield of company and the corresponding sub-sector', 'display': 'Dividend Yield vs Sub-sector', 'premium': True, 'quartile': False, 'rsch': None, 'short': 'Div Yield vs Sub-sector', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': -5.23, 'max': 4682.08
+        },
+        {'type': 'radio', 'min': 0, 'max': 0, 'elem': [
+                {'text': 'Below sector', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Above sector', 'rank': 2, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': '%', 'updatedAt': '2024-05-28T01: 55: 27.032Z', 'userId': None, 'locked': True
+}, 'ev': {'_id': '6040e08cce89850a4339e353', 'label': 'ev', 'type': 'prebuilt', '__v': 0, 'category': 'Valuation', 'clear': True, 'createdAt': '2021-03-04T13: 28: 43.771Z', 'def': 'Sum of a company’s latest market capitalisation, total debt and minority interest minus cash and short term investments at the end of the most recent financial year', 'display': 'Enterprise Value', 'premium': False, 'quartile': True, 'rsch': None, 'short': 'Enterprise Value', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': -34491, 'max': 2380519
+        },
+        {'type': 'radio', 'min': 35.33, 'btw': True, 'max': 1584.25, 'elem': [
+                {'text': 'Low', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Mid', 'rank': 2, 'subindustries': []
+                },
+                {'text': 'High', 'rank': 3, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': 'Cr', 'updatedAt': '2024-05-28T01: 55: 27.031Z', 'userId': None, 'locked': False
+}, 'evByIc': {'_id': '6040e08cce89850a4339e356', 'label': 'evByIc', 'type': 'prebuilt', '__v': 0, 'category': 'Valuation', 'clear': True, 'createdAt': '2021-03-04T13: 28: 43.771Z', 'def': 'Enterprise Value divided by invested capital of the last financial year', 'display': 'EV / Invested Capital', 'premium': False, 'quartile': False, 'rsch': None, 'short': 'EV / Invested Capital', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': 0.14, 'max': 53.03
+        },
+        {'type': 'radio', 'min': 0.2, 'btw': True, 'max': 1, 'elem': [
+                {'text': 'Low', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Mid', 'rank': 2, 'subindustries': []
+                },
+                {'text': 'High', 'rank': 3, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': None, 'updatedAt': '2024-05-28T01: 55: 27.031Z', 'userId': None, 'locked': False
+}, 'evByRev': {'_id': '6040e08cce89850a4339e355', 'label': 'evByRev', 'type': 'prebuilt', '__v': 0, 'category': 'Valuation', 'clear': True, 'createdAt': '2021-03-04T13: 28: 43.771Z', 'def': 'Current Enterprise Value divided by the total revenue at the end of the most recent financial year', 'display': 'EV / Revenue Ratio', 'premium': False, 'quartile': False, 'rsch': None, 'short': 'EV / Revenue Ratio', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': 0.13, 'max': 674.27
+        },
+        {'type': 'radio', 'min': 1, 'btw': True, 'max': 5, 'elem': [
+                {'text': 'Low', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Mid', 'rank': 2, 'subindustries': []
+                },
+                {'text': 'High', 'rank': 3, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': None, 'updatedAt': '2024-05-28T01: 55: 27.031Z', 'userId': None, 'locked': False
+}, 'evCafFcf': {'_id': '6040e08cce89850a4339e357', 'label': 'evCafFcf', 'type': 'prebuilt', '__v': 0, 'category': 'Valuation', 'clear': True, 'createdAt': '2021-03-04T13: 28: 43.771Z', 'def': 'Enterprise Value divided by free cash flow for the most recent financial year', 'display': 'EV / Free Cash Flow', 'premium': False, 'quartile': False, 'rsch': None, 'short': 'EV / Free Cash Flow', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': 1.06, 'max': 4014.14
+        },
+        {'type': 'radio', 'min': 3, 'btw': True, 'max': 30, 'elem': [
+                {'text': 'Low', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Mid', 'rank': 2, 'subindustries': []
+                },
+                {'text': 'High', 'rank': 3, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': None, 'updatedAt': '2024-05-28T01: 55: 27.031Z', 'userId': None, 'locked': False
+}, 'evebit': {'_id': '6040e08cce89850a4339e354', 'label': 'evebit', 'type': 'prebuilt', '__v': 0, 'category': 'Valuation', 'clear': True, 'createdAt': '2021-03-04T13: 28: 43.771Z', 'def': 'Current Enterprise Value divided by the EBIT at the end of the most recent financial year', 'display': 'EV / EBIT Ratio', 'premium': False, 'quartile': False, 'rsch': None, 'short': 'EV / EBIT Ratio', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': 0.97, 'max': 1180.73
+        },
+        {'type': 'radio', 'min': 10, 'btw': True, 'max': 30, 'elem': [
+                {'text': 'Low', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Mid', 'rank': 2, 'subindustries': []
+                },
+                {'text': 'High', 'rank': 3, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': None, 'updatedAt': '2024-05-28T01: 55: 27.031Z', 'userId': None, 'locked': False
+}, 'evebitd': {'_id': '5ea3e807f66c081ef6e17390', 'label': 'evebitd', 'type': 'prebuilt', '__v': 0, 'category': 'Valuation', 'clear': True, 'createdAt': '2020-04-25T07: 34: 30.964Z', 'def': 'Enterprise Value divided by the EBITDA for the most recent financial year', 'display': 'EV/EBITDA Ratio', 'premium': False, 'quartile': True, 'rsch': 'EVEBIT', 'short': 'EV/EBITDA Ratio', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': 0, 'max': 39378650606931550
+        },
+        {'type': 'radio', 'min': 10.11, 'btw': True, 'max': 34.9, 'elem': [
+                {'text': 'Low ', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Mid', 'rank': 2, 'subindustries': []
+                },
+                {'text': 'High', 'rank': 3, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': None, 'updatedAt': '2024-05-28T01: 55: 27.026Z', 'userId': None, 'locked': False
+}, 'inddy': {'_id': '62748013f5bf3e91a680c3b0', 'label': 'inddy', 'type': 'prebuilt', '__v': 0, 'category': 'Valuation', 'clear': True, 'createdAt': '2022-05-06T01: 55: 30.737Z', 'def': 'Average dividend yield of the sector the stock belongs to', 'display': 'Sector Dividend Yield', 'premium': False, 'quartile': False, 'rsch': 'INDDY', 'short': 'Sector Div Yield', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': 0, 'max': 1.94
+        },
+        {'type': 'radio', 'min': 1, 'btw': True, 'max': 3, 'elem': [
+                {'text': 'Low', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Mid', 'rank': 2, 'subindustries': []
+                },
+                {'text': 'High', 'rank': 3, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': None, 'updatedAt': '2024-05-28T01: 55: 27.033Z', 'userId': None, 'locked': False
+}, 'indpb': {'_id': '62748013f5bf3e91a680c3af', 'label': 'indpb', 'type': 'prebuilt', '__v': 0, 'category': 'Valuation', 'clear': True, 'createdAt': '2022-05-06T01: 55: 30.737Z', 'def': 'Average PB ratio of the sector the stock belongs to', 'display': 'Sector PB', 'premium': False, 'quartile': False, 'rsch': 'INDPB', 'short': 'Sector PB', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': 1.06, 'max': 245.28
+        },
+        {'type': 'radio', 'min': 1, 'btw': True, 'max': 3, 'elem': [
+                {'text': 'Low', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Mid', 'rank': 2, 'subindustries': []
+                },
+                {'text': 'High', 'rank': 3, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': None, 'updatedAt': '2024-05-28T01: 55: 27.033Z', 'userId': None, 'locked': False
+}, 'indpe': {'_id': '62748013f5bf3e91a680c3ae', 'label': 'indpe', 'type': 'prebuilt', '__v': 0, 'category': 'Valuation', 'clear': True, 'createdAt': '2022-05-06T01: 55: 30.737Z', 'def': 'Average PE ratio of the sector the stock belongs to', 'display': 'Sector PE', 'premium': False, 'quartile': False, 'rsch': 'INDPE', 'short': 'Sector PE', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': -144.92, 'max': 133.42
+        },
+        {'type': 'radio', 'min': 20, 'btw': True, 'max': 45, 'elem': [
+                {'text': 'Low', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Mid', 'rank': 2, 'subindustries': []
+                },
+                {'text': 'High', 'rank': 3, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': None, 'updatedAt': '2024-05-28T01: 55: 27.032Z', 'userId': None, 'locked': False
+}, 'lcpCafFcf': {'_id': '6040e08cce89850a4339e358', 'label': 'lcpCafFcf', 'type': 'prebuilt', '__v': 0, 'category': 'Valuation', 'clear': True, 'createdAt': '2021-03-04T13: 28: 43.771Z', 'def': 'Market capitalisation of the company divided by free cash flow for the most recent financial year', 'display': 'Price / Free Cash Flow', 'premium': False, 'quartile': False, 'rsch': None, 'short': 'Price / Free Cash Flow', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': 0.23, 'max': 3953.55
+        },
+        {'type': 'radio', 'min': 5, 'btw': True, 'max': 30, 'elem': [
+                {'text': 'Low', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Mid', 'rank': 2, 'subindustries': []
+                },
+                {'text': 'High', 'rank': 3, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': None, 'updatedAt': '2024-05-28T01: 55: 27.031Z', 'userId': None, 'locked': False
+}, 'pbPremSi': {'_id': '6040e08cce89850a4339e368', 'label': 'pbPremSi', 'type': 'prebuilt', '__v': 0, 'category': 'Valuation', 'clear': True, 'createdAt': '2021-03-04T13: 28: 43.773Z', 'def': 'Stock PB ratio divided by the corresponding sub-sector PB ratio minus one', 'display': 'PB Premium vs Sub-sector', 'premium': True, 'quartile': False, 'rsch': None, 'short': 'PB Premium vs Sub-sector', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': -783.29, 'max': 3163.13
+        },
+        {'type': 'radio', 'min': 0, 'max': 0, 'elem': [
+                {'text': 'Discount', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Premium', 'rank': 2, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': '%', 'updatedAt': '2024-05-28T01: 55: 27.032Z', 'userId': None, 'locked': True
+}, 'pbd': {'_id': '5ea3e807f66c081ef6e1738a', 'label': 'pbd', 'type': 'prebuilt', '__v': 0, 'category': 'Valuation', 'clear': True, 'createdAt': '2020-04-25T07: 34: 30.964Z', 'def': 'Stock PB ratio divided by the corresponding sector PB ratio minus one', 'display': 'PB Premium vs Sector', 'premium': True, 'quartile': False, 'rsch': 'APBFPD', 'short': 'PB Premium vs Sector', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': -764.24, 'max': 3210.3
+        },
+        {'type': 'radio', 'min': 0, 'max': 0, 'elem': [
+                {'text': 'Discount', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Premium', 'rank': 2, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': '%', 'updatedAt': '2024-05-28T01: 55: 27.026Z', 'userId': None, 'locked': True
+}, 'pbr': {'_id': '5ea3e807f66c081ef6e17389', 'label': 'pbr', 'type': 'prebuilt', '__v': 0, 'category': 'Valuation', 'clear': True, 'createdAt': '2020-04-25T07: 34: 30.964Z', 'def': 'Close price divided by the book value per share at the end of the most recent financial year', 'display': 'PB Ratio', 'premium': False, 'quartile': False, 'rsch': 'APBF', 'short': 'PB Ratio', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': -29.93, 'max': 79.1
+        },
+        {'type': 'radio', 'min': 1, 'btw': True, 'max': 3, 'elem': [
+                {'text': 'Low ', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Mid', 'rank': 2, 'subindustries': []
+                },
+                {'text': 'High', 'rank': 3, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': None, 'updatedAt': '2024-05-28T01: 55: 27.026Z', 'userId': None, 'locked': False
+}, 'pePremSi': {'_id': '6040e08cce89850a4339e367', 'label': 'pePremSi', 'type': 'prebuilt', '__v': 0, 'category': 'Valuation', 'clear': True, 'createdAt': '2021-03-04T13: 28: 43.773Z', 'def': 'Stock PE ratio divided by the corresponding sub-sector PE ratio minus one', 'display': 'PE Premium vs Sub-sector', 'premium': True, 'quartile': False, 'rsch': None, 'short': 'PE Premium vs Sub-sector', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': -1441.88, 'max': 2878.13
+        },
+        {'type': 'radio', 'min': 0, 'max': 0, 'elem': [
+                {'text': 'Discount', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Premium', 'rank': 2, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': '%', 'updatedAt': '2024-05-28T01: 55: 27.032Z', 'userId': None, 'locked': True
+}, 'ped': {'_id': '5ea3e807f66c081ef6e17388', 'label': 'ped', 'type': 'prebuilt', '__v': 0, 'category': 'Valuation', 'clear': True, 'createdAt': '2020-04-25T07: 34: 30.964Z', 'def': 'Stock PE ratio divided by the corresponding sector PE ratio minus one', 'display': 'PE Premium vs Sector', 'premium': True, 'quartile': False, 'rsch': 'APEFPD', 'short': 'PE Premium vs Sector', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': -1524.78, 'max': 3203.32
+        },
+        {'type': 'radio', 'min': 0, 'max': 0, 'elem': [
+                {'text': 'Discount', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Premium', 'rank': 2, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': '%', 'updatedAt': '2024-05-28T01: 55: 27.026Z', 'userId': None, 'locked': True
+}, 'pef': {'_id': '5ea3e807f66c081ef6e17387', 'label': 'pef', 'type': 'prebuilt', '__v': 0, 'category': 'Valuation', 'clear': True, 'createdAt': '2020-04-25T07: 34: 30.964Z', 'def': 'Close price divided by the estimated EPS for the current financial year', 'display': 'Forward PE Ratio', 'premium': True, 'quartile': False, 'rsch': 'ESTAPEF', 'short': 'Fwd PE Ratio', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': -48.8, 'max': 174.96
+        },
+        {'type': 'radio', 'min': 20, 'btw': True, 'max': 45, 'elem': [
+                {'text': 'Low ', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Mid', 'rank': 2, 'subindustries': []
+                },
+                {'text': 'High', 'rank': 3, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': None, 'updatedAt': '2024-05-28T01: 55: 27.026Z', 'userId': None, 'locked': True
+}, 'priceBySales': {'_id': '6040e08cce89850a4339e35e', 'label': 'priceBySales', 'type': 'prebuilt', '__v': 0, 'category': 'Valuation', 'clear': True, 'createdAt': '2021-03-04T13: 28: 43.772Z', 'def': 'Market cap of the stock divided by total revenue for the most recent financial year', 'display': 'Price / Sales', 'premium': False, 'quartile': False, 'rsch': None, 'short': 'Price / Sales', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': 0, 'max': 406.63
+        },
+        {'type': 'radio', 'min': 1, 'btw': True, 'max': 5, 'elem': [
+                {'text': 'Low', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Mid', 'rank': 2, 'subindustries': []
+                },
+                {'text': 'High', 'rank': 3, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': None, 'updatedAt': '2024-05-28T01: 55: 27.031Z', 'userId': None, 'locked': False
+}, 'priceCfoR': {'_id': '6040e08cce89850a4339e359', 'label': 'priceCfoR', 'type': 'prebuilt', '__v': 0, 'category': 'Valuation', 'clear': True, 'createdAt': '2021-03-04T13: 28: 43.771Z', 'def': 'Market capitalisation of the company divided by cashflow from operations for the most recent financial year', 'display': 'Price / CFO', 'premium': False, 'quartile': False, 'rsch': None, 'short': 'Price / CFO', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': 0.2, 'max': 1724.68
+        },
+        {'type': 'radio', 'min': 5, 'btw': True, 'max': 30, 'elem': [
+                {'text': 'Low', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Mid', 'rank': 2, 'subindustries': []
+                },
+                {'text': 'High', 'rank': 3, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': None, 'updatedAt': '2024-05-28T01: 55: 27.031Z', 'userId': None, 'locked': False
+}, 'ps': {'_id': '5ea3e807f66c081ef6e1738d', 'label': 'ps', 'type': 'prebuilt', '__v': 0, 'category': 'Valuation', 'clear': True, 'createdAt': '2020-04-25T07: 34: 30.964Z', 'def': 'Close price divided by the revenue per share for the most recent financial year', 'display': 'PS Ratio', 'premium': False, 'quartile': False, 'rsch': 'APSF', 'short': 'PS Ratio', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': 0, 'max': 406.63
+        },
+        {'type': 'radio', 'min': 1, 'btw': True, 'max': 2, 'elem': [
+                {'text': 'Low ', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Mid', 'rank': 2, 'subindustries': []
+                },
+                {'text': 'High', 'rank': 3, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': None, 'updatedAt': '2024-05-28T01: 55: 27.026Z', 'userId': None, 'locked': False
+}, 'psPremSi': {'_id': '6040e08cce89850a4339e369', 'label': 'psPremSi', 'type': 'prebuilt', '__v': 0, 'category': 'Valuation', 'clear': True, 'createdAt': '2021-03-04T13: 28: 43.773Z', 'def': 'Stock PS ratio divided by the corresponding sub-sector PS ratio minus one', 'display': 'PS Premium vs Sub-sector', 'premium': True, 'quartile': False, 'rsch': None, 'short': 'PS Premium vs Sub-sector', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': -100, 'max': 17839.4
+        },
+        {'type': 'radio', 'min': 0, 'max': 0, 'elem': [
+                {'text': 'Discount', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Premium', 'rank': 2, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': '%', 'updatedAt': '2024-05-28T01: 55: 27.032Z', 'userId': None, 'locked': True
+}, 'psf': {'_id': '5ea3e807f66c081ef6e1738e', 'label': 'psf', 'type': 'prebuilt', '__v': 0, 'category': 'Valuation', 'clear': True, 'createdAt': '2020-04-25T07: 34: 30.964Z', 'def': 'Close price divided by the estimated revenue per share for the most recent financial year', 'display': 'Forward PS Ratio', 'premium': True, 'quartile': False, 'rsch': 'ESTAPSF', 'short': 'Fwd PS Ratio', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': 0.38, 'max': 24.86
+        },
+        {'type': 'radio', 'min': 1, 'btw': True, 'max': 2, 'elem': [
+                {'text': 'Low ', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Mid', 'rank': 2, 'subindustries': []
+                },
+                {'text': 'High', 'rank': 3, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': None, 'updatedAt': '2024-05-28T01: 55: 27.026Z', 'userId': None, 'locked': True
+}, 'psfs': {'_id': '5ea3e807f66c081ef6e1738f', 'label': 'psfs', 'type': 'prebuilt', '__v': 0, 'category': 'Valuation', 'clear': True, 'createdAt': '2020-04-25T07: 34: 30.964Z', 'def': 'Stock PS ratio divided by the corresponding sector PS ratio minus one', 'display': 'PS Premium vs Sector', 'premium': True, 'quartile': False, 'rsch': 'APSFPD', 'short': 'PS Premium vs Sector', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': -100, 'max': 15967.85
+        },
+        {'type': 'radio', 'min': 0, 'max': 0, 'elem': [
+                {'text': 'Discount', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Premium', 'rank': 2, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': '%', 'updatedAt': '2024-05-28T01: 55: 27.026Z', 'userId': None, 'locked': True
+}, 'ttmPe': {'_id': '64107676c5b8cc0c14e8a759', 'label': 'ttmPe', 'type': 'prebuilt', '__v': 0, 'category': 'Valuation', 'clear': True, 'createdAt': '2023-03-14T13: 28: 22.519Z', 'def': 'Close price divided by the TTM earnings per share, excluding extraordinary items. TTM stands for trailing twelve months', 'display': 'TTM PE Ratio', 'premium': False, 'quartile': False, 'rsch': None, 'short': 'TTM PE Ratio', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': -528.22, 'max': 905.27
+        },
+        {'type': 'radio', 'min': 20, 'btw': True, 'max': 45, 'elem': [
+                {'text': 'Low ', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Mid', 'rank': 2, 'subindustries': []
+                },
+                {'text': 'High', 'rank': 3, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': None, 'updatedAt': '2023-06-06T02: 02: 16.208Z', 'userId': None, 'locked': False
+}, 'balAccp': {'_id': '5ea3e807f66c081ef6e17406', 'label': 'balAccp', 'type': 'prebuilt', '__v': 0, 'category': 'Balance Sheet & Cash Flow', 'clear': True, 'createdAt': '2020-04-25T07: 34: 30.970Z', 'def': 'Balance owed to suppliers for material and merchandise used in production', 'display': 'Accounts Payable', 'premium': False, 'quartile': True, 'rsch': 'BALACCP', 'short': 'Accounts Payable', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': -0.88, 'max': 147172
+        },
+        {'type': 'radio', 'min': 0.56, 'btw': True, 'max': 64.23, 'elem': [
+                {'text': 'Low', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Mid', 'rank': 2, 'subindustries': []
+                },
+                {'text': 'High', 'rank': 3, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': 'Cr', 'updatedAt': '2024-05-28T01: 55: 27.030Z', 'userId': None, 'locked': False
+}, 'balApic': {'_id': '5ea3e807f66c081ef6e1740f', 'label': 'balApic', 'type': 'prebuilt', '__v': 0, 'category': 'Balance Sheet & Cash Flow', 'clear': True, 'createdAt': '2020-04-25T07: 34: 30.971Z', 'def': 'Capital contributed by shareholders in excess of par value of common stock', 'display': 'Additional Paid–in Capital', 'premium': False, 'quartile': True, 'rsch': 'BALAPIC', 'short': 'Add. Paid-in Capital', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': -42.42, 'max': 109590.4
+        },
+        {'type': 'radio', 'min': 0, 'btw': True, 'max': 46.6, 'elem': [
+                {'text': 'Low', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Mid', 'rank': 2, 'subindustries': []
+                },
+                {'text': 'High', 'rank': 3, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': 'Cr', 'updatedAt': '2024-05-28T01: 55: 27.030Z', 'userId': None, 'locked': False
+}, 'balComs': {'_id': '5ea3e807f66c081ef6e1740e', 'label': 'balComs', 'type': 'prebuilt', '__v': 0, 'category': 'Balance Sheet & Cash Flow', 'clear': True, 'createdAt': '2020-04-25T07: 34: 30.971Z', 'def': 'Common shares outstanding of the company multiplied by the par value, also known as Common Stock', 'display': 'Share Capital', 'premium': False, 'quartile': True, 'rsch': 'BALCOMS', 'short': 'Share Capital', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': 0, 'max': 48679.7
+        },
+        {'type': 'radio', 'min': 5.41, 'btw': True, 'max': 27.99, 'elem': [
+                {'text': 'Low', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Mid', 'rank': 2, 'subindustries': []
+                },
+                {'text': 'High', 'rank': 3, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': 'Cr', 'updatedAt': '2024-05-28T01: 55: 27.030Z', 'userId': None, 'locked': False
+}, 'balCsti': {'_id': '5ea3e807f66c081ef6e173fd', 'label': 'balCsti', 'type': 'prebuilt', '__v': 0, 'category': 'Balance Sheet & Cash Flow', 'clear': True, 'createdAt': '2020-04-25T07: 34: 30.970Z', 'def': 'It includes cash, cash equivalent and short term investments of the company', 'display': 'Cash and Equivalent', 'premium': False, 'quartile': True, 'rsch': 'BALCSTI', 'short': 'Cash and Equivalent', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': -4.47, 'max': 318311.91
+        },
+        {'type': 'radio', 'min': 0.39, 'btw': True, 'max': 49.09, 'elem': [
+                {'text': 'Low', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Mid', 'rank': 2, 'subindustries': []
+                },
+                {'text': 'High', 'rank': 3, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': 'Cr', 'updatedAt': '2024-05-28T01: 55: 27.029Z', 'userId': None, 'locked': False
+}, 'balDit': {'_id': '5ea3e807f66c081ef6e1740b', 'label': 'balDit', 'type': 'prebuilt', '__v': 0, 'category': 'Balance Sheet & Cash Flow', 'clear': True, 'createdAt': '2020-04-25T07: 34: 30.971Z', 'def': 'Difference between deferred tax liabilities and deferred tax assets of the company', 'display': 'Deferred Tax Liabilities (Net)', 'premium': False, 'quartile': True, 'rsch': 'BALDIT', 'short': 'Deferred Tax Liabilities (Net)', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': 0, 'max': 58775
+        },
+        {'type': 'radio', 'min': 0.44, 'btw': True, 'max': 21.6, 'elem': [
+                {'text': 'Low', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Mid', 'rank': 2, 'subindustries': []
+                },
+                {'text': 'High', 'rank': 3, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': 'Cr', 'updatedAt': '2024-05-28T01: 55: 27.030Z', 'userId': None, 'locked': False
+}, 'balDta': {'_id': '5ec949a8cbf89767469b7470', 'label': 'balDta', 'type': 'prebuilt', '__v': 0, 'category': 'Balance Sheet & Cash Flow', 'clear': True, 'createdAt': '2020-05-23T16: 04: 56.192Z', 'def': 'Difference between deferred tax assets and deferred tax liabilities of the company', 'display': 'Deferred Tax Assets (Net)', 'premium': False, 'quartile': True, 'rsch': 'BALDTA', 'short': 'Deferred Tax Assets (Net)', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': 0, 'max': 16875.7
+        },
+        {'type': 'radio', 'min': 0.12, 'btw': True, 'max': 12.36, 'elem': [
+                {'text': 'Low', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Mid', 'rank': 2, 'subindustries': []
+                },
+                {'text': 'High', 'rank': 3, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': 'Cr', 'updatedAt': '2024-05-28T01: 55: 27.031Z', 'userId': None, 'locked': False
+}, 'balGint': {'_id': '5ea3e807f66c081ef6e17403', 'label': 'balGint', 'type': 'prebuilt', '__v': 0, 'category': 'Balance Sheet & Cash Flow', 'clear': True, 'createdAt': '2020-04-25T07: 34: 30.970Z', 'def': 'Sum of goodwill and intangibles like patents, copyrights, trademarks etc', 'display': 'Goodwill & Intangibles', 'premium': False, 'quartile': True, 'rsch': 'BALGINT', 'short': 'Goodwill & Intangibles', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': -0.18, 'max': 126746.8
+        },
+        {'type': 'radio', 'min': 0, 'btw': True, 'max': 0.02, 'elem': [
+                {'text': 'Low', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Mid', 'rank': 2, 'subindustries': []
+                },
+                {'text': 'High', 'rank': 3, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': 'Cr', 'updatedAt': '2024-05-28T01: 55: 27.029Z', 'userId': None, 'locked': False
+}, 'balLti': {'_id': '5ea3e807f66c081ef6e17404', 'label': 'balLti', 'type': 'prebuilt', '__v': 0, 'category': 'Balance Sheet & Cash Flow', 'clear': True, 'createdAt': '2020-04-25T07: 34: 30.970Z', 'def': 'Long term investments of the company at the end of latest financial year', 'display': 'Long Term Investments', 'premium': False, 'quartile': True, 'rsch': 'BALLTI', 'short': 'Long Term Investments', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': -0.16, 'max': 4243008.27
+        },
+        {'type': 'radio', 'min': 0, 'btw': True, 'max': 10.36, 'elem': [
+                {'text': 'Low', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Mid', 'rank': 2, 'subindustries': []
+                },
+                {'text': 'High', 'rank': 3, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': 'Cr', 'updatedAt': '2024-05-28T01: 55: 27.029Z', 'userId': None, 'locked': False
+}, 'balMint': {'_id': '5ea3e807f66c081ef6e1740c', 'label': 'balMint', 'type': 'prebuilt', '__v': 0, 'category': 'Balance Sheet & Cash Flow', 'clear': True, 'createdAt': '2020-04-25T07: 34: 30.971Z', 'def': 'Accumulated interest for minority shareholders in subsidiaries not wholly owned by the company', 'display': 'Minority Interest', 'premium': False, 'quartile': True, 'rsch': 'BALMINT', 'short': 'Minority Interest', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': -15581.9, 'max': 113009
+        },
+        {'type': 'radio', 'min': 0, 'btw': True, 'max': 2.11, 'elem': [
+                {'text': 'Low', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Mid', 'rank': 2, 'subindustries': []
+                },
+                {'text': 'High', 'rank': 3, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': 'Cr', 'updatedAt': '2024-05-28T01: 55: 27.030Z', 'userId': None, 'locked': False
+}, 'balNca': {'_id': '5ec7c89c8f4ffe55a1fc31d0', 'label': 'balNca', 'type': 'prebuilt', '__v': 0, 'category': 'Balance Sheet & Cash Flow', 'clear': True, 'createdAt': '2020-05-22T12: 42: 03.923Z', 'def': 'Sum of long term assets like Property/Plant/Equipment, Goodwill & Intangibles, Long term investments etc', 'display': 'Non Current Assets', 'premium': False, 'quartile': True, 'rsch': 'BALNCA', 'short': 'Non Current Assets', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': 0, 'max': 5647223.58
+        },
+        {'type': 'radio', 'min': 7.88, 'btw': True, 'max': 366.71, 'elem': [
+                {'text': 'Low', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Mid', 'rank': 2, 'subindustries': []
+                },
+                {'text': 'High', 'rank': 3, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': 'Cr', 'updatedAt': '2024-05-28T01: 55: 27.031Z', 'userId': None, 'locked': False
+}, 'balNcl': {'_id': '5ec7c89c8f4ffe55a1fc31d1', 'label': 'balNcl', 'type': 'prebuilt', '__v': 0, 'category': 'Balance Sheet & Cash Flow', 'clear': True, 'createdAt': '2020-05-22T12: 42: 03.923Z', 'def': 'Sum of long term debt, deferred tax liabilities & other long term liabilities', 'display': 'Non Current Liabilties', 'premium': False, 'quartile': True, 'rsch': 'BALNCL', 'short': 'Non Current Liabilties', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': -3.68, 'max': 4472516.91
+        },
+        {'type': 'radio', 'min': 0.79, 'btw': True, 'max': 79.58, 'elem': [
+                {'text': 'Low', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Mid', 'rank': 2, 'subindustries': []
+                },
+                {'text': 'High', 'rank': 3, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': 'Cr', 'updatedAt': '2024-05-28T01: 55: 27.031Z', 'userId': None, 'locked': False
+}, 'balNetl': {'_id': '5ea3e807f66c081ef6e17401', 'label': 'balNetl', 'type': 'prebuilt', '__v': 0, 'category': 'Balance Sheet & Cash Flow', 'clear': True, 'createdAt': '2020-04-25T07: 34: 30.970Z', 'def': 'Total loans to customers', 'display': 'Loans & Advances', 'premium': False, 'quartile': True, 'rsch': 'BALNETL', 'short': 'Loans & Advances', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': -0.23, 'max': 3267902.13
+        },
+        {'type': 'radio', 'min': 0, 'btw': True, 'max': 47.72, 'elem': [
+                {'text': 'Low', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Mid', 'rank': 2, 'subindustries': []
+                },
+                {'text': 'High', 'rank': 3, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': 'Cr', 'updatedAt': '2024-05-28T01: 55: 27.029Z', 'userId': None, 'locked': False
+}, 'balNppe': {'_id': '5ea3e807f66c081ef6e17402', 'label': 'balNppe', 'type': 'prebuilt', '__v': 0, 'category': 'Balance Sheet & Cash Flow', 'clear': True, 'createdAt': '2020-04-25T07: 34: 30.970Z', 'def': 'Gross property, plant and equipment minus accumulated depreciation', 'display': 'Net Property,Plant & Equipment', 'premium': False, 'quartile': True, 'rsch': 'BALNPPE', 'short': 'Net PP & E', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': -6208.55, 'max': 973652
+        },
+        {'type': 'radio', 'min': 1.34, 'btw': True, 'max': 192.74, 'elem': [
+                {'text': 'Low', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Mid', 'rank': 2, 'subindustries': []
+                },
+                {'text': 'High', 'rank': 3, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': 'Cr', 'updatedAt': '2024-05-28T01: 55: 27.029Z', 'userId': None, 'locked': False
+}, 'balOca': {'_id': '62748013f5bf3e91a680c3b1', 'label': 'balOca', 'type': 'prebuilt', '__v': 0, 'category': 'Balance Sheet & Cash Flow', 'clear': True, 'createdAt': '2022-05-06T01: 55: 30.737Z', 'def': 'Uncommon / Atypical assets held by a company which can be quickly converted to cash', 'display': 'Other Current Assets', 'premium': False, 'quartile': True, 'rsch': None, 'short': 'Other Current Assets', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': -12.13, 'max': 240492.1
+        },
+        {'type': 'radio', 'min': 1.43, 'btw': True, 'max': 46.96, 'elem': [
+                {'text': 'Low', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Mid', 'rank': 2, 'subindustries': []
+                },
+                {'text': 'High', 'rank': 3, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': 'Cr', 'updatedAt': '2024-05-28T01: 55: 27.033Z', 'userId': None, 'locked': False
+}, 'balOcl': {'_id': '62748013f5bf3e91a680c3b3', 'label': 'balOcl', 'type': 'prebuilt', '__v': 0, 'category': 'Balance Sheet & Cash Flow', 'clear': True, 'createdAt': '2022-05-06T01: 55: 30.737Z', 'def': 'Uncommon immediate obligations outstanding for a company not under any major liability type', 'display': 'Other Current Liabilities', 'premium': False, 'quartile': True, 'rsch': None, 'short': 'Other Current Liabilities', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': -0.63, 'max': 248571
+        },
+        {'type': 'radio', 'min': 2.23, 'btw': True, 'max': 136.35, 'elem': [
+                {'text': 'Low', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Mid', 'rank': 2, 'subindustries': []
+                },
+                {'text': 'High', 'rank': 3, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': 'Cr', 'updatedAt': '2024-05-28T01: 55: 27.033Z', 'userId': None, 'locked': False
+}, 'balOtha': {'_id': '62748013f5bf3e91a680c3b2', 'label': 'balOtha', 'type': 'prebuilt', '__v': 0, 'category': 'Balance Sheet & Cash Flow', 'clear': True, 'createdAt': '2022-05-06T01: 55: 30.737Z', 'def': 'Uncommon / Atypical assets held by a company which do not fall under major asset categories', 'display': 'Other Assets', 'premium': False, 'quartile': True, 'rsch': None, 'short': 'Other Assets', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': -92.64, 'max': 420267.85
+        },
+        {'type': 'radio', 'min': 0.19, 'btw': True, 'max': 23.65, 'elem': [
+                {'text': 'Low', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Mid', 'rank': 2, 'subindustries': []
+                },
+                {'text': 'High', 'rank': 3, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': 'Cr', 'updatedAt': '2024-05-28T01: 55: 27.033Z', 'userId': None, 'locked': False
+}, 'balOthl': {'_id': '62748013f5bf3e91a680c3b4', 'label': 'balOthl', 'type': 'prebuilt', '__v': 0, 'category': 'Balance Sheet & Cash Flow', 'clear': True, 'createdAt': '2022-05-06T01: 55: 30.737Z', 'def': 'Obligations outstanding for a company which do not fall under major liability categories', 'display': 'Other Liabilities', 'premium': False, 'quartile': True, 'rsch': None, 'short': 'Other Liabilities', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': -106.71, 'max': 4472516.91
+        },
+        {'type': 'radio', 'min': 0, 'btw': True, 'max': 6.34, 'elem': [
+                {'text': 'Low', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Mid', 'rank': 2, 'subindustries': []
+                },
+                {'text': 'High', 'rank': 3, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': 'Cr', 'updatedAt': '2024-05-28T01: 55: 27.033Z', 'userId': None, 'locked': False
+}, 'balRtne': {'_id': '5ea3e807f66c081ef6e17410', 'label': 'balRtne', 'type': 'prebuilt', '__v': 0, 'category': 'Balance Sheet & Cash Flow', 'clear': True, 'createdAt': '2020-04-25T07: 34: 30.971Z', 'def': 'Residual earnings from operations not distributed to shareholders', 'display': 'Reserves & Surplus', 'premium': False, 'quartile': True, 'rsch': 'BALRTVS', 'short': 'Reserves & Surplus', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': -232629.2, 'max': 609314
+        },
+        {'type': 'radio', 'min': 0.11, 'btw': True, 'max': 211.34, 'elem': [
+                {'text': 'Low', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Mid', 'rank': 2, 'subindustries': []
+                },
+                {'text': 'High', 'rank': 3, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': 'Cr', 'updatedAt': '2024-05-28T01: 55: 27.030Z', 'userId': None, 'locked': False
+}, 'balTca': {'_id': '5ea3e807f66c081ef6e17400', 'label': 'balTca', 'type': 'prebuilt', '__v': 0, 'category': 'Balance Sheet & Cash Flow', 'clear': True, 'createdAt': '2020-04-25T07: 34: 30.970Z', 'def': 'Sum of cash and equivalents, total receivables, total inventory and other current assets', 'display': 'Total Current Assets', 'premium': False, 'quartile': True, 'rsch': 'BALTCA', 'short': 'Current Assets', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': 0, 'max': 485180.77
+        },
+        {'type': 'radio', 'min': 11.04, 'btw': True, 'max': 374.72, 'elem': [
+                {'text': 'Low', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Mid', 'rank': 2, 'subindustries': []
+                },
+                {'text': 'High', 'rank': 3, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': 'Cr', 'updatedAt': '2024-05-28T01: 55: 27.029Z', 'userId': None, 'locked': False
+}, 'balTcl': {'_id': '5ea3e807f66c081ef6e17408', 'label': 'balTcl', 'type': 'prebuilt', '__v': 0, 'category': 'Balance Sheet & Cash Flow', 'clear': True, 'createdAt': '2020-04-25T07: 34: 30.971Z', 'def': 'Liabilities expected to be due in the next year/operating cycle of the company', 'display': 'Total Current Liabilities', 'premium': False, 'quartile': True, 'rsch': 'BALTCL', 'short': 'Current Liabilities', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': 0, 'max': 4468535.51
+        },
+        {'type': 'radio', 'min': 4.46, 'btw': True, 'max': 239.82, 'elem': [
+                {'text': 'Low', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Mid', 'rank': 2, 'subindustries': []
+                },
+                {'text': 'High', 'rank': 3, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': 'Cr', 'updatedAt': '2024-05-28T01: 55: 27.030Z', 'userId': None, 'locked': False
+}, 'balTcso': {'_id': '5ea3e807f66c081ef6e17412', 'label': 'balTcso', 'type': 'prebuilt', '__v': 0, 'category': 'Balance Sheet & Cash Flow', 'clear': True, 'createdAt': '2020-04-25T07: 34: 30.971Z', 'def': 'Total common shares of the company outstanding at the end of the most recent financial year', 'display': 'Common Shares Outstanding', 'premium': False, 'quartile': True, 'rsch': 'BALTCSO', 'short': 'Shares Outstanding', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': 0, 'max': 4867.97
+        },
+        {'type': 'radio', 'min': 0.62, 'btw': True, 'max': 7.89, 'elem': [
+                {'text': 'Low', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Mid', 'rank': 2, 'subindustries': []
+                },
+                {'text': 'High', 'rank': 3, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': 'Cr', 'updatedAt': '2024-05-28T01: 55: 27.030Z', 'userId': None, 'locked': False
+}, 'balTdeb': {'_id': '5ea3e807f66c081ef6e1740a', 'label': 'balTdeb', 'type': 'prebuilt', '__v': 0, 'category': 'Balance Sheet & Cash Flow', 'clear': True, 'createdAt': '2020-04-25T07: 34: 30.971Z', 'def': 'Total interest bearing debt of the company outstanding at the end of the most recent financial year', 'display': 'Total Debt', 'premium': False, 'quartile': True, 'rsch': 'BALTDEB', 'short': 'Total Debt', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': -1.55, 'max': 751157.52
+        },
+        {'type': 'radio', 'min': 1.18, 'btw': True, 'max': 122.95, 'elem': [
+                {'text': 'Low', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Mid', 'rank': 2, 'subindustries': []
+                },
+                {'text': 'High', 'rank': 3, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': 'Cr', 'updatedAt': '2024-05-28T01: 55: 27.030Z', 'userId': None, 'locked': False
+}, 'balTdep': {'_id': '5ea3e807f66c081ef6e17407', 'label': 'balTdep', 'type': 'prebuilt', '__v': 0, 'category': 'Balance Sheet & Cash Flow', 'clear': True, 'createdAt': '2020-04-25T07: 34: 30.970Z', 'def': 'Total deposits held by the bank at the end of the latest financial year', 'display': 'Total Deposits – Banks', 'premium': False, 'quartile': True, 'rsch': 'BALTDEP', 'short': 'Total Deposits', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': 917.15, 'max': 4468535.51
+        },
+        {'type': 'radio', 'min': 47766.49, 'btw': True, 'max': 361272.62, 'elem': [
+                {'text': 'Low', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Mid', 'rank': 2, 'subindustries': []
+                },
+                {'text': 'High', 'rank': 3, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': 'Cr', 'updatedAt': '2024-05-28T01: 55: 27.030Z', 'userId': None, 'locked': False
+}, 'balTeq': {'_id': '5ea3e807f66c081ef6e17411', 'label': 'balTeq', 'type': 'prebuilt', '__v': 0, 'category': 'Balance Sheet & Cash Flow', 'clear': True, 'createdAt': '2020-04-25T07: 34: 30.971Z', 'def': 'Sum of share capital, additional paid-in capital, reserves & surplus and other equity of the company', 'display': 'Total Equity', 'premium': False, 'quartile': True, 'rsch': 'BALTEQ', 'short': 'Total Equity', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': -74896, 'max': 828881
+        },
+        {'type': 'radio', 'min': 10.81, 'btw': True, 'max': 393.34, 'elem': [
+                {'text': 'Low', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Mid', 'rank': 2, 'subindustries': []
+                },
+                {'text': 'High', 'rank': 3, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': 'Cr', 'updatedAt': '2024-05-28T01: 55: 27.030Z', 'userId': None, 'locked': False
+}, 'balTinv': {'_id': '5ea3e807f66c081ef6e173ff', 'label': 'balTinv', 'type': 'prebuilt', '__v': 0, 'category': 'Balance Sheet & Cash Flow', 'clear': True, 'createdAt': '2020-04-25T07: 34: 30.970Z', 'def': 'All assets held for sale in the ordinary course of business by the company', 'display': 'Total Inventory', 'premium': False, 'quartile': True, 'rsch': 'BALTINV', 'short': 'Total Inventory', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': -0.02, 'max': 140008
+        },
+        {'type': 'radio', 'min': 0, 'btw': True, 'max': 73.88, 'elem': [
+                {'text': 'Low', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Mid', 'rank': 2, 'subindustries': []
+                },
+                {'text': 'High', 'rank': 3, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': 'Cr', 'updatedAt': '2024-05-28T01: 55: 27.029Z', 'userId': None, 'locked': False
+}, 'balTltd': {'_id': '5ea3e807f66c081ef6e17409', 'label': 'balTltd', 'type': 'prebuilt', '__v': 0, 'category': 'Balance Sheet & Cash Flow', 'clear': True, 'createdAt': '2020-04-25T07: 34: 30.971Z', 'def': 'Long term debt and capital lease obligation of the company for the latest financial year', 'display': 'Long Term Debt', 'premium': False, 'quartile': True, 'rsch': 'BALTLTD', 'short': 'Long Term Debt', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': -37.19, 'max': 743486.1
+        },
+        {'type': 'radio', 'min': 0.01, 'btw': True, 'max': 43.09, 'elem': [
+                {'text': 'Low', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Mid', 'rank': 2, 'subindustries': []
+                },
+                {'text': 'High', 'rank': 3, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': 'Cr', 'updatedAt': '2024-05-28T01: 55: 27.030Z', 'userId': None, 'locked': False
+}, 'balTota': {'_id': '5ea3e807f66c081ef6e17405', 'label': 'balTota', 'type': 'prebuilt', '__v': 0, 'category': 'Balance Sheet & Cash Flow', 'clear': True, 'createdAt': '2020-04-25T07: 34: 30.970Z', 'def': 'Total assets of the company for the latest financial year', 'display': 'Total Assets', 'premium': False, 'quartile': True, 'rsch': 'BALTOTA', 'short': 'Total Assets', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': 0, 'max': 5965535.49
+        },
+        {'type': 'radio', 'min': 26.81, 'btw': True, 'max': 881.15, 'elem': [
+                {'text': 'Low', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Mid', 'rank': 2, 'subindustries': []
+                },
+                {'text': 'High', 'rank': 3, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': 'Cr', 'updatedAt': '2024-05-28T01: 55: 27.030Z', 'userId': None, 'locked': False
+}, 'balTotl': {'_id': '5ea3e807f66c081ef6e1740d', 'label': 'balTotl', 'type': 'prebuilt', '__v': 0, 'category': 'Balance Sheet & Cash Flow', 'clear': True, 'createdAt': '2020-04-25T07: 34: 30.971Z', 'def': 'Total liabilities of the company for the latest financial year', 'display': 'Total Liabilities', 'premium': False, 'quartile': True, 'rsch': 'BALTOTL', 'short': 'Total Liabilities', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': -0.02, 'max': 5593767.55
+        },
+        {'type': 'radio', 'min': 8.37, 'btw': True, 'max': 381.43, 'elem': [
+                {'text': 'Low', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Mid', 'rank': 2, 'subindustries': []
+                },
+                {'text': 'High', 'rank': 3, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': 'Cr', 'updatedAt': '2024-05-28T01: 55: 27.030Z', 'userId': None, 'locked': False
+}, 'balTrec': {'_id': '5ea3e807f66c081ef6e173fe', 'label': 'balTrec', 'type': 'prebuilt', '__v': 0, 'category': 'Balance Sheet & Cash Flow', 'clear': True, 'createdAt': '2020-04-25T07: 34: 30.970Z', 'def': 'It includes accounts, notes and other receivables of the company', 'display': 'Total Receivables', 'premium': False, 'quartile': True, 'rsch': 'BLATREC', 'short': 'Total Receivables', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': -0.1, 'max': 244147.01
+        },
+        {'type': 'radio', 'min': 0.9, 'btw': True, 'max': 79.19, 'elem': [
+                {'text': 'Low', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Mid', 'rank': 2, 'subindustries': []
+                },
+                {'text': 'High', 'rank': 3, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': 'Cr', 'updatedAt': '2024-05-28T01: 55: 27.029Z', 'userId': None, 'locked': False
+}, 'bookValue': {'_id': '6040e08cce89850a4339e34c', 'label': 'bookValue', 'type': 'prebuilt', '__v': 0, 'category': 'Balance Sheet & Cash Flow', 'clear': True, 'createdAt': '2021-03-04T13: 28: 43.770Z', 'def': 'Total value of a company’s assets that shareholders of the company will receive if the company gets liquidated', 'display': 'Book Value', 'premium': False, 'quartile': True, 'rsch': None, 'short': 'Book Value', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': -74896, 'max': 828881
+        },
+        {'type': 'radio', 'min': 10.68, 'btw': True, 'max': 392.43, 'elem': [
+                {'text': 'Low', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Mid', 'rank': 2, 'subindustries': []
+                },
+                {'text': 'High', 'rank': 3, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': 'Cr', 'updatedAt': '2024-05-28T01: 55: 27.031Z', 'userId': None, 'locked': False
+}, 'cafCexp': {'_id': '5ea3e807f66c081ef6e17417', 'label': 'cafCexp', 'type': 'prebuilt', '__v': 0, 'category': 'Balance Sheet & Cash Flow', 'clear': True, 'createdAt': '2020-04-25T07: 34: 30.972Z', 'def': 'Capital expenditure incurred by the company in the latest financial year', 'display': 'Capital Expenditure', 'premium': False, 'quartile': True, 'rsch': 'CAFCEXP', 'short': 'Capital Expenditure', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': 0, 'max': 140988
+        },
+        {'type': 'radio', 'min': 0.01, 'btw': True, 'max': 22.4, 'elem': [
+                {'text': 'Low', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Mid', 'rank': 2, 'subindustries': []
+                },
+                {'text': 'High', 'rank': 3, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': 'Cr', 'updatedAt': '2024-05-28T01: 55: 27.030Z', 'userId': None, 'locked': False
+}, 'cafCffa': {'_id': '5ea3e807f66c081ef6e1741a', 'label': 'cafCffa', 'type': 'prebuilt', '__v': 0, 'category': 'Balance Sheet & Cash Flow', 'clear': True, 'createdAt': '2020-04-25T07: 34: 30.972Z', 'def': 'Cash flow attributed to financing activities of the latest financial year', 'display': 'Financing Cash Flow', 'premium': False, 'quartile': True, 'rsch': 'VAFCFFA', 'short': 'Financing Cash Flow', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': -48536, 'max': 75518.27
+        },
+        {'type': 'radio', 'min': -10.28, 'btw': True, 'max': 3.01, 'elem': [
+                {'text': 'Low', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Mid', 'rank': 2, 'subindustries': []
+                },
+                {'text': 'High', 'rank': 3, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': 'Cr', 'updatedAt': '2024-05-28T01: 55: 27.030Z', 'userId': None, 'locked': False
+}, 'cafCfia': {'_id': '5ea3e807f66c081ef6e17418', 'label': 'cafCfia', 'type': 'prebuilt', '__v': 0, 'category': 'Balance Sheet & Cash Flow', 'clear': True, 'createdAt': '2020-04-25T07: 34: 30.972Z', 'def': 'Cash flow attributed to investing activities of the latest financial year', 'display': 'Investing Cash Flow', 'premium': False, 'quartile': True, 'rsch': 'CAFCFIA', 'short': 'Investing Cash Flow', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': -93001, 'max': 6562
+        },
+        {'type': 'radio', 'min': -25.02, 'btw': True, 'max': 0.02, 'elem': [
+                {'text': 'Low', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Mid', 'rank': 2, 'subindustries': []
+                },
+                {'text': 'High', 'rank': 3, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': 'Cr', 'updatedAt': '2024-05-28T01: 55: 27.030Z', 'userId': None, 'locked': False
+}, 'cafCfoa': {'_id': '5ea3e807f66c081ef6e17416', 'label': 'cafCfoa', 'type': 'prebuilt', '__v': 0, 'category': 'Balance Sheet & Cash Flow', 'clear': True, 'createdAt': '2020-04-25T07: 34: 30.972Z', 'def': 'Cash flow attributed to normal business operations of the company for the latest financial year', 'display': 'Operating Cash Flow', 'premium': False, 'quartile': True, 'rsch': 'CAFCFOA', 'short': 'Operating Cash Flow', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': -86013.68, 'max': 115032
+        },
+        {'type': 'radio', 'min': -0.75, 'btw': True, 'max': 35.4, 'elem': [
+                {'text': 'Low', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Mid', 'rank': 2, 'subindustries': []
+                },
+                {'text': 'High', 'rank': 3, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': 'Cr', 'updatedAt': '2024-05-28T01: 55: 27.030Z', 'userId': None, 'locked': False
+}, 'cafCiwc': {'_id': '5ea3e807f66c081ef6e17415', 'label': 'cafCiwc', 'type': 'prebuilt', '__v': 0, 'category': 'Balance Sheet & Cash Flow', 'clear': True, 'createdAt': '2020-04-25T07: 34: 30.972Z', 'def': 'Change in working capital of the company for the latest financial year', 'display': 'Change in Working Capital', 'premium': False, 'quartile': True, 'rsch': 'CAFCIWC', 'short': 'Working Capital Change', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': -192683.12, 'max': 54518.5
+        },
+        {'type': 'radio', 'min': -26.6, 'btw': True, 'max': 0.4, 'elem': [
+                {'text': 'Low', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Mid', 'rank': 2, 'subindustries': []
+                },
+                {'text': 'High', 'rank': 3, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': 'Cr', 'updatedAt': '2024-05-28T01: 55: 27.030Z', 'userId': None, 'locked': False
+}, 'cafFcf': {'_id': '5ec7c89c8f4ffe55a1fc31d2', 'label': 'cafFcf', 'type': 'prebuilt', '__v': 0, 'category': 'Balance Sheet & Cash Flow', 'clear': True, 'createdAt': '2020-05-22T12: 42: 03.923Z', 'def': 'Operating cash flow remaining after deducting the capital expenditure for the latest financial year', 'display': 'Free Cash Flow', 'premium': False, 'quartile': True, 'rsch': 'CAFFCF', 'short': 'Free Cash Flow', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': -90684.7, 'max': 53632.04
+        },
+        {'type': 'radio', 'min': -4.78, 'btw': True, 'max': 11.51, 'elem': [
+                {'text': 'Low', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Mid', 'rank': 2, 'subindustries': []
+                },
+                {'text': 'High', 'rank': 3, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': 'Cr', 'updatedAt': '2024-05-28T01: 55: 27.031Z', 'userId': None, 'locked': False
+}, 'cafNcic': {'_id': '5ea3e807f66c081ef6e1741c', 'label': 'cafNcic', 'type': 'prebuilt', '__v': 0, 'category': 'Balance Sheet & Cash Flow', 'clear': True, 'createdAt': '2020-04-25T07: 34: 30.972Z', 'def': 'Sum of operating cashflow, investing cashflow, financing cashflow and foreign exchange effects', 'display': 'Net Change in Cash', 'premium': False, 'quartile': True, 'rsch': 'CAFNCIC', 'short': 'Net Change in Cash', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': -80593.21, 'max': 41762.08
+        },
+        {'type': 'radio', 'min': -0.83, 'btw': True, 'max': 1.66, 'elem': [
+                {'text': 'Low', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Mid', 'rank': 2, 'subindustries': []
+                },
+                {'text': 'High', 'rank': 3, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': 'Cr', 'updatedAt': '2024-05-28T01: 55: 27.030Z', 'userId': None, 'locked': False
+}, 'cafTcdp': {'_id': '5ea3e807f66c081ef6e17419', 'label': 'cafTcdp', 'type': 'prebuilt', '__v': 0, 'category': 'Balance Sheet & Cash Flow', 'clear': True, 'createdAt': '2020-04-25T07: 34: 30.972Z', 'def': 'Total cash distributed as dividend to shareholders in the latest financial year', 'display': 'Total Cash Dividend Paid', 'premium': False, 'quartile': True, 'rsch': 'CAFTCDP', 'short': 'Cash Dividend Paid', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': 0, 'max': 41149
+        },
+        {'type': 'radio', 'min': 0, 'btw': True, 'max': 0.84, 'elem': [
+                {'text': 'Low', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Mid', 'rank': 2, 'subindustries': []
+                },
+                {'text': 'High', 'rank': 3, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': 'Cr', 'updatedAt': '2024-05-28T01: 55: 27.030Z', 'userId': None, 'locked': False
+}, 'breco': {'_id': '5ea3e807f66c081ef6e173a1', 'label': 'breco', 'type': 'prebuilt', '__v': 0, 'category': 'Analyst Ratings', 'clear': True, 'createdAt': '2020-04-25T07: 34: 30.965Z', 'def': 'Sum of analysts having a strong buy/buy rating divided by the total number of analysts', 'display': 'Percentage Buy Reco’s', 'premium': True, 'quartile': False, 'rsch': 'BRECO', 'short': 'Percentage Buy Reco', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': 0, 'max': 100
+        },
+        {'type': 'radio', 'min': 50, 'btw': True, 'max': 70, 'elem': [
+                {'text': 'Low ', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Mid', 'rank': 2, 'subindustries': []
+                },
+                {'text': 'High', 'rank': 3, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': '%', 'updatedAt': '2024-05-28T01: 55: 27.026Z', 'userId': None, 'locked': True
+}, 'nBreco': {'_id': '6040e08cce89850a4339e349', 'label': 'nBreco', 'type': 'prebuilt', '__v': 0, 'category': 'Analyst Ratings', 'clear': True, 'createdAt': '2021-03-04T13: 28: 43.770Z', 'def': 'Sum of analysts having a strong buy/buy rating for the stock', 'display': 'No. of analysts with buy reco', 'premium': True, 'quartile': False, 'rsch': None, 'short': 'No. of analysts with buy reco', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': 0, 'max': 37
+        },
+        {'type': 'radio', 'min': 2, 'btw': True, 'max': 8, 'elem': [
+                {'text': 'Low', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Mid', 'rank': 2, 'subindustries': []
+                },
+                {'text': 'High', 'rank': 3, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': None, 'updatedAt': '2024-05-28T01: 55: 27.031Z', 'userId': None, 'locked': True
+}, 'pctHldReco': {'_id': '62fd167a6f01b4b7c709db82', 'label': 'pctHldReco', 'type': 'prebuilt', '__v': 0, 'category': 'Analyst Ratings', 'clear': True, 'createdAt': '2022-08-17T16: 25: 30.493Z', 'def': 'Sum of analysts having a hold rating divided by the total number of analysts', 'display': "Percentage Hold Reco's", 'premium': True, 'quartile': False, 'rsch': None, 'short': 'Percentage Hold Reco', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': 0, 'max': 100
+        },
+        {'type': 'radio', 'min': 50, 'btw': True, 'max': 70, 'elem': [
+                {'text': 'Low ', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Mid', 'rank': 2, 'subindustries': []
+                },
+                {'text': 'High', 'rank': 3, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': '%', 'updatedAt': '2023-06-06T02: 02: 16.208Z', 'userId': None, 'locked': True
+}, 'pctSelReco': {'_id': '62fd167a6f01b4b7c709db83', 'label': 'pctSelReco', 'type': 'prebuilt', '__v': 0, 'category': 'Analyst Ratings', 'clear': True, 'createdAt': '2022-08-17T16: 25: 30.493Z', 'def': 'Sum of analysts having a strong sell / sell rating divided by the total number of analysts', 'display': "Percentage Sell Reco's", 'premium': True, 'quartile': False, 'rsch': None, 'short': 'Percentage Sell Reco', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': 0, 'max': 100
+        },
+        {'type': 'radio', 'min': 50, 'btw': True, 'max': 70, 'elem': [
+                {'text': 'Low ', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Mid', 'rank': 2, 'subindustries': []
+                },
+                {'text': 'High', 'rank': 3, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': '%', 'updatedAt': '2023-06-06T02: 02: 16.208Z', 'userId': None, 'locked': True
+}, 'totalAnalysts': {'_id': '62fd167a6f01b4b7c709db84', 'label': 'totalAnalysts', 'type': 'prebuilt', '__v': 0, 'category': 'Analyst Ratings', 'clear': True, 'createdAt': '2022-08-17T16: 25: 30.493Z', 'def': 'Total number of analysts covering the company', 'display': 'Total no. of analysts', 'premium': True, 'quartile': False, 'rsch': None, 'short': 'Total no. of analysts', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': 1, 'max': 43
+        },
+        {'type': 'radio', 'min': 5, 'btw': True, 'max': 15, 'elem': [
+                {'text': 'Low ', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Mid', 'rank': 2, 'subindustries': []
+                },
+                {'text': 'High', 'rank': 3, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': None, 'updatedAt': '2023-06-06T02: 02: 16.208Z', 'userId': None, 'locked': True
+}, 'upside': {'_id': '5ea3e807f66c081ef6e173a2', 'label': 'upside', 'type': 'prebuilt', '__v': 0, 'category': 'Analyst Ratings', 'clear': True, 'createdAt': '2020-04-25T07: 34: 30.965Z', 'def': 'Target price estimate for the stock divided by the close price minus one', 'display': 'Percentage Upside', 'premium': True, 'quartile': False, 'rsch': 'UPSIDE', 'short': 'Percentage Upside', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': -56.93, 'max': 102.89
+        },
+        {'type': 'radio', 'min': 5, 'btw': True, 'max': 20, 'elem': [
+                {'text': 'Low ', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Mid', 'rank': 2, 'subindustries': []
+                },
+                {'text': 'High', 'rank': 3, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': '%', 'updatedAt': '2024-05-28T01: 55: 27.026Z', 'userId': None, 'locked': True
+}, 'bulkCml1M': {'_id': '6040e08cce89850a4339e374', 'label': 'bulkCml1M', 'type': 'prebuilt', '__v': 0, 'category': 'Ownership', 'clear': True, 'createdAt': '2021-03-04T13: 28: 43.774Z', 'def': 'Cumulative number of shares traded under bulk deals over the previous 1 month as a % of total shares outstanding', 'display': 'Bulk Deals - 1M Cumulative', 'premium': True, 'quartile': True, 'rsch': None, 'short': 'Bulk Deals - 1M Cumulative', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': -212.78, 'max': 148
+        },
+        {'type': 'radio', 'min': 0, 'btw': True, 'max': 0, 'elem': [
+                {'text': 'Low', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Mid', 'rank': 2, 'subindustries': []
+                },
+                {'text': 'High', 'rank': 3, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': '%', 'updatedAt': '2024-05-28T01: 55: 27.032Z', 'userId': None, 'locked': True
+}, 'bulkCml3M': {'_id': '6040e08cce89850a4339e375', 'label': 'bulkCml3M', 'type': 'prebuilt', '__v': 0, 'category': 'Ownership', 'clear': True, 'createdAt': '2021-03-04T13: 28: 43.774Z', 'def': 'Cumulative number of shares traded under bulk deals over the previous 3 months as a % of total shares outstanding', 'display': 'Bulk Deals - 3M Cumulative', 'premium': True, 'quartile': True, 'rsch': None, 'short': 'Bulk Deals - 3M Cumulative', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': -203.95, 'max': 293.69
+        },
+        {'type': 'radio', 'min': -0.01, 'btw': True, 'max': 0, 'elem': [
+                {'text': 'Low', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Mid', 'rank': 2, 'subindustries': []
+                },
+                {'text': 'High', 'rank': 3, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': '%', 'updatedAt': '2024-05-28T01: 55: 27.032Z', 'userId': None, 'locked': True
+}, 'bulkCml6M': {'_id': '6040e08cce89850a4339e376', 'label': 'bulkCml6M', 'type': 'prebuilt', '__v': 0, 'category': 'Ownership', 'clear': True, 'createdAt': '2021-03-04T13: 28: 43.774Z', 'def': 'Cumulative number of shares traded under bulk deals over the previous 6 months as a % of total shares outstanding', 'display': 'Bulk Deals - 6M Cumulative', 'premium': True, 'quartile': True, 'rsch': None, 'short': 'Bulk Deals - 6M Cumulative', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': -247.12, 'max': 293.69
+        },
+        {'type': 'radio', 'min': -0.92, 'btw': True, 'max': 0.52, 'elem': [
+                {'text': 'Low', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Mid', 'rank': 2, 'subindustries': []
+                },
+                {'text': 'High', 'rank': 3, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': '%', 'updatedAt': '2024-05-28T01: 55: 27.032Z', 'userId': None, 'locked': True
+}, 'chMutHldng6M': {'_id': '5ea3e807f66c081ef6e173a5', 'label': 'chMutHldng6M', 'type': 'prebuilt', '__v': 0, 'category': 'Ownership', 'clear': True, 'createdAt': '2020-04-25T07: 34: 30.965Z', 'def': 'Percentage change in MF ownership of the stock in last six months', 'display': '\xa0MF Holding Change\xa0–\xa06M', 'premium': False, 'quartile': True, 'rsch': 'MFHLD6M', 'short': 'MF Holding - 6M\xa0', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': -11.27, 'max': 20.25
+        },
+        {'type': 'radio', 'min': 0, 'btw': True, 'max': 0, 'elem': [
+                {'text': 'Low ', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Mid', 'rank': 2, 'subindustries': []
+                },
+                {'text': 'High', 'rank': 3, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': '%', 'updatedAt': '2024-05-28T01: 55: 27.026Z', 'userId': None, 'locked': False
+}, 'chPromHldng6M': {'_id': '5ea3e807f66c081ef6e173a8', 'label': 'chPromHldng6M', 'type': 'prebuilt', '__v': 0, 'category': 'Ownership', 'clear': True, 'createdAt': '2020-04-25T07: 34: 30.965Z', 'def': 'Percentage change in promoter holding of the stock in last six months', 'display': 'Promoter Holding Change\xa0–\xa06M\xa0', 'premium': False, 'quartile': True, 'rsch': 'PRMHLD6M', 'short': 'Promoter Holding - 6M', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': -73.61, 'max': 94.96
+        },
+        {'type': 'radio', 'min': 0, 'btw': True, 'max': 0, 'elem': [
+                {'text': 'Low ', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Mid', 'rank': 2, 'subindustries': []
+                },
+                {'text': 'High', 'rank': 3, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': '%', 'updatedAt': '2024-05-28T01: 55: 27.026Z', 'userId': None, 'locked': False
+}, 'domInstHldng': {'_id': '5ea3e807f66c081ef6e173aa', 'label': 'domInstHldng', 'type': 'prebuilt', '__v': 0, 'category': 'Ownership', 'clear': True, 'createdAt': '2020-04-25T07: 34: 30.965Z', 'def': "Percentage of company's common stock held by domestic institutions", 'display': 'Domestic Institutional Holding', 'premium': False, 'quartile': True, 'rsch': 'DIHLD', 'short': 'DII Holding', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': 0, 'max': 60.93
+        },
+        {'type': 'radio', 'min': 0, 'btw': True, 'max': 1.76, 'elem': [
+                {'text': 'Low ', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Mid', 'rank': 2, 'subindustries': []
+                },
+                {'text': 'High', 'rank': 3, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': '%', 'updatedAt': '2024-05-28T01: 55: 27.026Z', 'userId': None, 'locked': False
+}, 'domInstHldng3M': {'_id': '5ea3e807f66c081ef6e173ab', 'label': 'domInstHldng3M', 'type': 'prebuilt', '__v': 0, 'category': 'Ownership', 'clear': True, 'createdAt': '2020-04-25T07: 34: 30.965Z', 'def': 'Percentage change in domestic inst. holding of the stock in last three months', 'display': 'DII Holding Change\xa0–\xa03M', 'premium': False, 'quartile': True, 'rsch': 'DIHLD3M', 'short': 'DII Holding - 3M\xa0', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': -57.97, 'max': 29.9
+        },
+        {'type': 'radio', 'min': 0, 'btw': True, 'max': 0, 'elem': [
+                {'text': 'Low ', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Mid', 'rank': 2, 'subindustries': []
+                },
+                {'text': 'High', 'rank': 3, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': '%', 'updatedAt': '2024-05-28T01: 55: 27.027Z', 'userId': None, 'locked': False
+}, 'domInstHldng6M': {'_id': '5ea3e807f66c081ef6e173ac', 'label': 'domInstHldng6M', 'type': 'prebuilt', '__v': 0, 'category': 'Ownership', 'clear': True, 'createdAt': '2020-04-25T07: 34: 30.965Z', 'def': 'Percentage change in domestic inst. holding of the stock in last six months', 'display': 'DII Holding Change\xa0–\xa06M', 'premium': False, 'quartile': True, 'rsch': 'DIHLD6M', 'short': 'DII Holding - 6M\xa0', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': -66.71, 'max': 29.9
+        },
+        {'type': 'radio', 'min': 0, 'btw': True, 'max': 0, 'elem': [
+                {'text': 'Low ', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Mid', 'rank': 2, 'subindustries': []
+                },
+                {'text': 'High', 'rank': 3, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': '%', 'updatedAt': '2024-05-28T01: 55: 27.027Z', 'userId': None, 'locked': False
+}, 'forInstHldng': {'_id': '5ea3e807f66c081ef6e173ad', 'label': 'forInstHldng', 'type': 'prebuilt', '__v': 0, 'category': 'Ownership', 'clear': True, 'createdAt': '2020-04-25T07: 34: 30.965Z', 'def': "Percentage of company's common stock held by foreign institutions", 'display': 'Foreign Institutional Holding', 'premium': False, 'quartile': True, 'rsch': 'FIHLD', 'short': 'FII Holding', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': 0, 'max': 69.71
+        },
+        {'type': 'radio', 'min': 0, 'btw': True, 'max': 1.81, 'elem': [
+                {'text': 'Low ', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Mid', 'rank': 2, 'subindustries': []
+                },
+                {'text': 'High', 'rank': 3, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': '%', 'updatedAt': '2024-05-28T01: 55: 27.027Z', 'userId': None, 'locked': False
+}, 'forInstHldng3M': {'_id': '5ea3e807f66c081ef6e173ae', 'label': 'forInstHldng3M', 'type': 'prebuilt', '__v': 0, 'category': 'Ownership', 'clear': True, 'createdAt': '2020-04-25T07: 34: 30.965Z', 'def': 'Percentage change in foreign inst. holding of the stock in last three months', 'display': 'FII Holding Change\xa0–\xa03M', 'premium': False, 'quartile': True, 'rsch': 'FIHLD3M', 'short': 'FII Holding - 3M', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': -12.44, 'max': 23.47
+        },
+        {'type': 'radio', 'min': 0, 'btw': True, 'max': 0, 'elem': [
+                {'text': 'Low ', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Mid', 'rank': 2, 'subindustries': []
+                },
+                {'text': 'High', 'rank': 3, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': '%', 'updatedAt': '2024-05-28T01: 55: 27.027Z', 'userId': None, 'locked': False
+}, 'forInstHldng6M': {'_id': '5ea3e807f66c081ef6e173af', 'label': 'forInstHldng6M', 'type': 'prebuilt', '__v': 0, 'category': 'Ownership', 'clear': True, 'createdAt': '2020-04-25T07: 34: 30.965Z', 'def': 'Percentage change in foreign inst. holding of the stock in last six months', 'display': 'FII Holding Change\xa0–\xa06M', 'premium': False, 'quartile': True, 'rsch': 'FIHLD6M', 'short': 'FII Holding - 6M', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': -15.82, 'max': 40.27
+        },
+        {'type': 'radio', 'min': 0, 'btw': True, 'max': 0, 'elem': [
+                {'text': 'Low ', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Mid', 'rank': 2, 'subindustries': []
+                },
+                {'text': 'High', 'rank': 3, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': '%', 'updatedAt': '2024-05-28T01: 55: 27.027Z', 'userId': None, 'locked': False
+}, 'insHolding': {'_id': '6040e08cce89850a4339e36f', 'label': 'insHolding', 'type': 'prebuilt', '__v': 0, 'category': 'Ownership', 'clear': True, 'createdAt': '2021-03-04T13: 28: 43.773Z', 'def': "Percentage of company's common stock held by insurance firms", 'display': 'Insurance Firms Holding', 'premium': False, 'quartile': True, 'rsch': None, 'short': 'Insurance Firms Holding', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': 0, 'max': 23.8
+        },
+        {'type': 'radio', 'min': 0, 'btw': True, 'max': 0, 'elem': [
+                {'text': 'Low', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Mid', 'rank': 2, 'subindustries': []
+                },
+                {'text': 'High', 'rank': 3, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': '%', 'updatedAt': '2024-05-28T01: 55: 27.032Z', 'userId': None, 'locked': False
+}, 'insiderCml1M': {'_id': '6040e08cce89850a4339e371', 'label': 'insiderCml1M', 'type': 'prebuilt', '__v': 0, 'category': 'Ownership', 'clear': True, 'createdAt': '2021-03-04T13: 28: 43.774Z', 'def': 'Cumulative number of shares traded by insiders of the company over the previous 1 month as a % of total shares outstanding', 'display': 'Insider Trades - 1M Cumulative', 'premium': True, 'quartile': True, 'rsch': None, 'short': 'Insider Trades - 1M Cumulative', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': -58.32, 'max': 65
+        },
+        {'type': 'radio', 'min': 0, 'btw': True, 'max': 0, 'elem': [
+                {'text': 'Low', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Mid', 'rank': 2, 'subindustries': []
+                },
+                {'text': 'High', 'rank': 3, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': '%', 'updatedAt': '2024-05-28T01: 55: 27.032Z', 'userId': None, 'locked': True
+}, 'insiderCml3M': {'_id': '6040e08cce89850a4339e372', 'label': 'insiderCml3M', 'type': 'prebuilt', '__v': 0, 'category': 'Ownership', 'clear': True, 'createdAt': '2021-03-04T13: 28: 43.774Z', 'def': 'Cumulative number of shares traded by insiders of the company over the previous 3 months as a % of total shares outstanding', 'display': 'Insider Trades - 3M Cumulative', 'premium': True, 'quartile': True, 'rsch': None, 'short': 'Insider Trades - 3M Cumulative', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': -58.59, 'max': 214.65
+        },
+        {'type': 'radio', 'min': -0.01, 'btw': True, 'max': 0.02, 'elem': [
+                {'text': 'Low', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Mid', 'rank': 2, 'subindustries': []
+                },
+                {'text': 'High', 'rank': 3, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': '%', 'updatedAt': '2024-05-28T01: 55: 27.032Z', 'userId': None, 'locked': True
+}, 'insiderCml6M': {'_id': '6040e08cce89850a4339e373', 'label': 'insiderCml6M', 'type': 'prebuilt', '__v': 0, 'category': 'Ownership', 'clear': True, 'createdAt': '2021-03-04T13: 28: 43.774Z', 'def': 'Cumulative number of shares traded by insiders of the company over the previous 6 months as a % of total shares outstanding', 'display': 'Insider Trades - 6M Cumulative', 'premium': True, 'quartile': True, 'rsch': None, 'short': 'Insider Trades - 6M Cumulative', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': -129.81, 'max': 214.65
+        },
+        {'type': 'radio', 'min': -0.65, 'btw': True, 'max': 0.2, 'elem': [
+                {'text': 'Low', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Mid', 'rank': 2, 'subindustries': []
+                },
+                {'text': 'High', 'rank': 3, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': '%', 'updatedAt': '2024-05-28T01: 55: 27.032Z', 'userId': None, 'locked': True
+}, 'instown': {'_id': '5ea3e807f66c081ef6e173a3', 'label': 'instown', 'type': 'prebuilt', '__v': 0, 'category': 'Ownership', 'clear': True, 'createdAt': '2020-04-25T07: 34: 30.965Z', 'def': "Percentage of company's common stock held by mutual funds", 'display': 'Mutual Fund Holding', 'premium': False, 'quartile': True, 'rsch': 'INSTOWN', 'short': 'MF Holding', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': 0, 'max': 41.69
+        },
+        {'type': 'radio', 'min': 0, 'btw': True, 'max': 0.04, 'elem': [
+                {'text': 'Low ', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Mid', 'rank': 2, 'subindustries': []
+                },
+                {'text': 'High', 'rank': 3, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': '%', 'updatedAt': '2024-05-28T01: 55: 27.026Z', 'userId': None, 'locked': False
+}, 'instown3': {'_id': '5ea3e807f66c081ef6e173a4', 'label': 'instown3', 'type': 'prebuilt', '__v': 0, 'category': 'Ownership', 'clear': True, 'createdAt': '2020-04-25T07: 34: 30.965Z', 'def': 'Percentage change in MF ownership of the stock in last three months', 'display': 'MF Holding Change\xa0–\xa03M', 'premium': False, 'quartile': True, 'rsch': 'INSTOWN3', 'short': 'MF Holding - 3M\xa0', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': -7.72, 'max': 20.03
+        },
+        {'type': 'radio', 'min': 0, 'btw': True, 'max': 0, 'elem': [
+                {'text': 'Low ', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Mid', 'rank': 2, 'subindustries': []
+                },
+                {'text': 'High', 'rank': 3, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': '%', 'updatedAt': '2024-05-28T01: 55: 27.026Z', 'userId': None, 'locked': False
+}, 'nShareholders': {'_id': '6040e08cce89850a4339e377', 'label': 'nShareholders', 'type': 'prebuilt', '__v': 0, 'category': 'Ownership', 'clear': True, 'createdAt': '2021-03-04T13: 28: 43.774Z', 'def': 'No. of unique DEMATS account with at least one share of the stock in their portfolio', 'display': 'No. of Shareholders', 'premium': False, 'quartile': True, 'rsch': None, 'short': 'No. of Shareholders', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': 7, 'max': 15347968
+        },
+        {'type': 'radio', 'min': 2118, 'btw': True, 'max': 39861, 'elem': [
+                {'text': 'Low', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Mid', 'rank': 2, 'subindustries': []
+                },
+                {'text': 'High', 'rank': 3, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': 'Cr', 'updatedAt': '2024-05-28T01: 55: 27.032Z', 'userId': None, 'locked': False
+}, 'promShrPled': {'_id': '5ea3e807f66c081ef6e173a9', 'label': 'promShrPled', 'type': 'prebuilt', '__v': 0, 'category': 'Ownership', 'clear': True, 'createdAt': '2020-04-25T07: 34: 30.965Z', 'def': 'Promoter holdings pledged as a percentage of the total shares outstanding', 'display': 'Pledged Promoter Holdings', 'premium': False, 'quartile': True, 'rsch': 'PLGSHR', 'short': 'Promoter Pledges', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': 0, 'max': 74.06
+        },
+        {'type': 'radio', 'min': 0, 'btw': True, 'max': 0, 'elem': [
+                {'text': 'Low ', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Mid', 'rank': 2, 'subindustries': []
+                },
+                {'text': 'High', 'rank': 3, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': '%', 'updatedAt': '2024-05-28T01: 55: 27.026Z', 'userId': None, 'locked': False
+}, 'retailHolding': {'_id': '6040e08cce89850a4339e370', 'label': 'retailHolding', 'type': 'prebuilt', '__v': 0, 'category': 'Ownership', 'clear': True, 'createdAt': '2021-03-04T13: 28: 43.773Z', 'def': "Percentage of company's common stock held by retail investors", 'display': 'Retail Investor Holding', 'premium': False, 'quartile': True, 'rsch': None, 'short': 'Retail Investor Holding', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': 0, 'max': 89.82
+        },
+        {'type': 'radio', 'min': 9.58, 'btw': True, 'max': 24.35, 'elem': [
+                {'text': 'Low', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Mid', 'rank': 2, 'subindustries': []
+                },
+                {'text': 'High', 'rank': 3, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': '%', 'updatedAt': '2024-05-28T01: 55: 27.032Z', 'userId': None, 'locked': False
+}, 'strown': {'_id': '5ea3e807f66c081ef6e173a6', 'label': 'strown', 'type': 'prebuilt', '__v': 0, 'category': 'Ownership', 'clear': True, 'createdAt': '2020-04-25T07: 34: 30.965Z', 'def': "Percentage of company's common stock held by promoters", 'display': 'Promoter Holding', 'premium': False, 'quartile': True, 'rsch': 'STROWN', 'short': 'Promoter Holding\xa0', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': 0, 'max': 100
+        },
+        {'type': 'radio', 'min': 42.25, 'btw': True, 'max': 70.48, 'elem': [
+                {'text': 'Low ', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Mid', 'rank': 2, 'subindustries': []
+                },
+                {'text': 'High', 'rank': 3, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': '%', 'updatedAt': '2024-05-28T01: 55: 27.026Z', 'userId': None, 'locked': False
+}, 'strown3': {'_id': '5ea3e807f66c081ef6e173a7', 'label': 'strown3', 'type': 'prebuilt', '__v': 0, 'category': 'Ownership', 'clear': True, 'createdAt': '2020-04-25T07: 34: 30.965Z', 'def': 'Percentage change in promoter holding of the stock in last three months', 'display': 'Promoter Holding Change\xa0–\xa03M', 'premium': False, 'quartile': True, 'rsch': 'STROWN3', 'short': 'Promoter Holding - 3M', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': -73.52, 'max': 94.96
+        },
+        {'type': 'radio', 'min': 0, 'btw': True, 'max': 0, 'elem': [
+                {'text': 'Low ', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Mid', 'rank': 2, 'subindustries': []
+                },
+                {'text': 'High', 'rank': 3, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': '%', 'updatedAt': '2024-05-28T01: 55: 27.026Z', 'userId': None, 'locked': False
+}, 'erqr': {'_id': '5ea3e807f66c081ef6e173b2', 'label': 'erqr', 'type': 'prebuilt', '__v': 0, 'category': 'Tickertape Special', 'clear': True, 'createdAt': '2020-04-25T07: 34: 30.965Z', 'def': 'Earnings quality rank of the stock vs all the other stocks listed on NSE', 'display': 'Earnings Quality Rank', 'premium': True, 'quartile': False, 'rsch': 'ERNMOR', 'short': 'Earnings Quality Rank', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': 1, 'max': 100
+        },
+        {'type': 'radio', 'min': 30, 'btw': True, 'max': 70, 'elem': [
+                {'text': 'Low ', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Mid', 'rank': 2, 'subindustries': []
+                },
+                {'text': 'High', 'rank': 3, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': None, 'updatedAt': '2024-05-28T01: 55: 27.027Z', 'userId': None, 'locked': True
+}, 'fundamental': {'_id': '5ea3e807f66c081ef6e173b4', 'label': 'fundamental', 'type': 'prebuilt', '__v': 0, 'category': 'Tickertape Special', 'clear': True, 'createdAt': '2020-04-25T07: 34: 30.966Z', 'def': 'Rank of the stock vs all others in the sector, based on different fundamental criteria', 'display': 'Fundamental Score', 'premium': True, 'quartile': False, 'rsch': 'FUNDS', 'short': 'Fundamental Score', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': 0.51, 'max': 10
+        },
+        {'type': 'radio', 'min': 3, 'btw': True, 'max': 7, 'elem': [
+                {'text': 'Low ', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Mid', 'rank': 2, 'subindustries': []
+                },
+                {'text': 'High', 'rank': 3, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': None, 'updatedAt': '2024-05-28T01: 55: 27.027Z', 'userId': None, 'locked': True
+}, 'prmr': {'_id': '5ea3e807f66c081ef6e173b1', 'label': 'prmr', 'type': 'prebuilt', '__v': 0, 'category': 'Tickertape Special', 'clear': True, 'createdAt': '2020-04-25T07: 34: 30.965Z', 'def': 'Percentile rank of the stock, based on the price momentum characteristics', 'display': 'Price Momentum Rank', 'premium': True, 'quartile': False, 'rsch': 'PRMOR', 'short': 'Price Momentum Rank', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': 1, 'max': 100
+        },
+        {'type': 'radio', 'min': 30, 'btw': True, 'max': 70, 'elem': [
+                {'text': 'Low ', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Mid', 'rank': 2, 'subindustries': []
+                },
+                {'text': 'High', 'rank': 3, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': None, 'updatedAt': '2024-05-28T01: 55: 27.027Z', 'userId': None, 'locked': True
+}, 'ptir': {'_id': '5ea3e807f66c081ef6e173b3', 'label': 'ptir', 'type': 'prebuilt', '__v': 0, 'category': 'Tickertape Special', 'clear': True, 'createdAt': '2020-04-25T07: 34: 30.965Z', 'def': 'Percentile rank of the stock, calculated based on the price to intrinsic value ratio', 'display': 'Price to Intrinsic Value Rank', 'premium': True, 'quartile': False, 'rsch': 'P2INTR', 'short': 'Price to IV Rank', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': 1, 'max': 100
+        },
+        {'type': 'radio', 'min': 30, 'btw': True, 'max': 70, 'elem': [
+                {'text': 'Low ', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Mid', 'rank': 2, 'subindustries': []
+                },
+                {'text': 'High', 'rank': 3, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': None, 'updatedAt': '2024-05-28T01: 55: 27.027Z', 'userId': None, 'locked': True
+}, 'valr': {'_id': '5ea3e807f66c081ef6e173b0', 'label': 'valr', 'type': 'prebuilt', '__v': 0, 'category': 'Tickertape Special', 'clear': True, 'createdAt': '2020-04-25T07: 34: 30.965Z', 'def': 'Percentile rank of the stock, based on the price momentum as well as valuation characteristics', 'display': 'Value Momentum Rank', 'premium': True, 'quartile': False, 'rsch': 'VALMOR', 'short': 'Value Momentum Rank', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': 1, 'max': 100
+        },
+        {'type': 'radio', 'min': 30, 'btw': True, 'max': 70, 'elem': [
+                {'text': 'Low ', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Mid', 'rank': 2, 'subindustries': []
+                },
+                {'text': 'High', 'rank': 3, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': None, 'updatedAt': '2024-05-28T01: 55: 27.027Z', 'userId': None, 'locked': True
+}, 'expenseRatio': {'_id': '5ea3e807f66c081ef6e1741d', 'label': 'expenseRatio', 'type': 'prebuilt', '__v': 0, 'category': 'ETFs', 'clear': True, 'createdAt': '2020-04-25T07: 34: 30.972Z', 'def': 'The operating and administrative costs of running the fund measured as the percentage of fund assets', 'display': 'Expense Ratio', 'premium': False, 'quartile': True, 'rsch': None, 'short': 'Expense Ratio', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': 0, 'max': 1.04
+        },
+        {'type': 'radio', 'min': 0.14, 'btw': True, 'max': 0.37, 'elem': [
+                {'text': 'Low', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Mid', 'rank': 2, 'subindustries': []
+                },
+                {'text': 'High', 'rank': 3, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': '%', 'updatedAt': '2024-05-28T01: 55: 27.031Z', 'userId': None, 'locked': False
+}, 'trackErr': {'_id': '5ea3e807f66c081ef6e1741e', 'label': 'trackErr', 'type': 'prebuilt', '__v': 0, 'category': 'ETFs', 'clear': True, 'createdAt': '2020-04-25T07: 34: 30.972Z', 'def': 'The difference between the performance of the security and the benchmark index that it tracks', 'display': 'Tracking Error', 'premium': False, 'quartile': True, 'rsch': None, 'short': 'Tracking Error', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': 0, 'max': 2.85
+        },
+        {'type': 'radio', 'min': 0.04, 'btw': True, 'max': 0.11, 'elem': [
+                {'text': 'Low', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Mid', 'rank': 2, 'subindustries': []
+                },
+                {'text': 'High', 'rank': 3, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': '%', 'updatedAt': '2024-05-28T01: 55: 27.031Z', 'userId': None, 'locked': False
+}, 'incDep': {'_id': '5ea3e807f66c081ef6e173ee', 'label': 'incDep', 'type': 'prebuilt', '__v': 0, 'category': 'Income Statement', 'clear': True, 'createdAt': '2020-04-25T07: 34: 30.970Z', 'def': 'Depreciation and amortization expense of the company for the latest financial year', 'display': 'Depreciation & Amortization', 'premium': False, 'quartile': True, 'rsch': 'INCDEP', 'short': 'Depr. & Amortization', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': -50.74, 'max': 50832
+        },
+        {'type': 'radio', 'min': 0.11, 'btw': True, 'max': 16.02, 'elem': [
+                {'text': 'Low', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Mid', 'rank': 2, 'subindustries': []
+                },
+                {'text': 'High', 'rank': 3, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': 'Cr', 'updatedAt': '2024-05-28T01: 55: 27.029Z', 'userId': None, 'locked': False
+}, 'incDps': {'_id': '5ea3e807f66c081ef6e173f5', 'label': 'incDps', 'type': 'prebuilt', '__v': 0, 'category': 'Income Statement', 'clear': True, 'createdAt': '2020-04-25T07: 34: 30.970Z', 'def': 'Total dividend divided by the total common shares outstanding of the company', 'display': 'Dividend Per Share', 'premium': False, 'quartile': True, 'rsch': 'INCDPS', 'short': 'DPS', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': 0, 'max': 850
+        },
+        {'type': 'radio', 'min': 0, 'btw': True, 'max': 0.5, 'elem': [
+                {'text': 'Low', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Mid', 'rank': 2, 'subindustries': []
+                },
+                {'text': 'High', 'rank': 3, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': 'Rs', 'updatedAt': '2024-05-28T01: 55: 27.029Z', 'userId': None, 'locked': False
+}, 'incEbi': {'_id': '5ea3e807f66c081ef6e173ed', 'label': 'incEbi', 'type': 'prebuilt', '__v': 0, 'category': 'Income Statement', 'clear': True, 'createdAt': '2020-04-25T07: 34: 30.969Z', 'def': 'Gross profit minus operating cost for the latest financial year', 'display': 'EBITDA', 'premium': False, 'quartile': True, 'rsch': 'INCEBI', 'short': 'EBITDA', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': -14604, 'max': 178677
+        },
+        {'type': 'radio', 'min': 0.54, 'btw': True, 'max': 88.58, 'elem': [
+                {'text': 'Low', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Mid', 'rank': 2, 'subindustries': []
+                },
+                {'text': 'High', 'rank': 3, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': 'Cr', 'updatedAt': '2024-05-28T01: 55: 27.029Z', 'userId': None, 'locked': False
+}, 'incEpc': {'_id': '5ec7c89c8f4ffe55a1fc31cd', 'label': 'incEpc', 'type': 'prebuilt', '__v': 0, 'category': 'Income Statement', 'clear': True, 'createdAt': '2020-05-22T12: 42: 03.923Z', 'def': 'Expenses incurred on employee wages & salaries', 'display': 'Employee Cost', 'premium': False, 'quartile': True, 'rsch': 'INCEPC', 'short': 'Employee Cost', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': 0, 'max': 140131
+        },
+        {'type': 'radio', 'min': 0.23, 'btw': True, 'max': 15.11, 'elem': [
+                {'text': 'Low', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Mid', 'rank': 2, 'subindustries': []
+                },
+                {'text': 'High', 'rank': 3, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': 'Cr', 'updatedAt': '2024-05-28T01: 55: 27.031Z', 'userId': None, 'locked': False
+}, 'incEps': {'_id': '5ea3e807f66c081ef6e173f4', 'label': 'incEps', 'type': 'prebuilt', '__v': 0, 'category': 'Income Statement', 'clear': True, 'createdAt': '2020-04-25T07: 34: 30.970Z', 'def': 'Net income divided by the total common shares outstanding of the company', 'display': 'Earnings Per Share', 'premium': False, 'quartile': True, 'rsch': 'INCEPS', 'short': 'EPS', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': -759.59, 'max': 8060
+        },
+        {'type': 'radio', 'min': 0.01, 'btw': True, 'max': 12.25, 'elem': [
+                {'text': 'Low', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Mid', 'rank': 2, 'subindustries': []
+                },
+                {'text': 'High', 'rank': 3, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': 'Rs', 'updatedAt': '2024-05-28T01: 55: 27.029Z', 'userId': None, 'locked': False
+}, 'incIoi': {'_id': '5ea3e807f66c081ef6e173f0', 'label': 'incIoi', 'type': 'prebuilt', '__v': 0, 'category': 'Income Statement', 'clear': True, 'createdAt': '2020-04-25T07: 34: 30.970Z', 'def': 'Interest expense and other related items for the most recent financial year', 'display': 'Interest & Other Items', 'premium': False, 'quartile': True, 'rsch': 'INCLOI', 'short': 'Interest', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': -0.74, 'max': 25765.5
+        },
+        {'type': 'radio', 'min': 0.14, 'btw': True, 'max': 12.64, 'elem': [
+                {'text': 'Low', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Mid', 'rank': 2, 'subindustries': []
+                },
+                {'text': 'High', 'rank': 3, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': 'Cr', 'updatedAt': '2024-05-28T01: 55: 27.029Z', 'userId': None, 'locked': False
+}, 'incNinc': {'_id': '5ea3e807f66c081ef6e173f3', 'label': 'incNinc', 'type': 'prebuilt', '__v': 0, 'category': 'Income Statement', 'clear': True, 'createdAt': '2020-04-25T07: 34: 30.970Z', 'def': 'PBT minus taxes paid by the company for the latest financial year', 'display': 'Net Income', 'premium': False, 'quartile': True, 'rsch': 'INCNINC', 'short': 'Net Income', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': -31238.4, 'max': 69621
+        },
+        {'type': 'radio', 'min': 0.02, 'btw': True, 'max': 38.56, 'elem': [
+                {'text': 'Low', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Mid', 'rank': 2, 'subindustries': []
+                },
+                {'text': 'High', 'rank': 3, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': 'Cr', 'updatedAt': '2024-05-28T01: 55: 27.029Z', 'userId': None, 'locked': False
+}, 'incOpe': {'_id': '5ec7c89c8f4ffe55a1fc31cf', 'label': 'incOpe', 'type': 'prebuilt', '__v': 0, 'category': 'Income Statement', 'clear': True, 'createdAt': '2020-05-22T12: 42: 03.923Z', 'def': 'Other expenses incurred in operating the company like rent, servicing of machines, R&D etc', 'display': 'Operating & Other expenses', 'premium': False, 'quartile': True, 'rsch': 'INCOPE', 'short': 'Operating & Other expenses', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': -13579.89, 'max': 738831
+        },
+        {'type': 'radio', 'min': 1.12, 'btw': True, 'max': 340.92, 'elem': [
+                {'text': 'Low', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Mid', 'rank': 2, 'subindustries': []
+                },
+                {'text': 'High', 'rank': 3, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': 'Cr', 'updatedAt': '2024-05-28T01: 55: 27.031Z', 'userId': None, 'locked': False
+}, 'incPbi': {'_id': '5ea3e807f66c081ef6e173ef', 'label': 'incPbi', 'type': 'prebuilt', '__v': 0, 'category': 'Income Statement', 'clear': True, 'createdAt': '2020-04-25T07: 34: 30.970Z', 'def': 'EBITDA minus depreciation and amortization expense for the latest financial year', 'display': 'PBIT', 'premium': False, 'quartile': True, 'rsch': 'INCPBI', 'short': 'PBIT', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': -14740, 'max': 127845
+        },
+        {'type': 'radio', 'min': 0.23, 'btw': True, 'max': 68.05, 'elem': [
+                {'text': 'Low', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Mid', 'rank': 2, 'subindustries': []
+                },
+                {'text': 'High', 'rank': 3, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': 'Cr', 'updatedAt': '2024-05-28T01: 55: 27.029Z', 'userId': None, 'locked': False
+}, 'incPbt': {'_id': '5ea3e807f66c081ef6e173f1', 'label': 'incPbt', 'type': 'prebuilt', '__v': 0, 'category': 'Income Statement', 'clear': True, 'createdAt': '2020-04-25T07: 34: 30.970Z', 'def': 'PBIT minus interest and other related items for the latest financial year', 'display': 'PBT', 'premium': False, 'quartile': True, 'rsch': 'INCPBT', 'short': 'PBT', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': -30409.8, 'max': 104727
+        },
+        {'type': 'radio', 'min': 0.03, 'btw': True, 'max': 52.41, 'elem': [
+                {'text': 'Low', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Mid', 'rank': 2, 'subindustries': []
+                },
+                {'text': 'High', 'rank': 3, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': 'Cr', 'updatedAt': '2024-05-28T01: 55: 27.029Z', 'userId': None, 'locked': False
+}, 'incPfc': {'_id': '5ec7c89c8f4ffe55a1fc31cc', 'label': 'incPfc', 'type': 'prebuilt', '__v': 0, 'category': 'Income Statement', 'clear': True, 'createdAt': '2020-05-22T12: 42: 03.923Z', 'def': 'Expenses incurred on using power & fuel', 'display': 'Power & Fuel Cost', 'premium': False, 'quartile': True, 'rsch': 'INCPFC', 'short': 'Power & Fuel Cost', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': 0, 'max': 14271.01
+        },
+        {'type': 'radio', 'min': 0.01, 'btw': True, 'max': 5.38, 'elem': [
+                {'text': 'Low', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Mid', 'rank': 2, 'subindustries': []
+                },
+                {'text': 'High', 'rank': 3, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': 'Cr', 'updatedAt': '2024-05-28T01: 55: 27.030Z', 'userId': None, 'locked': False
+}, 'incPyr': {'_id': '5ea3e807f66c081ef6e173f6', 'label': 'incPyr', 'type': 'prebuilt', '__v': 0, 'category': 'Income Statement', 'clear': True, 'createdAt': '2020-04-25T07: 34: 30.970Z', 'def': 'Dividend per share divided by the earnings per share', 'display': 'Payout Ratio', 'premium': False, 'quartile': True, 'rsch': 'INCPYR', 'short': 'Payout Ratio', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': 0, 'max': 15.05
+        },
+        {'type': 'radio', 'min': 0, 'btw': True, 'max': 0.05, 'elem': [
+                {'text': 'Low', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Mid', 'rank': 2, 'subindustries': []
+                },
+                {'text': 'High', 'rank': 3, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': None, 'updatedAt': '2024-05-28T01: 55: 27.029Z', 'userId': None, 'locked': False
+}, 'incRaw': {'_id': '5ec7c89c8f4ffe55a1fc31cb', 'label': 'incRaw', 'type': 'prebuilt', '__v': 0, 'category': 'Income Statement', 'clear': True, 'createdAt': '2020-05-22T12: 42: 03.923Z', 'def': 'Expenses incurred on procuring raw materials', 'display': 'Raw Materials', 'premium': False, 'quartile': True, 'rsch': 'INCRAW', 'short': 'Raw Materials', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': -0.03, 'max': 337599.9
+        },
+        {'type': 'radio', 'min': 0, 'btw': True, 'max': 124.44, 'elem': [
+                {'text': 'Low', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Mid', 'rank': 2, 'subindustries': []
+                },
+                {'text': 'High', 'rank': 3, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': 'Cr', 'updatedAt': '2024-05-28T01: 55: 27.030Z', 'userId': None, 'locked': False
+}, 'incSga': {'_id': '5ec7c89c8f4ffe55a1fc31ce', 'label': 'incSga', 'type': 'prebuilt', '__v': 0, 'category': 'Income Statement', 'clear': True, 'createdAt': '2020-05-22T12: 42: 03.923Z', 'def': 'Expenses incurred on marketing, selling products & services and managing the company', 'display': 'Selling & Administrative Expenses', 'premium': False, 'quartile': True, 'rsch': 'INCSGA', 'short': 'Selling & Administrative Expenses', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': -20, 'max': 724063.64
+        },
+        {'type': 'radio', 'min': 0.48, 'btw': True, 'max': 14.23, 'elem': [
+                {'text': 'Low', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Mid', 'rank': 2, 'subindustries': []
+                },
+                {'text': 'High', 'rank': 3, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': 'Cr', 'updatedAt': '2024-05-28T01: 55: 27.031Z', 'userId': None, 'locked': False
+}, 'incToi': {'_id': '5ea3e807f66c081ef6e173f2', 'label': 'incToi', 'type': 'prebuilt', '__v': 0, 'category': 'Income Statement', 'clear': True, 'createdAt': '2020-04-25T07: 34: 30.970Z', 'def': 'Taxes paid for the most recent financial year', 'display': 'Taxes & Other Items', 'premium': False, 'quartile': True, 'rsch': 'INCTOI', 'short': 'Taxes', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': -3443.99, 'max': 35106
+        },
+        {'type': 'radio', 'min': 0, 'btw': True, 'max': 11.33, 'elem': [
+                {'text': 'Low', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Mid', 'rank': 2, 'subindustries': []
+                },
+                {'text': 'High', 'rank': 3, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': 'Cr', 'updatedAt': '2024-05-28T01: 55: 27.029Z', 'userId': None, 'locked': False
+}, 'incTrev': {'_id': '5ea3e807f66c081ef6e173e9', 'label': 'incTrev', 'type': 'prebuilt', '__v': 0, 'category': 'Income Statement', 'clear': True, 'createdAt': '2020-04-25T07: 34: 30.969Z', 'def': 'Revenue generated by the company in the most recent financial year', 'display': 'Total Revenue', 'premium': False, 'quartile': True, 'rsch': 'INCTREV', 'short': 'Total Revenue', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': -0.03, 'max': 917508
+        },
+        {'type': 'radio', 'min': 11.43, 'btw': True, 'max': 733.54, 'elem': [
+                {'text': 'Low', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Mid', 'rank': 2, 'subindustries': []
+                },
+                {'text': 'High', 'rank': 3, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': 'Cr', 'updatedAt': '2024-05-28T01: 55: 27.029Z', 'userId': None, 'locked': False
+}, 'qIncEbiK': {'_id': '62748013f5bf3e91a680c3b7', 'label': 'qIncEbiK', 'type': 'prebuilt', '__v': 0, 'category': 'Income Statement', 'clear': True, 'createdAt': '2022-05-06T01: 55: 30.737Z', 'def': 'Gross profit minus operating cost for the latest financial quarter', 'display': 'EBITDA (Q)', 'premium': False, 'quartile': True, 'rsch': None, 'short': 'EBITDA (Q)', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': -2015, 'max': 47150
+        },
+        {'type': 'radio', 'min': 0.08, 'btw': True, 'max': 29.81, 'elem': [
+                {'text': 'Low', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Mid', 'rank': 2, 'subindustries': []
+                },
+                {'text': 'High', 'rank': 3, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': 'Cr', 'updatedAt': '2024-05-28T01: 55: 27.033Z', 'userId': None, 'locked': False
+}, 'qIncEpsK': {'_id': '62748013f5bf3e91a680c3b8', 'label': 'qIncEpsK', 'type': 'prebuilt', '__v': 0, 'category': 'Income Statement', 'clear': True, 'createdAt': '2022-05-06T01: 55: 30.737Z', 'def': 'Net income for the latest financial quarter divided by the total common shares outstanding of the company', 'display': 'EPS (Q)', 'premium': False, 'quartile': True, 'rsch': None, 'short': 'EPS (Q)', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': -201.57, 'max': 2622.07
+        },
+        {'type': 'radio', 'min': -0.01, 'btw': True, 'max': 3.87, 'elem': [
+                {'text': 'Low', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Mid', 'rank': 2, 'subindustries': []
+                },
+                {'text': 'High', 'rank': 3, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': 'Rs', 'updatedAt': '2024-05-28T01: 55: 27.033Z', 'userId': None, 'locked': False
+}, 'qIncNincK': {'_id': '62748013f5bf3e91a680c3b6', 'label': 'qIncNincK', 'type': 'prebuilt', '__v': 0, 'category': 'Income Statement', 'clear': True, 'createdAt': '2022-05-06T01: 55: 30.737Z', 'def': 'Net income earned by the company in the most recent financial quarter', 'display': 'Net Income (Q)', 'premium': False, 'quartile': True, 'rsch': None, 'short': 'Net Income (Q)', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': -7674.61, 'max': 20917.89
+        },
+        {'type': 'radio', 'min': -0.02, 'btw': True, 'max': 13.09, 'elem': [
+                {'text': 'Low', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Mid', 'rank': 2, 'subindustries': []
+                },
+                {'text': 'High', 'rank': 3, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': 'Cr', 'updatedAt': '2024-05-28T01: 55: 27.033Z', 'userId': None, 'locked': False
+}, 'qIncOpeK': {'_id': '62748013f5bf3e91a680c3b9', 'label': 'qIncOpeK', 'type': 'prebuilt', '__v': 0, 'category': 'Income Statement', 'clear': True, 'createdAt': '2022-05-06T01: 55: 30.738Z', 'def': 'Other expenses incurred in operating the company like rent, servicing of machines, R&D etc', 'display': 'Operating and Other Expenses (Q)', 'premium': False, 'quartile': True, 'rsch': None, 'short': 'Op and Other Expenses (Q)', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': -70.49, 'max': 204814.95
+        },
+        {'type': 'radio', 'min': 1.82, 'btw': True, 'max': 188.27, 'elem': [
+                {'text': 'Low', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Mid', 'rank': 2, 'subindustries': []
+                },
+                {'text': 'High', 'rank': 3, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': 'Cr', 'updatedAt': '2024-05-28T01: 55: 27.033Z', 'userId': None, 'locked': False
+}, 'qIncPbiK': {'_id': '62748013f5bf3e91a680c3ba', 'label': 'qIncPbiK', 'type': 'prebuilt', '__v': 0, 'category': 'Income Statement', 'clear': True, 'createdAt': '2022-05-06T01: 55: 30.738Z', 'def': 'EBITDA minus depreciation and amortization expense for the latest financial quarter', 'display': 'PBIT (Q)', 'premium': False, 'quartile': True, 'rsch': None, 'short': 'PBIT (Q)', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': -2046, 'max': 33581
+        },
+        {'type': 'radio', 'min': 0.01, 'btw': True, 'max': 22.31, 'elem': [
+                {'text': 'Low', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Mid', 'rank': 2, 'subindustries': []
+                },
+                {'text': 'High', 'rank': 3, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': 'Cr', 'updatedAt': '2024-05-28T01: 55: 27.033Z', 'userId': None, 'locked': False
+}, 'qIncPbtK': {'_id': '62748013f5bf3e91a680c3bb', 'label': 'qIncPbtK', 'type': 'prebuilt', '__v': 0, 'category': 'Income Statement', 'clear': True, 'createdAt': '2022-05-06T01: 55: 30.738Z', 'def': 'PBIT minus interest and other related items for the latest financial quarter', 'display': 'PBT (Q)', 'premium': False, 'quartile': True, 'rsch': None, 'short': 'PBT (Q)', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': -7665.91, 'max': 28851.86
+        },
+        {'type': 'radio', 'min': -0.02, 'btw': True, 'max': 17.22, 'elem': [
+                {'text': 'Low', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Mid', 'rank': 2, 'subindustries': []
+                },
+                {'text': 'High', 'rank': 3, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': 'Cr', 'updatedAt': '2024-05-28T01: 55: 27.033Z', 'userId': None, 'locked': False
+}, 'qIncTrevK': {'_id': '62748013f5bf3e91a680c3b5', 'label': 'qIncTrevK', 'type': 'prebuilt', '__v': 0, 'category': 'Income Statement', 'clear': True, 'createdAt': '2022-05-06T01: 55: 30.737Z', 'def': 'Revenue generated by the company in the most recent financial quarter', 'display': 'Total revenue (Q)', 'premium': False, 'quartile': True, 'rsch': None, 'short': 'Total revenue (Q)', 'ui': [
+        {'type': 'slider', 'elem': [], 'min': -30.39, 'max': 241167
+        },
+        {'type': 'radio', 'min': 2.22, 'btw': True, 'max': 227.9, 'elem': [
+                {'text': 'Low', 'rank': 1, 'subindustries': []
+                },
+                {'text': 'Mid', 'rank': 2, 'subindustries': []
+                },
+                {'text': 'High', 'rank': 3, 'subindustries': []
+                }
+            ]
+        }
+    ], 'unit': 'Cr', 'updatedAt': '2024-05-28T01: 55: 27.033Z', 'userId': None, 'locked': False
+}
+}, 'nonClearFilters': ['mrktCapf', 'sector', 'subindustry'
+], 'isFetched': True, 'isClienSideFetched': False
+}, 'mutual-fund': {'filters': {}, 'labelToFilters': {}, 'nonClearFilters': [], 'parentFilterOrder': [], 'isFetched': False, 'isClienSideFetched': False
+}
+}, 'appPreBuiltScreens': {'equity': {'basic': [
+{'_id': '63504ba08639bdc38e1dc1a1', 'description': 'Check-in to low-expense ETFs for short to medium-term investments to fund your trips!', 'active': True, 'date': '2022-10-19T19: 10: 24.213Z', 'updated': '2023-07-17T10: 32: 48.934Z', 'slug': 'SCR0022', 'title': 'Get, Set, Fly!', 'premium': False, 'query': {'customUniverses': [], 'project': ['subindustry', 'mrktCapf', '52wpct', 'expenseRatio', 'trackErr'
+        ], 'match': {'subindustry': ['E_G', 'E_D', 'E_Q'
+            ], '52wpct': {'g': 7
+            }, 'expenseRatio': {'l': 0.75
+            }
+        }, 'sortBy': '52wpct', 'sortOrder': -1
+    }, 'type': 'prebuilt', 'createdAt': '2022-10-19T19: 10: 24.214Z', 'updatedAt': '2022-10-19T19: 10: 24.214Z', '__v': 0, 'locked': False
+},
+{'_id': '63504ba08639bdc38e1dc1a0', 'description': 'Stocks with low expense ratios and gold ETFs uncovering the Pro-life', 'active': True, 'date': '2022-10-19T19: 10: 24.211Z', 'updated': '2023-07-17T10: 32: 48.933Z', 'slug': 'SCR0021', 'title': 'Investing In A New Me!', 'premium': False, 'query': {'customUniverses': [], 'project': ['subindustry', 'mrktCapf', '52wpct', 'expenseRatio'
+        ], 'match': {'subindustry': ['E_G', 'E_D'
+            ], '52wpct': {'g': 0
+            }, 'expenseRatio': {'l': 0.75
+            }
+        }, 'sortBy': '52wpct', 'sortOrder': -1
+    }, 'type': 'prebuilt', 'createdAt': '2022-10-19T19: 10: 24.212Z', 'updatedAt': '2023-07-17T10: 32: 48.933Z', '__v': 0, 'locked': False
+},
+{'_id': '63504d30a48441c47ecf2891', 'description': 'Companies good at quickly turning around cash to generate profits due to low/negative cash conversion cycles', 'active': True, 'date': '2022-10-19T19: 17: 04.485Z', 'updated': '2023-07-17T10: 32: 48.892Z', 'slug': 'SCR0001', 'title': 'Money Minters', 'premium': False, 'query': {'customUniverses': [], 'project': ['subindustry', 'mrktCapf', 'lastPrice', 'ccnc', 'aqui', 'cfotr', 'apef'
+        ], 'match': {'subindustry': ['AUP', 'T_R', 'FOW', 'THW', 'TWW', 'CYC', 'EDS', 'WES', 'HRC', 'R_C', 'T_G', 'T_T', 'HEA', 'HFU', 'HOU', 'ADV', 'C_D', 'M_T', 'PBL', 'RAD', 'THE', 'TVB', 'R_A', 'R_D', 'R_O', 'R_S', 'A_A', 'FOO', 'PJW', 'TEX', 'ALC', 'SOF', 'T_C', 'AGR', 'F_F', 'P_M', 'SEE', 'SUG', 'F_H', 'F_P', 'F_T', 'OES', 'OEP', 'ORM', 'OST', 'PRI', 'PUB', 'ASS', 'I_B', 'S_R', 'CUS', 'DIV', 'SPE', 'INS', 'H_F', 'BIO', 'H_E', 'H_D', 'LLS', 'PHA', 'ARL', 'BPC', 'B_G', 'BPG', 'BPL', 'B_P', 'BSS', 'STA', 'C_E', 'BAT', 'CAB', 'ECE', 'HEE', 'CON', 'A_F', 'H_M', 'I_M', 'RAI', 'SHI', 'TRA', 'T_B', 'EMP', 'AIR', 'DRE', 'LOG', 'POR', 'ROA', 'RES', 'C_C', 'D_C', 'F_A', 'PAI', 'PLA', 'SPC', 'CEM', 'PAC', 'I_S', 'MED', 'MEA', 'MEC', 'MEO', 'MEI', 'MEL', 'MIC', 'MIO', 'MID', 'MII', 'MIM', 'P_P', 'W_P', 'REE', 'T_E', 'T_I', 'T_S', 'P_I', 'PTD', 'G_D', 'PTC', 'P_G', 'R_E', 'ETM', 'ANI', 'BPP', 'C_T', 'M_C'
+            ], 'mrktCapf': {'g': 5000
+            }, 'ccnc': {'l': 50
+            }, 'aqui': {'g': 1.2
+            }, 'cfotr': {'g': 10
+            }
+        }, 'sortBy': 'ccnc', 'sortOrder': 1
+    }, 'type': 'prebuilt', 'createdAt': '2022-10-19T19: 17: 04.492Z', 'updatedAt': '2022-10-19T19: 17: 04.492Z', '__v': 0, 'locked': False
+},
+{'_id': '63504d30a48441c47ecf2892', 'description': 'Fundamentally strong stocks near their 52W low', 'active': True, 'date': '2022-10-19T19: 17: 04.503Z', 'updated': '2023-07-17T10: 32: 48.900Z', 'slug': 'SCR0005', 'title': 'Near 52W Lows', 'premium': False, 'query': {'customUniverses': [], 'project': ['subindustry', 'mrktCapf', 'lastPrice', '5YrevChg', '5Yroe', '52wld', 'apef'
+        ], 'match': {'mrktCapf': {'g': 5000
+            }, '5YrevChg': {'g': 15
+            }, '5Yroe': {'g': 15
+            }, '52wld': {'l': 20
+            }
+        }, 'sortBy': 'apef', 'sortOrder': 1
+    }, 'type': 'prebuilt', 'createdAt': '2022-10-19T19: 17: 04.505Z', 'updatedAt': '2022-10-19T19: 17: 04.505Z', '__v': 0, 'locked': False
+},
+{'_id': '63504d30a48441c47ecf2893', 'description': 'Growing midcap companies with very less or zero debt', 'active': True, 'date': '2022-10-19T19: 17: 04.506Z', 'updated': '2023-07-17T10: 32: 48.903Z', 'slug': 'SCR0003', 'title': 'Low-debt Midcaps', 'premium': False, 'query': {'customUniverses': [], 'project': ['subindustry', 'mrktCapf', 'lastPrice', 'dbtEqt', 'epsGwth', 'apef'
+        ], 'match': {'mrktCapf': {'l': 20000, 'g': 5000
+            }, 'dbtEqt': {'l': 5
+            }, 'epsGwth': {'g': 10
+            }
+        }, 'sortBy': 'apef', 'sortOrder': 1
+    }, 'type': 'prebuilt', 'createdAt': '2022-10-19T19: 17: 04.507Z', 'updatedAt': '2022-10-19T19: 17: 04.507Z', '__v': 0, 'locked': False
+},
+{'_id': '63504d30a48441c47ecf28a1', 'description': 'Profitable Smallcap companies with growing cash flow and earnings', 'active': True, 'date': '2022-10-19T19: 17: 04.562Z', 'updated': '2023-07-17T10: 32: 48.930Z', 'slug': 'SCR0017', 'title': 'Cash Rich Smallcaps', 'premium': False, 'query': {'customUniverses': ['5d5681d486ec2972f76848bb'
+        ], 'project': ['subindustry', 'mrktCapf', 'lastPrice', 'cfog', 'epsg', 'incEps', 'cafNcic', 'cafCfoa', 'apef'
+        ], 'match': {'cfog': {'g': 0
+            }, 'epsg': {'g': 10
+            }, 'incEps': {'g': 0
+            }, 'cafNcic': {'g': 0
+            }, 'cafCfoa': {'g': 0
+            }
+        }, 'sortBy': 'mrktCapf', 'sortOrder': -1
+    }, 'type': 'prebuilt', 'createdAt': '2022-10-19T19: 17: 04.563Z', 'updatedAt': '2022-10-19T19: 17: 04.563Z', '__v': 0, 'locked': False
+},
+{'_id': '63504d30a48441c47ecf289f', 'description': 'Low risk, large cap stocks to achieve market beating returns', 'active': True, 'date': '2022-10-19T19: 17: 04.546Z', 'updated': '2023-07-17T10: 32: 48.929Z', 'slug': 'SCR0019', 'title': 'Limited Variability', 'premium': False, 'query': {'customUniverses': ['5d5681d486ec2972f76848bd'
+        ], 'project': ['subindustry', 'mrktCapf', 'lastPrice', '12mVolN', 'apef'
+        ], 'match': {'12mVolN': {'l': 5
+            }
+        }, 'sortBy': 'mrktCapf', 'sortOrder': -1
+    }, 'type': 'prebuilt', 'createdAt': '2022-10-19T19: 17: 04.547Z', 'updatedAt': '2022-10-19T19: 17: 04.547Z', '__v': 0, 'locked': False
+},
+{'_id': '63504d30a48441c47ecf28a0', 'description': 'High growth quality companies exhibiting price momentum', 'active': True, 'date': '2022-10-19T19: 17: 04.554Z', 'updated': '2023-07-17T10: 32: 48.932Z', 'slug': 'SCR0020', 'title': 'Quality Drifters', 'premium': False, 'query': {'customUniverses': ['5d5681d486ec2972f76848ba'
+        ], 'project': ['subindustry', 'mrktCapf', 'lastPrice', 'roe', 'dbtEqt', 'rvng', 'epsg', '12mpctN', 'apef'
+        ], 'match': {'subindustry': ['AUP', 'T_R', 'FOW', 'THW', 'TWW', 'CYC', 'EDS', 'WES', 'HRC', 'R_C', 'T_G', 'T_T', 'HEA', 'HFU', 'HOU', 'ADV', 'C_D', 'M_T', 'PBL', 'RAD', 'THE', 'TVB', 'R_A', 'R_D', 'R_O', 'R_S', 'A_A', 'FOO', 'PJW', 'TEX', 'ALC', 'SOF', 'T_C', 'AGR', 'F_F', 'P_M', 'SEE', 'SUG', 'F_H', 'F_P', 'F_T', 'OES', 'OEP', 'ORM', 'OST', 'BIO', 'H_E', 'H_D', 'LLS', 'PHA', 'ARL', 'BPC', 'B_G', 'BPG', 'BPL', 'B_P', 'BSS', 'STA', 'C_E', 'BAT', 'CAB', 'ECE', 'HEE', 'CON', 'A_F', 'H_M', 'I_M', 'RAI', 'SHI', 'TRA', 'T_B', 'EMP', 'AIR', 'DRE', 'LOG', 'POR', 'ROA', 'C_N', 'E_E', 'T_H', 'ONL', 'RES', 'ISC', 'O_S', 'S_S', 'C_C', 'D_C', 'F_A', 'PAI', 'PLA', 'SPC', 'CEM', 'PAC', 'I_S', 'MEA', 'MEC', 'MEO', 'MEI', 'MEL', 'MIC', 'MIO', 'MID', 'MII', 'MIM', 'P_P', 'W_P', 'REE', 'T_E', 'T_I', 'T_S', 'P_I', 'PTD', 'G_D', 'PTC', 'P_G', 'R_E', 'ETM', 'ANI', 'BPP', 'C_T', 'ADE'
+            ], 'roe': {'g': 15
+            }, 'dbtEqt': {'l': 5
+            }, 'rvng': {'g': 10
+            }, 'epsg': {'g': 10
+            }, '12mpctN': {'g': 5
+            }
+        }, 'sortBy': 'mrktCapf', 'sortOrder': -1
+    }, 'type': 'prebuilt', 'createdAt': '2022-10-19T19: 17: 04.555Z', 'updatedAt': '2022-10-19T19: 17: 04.555Z', '__v': 0, 'locked': False
+},
+{'_id': '63504d30a48441c47ecf28a2', 'description': 'Profitable Largecap companies with growing cash flow and earnings', 'active': True, 'date': '2022-10-19T19: 17: 04.566Z', 'updated': '2023-07-17T10: 32: 48.927Z', 'slug': 'SCR0018', 'title': 'Cash Rich Largecaps', 'premium': False, 'query': {'customUniverses': ['5d5681d486ec2972f76848bd'
+        ], 'project': ['subindustry', 'mrktCapf', 'lastPrice', 'cfog', 'epsg', 'incEps', 'cafNcic', 'cafCfoa', 'apef'
+        ], 'match': {'cfog': {'g': 0
+            }, 'epsg': {'g': 10
+            }, 'incEps': {'g': 0
+            }, 'cafNcic': {'g': 0
+            }, 'cafCfoa': {'g': 0
+            }
+        }, 'sortBy': 'mrktCapf', 'sortOrder': -1
+    }, 'type': 'prebuilt', 'createdAt': '2022-10-19T19: 17: 04.567Z', 'updatedAt': '2022-10-19T19: 17: 04.567Z', '__v': 0, 'locked': False
+},
+{'_id': '64b518d06a79007a2993c9d2', 'description': 'High dividend yield companies with a track record of not cutting dividends', 'active': True, 'date': '2023-07-17T10: 32: 48.945Z', 'updated': '2023-07-17T10: 32: 48.945Z', 'slug': 'SCR0027', 'title': 'Dividend Gems', 'premium': False, 'query': {'customUniverses': ['5d5681d486ec2972f76848ba'
+        ], 'project': ['subindustry', 'mrktCapf', 'lastPrice', '3YdivGwth', 'incPyr', 'divDps'
+        ], 'match': {'3YdivGwth': {'g': 0
+            }, 'incPyr': {'g': 0.1
+            }, 'divDps': {'g': 1
+            }
+        }, 'sortBy': 'mrktCapf', 'sortOrder': -1
+    }, 'type': 'prebuilt', 'createdAt': '2023-07-17T10: 32: 48.945Z', 'updatedAt': '2023-07-17T10: 32: 48.945Z', '__v': 0, 'locked': False
+},
+{'_id': '64b518d06a79007a2993c9d1', 'description': 'Investment strategy that involves selecting high-quality stocks and holding them for a long time.', 'active': True, 'date': '2023-07-17T10: 32: 48.937Z', 'updated': '2023-07-17T10: 32: 48.939Z', 'slug': 'SCR0026', 'title': 'Long Term Gems', 'premium': False, 'query': {'customUniverses': ['5d5681d486ec2972f76848ba'
+        ], 'project': ['subindustry', 'mrktCapf', 'lastPrice', '5YrevChg', 'rvng', 'roce', '5Yaroi', 'dbtEqt'
+        ], 'match': {'5YrevChg': {'g': 10
+            }, 'rvng': {'g': 10
+            }, 'roce': {'g': 15
+            }, '5Yaroi': {'g': 15
+            }, 'dbtEqt': {'l': 0.5
+            }
+        }, 'sortBy': 'mrktCapf', 'sortOrder': -1
+    }, 'type': 'prebuilt', 'createdAt': '2023-07-17T10: 32: 48.939Z', 'updatedAt': '2024-04-16T11: 09: 15.792Z', '__v': 0, 'locked': False
+},
+{'_id': '6655859d3ce6eaf6300164dc', 'active': True, 'createdAt': '2024-05-26T05: 52: 51.190Z', 'date': '2024-05-26T05: 52: 51.192Z', 'description': 'Best-in-class tech companies leading Technology & IT innovation in India', 'premium': False, 'query': {'customUniverses': [], 'project': ['subindustry', 'mrktCapf', 'roce', 'roe', 'pftMrg'
+        ], 'match': {'subindustry': ['C_N', 'E_E', 'T_H', 'ISC', 'O_S', 'S_S'
+            ], 'roce': {'g': 25
+            }, 'roe': {'g': 20
+            }, 'pftMrg': {'g': 15
+            }
+        }, 'sortOrder': -1, 'sortBy': 'mrktCapf'
+    }, 'slug': 'SCR0030', 'title': 'Technology Innovators', 'type': 'prebuilt', 'updated': '2024-05-26T05: 52: 51.192Z', 'updatedAt': '2024-05-26T05: 52: 51.190Z', 'locked': False
+}
+], 'premium': [
+{'_id': '63504ba08639bdc38e1dc1a3', 'description': 'Stocks picked from long-term growth companies to help you plan your golden years!', 'active': True, 'date': '2022-10-19T19: 10: 24.241Z', 'updated': '2023-07-17T10: 32: 48.944Z', 'slug': 'SCR0025', 'title': 'Retiring in Style', 'premium': True, 'query': {'customUniverses': [], 'project': ['subindustry', 'mrktCapf', '5Yroe', '5YrevChg', 'epsGwth', '12mEpsg', '5yCagrPct', 'apef'
+        ], 'match': {'mrktCapf': {'g': 15000
+            }, '5Yroe': {'g': 15
+            }, '5YrevChg': {'g': 15
+            }, 'epsGwth': {'g': 20
+            }, '12mEpsg': {'g': 15
+            }, '5yCagrPct': {'g': 17.5
+            }
+        }, 'sortBy': '5yCagrPct', 'sortOrder': -1
+    }, 'type': 'prebuilt', 'createdAt': '2022-10-19T19: 10: 24.242Z', 'updatedAt': '2022-10-19T19: 10: 24.242Z', '__v': 0, 'locked': True
+},
+{'_id': '63504ba08639bdc38e1dc1a2', 'description': 'Stocks curated with a high market cap and 1Y returns to help you plan for your new ride', 'active': True, 'date': '2022-10-19T19: 10: 24.234Z', 'updated': '2023-07-17T10: 32: 48.947Z', 'slug': 'SCR0023', 'title': 'Fuel for your dreams', 'premium': True, 'query': {'customUniverses': [], 'project': ['subindustry', 'mrktCapf', '52wpct', 'incNinc', 'epsGwth', '12mEpsg', 'apef'
+        ], 'match': {'mrktCapf': {'g': 50000
+            }, '52wpct': {'g': 12.5
+            }, 'incNinc': {'g': 1000
+            }, 'epsGwth': {'g': 10
+            }, '12mEpsg': {'g': 10
+            }
+        }, 'sortBy': '52wpct', 'sortOrder': -1
+    }, 'type': 'prebuilt', 'createdAt': '2022-10-19T19: 10: 24.235Z', 'updatedAt': '2022-10-19T19: 10: 24.235Z', '__v': 0, 'locked': True
+},
+{'_id': '63504d30a48441c47ecf289a', 'description': 'Stocks experiencing long build up in future contracts. It is considered as a bullish indicator', 'active': True, 'date': '2022-10-19T19: 17: 04.530Z', 'updated': '2023-07-17T10: 32: 48.917Z', 'slug': 'SCR0011', 'title': 'Fut: Long Build Up', 'premium': True, 'query': {'customUniverses': [], 'project': ['subindustry', 'mrktCapf', 'lastPrice', '1Wfoi', 'pr1w', 'apef'
+        ], 'match': {'1Wfoi': {'g': 0
+            }, 'pr1w': {'g': 3
+            }
+        }, 'sortBy': '1Wfoi', 'sortOrder': -1
+    }, 'type': 'prebuilt', 'category': 'F&O Screens', 'createdAt': '2022-10-19T19: 17: 04.531Z', 'updatedAt': '2022-10-19T19: 17: 04.531Z', '__v': 0, 'locked': True
+},
+{'_id': '63504d30a48441c47ecf2897', 'description': 'Asset management companies, investment banks and stocks exchanges - expected to benefit from bull run in stock markets', 'active': True, 'date': '2022-10-19T19: 17: 04.518Z', 'updated': '2023-07-17T10: 32: 48.906Z', 'slug': 'SCR0007', 'title': 'Wealth Emissaries', 'premium': True, 'query': {'customUniverses': [], 'project': ['subindustry', 'mrktCapf', 'lastPrice', 'breco', 'apef'
+        ], 'match': {'subindustry': ['I_B', 'S_R', 'ASS'
+            ], 'mrktCapf': {'g': 3000
+            }, 'breco': {'g': 50
+            }
+        }, 'sortBy': 'apef', 'sortOrder': 1
+    }, 'type': 'prebuilt', 'createdAt': '2022-10-19T19: 17: 04.519Z', 'updatedAt': '2022-10-19T19: 17: 04.519Z', '__v': 0, 'locked': True
+},
+{'_id': '63504d30a48441c47ecf289e', 'description': 'Companies with strong profitability, increasing cash flow and earnings, and currently priced lower than their actual value.\n', 'active': True, 'date': '2022-10-19T19: 17: 04.540Z', 'updated': '2023-07-17T10: 32: 48.921Z', 'slug': 'SCR0014', 'title': 'Growth Bargains', 'premium': True, 'query': {'customUniverses': [], 'project': ['subindustry', 'mrktCapf', 'lastPrice', '5Yroe', '5YrevChg', 'epsGwth', 'cfotr', 'ped', 'apef'
+        ], 'match': {'mrktCapf': {'g': 5000
+            }, '5Yroe': {'g': 15
+            }, '5YrevChg': {'g': 15
+            }, 'epsGwth': {'g': 15
+            }, 'cfotr': {'g': 15
+            }, 'ped': {'l': 0
+            }
+        }, 'sortBy': 'ped', 'sortOrder': 1
+    }, 'type': 'prebuilt', 'createdAt': '2022-10-19T19: 17: 04.541Z', 'updatedAt': '2023-07-17T10: 32: 48.921Z', '__v': 0, 'category': 'F&O Screens', 'locked': True
+},
+{'_id': '63504d30a48441c47ecf289b', 'description': 'Stocks experiencing short build up in future contracts. It is considered as a bearish indicator', 'active': True, 'date': '2022-10-19T19: 17: 04.532Z', 'updated': '2023-07-17T10: 32: 48.918Z', 'slug': 'SCR0012', 'title': 'Fut: Short Build Up', 'premium': True, 'query': {'customUniverses': [], 'project': ['subindustry', 'mrktCapf', 'lastPrice', '1Wfoi', 'pr1w', 'apef'
+        ], 'match': {'1Wfoi': {'g': 0
+            }, 'pr1w': {'l': -3
+            }
+        }, 'sortBy': '1Wfoi', 'sortOrder': -1
+    }, 'type': 'prebuilt', 'category': 'F&O Screens', 'createdAt': '2022-10-19T19: 17: 04.533Z', 'updatedAt': '2022-10-19T19: 17: 04.533Z', '__v': 0, 'locked': True
+},
+{'_id': '63504d30a48441c47ecf2899', 'description': 'Companies experiencing strong price momentum', 'active': True, 'date': '2022-10-19T19: 17: 04.527Z', 'updated': '2023-07-17T10: 32: 48.911Z', 'slug': 'SCR0009', 'title': 'Momentum Monsters', 'premium': True, 'query': {'customUniverses': [], 'project': ['subindustry', 'mrktCapf', 'lastPrice', 'pab1Mma', '14ersi', '1mac', '14adx', 'apef'
+        ], 'match': {'mrktCapf': {'g': 5000
+            }, 'pab1Mma': {'g': 0
+            }, '14ersi': {'l': 60, 'g': 20
+            }, '1mac': {'g': 0
+            }, '14adx': {'g': 40
+            }
+        }, 'sortBy': 'pab1Mma', 'sortOrder': -1
+    }, 'type': 'prebuilt', 'createdAt': '2022-10-19T19: 17: 04.528Z', 'updatedAt': '2023-06-12T07: 52: 02.883Z', '__v': 0, 'locked': True
+},
+{'_id': '63504d30a48441c47ecf289c', 'description': 'Stocks experiencing long build up in option contracts. It is considered as a bullish indicator', 'active': True, 'date': '2022-10-19T19: 17: 04.534Z', 'updated': '2023-07-17T10: 32: 48.919Z', 'slug': 'SCR0013', 'title': 'Opt: Long Build Up', 'premium': True, 'query': {'customUniverses': [], 'project': ['subindustry', 'mrktCapf', 'lastPrice', '1Wcoi', 'pr1w', 'apef'
+        ], 'match': {'1Wcoi': {'g': 0
+            }, 'pr1w': {'g': 3
+            }
+        }, 'sortBy': '1Wcoi', 'sortOrder': -1
+    }, 'type': 'prebuilt', 'category': 'F&O Screens', 'createdAt': '2022-10-19T19: 17: 04.536Z', 'updatedAt': '2022-10-19T19: 17: 04.536Z', '__v': 0, 'locked': True
+},
+{'_id': '63504d30a48441c47ecf289d', 'description': 'Potential stocks where a profitable cash and carry arbitrage trade can be executed', 'active': True, 'date': '2022-10-19T19: 17: 04.537Z', 'updated': '2023-07-17T10: 32: 48.915Z', 'slug': 'SCR0010', 'title': 'Cash & Carry Candidates', 'premium': True, 'query': {'customUniverses': [], 'project': ['subindustry', 'mrktCapf', 'lastPrice', 'fairsp', 'ccrp', 'apef'
+        ], 'match': {'fairsp': {'g': 0
+            }, 'ccrp': {'g': 0
+            }
+        }, 'sortBy': 'ccrp', 'sortOrder': -1
+    }, 'type': 'prebuilt', 'category': 'F&O Screens', 'createdAt': '2022-10-19T19: 17: 04.538Z', 'updatedAt': '2022-10-19T19: 17: 04.538Z', '__v': 0, 'locked': True
+},
+{'_id': '6655855c3ce6eaf6300164d8', 'active': True, 'createdAt': '2024-05-24T15: 31: 35.689Z', 'date': '2024-05-24T15: 31: 35.691Z', 'description': 'A technical screen to identify stocks in high momentum that are nearing breakout ', 'premium': True, 'query': {'customUniverses': ['5d5681d486ec2972f76848ba'
+        ], 'project': ['subindustry', 'mrktCapf', '14dRsi', 'lastPrice,sma50d,/', 'lastPrice,sma200d,/', '52whd'
+        ], 'match': {'14dRsi': {'g': 70
+            }, 'lastPrice,sma50d,/': {'g': 1
+            }, 'lastPrice,sma200d,/': {'g': 1
+            }, '52whd': {'g': 0, 'l': 5
+            }
+        }, 'sortOrder': -1, 'sortBy': 'mrktCapf'
+    }, 'slug': 'SCR0028', 'title': 'Nearing Breakout', 'type': 'prebuilt', 'updated': '2024-05-24T15: 31: 35.691Z', 'updatedAt': '2024-05-24T15: 31: 35.689Z', 'locked': True
+},
+{'_id': '665585763ce6eaf6300164da', 'active': True, 'createdAt': '2024-05-26T05: 50: 46.390Z', 'date': '2024-05-26T05: 50: 46.391Z', 'description': 'Profitable, High Growth consumer essentials companies offering defensive play to portfolio ', 'premium': True, 'query': {'customUniverses': [], 'project': ['subindustry', 'mrktCapf', 'lastPrice', 'apef', 'roce', 'roe', 'pftMrg', 'breco'
+        ], 'match': {'roce': {'g': 25
+            }, 'roe': {'g': 15
+            }, 'pftMrg': {'g': 7
+            }, 'breco': {'g': 50, 'l': 100
+            }, 'subindustry': ['ALC', 'SOF', 'T_C', 'AGR', 'F_F', 'P_M', 'SEE', 'SUG', 'F_H', 'F_P', 'F_T'
+            ]
+        }, 'sortOrder': -1, 'sortBy': 'mrktCapf'
+    }, 'slug': 'SCR0029', 'title': 'Consumer Essentials', 'type': 'prebuilt', 'updated': '2024-05-26T05: 50: 46.391Z', 'updatedAt': '2024-05-26T05: 50: 46.390Z', 'locked': True
+}
+], 'isFetched': True, 'isClienSideFetched': False
+}, 'mutual-fund': {'basic': [], 'premium': [], 'isFetched': False, 'isClienSideFetched': False
+}
+}, 'appPreBuiltScreensV2': {'equity': {'allScreens': [
+{'name': 'Popular', 'screens': [
+        {'id': 'SCR0026', 'rank': 2, 'filterTags': ['5Y revenue growth', 'ROCE'
+            ], 'nudge': '10k+ users have been using this', 'screen': {'_id': '64b518d06a79007a2993c9d1', 'description': 'Investment strategy that involves selecting high-quality stocks and holding them for a long time.', 'active': True, 'date': '2023-07-17T10: 32: 48.937Z', 'updated': '2023-07-17T10: 32: 48.939Z', 'slug': 'SCR0026', 'title': 'Long Term Gems', 'premium': False, 'query': {'customUniverses': ['5d5681d486ec2972f76848ba'
+                    ], 'project': ['subindustry', 'mrktCapf', 'lastPrice', '5YrevChg', 'rvng', 'roce', '5Yaroi', 'dbtEqt'
+                    ], 'match': {'5YrevChg': {'g': 10
+                        }, 'rvng': {'g': 10
+                        }, 'roce': {'g': 15
+                        }, '5Yaroi': {'g': 15
+                        }, 'dbtEqt': {'l': 0.5
+                        }
+                    }, 'sortBy': 'mrktCapf', 'sortOrder': -1
+                }, 'type': 'prebuilt', 'createdAt': '2023-07-17T10: 32: 48.939Z', 'updatedAt': '2024-04-16T11: 09: 15.792Z', '__v': 0, 'locked': False
+            }
+        },
+        {'id': 'SCR0005', 'rank': 3, 'filterTags': ['% away from 52 low', '5Y revenue growth'
+            ], 'nudge': '83k+ users have been using this', 'screen': {'_id': '63504d30a48441c47ecf2892', 'description': 'Fundamentally strong stocks near their 52W low', 'active': True, 'date': '2022-10-19T19: 17: 04.503Z', 'updated': '2023-07-17T10: 32: 48.900Z', 'slug': 'SCR0005', 'title': 'Near 52W Lows', 'premium': False, 'query': {'customUniverses': [], 'project': ['subindustry', 'mrktCapf', 'lastPrice', '5YrevChg', '5Yroe', '52wld', 'apef'
+                    ], 'match': {'mrktCapf': {'g': 5000
+                        }, '5YrevChg': {'g': 15
+                        }, '5Yroe': {'g': 15
+                        }, '52wld': {'l': 20
+                        }
+                    }, 'sortBy': 'apef', 'sortOrder': 1
+                }, 'type': 'prebuilt', 'createdAt': '2022-10-19T19: 17: 04.505Z', 'updatedAt': '2022-10-19T19: 17: 04.505Z', '__v': 0, 'locked': False
+            }
+        },
+        {'id': 'SCR0009', 'rank': 1, 'filterTags': ['14D exponential RSI', 'ADX rating'
+            ], 'nudge': '12k+ users have been using this', 'screen': {'_id': '63504d30a48441c47ecf2899', 'description': 'Companies experiencing strong price momentum', 'active': True, 'date': '2022-10-19T19: 17: 04.527Z', 'updated': '2023-07-17T10: 32: 48.911Z', 'slug': 'SCR0009', 'title': 'Momentum Monsters', 'premium': True, 'query': {'customUniverses': [], 'project': ['subindustry', 'mrktCapf', 'lastPrice', 'pab1Mma', '14ersi', '1mac', '14adx', 'apef'
+                    ], 'match': {'mrktCapf': {'g': 5000
+                        }, 'pab1Mma': {'g': 0
+                        }, '14ersi': {'l': 60, 'g': 20
+                        }, '1mac': {'g': 0
+                        }, '14adx': {'g': 40
+                        }
+                    }, 'sortBy': 'pab1Mma', 'sortOrder': -1
+                }, 'type': 'prebuilt', 'createdAt': '2022-10-19T19: 17: 04.528Z', 'updatedAt': '2023-06-12T07: 52: 02.883Z', '__v': 0, 'locked': True
+            }
+        }
+    ]
+},
+{'name': 'Futures & Options', 'screens': [
+        {'id': 'SCR0011', 'rank': 1, 'filterTags': ['1W change in Fut OI', '1W return'
+            ], 'nudge': '10k+ users have been using this', 'screen': {'_id': '63504d30a48441c47ecf289a', 'description': 'Stocks experiencing long build up in future contracts. It is considered as a bullish indicator', 'active': True, 'date': '2022-10-19T19: 17: 04.530Z', 'updated': '2023-07-17T10: 32: 48.917Z', 'slug': 'SCR0011', 'title': 'Fut: Long Build Up', 'premium': True, 'query': {'customUniverses': [], 'project': ['subindustry', 'mrktCapf', 'lastPrice', '1Wfoi', 'pr1w', 'apef'
+                    ], 'match': {'1Wfoi': {'g': 0
+                        }, 'pr1w': {'g': 3
+                        }
+                    }, 'sortBy': '1Wfoi', 'sortOrder': -1
+                }, 'type': 'prebuilt', 'category': 'F&O Screens', 'createdAt': '2022-10-19T19: 17: 04.531Z', 'updatedAt': '2022-10-19T19: 17: 04.531Z', '__v': 0, 'locked': True
+            }
+        },
+        {'id': 'SCR0010', 'rank': 2, 'filterTags': ['Fair value spread', 'Cash & carry profit'
+            ], 'nudge': '9k+ users have been using this', 'screen': {'_id': '63504d30a48441c47ecf289d', 'description': 'Potential stocks where a profitable cash and carry arbitrage trade can be executed', 'active': True, 'date': '2022-10-19T19: 17: 04.537Z', 'updated': '2023-07-17T10: 32: 48.915Z', 'slug': 'SCR0010', 'title': 'Cash & Carry Candidates', 'premium': True, 'query': {'customUniverses': [], 'project': ['subindustry', 'mrktCapf', 'lastPrice', 'fairsp', 'ccrp', 'apef'
+                    ], 'match': {'fairsp': {'g': 0
+                        }, 'ccrp': {'g': 0
+                        }
+                    }, 'sortBy': 'ccrp', 'sortOrder': -1
+                }, 'type': 'prebuilt', 'category': 'F&O Screens', 'createdAt': '2022-10-19T19: 17: 04.538Z', 'updatedAt': '2022-10-19T19: 17: 04.538Z', '__v': 0, 'locked': True
+            }
+        },
+        {'id': 'SCR0013', 'rank': 3, 'filterTags': ['1W change in Call OI', '1W return'
+            ], 'nudge': '8k+ users have been using this', 'screen': {'_id': '63504d30a48441c47ecf289c', 'description': 'Stocks experiencing long build up in option contracts. It is considered as a bullish indicator', 'active': True, 'date': '2022-10-19T19: 17: 04.534Z', 'updated': '2023-07-17T10: 32: 48.919Z', 'slug': 'SCR0013', 'title': 'Opt: Long Build Up', 'premium': True, 'query': {'customUniverses': [], 'project': ['subindustry', 'mrktCapf', 'lastPrice', '1Wcoi', 'pr1w', 'apef'
+                    ], 'match': {'1Wcoi': {'g': 0
+                        }, 'pr1w': {'g': 3
+                        }
+                    }, 'sortBy': '1Wcoi', 'sortOrder': -1
+                }, 'type': 'prebuilt', 'category': 'F&O Screens', 'createdAt': '2022-10-19T19: 17: 04.536Z', 'updatedAt': '2022-10-19T19: 17: 04.536Z', '__v': 0, 'locked': True
+            }
+        },
+        {'id': 'SCR0012', 'rank': 4, 'filterTags': ['1W change in Fut OI', '1W return'
+            ], 'nudge': '7k+ users have been using this', 'screen': {'_id': '63504d30a48441c47ecf289b', 'description': 'Stocks experiencing short build up in future contracts. It is considered as a bearish indicator', 'active': True, 'date': '2022-10-19T19: 17: 04.532Z', 'updated': '2023-07-17T10: 32: 48.918Z', 'slug': 'SCR0012', 'title': 'Fut: Short Build Up', 'premium': True, 'query': {'customUniverses': [], 'project': ['subindustry', 'mrktCapf', 'lastPrice', '1Wfoi', 'pr1w', 'apef'
+                    ], 'match': {'1Wfoi': {'g': 0
+                        }, 'pr1w': {'l': -3
+                        }
+                    }, 'sortBy': '1Wfoi', 'sortOrder': -1
+                }, 'type': 'prebuilt', 'category': 'F&O Screens', 'createdAt': '2022-10-19T19: 17: 04.533Z', 'updatedAt': '2022-10-19T19: 17: 04.533Z', '__v': 0, 'locked': True
+            }
+        }
+    ]
+},
+{'name': 'Fundamentals', 'screens': [
+        {'id': 'SCR0027', 'rank': 1, 'filterTags': ['Div yield', '3Y div growth'
+            ], 'nudge': '10k+ users have been using this', 'screen': {'_id': '64b518d06a79007a2993c9d2', 'description': 'High dividend yield companies with a track record of not cutting dividends', 'active': True, 'date': '2023-07-17T10: 32: 48.945Z', 'updated': '2023-07-17T10: 32: 48.945Z', 'slug': 'SCR0027', 'title': 'Dividend Gems', 'premium': False, 'query': {'customUniverses': ['5d5681d486ec2972f76848ba'
+                    ], 'project': ['subindustry', 'mrktCapf', 'lastPrice', '3YdivGwth', 'incPyr', 'divDps'
+                    ], 'match': {'3YdivGwth': {'g': 0
+                        }, 'incPyr': {'g': 0.1
+                        }, 'divDps': {'g': 1
+                        }
+                    }, 'sortBy': 'mrktCapf', 'sortOrder': -1
+                }, 'type': 'prebuilt', 'createdAt': '2023-07-17T10: 32: 48.945Z', 'updatedAt': '2023-07-17T10: 32: 48.945Z', '__v': 0, 'locked': False
+            }
+        },
+        {'id': 'SCR0017', 'rank': 3, 'filterTags': ['1Y OCF growth', 'Net change in cash'
+            ], 'nudge': '54k+ users have been using this', 'screen': {'_id': '63504d30a48441c47ecf28a1', 'description': 'Profitable Smallcap companies with growing cash flow and earnings', 'active': True, 'date': '2022-10-19T19: 17: 04.562Z', 'updated': '2023-07-17T10: 32: 48.930Z', 'slug': 'SCR0017', 'title': 'Cash Rich Smallcaps', 'premium': False, 'query': {'customUniverses': ['5d5681d486ec2972f76848bb'
+                    ], 'project': ['subindustry', 'mrktCapf', 'lastPrice', 'cfog', 'epsg', 'incEps', 'cafNcic', 'cafCfoa', 'apef'
+                    ], 'match': {'cfog': {'g': 0
+                        }, 'epsg': {'g': 10
+                        }, 'incEps': {'g': 0
+                        }, 'cafNcic': {'g': 0
+                        }, 'cafCfoa': {'g': 0
+                        }
+                    }, 'sortBy': 'mrktCapf', 'sortOrder': -1
+                }, 'type': 'prebuilt', 'createdAt': '2022-10-19T19: 17: 04.563Z', 'updatedAt': '2022-10-19T19: 17: 04.563Z', '__v': 0, 'locked': False
+            }
+        },
+        {'id': 'SCR0001', 'rank': 4, 'filterTags': ['Cash conversion cycle', '5Y OCF growth'
+            ], 'nudge': '57k+ users have been using this', 'screen': {'_id': '63504d30a48441c47ecf2891', 'description': 'Companies good at quickly turning around cash to generate profits due to low/negative cash conversion cycles', 'active': True, 'date': '2022-10-19T19: 17: 04.485Z', 'updated': '2023-07-17T10: 32: 48.892Z', 'slug': 'SCR0001', 'title': 'Money Minters', 'premium': False, 'query': {'customUniverses': [], 'project': ['subindustry', 'mrktCapf', 'lastPrice', 'ccnc', 'aqui', 'cfotr', 'apef'
+                    ], 'match': {'subindustry': ['AUP', 'T_R', 'FOW', 'THW', 'TWW', 'CYC', 'EDS', 'WES', 'HRC', 'R_C', 'T_G', 'T_T', 'HEA', 'HFU', 'HOU', 'ADV', 'C_D', 'M_T', 'PBL', 'RAD', 'THE', 'TVB', 'R_A', 'R_D', 'R_O', 'R_S', 'A_A', 'FOO', 'PJW', 'TEX', 'ALC', 'SOF', 'T_C', 'AGR', 'F_F', 'P_M', 'SEE', 'SUG', 'F_H', 'F_P', 'F_T', 'OES', 'OEP', 'ORM', 'OST', 'PRI', 'PUB', 'ASS', 'I_B', 'S_R', 'CUS', 'DIV', 'SPE', 'INS', 'H_F', 'BIO', 'H_E', 'H_D', 'LLS', 'PHA', 'ARL', 'BPC', 'B_G', 'BPG', 'BPL', 'B_P', 'BSS', 'STA', 'C_E', 'BAT', 'CAB', 'ECE', 'HEE', 'CON', 'A_F', 'H_M', 'I_M', 'RAI', 'SHI', 'TRA', 'T_B', 'EMP', 'AIR', 'DRE', 'LOG', 'POR', 'ROA', 'RES', 'C_C', 'D_C', 'F_A', 'PAI', 'PLA', 'SPC', 'CEM', 'PAC', 'I_S', 'MED', 'MEA', 'MEC', 'MEO', 'MEI', 'MEL', 'MIC', 'MIO', 'MID', 'MII', 'MIM', 'P_P', 'W_P', 'REE', 'T_E', 'T_I', 'T_S', 'P_I', 'PTD', 'G_D', 'PTC', 'P_G', 'R_E', 'ETM', 'ANI', 'BPP', 'C_T', 'M_C'
+                        ], 'mrktCapf': {'g': 5000
+                        }, 'ccnc': {'l': 50
+                        }, 'aqui': {'g': 1.2
+                        }, 'cfotr': {'g': 10
+                        }
+                    }, 'sortBy': 'ccnc', 'sortOrder': 1
+                }, 'type': 'prebuilt', 'createdAt': '2022-10-19T19: 17: 04.492Z', 'updatedAt': '2022-10-19T19: 17: 04.492Z', '__v': 0, 'locked': False
+            }
+        },
+        {'id': 'SCR0018', 'rank': 5, 'filterTags': ['1Y OCF growth', '1Y EPS growth'
+            ], 'nudge': '35k+ users have been using this', 'screen': {'_id': '63504d30a48441c47ecf28a2', 'description': 'Profitable Largecap companies with growing cash flow and earnings', 'active': True, 'date': '2022-10-19T19: 17: 04.566Z', 'updated': '2023-07-17T10: 32: 48.927Z', 'slug': 'SCR0018', 'title': 'Cash Rich Largecaps', 'premium': False, 'query': {'customUniverses': ['5d5681d486ec2972f76848bd'
+                    ], 'project': ['subindustry', 'mrktCapf', 'lastPrice', 'cfog', 'epsg', 'incEps', 'cafNcic', 'cafCfoa', 'apef'
+                    ], 'match': {'cfog': {'g': 0
+                        }, 'epsg': {'g': 10
+                        }, 'incEps': {'g': 0
+                        }, 'cafNcic': {'g': 0
+                        }, 'cafCfoa': {'g': 0
+                        }
+                    }, 'sortBy': 'mrktCapf', 'sortOrder': -1
+                }, 'type': 'prebuilt', 'createdAt': '2022-10-19T19: 17: 04.567Z', 'updatedAt': '2022-10-19T19: 17: 04.567Z', '__v': 0, 'locked': False
+            }
+        },
+        {'id': 'SCR0029', 'rank': 6, 'filterTags': ['ROCE', 'Return on Equity'
+            ], 'nudge': '12k+ users have been using this', 'screen': {'_id': '665585763ce6eaf6300164da', 'active': True, 'createdAt': '2024-05-26T05: 50: 46.390Z', 'date': '2024-05-26T05: 50: 46.391Z', 'description': 'Profitable, High Growth consumer essentials companies offering defensive play to portfolio ', 'premium': True, 'query': {'customUniverses': [], 'project': ['subindustry', 'mrktCapf', 'lastPrice', 'apef', 'roce', 'roe', 'pftMrg', 'breco'
+                    ], 'match': {'roce': {'g': 25
+                        }, 'roe': {'g': 15
+                        }, 'pftMrg': {'g': 7
+                        }, 'breco': {'g': 50, 'l': 100
+                        }, 'subindustry': ['ALC', 'SOF', 'T_C', 'AGR', 'F_F', 'P_M', 'SEE', 'SUG', 'F_H', 'F_P', 'F_T'
+                        ]
+                    }, 'sortOrder': -1, 'sortBy': 'mrktCapf'
+                }, 'slug': 'SCR0029', 'title': 'Consumer Essentials', 'type': 'prebuilt', 'updated': '2024-05-26T05: 50: 46.391Z', 'updatedAt': '2024-05-26T05: 50: 46.390Z', 'locked': True
+            }
+        },
+        {'id': 'SCR0030', 'rank': 7, 'nudge': '12k+ users have been using this', 'filterTags': ['Net Profit Margin', 'ROCE'
+            ], 'screen': {'_id': '6655859d3ce6eaf6300164dc', 'active': True, 'createdAt': '2024-05-26T05: 52: 51.190Z', 'date': '2024-05-26T05: 52: 51.192Z', 'description': 'Best-in-class tech companies leading Technology & IT innovation in India', 'premium': False, 'query': {'customUniverses': [], 'project': ['subindustry', 'mrktCapf', 'roce', 'roe', 'pftMrg'
+                    ], 'match': {'subindustry': ['C_N', 'E_E', 'T_H', 'ISC', 'O_S', 'S_S'
+                        ], 'roce': {'g': 25
+                        }, 'roe': {'g': 20
+                        }, 'pftMrg': {'g': 15
+                        }
+                    }, 'sortOrder': -1, 'sortBy': 'mrktCapf'
+                }, 'slug': 'SCR0030', 'title': 'Technology Innovators', 'type': 'prebuilt', 'updated': '2024-05-26T05: 52: 51.192Z', 'updatedAt': '2024-05-26T05: 52: 51.190Z', 'locked': False
+            }
+        },
+        {'id': 'SCR0025', 'rank': 8, 'filterTags': ['5Y avg ROE', '5Y EPS growth'
+            ], 'nudge': '20k+ users have been using this', 'screen': {'_id': '63504ba08639bdc38e1dc1a3', 'description': 'Stocks picked from long-term growth companies to help you plan your golden years!', 'active': True, 'date': '2022-10-19T19: 10: 24.241Z', 'updated': '2023-07-17T10: 32: 48.944Z', 'slug': 'SCR0025', 'title': 'Retiring in Style', 'premium': True, 'query': {'customUniverses': [], 'project': ['subindustry', 'mrktCapf', '5Yroe', '5YrevChg', 'epsGwth', '12mEpsg', '5yCagrPct', 'apef'
+                    ], 'match': {'mrktCapf': {'g': 15000
+                        }, '5Yroe': {'g': 15
+                        }, '5YrevChg': {'g': 15
+                        }, 'epsGwth': {'g': 20
+                        }, '12mEpsg': {'g': 15
+                        }, '5yCagrPct': {'g': 17.5
+                        }
+                    }, 'sortBy': '5yCagrPct', 'sortOrder': -1
+                }, 'type': 'prebuilt', 'createdAt': '2022-10-19T19: 10: 24.242Z', 'updatedAt': '2022-10-19T19: 10: 24.242Z', '__v': 0, 'locked': True
+            }
+        },
+        {'id': 'SCR0023', 'rank': 9, 'filterTags': ['5Y EPS growth', '1Y forward EPS growth'
+            ], 'nudge': '14k+ users have been using this', 'screen': {'_id': '63504ba08639bdc38e1dc1a2', 'description': 'Stocks curated with a high market cap and 1Y returns to help you plan for your new ride', 'active': True, 'date': '2022-10-19T19: 10: 24.234Z', 'updated': '2023-07-17T10: 32: 48.947Z', 'slug': 'SCR0023', 'title': 'Fuel for your dreams', 'premium': True, 'query': {'customUniverses': [], 'project': ['subindustry', 'mrktCapf', '52wpct', 'incNinc', 'epsGwth', '12mEpsg', 'apef'
+                    ], 'match': {'mrktCapf': {'g': 50000
+                        }, '52wpct': {'g': 12.5
+                        }, 'incNinc': {'g': 1000
+                        }, 'epsGwth': {'g': 10
+                        }, '12mEpsg': {'g': 10
+                        }
+                    }, 'sortBy': '52wpct', 'sortOrder': -1
+                }, 'type': 'prebuilt', 'createdAt': '2022-10-19T19: 10: 24.235Z', 'updatedAt': '2022-10-19T19: 10: 24.235Z', '__v': 0, 'locked': True
+            }
+        },
+        {'id': 'SCR0007', 'rank': 10, 'filterTags': ['% buy reommendation', ''
+            ], 'nudge': '10k+ users have been using this', 'screen': {'_id': '63504d30a48441c47ecf2897', 'description': 'Asset management companies, investment banks and stocks exchanges - expected to benefit from bull run in stock markets', 'active': True, 'date': '2022-10-19T19: 17: 04.518Z', 'updated': '2023-07-17T10: 32: 48.906Z', 'slug': 'SCR0007', 'title': 'Wealth Emissaries', 'premium': True, 'query': {'customUniverses': [], 'project': ['subindustry', 'mrktCapf', 'lastPrice', 'breco', 'apef'
+                    ], 'match': {'subindustry': ['I_B', 'S_R', 'ASS'
+                        ], 'mrktCapf': {'g': 3000
+                        }, 'breco': {'g': 50
+                        }
+                    }, 'sortBy': 'apef', 'sortOrder': 1
+                }, 'type': 'prebuilt', 'createdAt': '2022-10-19T19: 17: 04.519Z', 'updatedAt': '2022-10-19T19: 17: 04.519Z', '__v': 0, 'locked': True
+            }
+        },
+        {'id': 'SCR0014', 'rank': 11, 'filterTags': ['5Y EPS growth', 'PE premium vs sector'
+            ], 'nudge': '12k+ users have been using this', 'screen': {'_id': '63504d30a48441c47ecf289e', 'description': 'Companies with strong profitability, increasing cash flow and earnings, and currently priced lower than their actual value.\n', 'active': True, 'date': '2022-10-19T19: 17: 04.540Z', 'updated': '2023-07-17T10: 32: 48.921Z', 'slug': 'SCR0014', 'title': 'Growth Bargains', 'premium': True, 'query': {'customUniverses': [], 'project': ['subindustry', 'mrktCapf', 'lastPrice', '5Yroe', '5YrevChg', 'epsGwth', 'cfotr', 'ped', 'apef'
+                    ], 'match': {'mrktCapf': {'g': 5000
+                        }, '5Yroe': {'g': 15
+                        }, '5YrevChg': {'g': 15
+                        }, 'epsGwth': {'g': 15
+                        }, 'cfotr': {'g': 15
+                        }, 'ped': {'l': 0
+                        }
+                    }, 'sortBy': 'ped', 'sortOrder': 1
+                }, 'type': 'prebuilt', 'createdAt': '2022-10-19T19: 17: 04.541Z', 'updatedAt': '2023-07-17T10: 32: 48.921Z', '__v': 0, 'category': 'F&O Screens', 'locked': True
+            }
+        },
+        {'id': 'SCR0026', 'rank': 2, 'filterTags': ['5Y revenue growth', 'ROCE'
+            ], 'nudge': '10k+ users have been using this', 'screen': {'_id': '64b518d06a79007a2993c9d1', 'description': 'Investment strategy that involves selecting high-quality stocks and holding them for a long time.', 'active': True, 'date': '2023-07-17T10: 32: 48.937Z', 'updated': '2023-07-17T10: 32: 48.939Z', 'slug': 'SCR0026', 'title': 'Long Term Gems', 'premium': False, 'query': {'customUniverses': ['5d5681d486ec2972f76848ba'
+                    ], 'project': ['subindustry', 'mrktCapf', 'lastPrice', '5YrevChg', 'rvng', 'roce', '5Yaroi', 'dbtEqt'
+                    ], 'match': {'5YrevChg': {'g': 10
+                        }, 'rvng': {'g': 10
+                        }, 'roce': {'g': 15
+                        }, '5Yaroi': {'g': 15
+                        }, 'dbtEqt': {'l': 0.5
+                        }
+                    }, 'sortBy': 'mrktCapf', 'sortOrder': -1
+                }, 'type': 'prebuilt', 'createdAt': '2023-07-17T10: 32: 48.939Z', 'updatedAt': '2024-04-16T11: 09: 15.792Z', '__v': 0, 'locked': False
+            }
+        },
+        {'id': 'SCR0003', 'rank': 6, 'filterTags': ['Debt to Equity', '5Y EPS growth'
+            ], 'nudge': '40k+ users have been using this', 'screen': {'_id': '63504d30a48441c47ecf2893', 'description': 'Growing midcap companies with very less or zero debt', 'active': True, 'date': '2022-10-19T19: 17: 04.506Z', 'updated': '2023-07-17T10: 32: 48.903Z', 'slug': 'SCR0003', 'title': 'Low-debt Midcaps', 'premium': False, 'query': {'customUniverses': [], 'project': ['subindustry', 'mrktCapf', 'lastPrice', 'dbtEqt', 'epsGwth', 'apef'
+                    ], 'match': {'mrktCapf': {'l': 20000, 'g': 5000
+                        }, 'dbtEqt': {'l': 5
+                        }, 'epsGwth': {'g': 10
+                        }
+                    }, 'sortBy': 'apef', 'sortOrder': 1
+                }, 'type': 'prebuilt', 'createdAt': '2022-10-19T19: 17: 04.507Z', 'updatedAt': '2022-10-19T19: 17: 04.507Z', '__v': 0, 'locked': False
+            }
+        },
+        {'id': 'SCR0020', 'rank': 7, 'filterTags': ['ROE', '1Y revenue growth'
+            ], 'nudge': '36k+ users have been using this', 'screen': {'_id': '63504d30a48441c47ecf28a0', 'description': 'High growth quality companies exhibiting price momentum', 'active': True, 'date': '2022-10-19T19: 17: 04.554Z', 'updated': '2023-07-17T10: 32: 48.932Z', 'slug': 'SCR0020', 'title': 'Quality Drifters', 'premium': False, 'query': {'customUniverses': ['5d5681d486ec2972f76848ba'
+                    ], 'project': ['subindustry', 'mrktCapf', 'lastPrice', 'roe', 'dbtEqt', 'rvng', 'epsg', '12mpctN', 'apef'
+                    ], 'match': {'subindustry': ['AUP', 'T_R', 'FOW', 'THW', 'TWW', 'CYC', 'EDS', 'WES', 'HRC', 'R_C', 'T_G', 'T_T', 'HEA', 'HFU', 'HOU', 'ADV', 'C_D', 'M_T', 'PBL', 'RAD', 'THE', 'TVB', 'R_A', 'R_D', 'R_O', 'R_S', 'A_A', 'FOO', 'PJW', 'TEX', 'ALC', 'SOF', 'T_C', 'AGR', 'F_F', 'P_M', 'SEE', 'SUG', 'F_H', 'F_P', 'F_T', 'OES', 'OEP', 'ORM', 'OST', 'BIO', 'H_E', 'H_D', 'LLS', 'PHA', 'ARL', 'BPC', 'B_G', 'BPG', 'BPL', 'B_P', 'BSS', 'STA', 'C_E', 'BAT', 'CAB', 'ECE', 'HEE', 'CON', 'A_F', 'H_M', 'I_M', 'RAI', 'SHI', 'TRA', 'T_B', 'EMP', 'AIR', 'DRE', 'LOG', 'POR', 'ROA', 'C_N', 'E_E', 'T_H', 'ONL', 'RES', 'ISC', 'O_S', 'S_S', 'C_C', 'D_C', 'F_A', 'PAI', 'PLA', 'SPC', 'CEM', 'PAC', 'I_S', 'MEA', 'MEC', 'MEO', 'MEI', 'MEL', 'MIC', 'MIO', 'MID', 'MII', 'MIM', 'P_P', 'W_P', 'REE', 'T_E', 'T_I', 'T_S', 'P_I', 'PTD', 'G_D', 'PTC', 'P_G', 'R_E', 'ETM', 'ANI', 'BPP', 'C_T', 'ADE'
+                        ], 'roe': {'g': 15
+                        }, 'dbtEqt': {'l': 5
+                        }, 'rvng': {'g': 10
+                        }, 'epsg': {'g': 10
+                        }, '12mpctN': {'g': 5
+                        }
+                    }, 'sortBy': 'mrktCapf', 'sortOrder': -1
+                }, 'type': 'prebuilt', 'createdAt': '2022-10-19T19: 17: 04.555Z', 'updatedAt': '2022-10-19T19: 17: 04.555Z', '__v': 0, 'locked': False
+            }
+        }
+    ]
+},
+{'name': 'Technical and Momentum', 'screens': [
+        {'id': 'SCR0028', 'rank': 6, 'filterTags': ['RSI – 14D', 'Close Price / 50D SMA'
+            ], 'nudge': '10k+ users have been using this', 'screen': {'_id': '6655855c3ce6eaf6300164d8', 'active': True, 'createdAt': '2024-05-24T15: 31: 35.689Z', 'date': '2024-05-24T15: 31: 35.691Z', 'description': 'A technical screen to identify stocks in high momentum that are nearing breakout ', 'premium': True, 'query': {'customUniverses': ['5d5681d486ec2972f76848ba'
+                    ], 'project': ['subindustry', 'mrktCapf', '14dRsi', 'lastPrice,sma50d,/', 'lastPrice,sma200d,/', '52whd'
+                    ], 'match': {'14dRsi': {'g': 70
+                        }, 'lastPrice,sma50d,/': {'g': 1
+                        }, 'lastPrice,sma200d,/': {'g': 1
+                        }, '52whd': {'g': 0, 'l': 5
+                        }
+                    }, 'sortOrder': -1, 'sortBy': 'mrktCapf'
+                }, 'slug': 'SCR0028', 'title': 'Nearing Breakout', 'type': 'prebuilt', 'updated': '2024-05-24T15: 31: 35.691Z', 'updatedAt': '2024-05-24T15: 31: 35.689Z', 'locked': True
+            }
+        },
+        {'id': 'SCR0021', 'rank': 3, 'filterTags': ['1Y return', 'Expense ratio'
+            ], 'nudge': '74k+ users have been using this', 'screen': {'_id': '63504ba08639bdc38e1dc1a0', 'description': 'Stocks with low expense ratios and gold ETFs uncovering the Pro-life', 'active': True, 'date': '2022-10-19T19: 10: 24.211Z', 'updated': '2023-07-17T10: 32: 48.933Z', 'slug': 'SCR0021', 'title': 'Investing In A New Me!', 'premium': False, 'query': {'customUniverses': [], 'project': ['subindustry', 'mrktCapf', '52wpct', 'expenseRatio'
+                    ], 'match': {'subindustry': ['E_G', 'E_D'
+                        ], '52wpct': {'g': 0
+                        }, 'expenseRatio': {'l': 0.75
+                        }
+                    }, 'sortBy': '52wpct', 'sortOrder': -1
+                }, 'type': 'prebuilt', 'createdAt': '2022-10-19T19: 10: 24.212Z', 'updatedAt': '2023-07-17T10: 32: 48.933Z', '__v': 0, 'locked': False
+            }
+        },
+        {'id': 'SCR0019', 'rank': 4, 'filterTags': ['Volatility vs Nifty', ''
+            ], 'nudge': '20k+ users have been using this', 'screen': {'_id': '63504d30a48441c47ecf289f', 'description': 'Low risk, large cap stocks to achieve market beating returns', 'active': True, 'date': '2022-10-19T19: 17: 04.546Z', 'updated': '2023-07-17T10: 32: 48.929Z', 'slug': 'SCR0019', 'title': 'Limited Variability', 'premium': False, 'query': {'customUniverses': ['5d5681d486ec2972f76848bd'
+                    ], 'project': ['subindustry', 'mrktCapf', 'lastPrice', '12mVolN', 'apef'
+                    ], 'match': {'12mVolN': {'l': 5
+                        }
+                    }, 'sortBy': 'mrktCapf', 'sortOrder': -1
+                }, 'type': 'prebuilt', 'createdAt': '2022-10-19T19: 17: 04.547Z', 'updatedAt': '2022-10-19T19: 17: 04.547Z', '__v': 0, 'locked': False
+            }
+        },
+        {'id': 'SCR0005', 'rank': 1, 'filterTags': ['% away from 52 low', '5Y revenue growth'
+            ], 'nudge': '83k+ users have been using this', 'screen': {'_id': '63504d30a48441c47ecf2892', 'description': 'Fundamentally strong stocks near their 52W low', 'active': True, 'date': '2022-10-19T19: 17: 04.503Z', 'updated': '2023-07-17T10: 32: 48.900Z', 'slug': 'SCR0005', 'title': 'Near 52W Lows', 'premium': False, 'query': {'customUniverses': [], 'project': ['subindustry', 'mrktCapf', 'lastPrice', '5YrevChg', '5Yroe', '52wld', 'apef'
+                    ], 'match': {'mrktCapf': {'g': 5000
+                        }, '5YrevChg': {'g': 15
+                        }, '5Yroe': {'g': 15
+                        }, '52wld': {'l': 20
+                        }
+                    }, 'sortBy': 'apef', 'sortOrder': 1
+                }, 'type': 'prebuilt', 'createdAt': '2022-10-19T19: 17: 04.505Z', 'updatedAt': '2022-10-19T19: 17: 04.505Z', '__v': 0, 'locked': False
+            }
+        },
+        {'id': 'SCR0009', 'rank': 5, 'filterTags': ['14D exponential RSI', 'ADX rating'
+            ], 'nudge': '12k+ users have been using this', 'screen': {'_id': '63504d30a48441c47ecf2899', 'description': 'Companies experiencing strong price momentum', 'active': True, 'date': '2022-10-19T19: 17: 04.527Z', 'updated': '2023-07-17T10: 32: 48.911Z', 'slug': 'SCR0009', 'title': 'Momentum Monsters', 'premium': True, 'query': {'customUniverses': [], 'project': ['subindustry', 'mrktCapf', 'lastPrice', 'pab1Mma', '14ersi', '1mac', '14adx', 'apef'
+                    ], 'match': {'mrktCapf': {'g': 5000
+                        }, 'pab1Mma': {'g': 0
+                        }, '14ersi': {'l': 60, 'g': 20
+                        }, '1mac': {'g': 0
+                        }, '14adx': {'g': 40
+                        }
+                    }, 'sortBy': 'pab1Mma', 'sortOrder': -1
+                }, 'type': 'prebuilt', 'createdAt': '2022-10-19T19: 17: 04.528Z', 'updatedAt': '2023-06-12T07: 52: 02.883Z', '__v': 0, 'locked': True
+            }
+        },
+        {'id': 'SCR0022', 'rank': 2, 'filterTags': ['1Y return', 'Expense ratio'
+            ], 'nudge': '55k+ users have been using this', 'screen': {'_id': '63504ba08639bdc38e1dc1a1', 'description': 'Check-in to low-expense ETFs for short to medium-term investments to fund your trips!', 'active': True, 'date': '2022-10-19T19: 10: 24.213Z', 'updated': '2023-07-17T10: 32: 48.934Z', 'slug': 'SCR0022', 'title': 'Get, Set, Fly!', 'premium': False, 'query': {'customUniverses': [], 'project': ['subindustry', 'mrktCapf', '52wpct', 'expenseRatio', 'trackErr'
+                    ], 'match': {'subindustry': ['E_G', 'E_D', 'E_Q'
+                        ], '52wpct': {'g': 7
+                        }, 'expenseRatio': {'l': 0.75
+                        }
+                    }, 'sortBy': '52wpct', 'sortOrder': -1
+                }, 'type': 'prebuilt', 'createdAt': '2022-10-19T19: 10: 24.214Z', 'updatedAt': '2022-10-19T19: 10: 24.214Z', '__v': 0, 'locked': False
+            }
+        }
+    ]
+}
+], 'isFetched': True, 'isClienSideFetched': False
+}, 'mutual-fund': {'allScreens': [], 'isFetched': False, 'isClienSideFetched': False
+}
+}, 'appDefaultState': {'equity': {'isFetched': False, 'isDefaultScreenFetched': False
+}, 'mutual-fund': {'isFetched': False, 'isDefaultScreenFetched': False
+}
+}, 'selectedScreenerSegment': 'equity', 'isScreenerSegmentSwitcherOpen': False
+}, 'portfolioAppData': {'isPortfolioSwitcherOpen': False, 'triggeredAsset': None, 'triggeredFrom': None, 'accessedFrom': None
+}, 'smallcaseAppData': {'txnId': ''
+}
+}, 'communityUserData': {'profileData': None, 'userSpaces': None, 'isCommunityUserDataFetched': False
+}, 'userData': {'snackbarInfo': {}, 'userWatchlists': {'watchlists': {}, 'constituents': [], 'watchlistType': {}, 'selectedWatchlist': None, 'isFetched': False, 'isWatchlistNotFound': False
+}, 'userBasket': {'basket': [], 'basketConstituent': [], 'isFetched': False
+}, 'savedScreens': {'equity': {'screens': [], 'isFetched': False, 'isLoading': False
+}, 'mutual-fund': {'screens': [], 'isFetched': False, 'isLoading': False
+}
+}, 'userFilters': {'equity': {'filters': {}, 'labelToFilters': {}, 'nonClearFilters': [], 'parentFilterOrder': ['Your Filters'
+], 'creationAllowed': False, 'isFetched': False
+}, 'mutual-fund': {'filters': {}, 'labelToFilters': {}, 'nonClearFilters': [], 'parentFilterOrder': ['Your Filters'
+], 'creationAllowed': False, 'isFetched': False
+}
+}, 'exportConfig': {'equity': {'isFetched': False
+}, 'mutual-fund': {'isFetched': False
+}
+}, 'userUniverses': {'isFetched': False, 'equity': {'userUniverseArr': [], 'userUniverseObj': {}, 'maxLimit': 0
+}, 'mutual-fund': {'userUniverseArr': [], 'userUniverseObj': {}, 'maxLimit': 0
+}
+}
+}, 'loginData': {'isBrokerMismatch': False, 'isMobileFBLogin': False, 'isSignup': False, 'isBrokerConnected': False, 'errorInOfferAvail': False, 'authData': {}, 'jwtData': {}, 'loginVia': 'N/A'
+}, 'globalComponents': {'premiumModal': {}, 'snackbar': {}, 'basketOrder': {}, 'agent': 'browser', 'txnInfo': {}, 'search': {'showModal': False, 'searchProductTags': []
+}, 'infoModal': None, 'popupType': None, 'showLoginModal': False, 'recaptchaSupportAvailable': False, 'lamfModal': {'show': False, 'sectionTag': None
+}, 'stockWidgetState': None, 'redirectionPayload': None
+}, 'trackingReducer': {'accessedFrom': ''
+}, 'screenerSessionData': {'paginationInfo': {'offset': 0, 'count': 20
+}, 'sortDetails': {'sortOrder': -1, 'sortBy': 'mrktCapf'
+}, 'screenedResults': [
+{'sid': 'BAJE', 'stock': {'advancedRatios': {'subindustry': 'Electronic Equipments', 'lastPrice': 260.35, 'mrktCapf': 217246.62679788002, '5Yaroi': 19.751033670837085, '5YrevChg': 11.340325796866214, 'dbtEqt': 0.4419505770430668, 'rvng': 16.225928713689086, 'roce': 35.33824761266545
+}, 'info': {'name': 'Bharat Electronics Ltd', 'ticker': 'BEL', 'sector': 'Information Technology'
+}
+}
+},
+{'sid': 'MAZ', 'stock': {'advancedRatios': {'lastPrice': 2798.2, 'mrktCapf': 64077.92145, '5YrevChg': 15.101160725329898, 'dbtEqt': 0.12688649121037948, '5Yaroi': 17.686692762385984, 'rvng': 24.125412114855393, 'subindustry': 'Shipbuilding', 'roce': 45.647265240489034
+}, 'info': {'name': 'Mazagon Dock Shipbuilders Ltd', 'ticker': 'MAZDOCK', 'sector': 'Industrials'
+}
+}
+},
+{'sid': 'CENA', 'stock': {'advancedRatios': {'subindustry': 'Stock Exchanges & Ratings', 'lastPrice': 1967.9, 'mrktCapf': 22420.9975, '5Yaroi': 20.18778365044627, '5YrevChg': 29.885632544030205, 'dbtEqt': 0.18852315573444484, 'rvng': 46.117177182980626, 'roce': 43.696079201697174
+}, 'info': {'name': 'Central Depository Services (India) Ltd', 'ticker': 'CDSL', 'sector': 'Financials'
+}
+}
+},
+{'sid': 'TRVT', 'stock': {'advancedRatios': {'subindustry': 'Heavy Electrical Equipments', 'lastPrice': 561.85, 'mrktCapf': 18705.466945485, '5Yaroi': 24.289358122520788, '5YrevChg': 14.838405712789404, 'dbtEqt': 0.4886121837812279, 'rvng': 33.032856135238006, 'roce': 46.344630734416775
+}, 'info': {'name': 'Triveni Turbine Ltd', 'ticker': 'TRITURBINE', 'sector': 'Industrials'
+}
+}
+},
+{'sid': 'DATAP', 'stock': {'advancedRatios': {'lastPrice': 2475.85, 'mrktCapf': 17017.726976775, '5YrevChg': 33.68647224605375, 'dbtEqt': 0.21335298351441204, '5Yaroi': 16.692610305067923, 'rvng': 22.296669332353524, 'roce': 19.219072361885846, 'subindustry': 'Aerospace & Defense Equipments'
+}, 'info': {'name': 'Data Patterns (India) Ltd', 'ticker': 'DATAPATTNS', 'sector': 'Industrials'
+}
+}
+},
+{'sid': 'CAPL', 'stock': {'advancedRatios': {'subindustry': 'Pharmaceuticals', 'lastPrice': 1288.05, 'mrktCapf': 9897.867464910001, '5Yaroi': 21.82911879956774, '5YrevChg': 21.408273501867782, 'dbtEqt': 0.2873216691920913, 'rvng': 15.663354763296322, 'roce': 29.385983154829976
+}, 'info': {'name': 'Caplin Point Laboratories Ltd', 'ticker': 'CAPLIPOINT', 'sector': 'Health Care'
+}
+}
+}
+],

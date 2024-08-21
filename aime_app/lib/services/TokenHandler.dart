@@ -100,4 +100,21 @@ class TokenHandler {
       
     }
   }
+
+  Future<void> getCommonData(url) async {
+    dynamic response = await GetData(url);
+    int status = response.statusCode;
+  
+    if ([200, 201, 204].contains(status)) {
+      // Parse the response JSON data
+      final jsonData = jsonDecode(response.body);
+      FlashMessage.showMessage(context, jsonData['message'], 200);
+      // Navigator.of(context).pop();
+
+    } else {
+      ApiResponse apiResponse = ApiResponse();
+      await apiResponse.errorMsg(context, response);
+      
+    }
+  }
 }

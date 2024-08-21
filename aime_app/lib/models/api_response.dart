@@ -43,4 +43,23 @@ class ApiResponse {
       },
     );
   }
+
+  Future<void> errorMsg(BuildContext context, response) async {
+    String errorMessage = '';
+    try {
+      // Try to parse response body as JSON
+      final jsonData = jsonDecode(response.body);
+      // Loop through the keys and take the first one as error message
+      jsonData.forEach((key, value) {
+        errorMessage = value.toString();
+        return;
+      });
+    } catch (e) {
+      // If parsing as JSON fails, use status code as error message
+      errorMessage = 'Failed to load data: ${response.statusCode}';
+    }
+
+    // _showErrorDialog(context, errorMessage);
+    FlashMessage.showMessage(context, errorMessage, 400);
+  }
 }

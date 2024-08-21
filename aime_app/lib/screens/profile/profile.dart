@@ -14,6 +14,28 @@ class Profile extends StatefulWidget {
 class _ProfileState extends State<Profile> {
   get press => null;
 
+   final _formKey = GlobalKey<FormState>();
+  late TextEditingController _nameController;
+  late TextEditingController _emailController;
+  late TextEditingController _passwordController;
+
+  @override
+  void initState() {
+    super.initState();
+    _nameController = TextEditingController(text: 'naME');
+    _emailController = TextEditingController(text: 'widget.user.email');
+    _passwordController = TextEditingController(text: 'widget.user.password');
+  }
+
+  @override
+  void dispose() {
+    _nameController.dispose();
+    _emailController.dispose();
+    _passwordController.dispose();
+    super.dispose();
+  }
+
+
   @override
   Widget build(BuildContext context) {
     int _currentIndex = 1;
@@ -28,7 +50,7 @@ class _ProfileState extends State<Profile> {
                 expandedHeight: 400.0,
                 flexibleSpace: FlexibleSpaceBar(
                   background: Container(
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                         image: DecorationImage(
                             image: AssetImage('assets/images/bg.jpg'),
                             fit: BoxFit.cover)),
@@ -38,17 +60,65 @@ class _ProfileState extends State<Profile> {
                               begin: Alignment.bottomRight,
                               colors: [kDark, kDark.withOpacity(0.3)])),
                       child: Padding(
-                        padding: EdgeInsets.all(20),
+                        padding: EdgeInsets.all(10),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           mainAxisAlignment: MainAxisAlignment.end,
                           children: [
                             FadeAnimation(
-                                1,
-                                Text(
-                                  "NAME",
-                                  style: TextStyle(color: Colors.white),
-                                ))
+                              1,
+                              TextFormField(
+                                controller: _nameController,
+                                decoration: const InputDecoration(
+                                  hintText: 'Enter the name...',
+                                ),
+                                validator: (value) {
+                                  if (value == null || value.isEmpty) {
+                                    return 'Please enter the name';
+                                  }
+                                  return null;
+                                },
+                                style: const TextStyle(
+                                  color: Color.fromARGB(255, 27, 147, 163)
+                                ),
+                              ),
+                            ),
+                            FadeAnimation(
+                              1,
+                              TextFormField(
+                                controller: _emailController,
+                                decoration: const InputDecoration(
+                                  hintText: 'Enter the email...',
+                                ),
+                                validator: (value) {
+                                  if (value == null || value.isEmpty) {
+                                    return 'Please enter the email';
+                                  }
+                                  return null;
+                                },
+                                style: const TextStyle(
+                                  color: Color.fromARGB(255, 27, 147, 163)
+                                ),
+                              ),
+                            ),
+                            FadeAnimation(
+                              1,
+                              TextFormField(
+                                controller: _passwordController,
+                                decoration: const InputDecoration(
+                                  hintText: 'Enter the password...',
+                                ),
+                                validator: (value) {
+                                  if (value == null || value.isEmpty) {
+                                    return 'Please enter the password';
+                                  }
+                                  return null;
+                                },
+                                style: const TextStyle(
+                                  color: Color.fromARGB(255, 27, 147, 163)
+                                ),
+                              ),
+                            )
                           ],
                         ),
                       ),

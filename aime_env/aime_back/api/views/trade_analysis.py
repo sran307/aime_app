@@ -141,7 +141,7 @@ def swingAnalysis(request):
             stock_data = {
                 'id': stock['id'],
                 'stockName': stock['stockCode']+':'+stock['stockName'],
-                'rank': swing_stock['tot_rank']
+                'rank': round(swing_stock['tot_rank'], 2)
             }
         stockData.append(stock_data)
 
@@ -255,6 +255,59 @@ def getLong(request):
 
     data = {
         'longStocks':stockData
+    }
+    encodedData = baseEncode(data)
+    return Response({'data': encodedData}, status=200)
+
+@api_view(['POST'])
+def get52Low(request):
+          
+    lstocks = StockRatios.objects.filter(w52Low__lt=500).order_by('away52L').values()
+    stockData=[]
+
+    for lstock in lstocks:
+        stock_instance = StockNames.objects.filter(id=lstock.get('stock_id')).values()
+        for stock in stock_instance:
+            amount = lstock.get('w52Low')
+            if amount:
+                close_value = round(amount, 2)
+            else:
+                close_value = 0
+            stock_data = {
+                'id': stock['id'],
+                'stockName': stock['stockCode']+':'+stock['stockName'],
+                'amount': close_value,
+            }
+        stockData.append(stock_data)
+
+    data = {
+        'stock52Low':stockData
+    }
+    encodedData = baseEncode(data)
+    return Response({'data': encodedData}, status=200)
+
+@api_view(['POST'])
+def get52High(request):
+    hstocks = StockRatios.objects.filter(w52High__lt=500).order_by('away52H').values()
+    stockData=[]
+
+    for hstock in hstocks:
+        stock_instance = StockNames.objects.filter(id=hstock.get('stock_id')).values()
+        for stock in stock_instance:
+            amount = hstock.get('w52High')
+            if amount:
+                close_value = round(amount, 2)
+            else:
+                close_value = 0
+            stock_data = {
+                'id': stock['id'],
+                'stockName': stock['stockCode']+':'+stock['stockName'],
+                'amount': close_value,
+            }
+        stockData.append(stock_data)
+
+    data = {
+        'stock52High':stockData
     }
     encodedData = baseEncode(data)
     return Response({'data': encodedData}, status=200)

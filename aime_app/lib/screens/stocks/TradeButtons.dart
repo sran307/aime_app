@@ -8,6 +8,8 @@ import 'package:dailyme/screens/stocks/PennyStocks.dart';
 import 'package:dailyme/screens/stocks/ScreenStocks.dart';
 import 'package:dailyme/screens/stocks/SwingStocks.dart';
 import 'package:dailyme/screens/stocks/LongStocks.dart';
+import 'package:dailyme/screens/stocks/stocks52low.dart';
+import 'package:dailyme/screens/stocks/stocks52High.dart';
 
 
 class TradeButtons extends StatefulWidget {
@@ -17,19 +19,20 @@ class TradeButtons extends StatefulWidget {
   _TradeButtonsState createState() => _TradeButtonsState();
 }
 
-class _TradeButtonsState extends State<TradeButtons> with TickerProviderStateMixin {
+class _TradeButtonsState extends State<TradeButtons>
+    with TickerProviderStateMixin {
   late AnimationController controller;
-  
+
   final Map<String, bool> _isLoading = {};
   final Map<String, double> _progress = {};
 
-  Future<void> _handleButtonPress(String buttonKey, Future<void> Function() apiCall) async {
+  Future<void> _handleButtonPress(
+      String buttonKey, Future<void> Function() apiCall) async {
     setState(() {
       _isLoading[buttonKey] = true;
-       _progress[buttonKey] = 0.0;
+      _progress[buttonKey] = 0.0;
     });
 
-     
     // Simulate a download by updating the progress in a loop
     // for (int i = 1; i <= 100; i++) {
     //   await Future.delayed(const Duration(milliseconds: 50));
@@ -50,7 +53,6 @@ class _TradeButtonsState extends State<TradeButtons> with TickerProviderStateMix
     });
   }
 
-
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -61,7 +63,7 @@ class _TradeButtonsState extends State<TradeButtons> with TickerProviderStateMix
           gradient: kPrimaryGradientColor,
         ),
         child: SizedBox(
-          height: MediaQuery.of(context).size.height*0.8,
+          height: MediaQuery.of(context).size.height * 0.8,
           child: SingleChildScrollView(
             child: Column(
               children: [
@@ -72,7 +74,8 @@ class _TradeButtonsState extends State<TradeButtons> with TickerProviderStateMix
                       child: Container(
                         padding: const EdgeInsets.all(8),
                         child: ElevatedButton(
-                          onPressed: () => _handleButtonPress('getHolidays', () async {
+                          onPressed: () =>
+                              _handleButtonPress('getHolidays', () async {
                             TokenHandler tokenHandler = TokenHandler(context);
                             await tokenHandler.getCommonData(getHolidays);
                           }),
@@ -97,7 +100,8 @@ class _TradeButtonsState extends State<TradeButtons> with TickerProviderStateMix
                       child: Container(
                         padding: const EdgeInsets.all(8),
                         child: ElevatedButton(
-                          onPressed: () => _handleButtonPress('getSlug', () async {
+                          onPressed: () =>
+                              _handleButtonPress('getSlug', () async {
                             TokenHandler tokenHandler = TokenHandler(context);
                             await tokenHandler.getCommonData(getSlug);
                           }),
@@ -127,7 +131,8 @@ class _TradeButtonsState extends State<TradeButtons> with TickerProviderStateMix
                       child: Container(
                         padding: const EdgeInsets.all(8),
                         child: ElevatedButton(
-                          onPressed: () => _handleButtonPress('getNewStock', () async {
+                          onPressed: () =>
+                              _handleButtonPress('getNewStock', () async {
                             TokenHandler tokenHandler = TokenHandler(context);
                             await tokenHandler.getCommonData(getNewStock);
                           }),
@@ -144,7 +149,7 @@ class _TradeButtonsState extends State<TradeButtons> with TickerProviderStateMix
                                     const SizedBox(height: 8),
                                   ],
                                 )
-                              :const Text('Get New Stock 3'),
+                              : const Text('Get New Stock 3'),
                         ),
                       ),
                     ),
@@ -152,7 +157,8 @@ class _TradeButtonsState extends State<TradeButtons> with TickerProviderStateMix
                       child: Container(
                         padding: const EdgeInsets.all(8),
                         child: ElevatedButton(
-                          onPressed: () => _handleButtonPress('getStockName', () async {
+                          onPressed: () =>
+                              _handleButtonPress('getStockName', () async {
                             TokenHandler tokenHandler = TokenHandler(context);
                             await tokenHandler.getCommonData(getStockName);
                           }),
@@ -169,7 +175,7 @@ class _TradeButtonsState extends State<TradeButtons> with TickerProviderStateMix
                                     const SizedBox(height: 8),
                                   ],
                                 )
-                              :const Text('Get Stock Name 4'),
+                              : const Text('Get Stock Name 4'),
                         ),
                       ),
                     ),
@@ -182,7 +188,8 @@ class _TradeButtonsState extends State<TradeButtons> with TickerProviderStateMix
                       child: Container(
                         padding: const EdgeInsets.all(8),
                         child: ElevatedButton(
-                          onPressed: () => _handleButtonPress('getQuotes', () async {
+                          onPressed: () =>
+                              _handleButtonPress('getQuotes', () async {
                             TokenHandler tokenHandler = TokenHandler(context);
                             await tokenHandler.getCommonData(getQuotes);
                           }),
@@ -199,7 +206,7 @@ class _TradeButtonsState extends State<TradeButtons> with TickerProviderStateMix
                                     const SizedBox(height: 8),
                                   ],
                                 )
-                              :const Text('Get Trading Stocks 5'),
+                              : const Text('Get Trading Stocks 5'),
                         ),
                       ),
                     ),
@@ -207,7 +214,8 @@ class _TradeButtonsState extends State<TradeButtons> with TickerProviderStateMix
                       child: Container(
                         padding: const EdgeInsets.all(8),
                         child: ElevatedButton(
-                          onPressed: () => _handleButtonPress('getSector', () async {
+                          onPressed: () =>
+                              _handleButtonPress('getSector', () async {
                             TokenHandler tokenHandler = TokenHandler(context);
                             await tokenHandler.getCommonData(getSector);
                           }),
@@ -224,7 +232,7 @@ class _TradeButtonsState extends State<TradeButtons> with TickerProviderStateMix
                                     const SizedBox(height: 8),
                                   ],
                                 )
-                              :const Text('Get Sector 6'),
+                              : const Text('Get Sector 6'),
                         ),
                       ),
                     ),
@@ -237,7 +245,8 @@ class _TradeButtonsState extends State<TradeButtons> with TickerProviderStateMix
                       child: Container(
                         padding: const EdgeInsets.all(8),
                         child: ElevatedButton(
-                          onPressed: () => _handleButtonPress('getFunda', () async {
+                          onPressed: () =>
+                              _handleButtonPress('getFunda', () async {
                             TokenHandler tokenHandler = TokenHandler(context);
                             await tokenHandler.getCommonData(getFunda);
                           }),
@@ -254,7 +263,7 @@ class _TradeButtonsState extends State<TradeButtons> with TickerProviderStateMix
                                     const SizedBox(height: 8),
                                   ],
                                 )
-                              :const Text('Get Stock Fundamentals 7'),
+                              : const Text('Get Stock Fundamentals 7'),
                         ),
                       ),
                     ),
@@ -262,7 +271,8 @@ class _TradeButtonsState extends State<TradeButtons> with TickerProviderStateMix
                       child: Container(
                         padding: const EdgeInsets.all(8),
                         child: ElevatedButton(
-                          onPressed: () => _handleButtonPress('updateDaily', () async {
+                          onPressed: () =>
+                              _handleButtonPress('updateDaily', () async {
                             TokenHandler tokenHandler = TokenHandler(context);
                             await tokenHandler.getCommonData(updateDaily);
                           }),
@@ -279,7 +289,7 @@ class _TradeButtonsState extends State<TradeButtons> with TickerProviderStateMix
                                     const SizedBox(height: 8),
                                   ],
                                 )
-                              :const Text('Update Daily Data 8'),
+                              : const Text('Update Daily Data 8'),
                         ),
                       ),
                     ),
@@ -292,7 +302,7 @@ class _TradeButtonsState extends State<TradeButtons> with TickerProviderStateMix
                       child: Container(
                         padding: const EdgeInsets.all(8),
                         child: ElevatedButton(
-                           onPressed: () {
+                          onPressed: () {
                             Get.to(TrendySector(),
                                 transition: Transition.circularReveal);
                           },
@@ -304,7 +314,7 @@ class _TradeButtonsState extends State<TradeButtons> with TickerProviderStateMix
                       child: Container(
                         padding: const EdgeInsets.all(8),
                         child: ElevatedButton(
-                           onPressed: () {
+                          onPressed: () {
                             Get.to(PennyStocks(),
                                 transition: Transition.circularReveal);
                           },
@@ -321,7 +331,7 @@ class _TradeButtonsState extends State<TradeButtons> with TickerProviderStateMix
                       child: Container(
                         padding: const EdgeInsets.all(8),
                         child: ElevatedButton(
-                           onPressed: () {
+                          onPressed: () {
                             Get.to(ScreenStocks(),
                                 transition: Transition.circularReveal);
                           },
@@ -333,7 +343,7 @@ class _TradeButtonsState extends State<TradeButtons> with TickerProviderStateMix
                       child: Container(
                         padding: const EdgeInsets.all(8),
                         child: ElevatedButton(
-                           onPressed: () {
+                          onPressed: () {
                             Get.to(SwingStocks(),
                                 transition: Transition.circularReveal);
                           },
@@ -350,7 +360,7 @@ class _TradeButtonsState extends State<TradeButtons> with TickerProviderStateMix
                       child: Container(
                         padding: const EdgeInsets.all(8),
                         child: ElevatedButton(
-                           onPressed: () {
+                          onPressed: () {
                             Get.to(LongStocks(),
                                 transition: Transition.circularReveal);
                           },
@@ -362,7 +372,7 @@ class _TradeButtonsState extends State<TradeButtons> with TickerProviderStateMix
                       child: Container(
                         padding: const EdgeInsets.all(8),
                         child: ElevatedButton(
-                           onPressed: () {
+                          onPressed: () {
                             Get.to(LongStocks(),
                                 transition: Transition.circularReveal);
                           },
@@ -372,6 +382,34 @@ class _TradeButtonsState extends State<TradeButtons> with TickerProviderStateMix
                     ),
                   ],
                 ),
+                Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Expanded(
+                        child: Container(
+                          padding: const EdgeInsets.all(8),
+                          child: ElevatedButton(
+                            onPressed: () {
+                              Get.to(Stock52Low(),
+                                  transition: Transition.circularReveal);
+                            },
+                            child: const Text('Near 52 Low'),
+                          ),
+                        ),
+                      ),
+                      Expanded(
+                        child: Container(
+                          padding: const EdgeInsets.all(8),
+                          child: ElevatedButton(
+                            onPressed: () {
+                              Get.to(Stock52High(),
+                                  transition: Transition.circularReveal);
+                            },
+                            child: const Text('Near 52 High'),
+                          ),
+                        ),
+                      ),
+                    ])
               ],
             ),
           ),

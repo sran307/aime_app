@@ -8,6 +8,7 @@ import 'package:dailyme/constants/drawer.dart';
 import 'package:dailyme/constants/drawer.dart';
 import 'package:dailyme/constants/navBar/CustomBottomNavBar.dart';
 import 'package:dailyme/constants/constants.dart';
+import 'package:dailyme/charts/chart.dart';
 
 class Home extends StatefulWidget {
   final token;
@@ -42,6 +43,7 @@ class _HomeState extends State<Home> {
             SizedBox(height: 20.0,),
             UserSection(),
             // Utilities(),
+            Chart(),
           ],
         ),
       )),

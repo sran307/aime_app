@@ -35,7 +35,7 @@ class drawer extends StatelessWidget {
               
               ),
               ListTile(
-                leading: Icon(Icons.home),
+                leading: Icon(Icons.alarm),
                 title: Text('Clock'),
                 onTap:(){
                   // Get.to
@@ -49,49 +49,49 @@ class drawer extends StatelessWidget {
                 },
               ),
               ListTile(
-                leading: Icon(Icons.home),
+                leading: Icon(Icons.api),
                 title: const Text('Goals'),
                 onTap:(){
                   Get.to(Goal(), transition:Transition.circularReveal);
                 }
               ),
               ListTile(
-                leading: Icon(Icons.home),
+                leading: Icon(Icons.event),
                 title: const Text('Events'),
                 onTap: (){
                   Get.to(EventList(), transition:Transition.circularReveal);
                 }
               ),
               ListTile(
-                leading: Icon(Icons.home),
+                leading: Icon(Icons.trending_up),
                 title: const Text('Trades'),
                 onTap:(){
                   Get.to(stockHome(), transition:Transition.circularReveal);
                 }
               ),
               ListTile(
-                leading: Icon(Icons.home),
+                leading: Icon(Icons.currency_rupee),
                 title: const Text('Finance'),
                 onTap:(){
 
                 }
               ),
               ListTile(
-                leading: Icon(Icons.home),
+                leading: Icon(Icons.business_center),
                 title: const Text('Locker'),
                 onTap:(){
                   Get.to(LockerIndex(), transition:Transition.circularReveal);
                 }
               ),
               ListTile(
-                leading: Icon(Icons.home),
+                leading: Icon(Icons.analytics),
                 title: const Text('Assets'),
                 onTap: (){
                   Get.to(Assets(), transition: Transition.circularReveal);
                 }
               ),
               ListTile(
-                leading: Icon(Icons.home),
+                leading: Icon(Icons.spa),
                 title: const Text('Health'),
                 onTap:(){
 

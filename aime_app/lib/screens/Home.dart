@@ -41,7 +41,7 @@ class _HomeState extends State<Home> {
             // HomeHeader(),
             SizedBox(height: 20.0,),
             UserSection(),
-            Utilities(),
+            // Utilities(),
           ],
         ),
       )),

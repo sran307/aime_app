@@ -1,6 +1,7 @@
 import 'package:dailyme/screens/events/EventItem.dart';
 import 'package:dailyme/constants/animations/FadeAnimation.dart';
 import 'package:dailyme/constants/appBar.dart';
+import 'package:dailyme/constants/drawer.dart';
 import 'package:dailyme/constants/navBar/CustomBottomNavBar.dart';
 import 'package:dailyme/screens/events/eventForm.dart';
 import 'package:flutter/material.dart';
@@ -19,6 +20,7 @@ class _EventListState extends State<EventList> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const CustomAppBar(),
+      drawer: const drawer(),
       body: Stack(
         children: [
           SafeArea(

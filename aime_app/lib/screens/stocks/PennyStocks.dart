@@ -3,6 +3,7 @@ import 'package:dailyme/screens/stocks/stockHome.dart';
 import 'package:flutter/material.dart';
 import 'package:dailyme/constants/constants.dart';
 import 'package:dailyme/constants/appBar.dart';
+import 'package:dailyme/constants/drawer.dart';
 import 'package:dailyme/constants/navBar/CustomBottomNavBar.dart';
 
 import 'dart:async';
@@ -64,6 +65,7 @@ class _PennyStocksState extends State<PennyStocks> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const CustomAppBar(),
+      drawer: const drawer(),
       body: SafeArea(
         child: Card(
           elevation: 5.0,

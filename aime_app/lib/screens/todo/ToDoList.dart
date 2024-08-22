@@ -1,4 +1,5 @@
 import 'package:dailyme/constants/appBar.dart';
+import 'package:dailyme/constants/drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:dailyme/screens/todo/Today.dart';
 import 'package:dailyme/screens/todo/Tomorrow.dart';
@@ -20,6 +21,7 @@ class _ToDoListState extends State<ToDoList> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CustomAppBar(),
+      drawer: const drawer(),
       body: SafeArea(
         child: Column(
           children: [

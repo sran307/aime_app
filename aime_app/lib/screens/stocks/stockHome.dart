@@ -1,4 +1,5 @@
 import 'package:dailyme/constants/appBar.dart';
+import 'package:dailyme/constants/drawer.dart';
 import 'package:dailyme/constants/navBar/CustomBottomNavBar.dart';
 import 'package:flutter/material.dart';
 import 'package:dailyme/screens/stocks/TradeButtons.dart';
@@ -16,6 +17,7 @@ class _stockHomeState extends State<stockHome> {
   Widget build(BuildContext context) {
     return  Scaffold(
       appBar: const CustomAppBar(),
+      drawer: const drawer(),
       body: const SafeArea(
         child: Column(
           children: [

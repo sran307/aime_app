@@ -1,4 +1,5 @@
 import 'package:dailyme/constants/appBar.dart';
+import 'package:dailyme/constants/drawer.dart';
 import 'package:dailyme/screens/locker/LockerForm.dart';
 import 'package:flutter/material.dart';
 import 'package:dailyme/constants/constants.dart';
@@ -18,6 +19,7 @@ class _LockerIndexState extends State<LockerIndex> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const CustomAppBar(),
+      drawer: const drawer(),
       body: const SafeArea(
         child: SingleChildScrollView(
           padding: EdgeInsets.all(5.0),

@@ -11,6 +11,7 @@ import 'package:dailyme/screens/events/EventList.dart';
 import 'package:dailyme/screens/goals/goals.dart';
 import 'package:dailyme/screens/locker/LockerIndex.dart';
 import 'package:dailyme/screens/Home.dart';
+import 'package:dailyme/clock/clock.dart';
 
 class drawer extends StatelessWidget {
   const drawer({super.key});
@@ -38,7 +39,7 @@ class drawer extends StatelessWidget {
                 leading: Icon(Icons.alarm),
                 title: Text('Clock'),
                 onTap:(){
-                  // Get.to
+                  Get.to(Clock(), transition: Transition.zoom);
                 }
               ),
               ListTile(

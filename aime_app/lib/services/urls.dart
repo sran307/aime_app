@@ -30,3 +30,5 @@ const stock52HighUrl = '${baseUrl}stock/52high/';
 const serverError = 'server error';
 const unAuth = 'Unauthorized';
 const smw = 'Something went wrong';
+
+const assetSave = '${baseUrl}asset/save/';

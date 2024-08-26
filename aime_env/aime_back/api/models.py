@@ -327,3 +327,17 @@ class LongStocks(models.Model):
     def __int__(self):
         return self.id
 
+class Goals(models.Model):
+    guid = models.UUIDField(default=uuid.uuid4, editable=False, unique=True)
+    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE, db_column='user_id')
+    goal_name = models.CharField(null=True, max_length=100)
+    goal_amnt = models.FloatField(null=True)
+    isAchieved  = models.BooleanField(default=False)
+    insertAt = models.ForeignKey(MetaData, on_delete=models.SET_NULL, null=True, db_column = 'insert_at', related_name='goal_inserts')
+    updateAt = models.ForeignKey(MetaData, on_delete=models.SET_NULL, null=True, db_column = 'update_at', related_name='goal_updates')
+
+    class Meta:
+        db_table ='goals'
+
+    def __int__(self):
+        return self.id

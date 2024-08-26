@@ -3,6 +3,7 @@ import 'package:dailyme/constants/constants.dart';
 import 'package:dailyme/constants/drawer.dart';
 import 'package:dailyme/constants/navBar/CustomBottomNavBar.dart';
 import 'package:dailyme/screens/goals/goalForm.dart';
+import 'package:dailyme/screens/goals/goalList.dart';
 import 'package:flutter/material.dart';
 
 class Goal extends StatefulWidget {
@@ -20,7 +21,7 @@ class _GoalState extends State<Goal> {
     return Scaffold(
       appBar: CustomAppBar(),
       drawer: const drawer(),
-      body: SafeArea(child: Column()
+      body: SafeArea(child:GoalList()
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       floatingActionButton: FloatingActionButton(

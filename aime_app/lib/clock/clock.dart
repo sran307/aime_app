@@ -7,6 +7,9 @@ import 'package:dailyme/clock/shortcut_button.dart';
 import 'package:dailyme/widgets/tile.dart';
 import 'package:flutter/material.dart';
 import 'package:permission_handler/permission_handler.dart';
+import 'package:dailyme/constants/navBar/CustomBottomNavBar.dart';
+import 'package:dailyme/constants/appBar.dart';
+import 'package:dailyme/constants/drawer.dart';
 
 class Clock extends StatefulWidget {
   const Clock({super.key});
@@ -33,8 +36,10 @@ class _ClockState extends State<Clock> {
 
   void loadAlarms() {
     setState(() {
-      alarms = Alarm.getAlarms();
-      alarms.sort((a, b) => a.dateTime.isBefore(b.dateTime) ? 0 : 1);
+      //DATA FETCHED FROM DATABASE
+      // alarms = Alarm.getAlarms();
+      // alarms.sort((a, b) => a.dateTime.isBefore(b.dateTime) ? 0 : 1);
+      alarms=[];
     });
   }
 
@@ -108,9 +113,12 @@ class _ClockState extends State<Clock> {
   }
 
   @override
+  int _currentIndex = 5;
+
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('alarm 3.1.5')),
+      appBar: CustomAppBar(),
+      drawer: const drawer(),
       body: SafeArea(
         child: alarms.isNotEmpty
             ? ListView.separated(
@@ -123,9 +131,12 @@ class _ClockState extends State<Clock> {
                       hour: alarms[index].dateTime.hour,
                       minute: alarms[index].dateTime.minute,
                     ).format(context),
-                    onPressed: () => navigateToAlarmScreen(alarms[index]),
+                    // onPressed: () => navigateToAlarmScreen(alarms[index]),
+                    onPressed: (){
+
+                    },
                     onDismissed: () {
-                      Alarm.stop(alarms[index].id).then((_) => loadAlarms());
+                      // Alarm.stop(alarms[index].id).then((_) => loadAlarms());
                     },
                   );
                 },
@@ -137,6 +148,7 @@ class _ClockState extends State<Clock> {
                 ),
               ),
       ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       floatingActionButton: Padding(
         padding: const EdgeInsets.all(10),
         child: Row(
@@ -145,12 +157,18 @@ class _ClockState extends State<Clock> {
             ShortcutButton(refreshAlarms: loadAlarms),
             FloatingActionButton(
               onPressed: () => navigateToAlarmScreen(null),
+              // onPressed:(){},
               child: const Icon(Icons.alarm_add_rounded, size: 33),
             ),
           ],
         ),
       ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      bottomNavigationBar: CustomBottomNavBar(
+        currentIndex: _currentIndex,
+        onItemSelected: (index) {
+          setState(() => _currentIndex = index);
+        },
+      ),
     );
   }
 }

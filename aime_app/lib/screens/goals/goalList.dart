@@ -6,6 +6,8 @@ import 'package:dailyme/services/auth.dart';
 import 'package:dailyme/services/urls.dart';
 import 'package:flutter/material.dart';
 import 'package:dailyme/widgets/parallax.dart';
+import 'package:dailyme/constants/constants.dart';
+
 
 class GoalList extends StatefulWidget {
   const GoalList({super.key});
@@ -42,7 +44,7 @@ class _GoalListState extends State<GoalList> {
   }
 
   Widget build(BuildContext context) {
-    return RefreshIndicator(
+    return SingleChildScrollView(child: RefreshIndicator(
       onRefresh: fetchGoals,
       child: FutureBuilder<Object>(
         future: goalsData,
@@ -52,8 +54,17 @@ class _GoalListState extends State<GoalList> {
           } else if (snapshot.hasError) {
             return Center(child: Text('Error: ${snapshot.error}'));
           } else if (snapshot.hasData) {
-            print(snapshot.data);
-            return const ParallaxSwiper(
+            data = snapshot.data;
+            return Column(
+              children:[
+                Text('Goals Pending', style:formHeading),
+                if (data.containsKey('goalPend') && data['goalPend'].isNotEmpty) {
+                  goalPendList = data['goalPend'];
+                }
+                SizedBox(
+            height: MediaQuery.of(context).size.height * 0.4, // 50% of the screen height
+            child:ParallaxSwiper(
+              // heading: 'Goals Pending'
               images: [
                 'assets/images/bg.jpg',
                 'assets/images/bg.jpg',
@@ -64,13 +75,31 @@ class _GoalListState extends State<GoalList> {
               padding: EdgeInsets.all(16.0),
               parallaxFactor: 10.0,
               foregroundFadeEnabled: true,
-              backgroundZoomEnabled: true,
+              backgroundZoomEnabled: true,),),
+
+                Text('Goals Achieved', style:formHeading),
+
+              SizedBox(
+            height: MediaQuery.of(context).size.height * 0.4, // 50% of the screen height
+            child:ParallaxSwiper(
+              images: [
+                'assets/images/bg.jpg',
+                'assets/images/bg.jpg',
+                'assets/images/bg.jpg',
+              ],
+              dragToScroll: true,
+              viewPortFraction: 0.85,
+              padding: EdgeInsets.all(16.0),
+              parallaxFactor: 10.0,
+              foregroundFadeEnabled: true,
+              backgroundZoomEnabled: true,),)
+              ],
             );
           } else {
             return const Center(child: Text('No data available'));
           }
         },
       ),
-    );
+    ));
   }
 }

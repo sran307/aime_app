@@ -111,7 +111,7 @@ class _ParallaxSwiperState extends State<ParallaxSwiper> {
           widget.dragToScroll ? DragScrollBehavior() : const ScrollBehavior(),
       child: PageView.builder(
         controller: controller,
-        itemCount: widget.dataItems.length,
+        itemCount: pImageList.length,
         itemBuilder: (context, index) {
           // Calculate the parallax effect value based on the controller position.
           double value =
@@ -130,7 +130,7 @@ class _ParallaxSwiperState extends State<ParallaxSwiper> {
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Text(
-                  '$pHeading[index]',
+                  pHeading[index],
                   style: Theme.of(context).textTheme.headlineLarge!.copyWith(
                         color: Colors.white,
                       ),

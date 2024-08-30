@@ -77,7 +77,7 @@ class _GoalListState extends State<GoalList> {
                      guidList1.add(item['guid']);
                     goalNameList1.add(item['goal_name']);
                     goalAmountList1.add(item['goal_amount'].toStringAsFixed(2));
-                    goalImageList1.add('assets/images/bg.jpg');
+                    goalImageList1.add('assets/images/OIP.jpeg');
                   });
 
   // Combining the three lists into the common array
@@ -98,7 +98,7 @@ class _GoalListState extends State<GoalList> {
                      guidList2.add(item['guid']);
                     goalNameList2.add(item['goal_name']);
                     goalAmountList2.add(item['goal_amount'].toStringAsFixed(2));
-                    goalImageList2.add('assets/images/bg.jpg');
+                    goalImageList2.add('assets/images/OIP.jpeg');
                   });
 
   // Combining the three lists into the common array
@@ -113,7 +113,7 @@ class _GoalListState extends State<GoalList> {
             return Column(
               children:[
                 Text('Goals Pending', style:formHeading),
-                if (goalPendList != null)
+                if (goalPendList != null && goalPendList.isNotEmpty)
                     SizedBox(
                 height: MediaQuery.of(context).size.height * 0.4,
                 child:ParallaxSwiper(
@@ -123,10 +123,12 @@ class _GoalListState extends State<GoalList> {
                   padding: EdgeInsets.all(16.0),
                   parallaxFactor: 10.0,
                   foregroundFadeEnabled: true,
-                  backgroundZoomEnabled: true,),),
+                  backgroundZoomEnabled: true,),)
+                else
+                  Text('No Data Available.'),
                 
                 Text('Goals Achieved', style:formHeading),
-                if (goalCompList != null)
+                if (goalCompList != null && goalCompList.isNotEmpty)
                     SizedBox(
                   height: MediaQuery.of(context).size.height * 0.4, // 50% of the screen height
                   child:ParallaxSwiper(

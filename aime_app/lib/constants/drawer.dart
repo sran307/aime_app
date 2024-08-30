@@ -97,6 +97,13 @@ class drawer extends StatelessWidget {
                 onTap:(){
 
                 }
+              ),
+              ListTile(
+                leading: Icon(Icons.location_on),
+                title: const Text('Where Is..?'),
+                onTap:(){
+
+                }
               )
             ],
           ),

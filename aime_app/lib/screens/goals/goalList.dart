@@ -18,6 +18,21 @@ class GoalList extends StatefulWidget {
 
 class _GoalListState extends State<GoalList> {
   Future<Object>? goalsData;
+    dynamic dataValues=[];
+    dynamic goalPendList=[];
+    dynamic goalCompList=[];
+
+    List<String> guidList1 = [];
+    List<String> goalNameList1 = [];
+    List<String> goalImageList1 = [];
+    List<String> goalAmountList1 = [];
+    List<Map<String, dynamic>> combinedData1 = [];
+
+    List<String> guidList2 = [];
+    List<String> goalNameList2 = [];
+    List<String> goalImageList2 = [];
+    List<String> goalAmountList2 = [];
+    List<Map<String, dynamic>> combinedData2 = [];
 
   @override
   void initState() {
@@ -54,45 +69,76 @@ class _GoalListState extends State<GoalList> {
           } else if (snapshot.hasError) {
             return Center(child: Text('Error: ${snapshot.error}'));
           } else if (snapshot.hasData) {
-            data = snapshot.data;
+            dataValues = snapshot.data;
+            if (dataValues.containsKey('goalPend') && dataValues['goalPend'].isNotEmpty) {
+                  goalPendList = dataValues['goalPend'];
+                  // print(goalPendList);
+                  goalPendList.forEach((item) {
+                     guidList1.add(item['guid']);
+                    goalNameList1.add(item['goal_name']);
+                    goalAmountList1.add(item['goal_amount'].toStringAsFixed(2));
+                    goalImageList1.add('assets/images/bg.jpg');
+                  });
+
+  // Combining the three lists into the common array
+    combinedData1.add({
+      'guid': guidList1,
+      'heading': goalNameList1,
+      'subHeading': goalAmountList1,
+      'image': goalImageList1
+    });
+  
+
+  // Printing the combined data
+  // print('Combined Data: $combinedData');
+            }
+            if (dataValues.containsKey('goalComp') && dataValues['goalComp'].isNotEmpty) {
+                  goalCompList = dataValues['goalComp'];
+                  goalCompList.forEach((item) {
+                     guidList2.add(item['guid']);
+                    goalNameList2.add(item['goal_name']);
+                    goalAmountList2.add(item['goal_amount'].toStringAsFixed(2));
+                    goalImageList2.add('assets/images/bg.jpg');
+                  });
+
+  // Combining the three lists into the common array
+    combinedData2.add({
+      'guid': guidList2,
+      'heading': goalNameList2,
+      'subHeading': goalAmountList2,
+      'image': goalImageList2
+    });
+            }
+
             return Column(
               children:[
                 Text('Goals Pending', style:formHeading),
-                if (data.containsKey('goalPend') && data['goalPend'].isNotEmpty) {
-                  goalPendList = data['goalPend'];
-                }
-                SizedBox(
-            height: MediaQuery.of(context).size.height * 0.4, // 50% of the screen height
-            child:ParallaxSwiper(
-              // heading: 'Goals Pending'
-              images: [
-                'assets/images/bg.jpg',
-                'assets/images/bg.jpg',
-                'assets/images/bg.jpg',
-              ],
-              dragToScroll: true,
-              viewPortFraction: 0.85,
-              padding: EdgeInsets.all(16.0),
-              parallaxFactor: 10.0,
-              foregroundFadeEnabled: true,
-              backgroundZoomEnabled: true,),),
-
+                if (goalPendList != null)
+                    SizedBox(
+                height: MediaQuery.of(context).size.height * 0.4,
+                child:ParallaxSwiper(
+                  dataItems: combinedData1,
+                  dragToScroll: true,
+                  viewPortFraction: 0.85,
+                  padding: EdgeInsets.all(16.0),
+                  parallaxFactor: 10.0,
+                  foregroundFadeEnabled: true,
+                  backgroundZoomEnabled: true,),),
+                
                 Text('Goals Achieved', style:formHeading),
-
-              SizedBox(
-            height: MediaQuery.of(context).size.height * 0.4, // 50% of the screen height
-            child:ParallaxSwiper(
-              images: [
-                'assets/images/bg.jpg',
-                'assets/images/bg.jpg',
-                'assets/images/bg.jpg',
-              ],
-              dragToScroll: true,
-              viewPortFraction: 0.85,
-              padding: EdgeInsets.all(16.0),
-              parallaxFactor: 10.0,
-              foregroundFadeEnabled: true,
-              backgroundZoomEnabled: true,),)
+                if (goalCompList != null)
+                    SizedBox(
+                  height: MediaQuery.of(context).size.height * 0.4, // 50% of the screen height
+                  child:ParallaxSwiper(
+                    dataItems: combinedData2,
+                    dragToScroll: true,
+                    viewPortFraction: 0.85,
+                    padding: EdgeInsets.all(16.0),
+                    parallaxFactor: 10.0,
+                    foregroundFadeEnabled: true,
+                    backgroundZoomEnabled: true,),)
+                else
+                  Text('No Data Available.')
               ],
             );
           } else {

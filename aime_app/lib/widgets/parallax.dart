@@ -6,7 +6,7 @@ import 'package:dailyme/config/drag_scroll.dart';
 class ParallaxSwiper extends StatefulWidget {
   const ParallaxSwiper({
     super.key,
-    required this.images,
+    required this.dataItems,
     this.dragToScroll = true,
     this.viewPortFraction = 1,
     this.padding = const EdgeInsets.all(8.0),
@@ -16,7 +16,7 @@ class ParallaxSwiper extends StatefulWidget {
   });
 
   /// A list of image URLs to display in the parallax swiper.
-  final List<String> images;
+  final List<Map<String, dynamic>> dataItems;
 
   /// A flag that determines whether drag-to-scroll functionality is enabled.
   final bool dragToScroll;
@@ -94,20 +94,31 @@ class _ParallaxSwiperState extends State<ParallaxSwiper> {
 
   @override
   Widget build(BuildContext context) {
+      List<String> pImageList = [];
+      List<String> pHeading = [];
+      List <String> pSubHeading =[];
+      List<String> pGuid =[];
+
+      for (var item in widget.dataItems) {
+        pGuid.addAll(List<String>.from(item['guid']));
+        pHeading.addAll(List<String>.from(item['heading']));
+        pSubHeading.addAll(List<String>.from(item['subHeading']));
+        pImageList.addAll(List<String>.from(item['image']));
+      }
     return ScrollConfiguration(
       // Apply drag-to-scroll behavior if enabled, otherwise use the default scroll behavior.
       behavior:
           widget.dragToScroll ? DragScrollBehavior() : const ScrollBehavior(),
       child: PageView.builder(
         controller: controller,
-        itemCount: widget.images.length,
+        itemCount: widget.dataItems.length,
         itemBuilder: (context, index) {
           // Calculate the parallax effect value based on the controller position.
           double value =
               controller.position.haveDimensions ? pageIndex - index : 0;
-
           return _SwiperItem(
-            image: widget.images[index],
+            image: pImageList[index],
+            // image:'asset/images/bg.jpg',
             value: value,
             padding: widget.padding,
             parallaxFactor: widget.parallaxFactor,
@@ -119,7 +130,7 @@ class _ParallaxSwiperState extends State<ParallaxSwiper> {
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Text(
-                  'Item $index',
+                  '$pHeading[index]',
                   style: Theme.of(context).textTheme.headlineLarge!.copyWith(
                         color: Colors.white,
                       ),

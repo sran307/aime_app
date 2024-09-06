@@ -108,6 +108,7 @@ flutter:
     - assets/images/
     - assets/icons/
     - assets/tunes/blank.mp3
+    - assets/RiveAssets/
   fonts:
     - family: Muli
       fonts:

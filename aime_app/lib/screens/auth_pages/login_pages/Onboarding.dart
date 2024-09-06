@@ -2,7 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:rive/rive.dart' as rive;
+import 'package:rive/rive.dart' as rive;  // Alias for Rive
 import 'package:dailyme/screens/onboding/components/animated_btn.dart';
 import 'package:dailyme/screens/onboding/components/custom_sign_in.dart';
 
@@ -15,11 +15,11 @@ class OnboardingScreen extends StatefulWidget {
 
 class _OnboardingScreenState extends State<OnboardingScreen> {
   bool isSignInDialogShown = false;
-  late RiveAnimationController _btnAnimationController;
+  late rive.RiveAnimationController _btnAnimationController;  // Use Rive's animation controller with the alias
 
   @override
   void initState() {
-    _btnAnimationController = OneShotAnimation("active", autoplay: false);
+    _btnAnimationController = rive.OneShotAnimation("active", autoplay: false);  // Use the alias for Rive's controller
     super.initState();
   }
 
@@ -32,13 +32,13 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             width: MediaQuery.of(context).size.width * 1.7,
             bottom: 200,
             left: 100,
-            // child: Image.asset('assets/Backgrounds/Spline.png')),
-            child: rive.Image.asset('assets/images/glap.png')),
+            child: Image.asset('assets/images/glap.png')  // Flutter's Image
+            ),
         Positioned.fill(
             child: BackdropFilter(
           filter: ImageFilter.blur(sigmaX: 20, sigmaY: 10),
         )),
-        const RiveAnimation.asset('assets/RiveAssets/shapes.riv'),
+        const rive.RiveAnimation.asset('assets/RiveAssets/shapes.riv'),  // Use Rive's RiveAnimation with the alias
         Positioned.fill(
             child: BackdropFilter(
           filter: ImageFilter.blur(sigmaX: 20, sigmaY: 10),
@@ -75,7 +75,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                       flex: 2,
                     ),
                     AnimatedBtn(
-                      btnAnimationController: _btnAnimationController,
+                      btnAnimationController: _btnAnimationController,  // Button animation using Rive's controller
                       press: () {
                         _btnAnimationController.isActive = true;
                         Future.delayed(Duration(milliseconds: 800), () {

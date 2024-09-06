@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pinput/pinput.dart';
+import 'package:dailyme/services/TokenHandler.dart';
+
 
 class PinputForm extends StatefulWidget {
   const PinputForm({super.key});
@@ -65,11 +67,13 @@ class _PinputFormState extends State<PinputForm> {
                   defaultPinTheme: defaultPinTheme,
                   separatorBuilder: (index) => const SizedBox(width: 8),
                   validator: (value) {
-                    return value == '2222' ? null : 'Pin is incorrect';
+                    // return value == '2222' ? null : 'Pin is incorrect';
                   },
                   hapticFeedbackType: HapticFeedbackType.lightImpact,
                   onCompleted: (pin) {
-                    debugPrint('onCompleted: $pin');
+                    // debugPrint('onCompleted: $pin');
+                     TokenHandler tokenHandler = TokenHandler(context);
+      tokenHandler.loadKey(pin);
                   },
                   onChanged: (value) {
                     debugPrint('onChanged: $value');
@@ -103,13 +107,13 @@ class _PinputFormState extends State<PinputForm> {
                   ),
                 ),
               ),
-              TextButton(
-                onPressed: () {
-                  focusNode.unfocus();
-                  formKey.currentState!.validate();
-                },
-                child: const Text('Validate'),
-              ),
+              // TextButton(
+              //   onPressed: () {
+              //     focusNode.unfocus();
+              //     formKey.currentState!.validate();
+              //   },
+              //   child: const Text('Validate'),
+              // ),
             ],
           ),
         ),

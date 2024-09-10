@@ -72,8 +72,9 @@ class _PinputFormState extends State<PinputForm> {
                   hapticFeedbackType: HapticFeedbackType.lightImpact,
                   onCompleted: (pin) {
                     // debugPrint('onCompleted: $pin');
+                    
                      TokenHandler tokenHandler = TokenHandler(context);
-      tokenHandler.loadKey(pin);
+                    tokenHandler.loadKey(pin);
                   },
                   onChanged: (value) {
                     debugPrint('onChanged: $value');

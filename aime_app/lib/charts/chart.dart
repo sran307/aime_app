@@ -70,7 +70,8 @@ class _ChartState extends State<Chart> {
       final isTouched = i == touchedIndex;
       final fontSize = isTouched ? 25.0 : 16.0;
       final radius = isTouched ? 60.0 : 50.0;
-      const shadows = [Shadow(color: Colors.black, blurRadius: 2)];
+      const shadows = [Shadow(color: Colors.black, blurRadius: 6)];
+      const dColor =  Color.fromARGB(255, 100,155,200);
       switch (i) {
         case 0:
           return PieChartSectionData(
@@ -81,7 +82,7 @@ class _ChartState extends State<Chart> {
             titleStyle: TextStyle(
               fontSize: fontSize,
               fontWeight: FontWeight.bold,
-              color: Colors.red,
+              color:dColor,
               shadows: shadows,
             ),
           );
@@ -94,7 +95,7 @@ class _ChartState extends State<Chart> {
             titleStyle: TextStyle(
               fontSize: fontSize,
               fontWeight: FontWeight.bold,
-              color: Colors.red,
+              color: dColor,
               shadows: shadows,
             ),
           );
@@ -107,7 +108,7 @@ class _ChartState extends State<Chart> {
             titleStyle: TextStyle(
               fontSize: fontSize,
               fontWeight: FontWeight.bold,
-              color: Colors.red,
+              color: dColor,
               shadows: shadows,
             ),
           );
@@ -120,7 +121,7 @@ class _ChartState extends State<Chart> {
             titleStyle: TextStyle(
               fontSize: fontSize,
               fontWeight: FontWeight.bold,
-              color: Colors.red,
+              color: dColor,
               shadows: shadows,
             ),
           );

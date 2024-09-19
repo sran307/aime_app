@@ -1,6 +1,9 @@
 import hashlib
 import base64
 import json
+from datetime import date, datetime as dateMode
+
+
 def hashUsername(input_string):
     # Convert input string to bytes (UTF-8 encoding)
     input_bytes = input_string.encode('utf-8')
@@ -34,3 +37,9 @@ def baseEncode(string_to_encode):
     encoded_string = encoded_bytes.decode('utf-8')
     
     return encoded_string
+
+def DateTimeConvert(stringDate):
+    date_obj = dateMode.strptime(stringDate, '%d-%m-%Y %H:%M')
+    formatted_date_str = date_obj.strftime('%Y-%m-%d %H:%M:%S.%f')
+
+    return formatted_date_str

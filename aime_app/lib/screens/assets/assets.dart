@@ -3,6 +3,7 @@ import 'package:dailyme/constants/drawer.dart';
 import 'package:dailyme/constants/constants.dart';
 import 'package:dailyme/constants/navBar/CustomBottomNavBar.dart';
 import 'package:dailyme/screens/assets/assetForm.dart';
+import 'package:dailyme/screens/assets/assetsList.dart';
 import 'package:flutter/material.dart';
 
 class Assets extends StatefulWidget {
@@ -23,18 +24,16 @@ class _Assets extends State<Assets> {
         elevation: 5.0,
           color: bg1,
         child: Container(
-          child: const Column(
+          child: Column(
             children: [
-              Row(
+              const Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text("Assets")
+                  Text("Assets"),
                 ],
               ),
-              Expanded(child: Row(
-                children: [
-                  
-                ],
+              Expanded(child: SingleChildScrollView(
+                child: Assetslist(),
               ))
             ],
           ),

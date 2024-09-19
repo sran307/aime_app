@@ -341,3 +341,21 @@ class Goals(models.Model):
 
     def __int__(self):
         return self.id
+
+class assets(models.Model):
+    guid = models.UUIDField(default=uuid.uuid4, editable=False, unique=True)
+    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE, db_column='user_id')
+    asset_name = models.CharField(null=True, max_length=100)
+    asset_amnt = models.FloatField(null=True)
+    purchased_on = models.DateTimeField()
+    valid_on = models.DateTimeField(null=True)
+    insertAt = models.ForeignKey(MetaData, on_delete=models.SET_NULL, null=True, db_column = 'insert_at', related_name='asset_inserts')
+    updateAt = models.ForeignKey(MetaData, on_delete=models.SET_NULL, null=True, db_column = 'update_at', related_name='asset_updates')
+
+    class Meta:
+        db_table='assets'
+
+    def __int__(self):
+        return self.id
+
+

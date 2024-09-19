@@ -32,5 +32,7 @@ const unAuth = 'Unauthorized';
 const smw = 'Something went wrong';
 
 const assetSave = '${baseUrl}asset/save/';
+const assetList = '${baseUrl}asset/list/';
+
 const goalSave = '${baseUrl}goal/save/';
 const goalList = '${baseUrl}goal/list/';

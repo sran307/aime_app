@@ -2,7 +2,7 @@
 from django.urls import path
 # from .views import Usercreate
 # from .views import AuthView
-from .views import views, stock_views, stock_ai, trade_analysis,goal
+from .views import views, stock_views, stock_ai, trade_analysis,goal, asset
 urlpatterns = [
     # path('login/', views.as_view),
     path('checkExist/', views.checkDeviceExist),
@@ -34,6 +34,9 @@ urlpatterns = [
 
     path('goal/save/', goal.save),
     path('goal/list/', goal.list),
+
+    path('asset/save/', asset.save),
+    path('asset/list/', asset.list),
 
 
 ]

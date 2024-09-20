@@ -107,8 +107,8 @@ def list(request):
             user = CustomUser.objects.get(guid=objId)
             if user is not None:
                 current_date = timezone.now().date()
-                assetObj = assets.objects.filter(user=user)
-                assetsData = [{'guid': str(asset['guid']), 'asset_name': asset['asset_name'], 'asset_amount': asset['asset_amnt'], 'days': timezone.now-asset['purchased_on']} for asset in assetObj.values()]
+                assetObj = assets.objects.filter(user=user).order_by('-id')
+                assetsData = [{'guid': str(asset['guid']), 'asset_name': asset['asset_name'], 'asset_amount': asset['asset_amnt']} for asset in assetObj.values()]
 
                 data = {
                     'data': assetsData,

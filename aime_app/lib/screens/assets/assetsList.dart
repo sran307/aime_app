@@ -66,47 +66,43 @@ class _AssetslistState extends State<Assetslist> {
                     Padding(
                       padding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
                       child: Container(
-                          width: MediaQuery.of(context).size.width * 1,
-                          height: MediaQuery.of(context).size.height * .1,
-                          decoration: BoxDecoration(
-                            color: const Color.fromARGB(100, 100, 100, 100),
-                            borderRadius: BorderRadius.circular(5),
-                            // boxShadow: const BoxShadow(color: Colors.black),
-                          ),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceAround,
-                            children: [
-                              Text(
+                        width: MediaQuery.of(context).size.width * 1,
+                        height: MediaQuery.of(context).size.height * .1,
+                        decoration: BoxDecoration(
+                          color: const Color.fromARGB(100, 100, 100, 100),
+                          borderRadius: BorderRadius.circular(5),
+                        ),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: [
+                            Expanded(
+                              child: Text(
                                 item['asset_name'].toString(),
                                 style: paragraph,
+                                overflow: TextOverflow.ellipsis,
+                                maxLines: 2,
                               ),
+                            ),
+                            // Expanded(
                               Text(
                                 item['asset_amount'].toString(),
                                 style: paragraph,
+                                // overflow: TextOverflow.ellipsis,
+                                // maxLines: 1,
                               ),
-                              Text(
-                                item['days'].toString(),
-                                style: paragraph,
-                              ),
-                            ],
-                          )),
-                      // child: Row(
-                      //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      //   children: [
-                      //     Text(
-                      //       item['asset_name'].toString(),
-                      //       style: paragraph,
-                      //     ),
-                      //   ],
-                      // ),
+                            // ),
+                            // Expanded(
+                            //   child: Text(
+                            //     item['days'].toString(),
+                            //     style: paragraph,
+                            //     overflow: TextOverflow.ellipsis,
+                            //     maxLines: 1,
+                            //   ),
+                            // ),
+                          ],
+                        ),
+                      ),
                     ),
-                    // const Divider(
-                    //   color: kDark,
-                    //   thickness: 1,
-                    //   height: 1.0,
-                    //   indent: 10,
-                    //   endIndent: 10,
-                    // ),
                   ],
                 ],
               );

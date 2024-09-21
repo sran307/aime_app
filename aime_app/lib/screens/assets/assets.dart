@@ -3,6 +3,7 @@ import 'package:dailyme/constants/drawer.dart';
 import 'package:dailyme/constants/constants.dart';
 import 'package:dailyme/constants/navBar/CustomBottomNavBar.dart';
 import 'package:dailyme/screens/assets/assetForm.dart';
+import 'package:dailyme/screens/assets/assetsAmnt.dart';
 import 'package:dailyme/screens/assets/assetsList.dart';
 import 'package:flutter/material.dart';
 
@@ -24,16 +25,21 @@ class _Assets extends State<Assets> {
         elevation: 5.0,
           color: bg1,
         child: Container(
-          child: Column(
+          child: const Column(
             children: [
-              const Row(
+              Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text("Assets"),
                 ],
               ),
               Expanded(child: SingleChildScrollView(
-                child: Assetslist(),
+                child: Column(
+                  children: [
+                    AssetsAmnt(),
+                    Assetslist(),
+                  ],
+                ),
               ))
             ],
           ),
@@ -47,7 +53,7 @@ class _Assets extends State<Assets> {
         onPressed: (){
           showDialog(
             context: context, 
-            builder: (BuildContext context) => AlertDialog(
+            builder: (BuildContext context) => const AlertDialog(
               content: AssetForm(),
 
             ));

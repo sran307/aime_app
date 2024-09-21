@@ -37,6 +37,10 @@ urlpatterns = [
 
     path('asset/save/', asset.save),
     path('asset/list/', asset.list),
+    path('asset/amnt/', asset.amnt),
+    path('asset/update/', asset.update),
+
+
 
 
 ]

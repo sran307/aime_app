@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:dailyme/constants/constants.dart';
 import 'package:dailyme/models/api_response.dart';
 import 'package:dailyme/services/DataDecryptor.dart';
+import 'package:dailyme/services/TokenHandler.dart';
 import 'package:dailyme/services/auth.dart';
 import 'package:dailyme/services/urls.dart';
 import 'package:flutter/material.dart';
@@ -17,6 +18,39 @@ class Assetslist extends StatefulWidget {
 class _AssetslistState extends State<Assetslist> {
   Future<List<dynamic>>? assetsData;
 
+void _showPasswordDialog(value) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: const Text('Confirm'),
+          content: Text(
+            'Is this asset Expired?'
+          ),
+          actions: <Widget>[
+            TextButton(
+              child: const Text('Cancel'),
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+            ),
+            TextButton(
+              child: const Text('Submit'),
+              onPressed: () {
+                    Map<String, dynamic> data = {
+                      "guid": value,
+                    };
+    
+                    TokenHandler tokenHandler = TokenHandler(context);
+                    tokenHandler.submitCommonForm(data, assetUpdateUrl);
+              },
+            ),
+          ],
+        );
+      },
+    );
+  }
+  
   @override
   void initState() {
     super.initState();
@@ -65,41 +99,34 @@ class _AssetslistState extends State<Assetslist> {
                   for (var item in snapshot.data!) ...[
                     Padding(
                       padding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
-                      child: Container(
-                        width: MediaQuery.of(context).size.width * 1,
-                        height: MediaQuery.of(context).size.height * .1,
-                        decoration: BoxDecoration(
-                          color: const Color.fromARGB(100, 100, 100, 100),
-                          borderRadius: BorderRadius.circular(5),
-                        ),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
-                          children: [
-                            Expanded(
-                              child: Text(
-                                item['asset_name'].toString(),
-                                style: paragraph,
-                                overflow: TextOverflow.ellipsis,
-                                maxLines: 2,
+                      child: GestureDetector(
+                        onTap: (){_showPasswordDialog(item['guid']);},
+                        child: Container(
+                          width: MediaQuery.of(context).size.width * 1,
+                          height: MediaQuery.of(context).size.height * .1,
+                          decoration: BoxDecoration(
+                            color: item['validity'] == null
+                                ? const Color.fromARGB(200, 2, 155, 53)
+                                : const Color.fromARGB(150, 126, 9, 9),
+                            borderRadius: BorderRadius.circular(5),
+                          ),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                            children: [
+                              Expanded(
+                                child: Text(
+                                  item['asset_name'].toString(),
+                                  style: paragraph,
+                                  overflow: TextOverflow.ellipsis,
+                                  maxLines: 2,
+                                ),
                               ),
-                            ),
-                            // Expanded(
                               Text(
                                 item['asset_amount'].toString(),
                                 style: paragraph,
-                                // overflow: TextOverflow.ellipsis,
-                                // maxLines: 1,
                               ),
-                            // ),
-                            // Expanded(
-                            //   child: Text(
-                            //     item['days'].toString(),
-                            //     style: paragraph,
-                            //     overflow: TextOverflow.ellipsis,
-                            //     maxLines: 1,
-                            //   ),
-                            // ),
-                          ],
+                            ],
+                          ),
                         ),
                       ),
                     ),

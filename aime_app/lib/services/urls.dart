@@ -33,6 +33,11 @@ const smw = 'Something went wrong';
 
 const assetSave = '${baseUrl}asset/save/';
 const assetList = '${baseUrl}asset/list/';
+const assetsAmntUrl = '${baseUrl}asset/amnt/';
+const assetUpdateUrl = '${baseUrl}asset/update/';
+
+
+
 
 const goalSave = '${baseUrl}goal/save/';
 const goalList = '${baseUrl}goal/list/';
